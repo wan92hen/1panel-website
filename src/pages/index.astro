@@ -1,0 +1,30 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Hero from '../components/Hero.astro';
+import Features from '../components/Features.astro';
+import QuickStart from '../components/QuickStart.astro';
+import AppStore from '../components/AppStore.astro';
+import CTA from '../components/CTA.astro';
+import Footer from '../components/Footer.astro';
+import '../styles/global.css';
+---
+
+<Layout title="1Panel - 现代化、开源的Linux服务器运维管理面板">
+  <Header />
+  <main>
+    <Hero />
+    <Features />
+    <QuickStart />
+    <AppStore />
+    <CTA />
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    z-index: 1;
+  }
+</style>

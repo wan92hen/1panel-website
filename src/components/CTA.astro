@@ -1,0 +1,102 @@
+---
+// CTA (Call-to-Action) section for 1Panel website
+---
+
+<section id="cta" class="relative py-20 lg:py-32 overflow-hidden">
+  <!-- Background with gradient and mesh pattern -->
+  <div class="absolute inset-0 bg-gradient-to-br from-1panel via-blue-600 to-blue-700"></div>
+  <div class="absolute inset-0 bg-mesh opacity-10"></div>
+  
+  <!-- Floating geometric shapes -->
+  <div class="absolute inset-0 overflow-hidden">
+    <div class="absolute top-10 left-10 w-32 h-32 rounded-full blur-3xl bg-white opacity-10 animate-float"></div>
+    <div class="absolute top-40 right-20 w-24 h-24 rounded-full blur-3xl bg-white opacity-15 animate-float" style="animation-delay: -2s;"></div>
+    <div class="absolute bottom-20 left-20 w-40 h-40 rounded-full blur-3xl bg-white opacity-10 animate-float" style="animation-delay: -4s;"></div>
+    <div class="absolute bottom-40 right-10 w-20 h-20 rounded-full blur-3xl bg-white opacity-20 animate-float" style="animation-delay: -6s;"></div>
+  </div>
+
+    <!-- Main content -->
+  <div class="relative z-10 container-custom">
+    <div class="text-center max-w-3xl mx-auto">
+      <!-- Main heading -->
+      <h2 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight" style="animation-delay: 0.2s;">
+        立即开始使用
+        <span class="block">
+          <img src="/images/logo-blue.png" alt="1Panel" class="mt-4 inline-block h-12 md:h-16 lg:h-20" />
+        </span>
+      </h2>
+
+      <!-- Subtitle -->
+      <p class="fade-in-up text-xl text-blue-100 mb-12 leading-relaxed" style="animation-delay: 0.4s;">
+        现代化、开源的 Linux 服务器运维管理面板
+      </p>
+
+      <!-- Action buttons -->
+      <div class="fade-in-up flex flex-col sm:flex-row gap-6 justify-center items-center" style="animation-delay: 0.6s;">
+        <!-- Primary CTA button -->
+        <a 
+          href="https://demo.1panel.cn/" 
+          target="_blank" 
+          class="group bg-white text-1panel font-bold text-xl px-12 py-5 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl inline-flex items-center"
+        >
+          免费试用
+          <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
+          </svg>
+        </a>
+
+        <!-- Secondary button -->
+        <a 
+          href="https://1panel.cn/docs/installation/" 
+          target="_blank" 
+          class="group border-2 border-white/30 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-white/50 backdrop-blur-sm inline-flex items-center"
+        >
+          安装文档
+          <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+    @keyframes float {
+        0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    33% {
+      transform: translateY(-20px) rotate(120deg);
+    }
+    66% {
+      transform: translateY(10px) rotate(240deg);
+    }
+  }
+
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  .shadow-3xl {
+    box-shadow: 0 35px 60px -12px rgba(0, 0, 0, 0.25);
+  }
+</style>
+
+<script>
+  // Intersection Observer for animation triggers
+  document.addEventListener('DOMContentLoaded', function() {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, { threshold: 0.1 });
+
+    // Observe all animated elements
+    document.querySelectorAll('.fade-in-up, .fade-in-left, .fade-in-right').forEach(el => {
+      observer.observe(el);
+    });
+  });
+</script> 
