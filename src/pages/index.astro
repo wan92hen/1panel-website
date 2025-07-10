@@ -7,6 +7,7 @@ import QuickStart from '../components/QuickStart.astro';
 import AppStore from '../components/AppStore.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
+import { Icon } from 'astro-icon/components';
 import '../styles/global.css';
 ---
 
@@ -15,11 +16,40 @@ import '../styles/global.css';
   <main>
     <Hero />
     <Features />
-    <QuickStart />
     <AppStore />
+    <QuickStart />
     <CTA />
   </main>
   <Footer />
+  
+  <!-- Language Detection Modal -->
+  <div id="language-modal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden items-center justify-center p-4">
+    <div class="bg-white rounded-lg shadow-xl max-w-md w-full mx-4 transform transition-all">
+      <div class="p-6">
+        <div class="flex items-center mb-4">
+          <div class="flex-shrink-0">
+            <Icon name="carbon:earth-filled" class="w-6 h-6 text-1panel" />
+          </div>
+          <div class="ml-2">
+            <h3 class="text-lg font-medium text-gray-900">Language Detection</h3>
+          </div>
+        </div>
+        <div class="mb-6">
+          <p class="text-sm text-gray-600">
+            Your browser language is not Chinese. Would you like to switch to our English site for a better experience?
+          </p>
+        </div>
+        <div class="flex justify-end space-x-3">
+          <button id="stay-here" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
+            Stay Here
+          </button>
+          <button id="go-english" class="px-4 py-2 text-sm font-medium text-white bg-1panel border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+            Go to English Site
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
 </Layout>
 
 <style>
@@ -28,3 +58,74 @@ import '../styles/global.css';
     z-index: 1;
   }
 </style>
+
+<script is:inline>
+  document.addEventListener('DOMContentLoaded', function() {
+    // 检查是否已经显示过弹框
+    const hasShownModal = sessionStorage.getItem('languageModalShown');
+    if (hasShownModal) {
+      console.log('hasShownModal', hasShownModal);
+      return;
+    }
+
+    // 获取浏览器语言
+    const browserLanguage = navigator.language;
+    const isChinese = browserLanguage.startsWith('zh');
+    console.log(browserLanguage);
+
+    // 如果不是中文，显示弹框
+    if (!isChinese) {
+      const modal = document.getElementById('language-modal');
+      const stayButton = document.getElementById('stay-here');
+      const goButton = document.getElementById('go-english');
+
+      if (modal && stayButton && goButton) {
+        // 显示弹框
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+
+        // 添加淡入动画
+        setTimeout(() => {
+          const modalContent = modal.querySelector('.bg-white');
+          if (modalContent) {
+            modalContent.classList.add('scale-100');
+            modalContent.classList.remove('scale-95');
+          }
+        }, 10);
+
+        // 标记已显示
+        sessionStorage.setItem('languageModalShown', 'true');
+
+        // 点击"留在这里"按钮
+        stayButton.addEventListener('click', function() {
+          hideModal();
+        });
+
+        // 点击"前往英文网站"按钮
+        goButton.addEventListener('click', function() {
+          window.location.href = 'https://1panel.pro';
+        });
+
+        // 点击背景关闭弹框
+        modal.addEventListener('click', function(e) {
+          if (e.target === modal) {
+            hideModal();
+          }
+        });
+
+        // 隐藏弹框函数
+        function hideModal() {
+          const modalContent = modal.querySelector('.bg-white');
+          if (modalContent) {
+            modalContent.classList.add('scale-95');
+            modalContent.classList.remove('scale-100');
+          }
+          setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+          }, 200);
+        }
+      }
+    }
+  });
+</script>

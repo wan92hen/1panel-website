@@ -1,5 +1,6 @@
 ---
 // Header component for 1Panel website
+import { Icon } from 'astro-icon/components'
 ---
 
 <header class="fixed top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
@@ -23,10 +24,12 @@
         <a href="#" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">论坛求助</a>
         <a href="#" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">使用手册</a>
         <div class="flex items-center space-x-4">
-          <a href="https://demo.1panel.cn/" target="_blank" class="btn-secondary text-sm">
+          <a href="https://demo.1panel.cn/" target="_blank" class="btn-secondary text-sm inline-flex items-center">
+            <Icon name="carbon:demo" class="w-5 h-5 mr-2" />
             在线体验
           </a>
-          <a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="btn-primary text-sm">
+          <a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="btn-primary text-sm inline-flex items-center">
+            <Icon name="carbon:logo-github" class="w-5 h-5 mr-2" />
             代码仓库
           </a>
         </div>
@@ -49,6 +52,7 @@
         <a href="#about" class="text-gray-700 hover:text-gray-900 transition-colors duration-300 py-2">关于我们</a>
         <div class="flex flex-col space-y-3 pt-4">
           <a href="https://demo.1panel.cn/" target="_blank" class="btn-secondary text-sm text-center">
+            <Icon name="carbon:demo" class="w-5 h-5 mr-3 text-gray-700" />
             在线体验
           </a>
           <a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="btn-primary text-sm text-center">

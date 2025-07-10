@@ -1,5 +1,6 @@
 ---
 // Features section for 1Panel website
+import { Icon } from 'astro-icon/components'
 ---
 
 <section id="features" class="section-padding bg-gradient-to-br from-gray-50 to-white">
@@ -28,27 +29,20 @@
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="monitoring">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="mdi:chart-multiline" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">实时系统监控</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="files">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="carbon:volume-file-storage" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">在线文件管理器</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="database">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="carbon:db2-database" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">数据库可视化管理</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="containers">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <!-- Containers: Docker logo icon -->
+              <Icon name="mdi:docker" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">Docker 容器管理</span>
             </div>
           </div>
@@ -56,7 +50,7 @@
         <!-- Image Carousel -->
         <div class="fade-in-right order-1 lg:order-2 lg:col-span-3">
           <div class="relative group">
-            <div class="relative bg-white rounded shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
+            <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
               <!-- Carousel Container -->
               <div class="carousel-container relative overflow-hidden" style="min-height: 400px;">
                 <!-- Image 1: System Monitoring -->
@@ -110,13 +104,13 @@
         <!-- Image Carousel -->
         <div class="fade-in-left order-2 lg:order-1 lg:col-span-3">
           <div class="relative group">
-            <div class="relative bg-white rounded shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
+            <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
               <!-- Carousel Container -->
               <div class="carousel-container relative overflow-hidden" style="min-height: 400px;">
                 <!-- Image 1: WordPress Deployment -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="wordpress">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/website.png" 
+                    src="/images/f5.png" 
                     alt="1Panel WordPress部署界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -125,7 +119,7 @@
                 <!-- Image 2: SSL Certificate -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ssl">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/ssl.png" 
+                    src="/images/f6.png" 
                     alt="1Panel SSL证书管理界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -134,8 +128,8 @@
                 <!-- Image 3: Domain Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="domain">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/domain.png" 
-                    alt="1Panel 域名管理界面" 
+                    src="/images/f7.png" 
+                    alt="1Panel 网站管理界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
                   />
@@ -143,7 +137,7 @@
                 <!-- Image 4: Multi-site Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="multisite">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/multisite.png" 
+                    src="/images/f8.png" 
                     alt="1Panel 多站点管理界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -164,27 +158,19 @@
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="wordpress">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="mdi:wordpress" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">一键WordPress部署</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ssl">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="carbon:security" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">自动SSL证书申请</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="domain">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700 font-medium">域名管理与解析</span>
+              <Icon name="carbon:dns-services" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">域名管理与配置</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="multisite">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="carbon:web-services-service" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">多站点管理</span>
             </div>
           </div>
@@ -205,41 +191,33 @@
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="store">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="carbon:application" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">精选开源应用</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="install">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="carbon:deploy" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">一键安装部署</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="updates">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="carbon:update-now" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">自动更新管理</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="management">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
-              <span class="text-gray-700 font-medium">版本兼容性检查</span>
+              <Icon name="carbon:data-backup" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">数据备份与恢复</span>
             </div>
           </div>
         </div>
         <!-- Image Carousel -->
         <div class="fade-in-right order-1 lg:order-2 lg:col-span-3">
           <div class="relative group">
-            <div class="relative bg-white rounded shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
+            <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
               <!-- Carousel Container -->
               <div class="carousel-container relative overflow-hidden" style="min-height: 400px;">
                 <!-- Image 1: App Store Overview -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="store">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/appstore.png" 
+                    src="/images/f9.png" 
                     alt="1Panel 应用商店界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -248,7 +226,7 @@
                 <!-- Image 2: App Installation -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="install">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/install.png" 
+                    src="/images/f10.png" 
                     alt="1Panel 应用安装界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -257,7 +235,7 @@
                 <!-- Image 3: App Updates -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="updates">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/updates.png" 
+                    src="/images/f11.png" 
                     alt="1Panel 应用更新界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -266,7 +244,7 @@
                 <!-- Image 4: App Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="management">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/app-management.png" 
+                    src="/images/f12.png" 
                     alt="1Panel 应用管理界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -286,13 +264,13 @@
         <!-- Image Carousel -->
         <div class="fade-in-left order-1 lg:order-1 lg:col-span-3">
           <div class="relative group">
-            <div class="relative bg-white rounded shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
+            <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
               <!-- Carousel Container -->
               <div class="carousel-container relative overflow-hidden" style="min-height: 400px;">
                 <!-- Image 1: AI Chat Interface -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="ai-chat">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/ai-chat.png" 
+                    src="/images/f13.png" 
                     alt="1Panel AI 智能对话界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -301,7 +279,7 @@
                 <!-- Image 2: AI Diagnosis -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-diagnosis">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/ai-diagnosis.png" 
+                    src="/images/f14.png" 
                     alt="1Panel AI 问题诊断界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -310,7 +288,7 @@
                 <!-- Image 3: AI Optimization -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-optimization">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/ai-optimization.png" 
+                    src="/images/f13.png" 
                     alt="1Panel AI 性能优化界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -319,7 +297,7 @@
                 <!-- Image 4: AI Automation -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-automation">
                   <img 
-                    src="https://resource.fit2cloud.com/1panel/img/ai-automation.png" 
+                    src="/images/f16.png" 
                     alt="1Panel AI 自动化运维界面" 
                     class="w-full h-full object-cover"
                     loading="lazy"
@@ -340,27 +318,19 @@
           </p>
           <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="ai-chat">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="carbon:ai" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">本地大模型管理</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-diagnosis">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="codicon:mcp" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">MCP 服务管理</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-optimization">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="mdi:gpu" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">GPU 监控</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-automation">
-              <svg class="w-5 h-5 mr-3 text-1panel" fill="currentColor" viewBox="0 0 20 20">
-                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-              </svg>
+              <Icon name="tabler:file-text-ai" class="w-5 h-5 mr-3 text-1panel" />
               <span class="text-gray-700 font-medium">AI 建站服务</span>
             </div>
           </div>

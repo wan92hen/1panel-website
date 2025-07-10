@@ -1,5 +1,6 @@
 ---
 // Hero section for 1Panel website
+import { Icon } from 'astro-icon/components'
 // 获取下载量数据
 let downloadCount = 1500000; // 默认值
 
@@ -25,19 +26,6 @@ const formattedDownload = formatDownloadCount(downloadCount);
 ---
 
 <section id="home" class="relative min-h-screen flex items-center overflow-hidden bg-gray-50">
-  <!-- Background Image with Overlay -->
-  <div class="absolute inset-0">
-    <img 
-      src="/images/overview.png" 
-      alt="1Panel Hero Background" 
-      class="w-full h-full opacity-5"
-    />
-    <div class="absolute inset-0 bg-gradient-to-br from-white/90 via-gray-50/95 to-blue-50/80"></div>
-  </div>
-
-  <!-- Background Mesh Pattern -->
-  <div class="absolute inset-0 bg-mesh opacity-5"></div>
-
   <!-- Floating Geometric Shapes -->
   <div class="absolute inset-0 overflow-hidden">
     <div class="absolute top-20 left-10 w-20 h-20 rounded-full blur-xl animate-float bg-1panel opacity-5"></div>
@@ -48,10 +36,69 @@ const formattedDownload = formatDownloadCount(downloadCount);
 
   <!-- Main Content -->
   <div class="relative z-10 container-custom py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-center min-h-[80vh]">
-      
+    <div id="hero-content" class="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-16 items-center min-h-[80vh]">
+      <!-- Right Content - Dashboard Preview -->
+      <div id="hero-right" class="order-1 lg:order-2 lg:col-span-2 transition-all duration-1000 peer hover:lg:col-span-5 group">
+        <div class="fade-in-right relative hero-dashboard-preview" style="animation-delay: 0.5s;">
+          <!-- Dashboard Image -->
+          <div class="relative">
+            <div class="relative bg-white rounded-lg border border-gray-200 overflow-hidden shadow-2xl">
+              <img
+                id="hero-right-img"
+                src="/images/overview.png" 
+                alt="1Panel Dashboard Preview" 
+                class="w-full h-auto max-w-none dashboard-img group-hover:hidden"
+                loading="lazy"
+              />
+              <!-- <div class="w-full h-auto max-w-none hidden group-hover:block">
+                <iframe id="hero-right-iframe" src="//player.bilibili.com/player.html?isOutside=true&aid=1802554357&bvid=BV1Mt421n7LZ&cid=1492247146&p=1" width="1200px" allowfullscreen="true" autoplay="false"></iframe>
+              </div>
+              <script>
+                document.addEventListener('DOMContentLoaded', () => {
+                  const heroRightIframe = document.getElementById('hero-right-iframe') as HTMLIFrameElement | null;
+                  function setIframeHeight() {
+                    if (heroRightIframe) {
+                      const vh = window.innerHeight;
+                      const height = vh * 0.7;
+                      heroRightIframe.style.height = height + 'px';
+                      heroRightIframe.setAttribute('height', height + 'px');
+                    }
+                  }
+                  if (heroRightIframe) {
+                    heroRightIframe.addEventListener('load', setIframeHeight);
+                  }
+                  window.addEventListener('resize', setIframeHeight);
+                  setIframeHeight();
+                });
+              </script> -->
+              <a
+                href="https://www.bilibili.com/video/BV1Mt421n7LZ/"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="relative w-full hidden group-hover:block"
+                style="outline: none;"
+                aria-label="播放视频"
+              >
+                <img
+                  src="/images/overview-full.png" 
+                  alt="1Panel Dashboard Preview" 
+                  class="w-full h-auto max-w-none dashboard-img"
+                  loading="lazy"
+                />
+                <!-- Play Icon Overlay -->
+                <span
+                  class="absolute inset-0 flex items-center justify-center pointer-events-none"
+                  style="z-index: 2;"
+                >
+                  <Icon name="carbon:play-outline-filled" class="w-20 h-20 md:w-24 md:h-24 text-gray-500 animate-pulse" />
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- Left Content -->
-      <div class="order-2 lg:order-1 lg:col-span-3">
+      <div id="hero-left" class="order-2 lg:order-1 lg:col-span-3 transition-all duration-1000 peer-hover:hidden">
         <!-- Main Heading -->
         <h1 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6" style="animation-delay: 0.2s;">
           <span class="block text-gray-800 mb-2">使用 1Panel 轻松</span>
@@ -150,23 +197,9 @@ const formattedDownload = formatDownloadCount(downloadCount);
         </div>
       </div>
 
-      <!-- Right Content - Dashboard Preview -->
-      <div class="order-1 lg:order-2 lg:col-span-2">
-        <div class="fade-in-right relative" style="animation-delay: 0.5s;">
-          <!-- Dashboard Image -->
-          <div class="relative group">
-            <div class="relative bg-white rounded border border-gray-200 overflow-hidden shadow-2xl">
-              <img 
-                src="/images/overview.png" 
-                alt="1Panel Dashboard Preview" 
-                class="w-full h-auto max-w-none"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
+    
   </div>
 
   <!-- Scroll Indicator -->
