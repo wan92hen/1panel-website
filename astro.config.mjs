@@ -8,7 +8,8 @@ export default defineConfig({
   integrations: [tailwind(), react(), icon()],
   output: 'static',
   build: {
-    assets: 'assets'
+    assets: 'assets',
+    assetsPrefix: './'
   },
   server: {
     host: true,
