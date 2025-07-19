@@ -18,5 +18,9 @@ export default defineConfig({
       '127.0.0.1',
       '0afe-240e-3ba-30ea-8e60-a1f8-1835-58fa-6013.ngrok-free.app'
     ]
+  },
+  i18n: {
+    locales: ["zh-cn", "en"],
+    defaultLocale: "zh-cn",
   }
 });

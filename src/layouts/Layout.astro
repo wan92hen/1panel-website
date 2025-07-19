@@ -5,6 +5,7 @@ export interface Props {
 }
 
 const { title, description = "1Panel - 现代化、开源的Linux服务器运维管理面板" } = Astro.props;
+import '../styles/global.css';
 ---
 
 <!DOCTYPE html>
@@ -20,7 +21,7 @@ const { title, description = "1Panel - 现代化、开源的Linux服务器运维
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./images/overview-full.png" />
+  <meta property="og:image" content="/images/overview-full.png" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />
@@ -34,8 +35,8 @@ const { title, description = "1Panel - 现代化、开源的Linux服务器运维
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" is:inline href="./lib/asciinema-player.css">
-  <script is:inline src="./lib/asciinema-player.min.js"></script>
+  <link rel="stylesheet" is:inline href="/lib/asciinema-player.css">
+  <script is:inline src="/lib/asciinema-player.min.js"></script>
 </head>
 <body class="bg-dark-900 text-gray-100 antialiased">
   <!-- Background particles -->

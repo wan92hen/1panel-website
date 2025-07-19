@@ -103,7 +103,7 @@ function getCategoryDisplayName(key: string): string {
 
 // 获取应用图标的函数
 function getAppIcon(app: App): string {
-  return app.icon || './images/default-app-icon.png';
+  return app.icon || '/images/default-app-icon.png';
 }
 
 // 格式化下载数量
@@ -164,7 +164,7 @@ function formatDownloads(downloads: number): string {
                       alt={app.name}
                       class="w-16 h-16 rounded-xl object-cover group-hover:scale-110 transition-transform duration-300"
                       loading="lazy"
-                      onerror="this.src='./images/default-app-icon.png'"
+                      onerror="this.src='/images/default-app-icon.png'"
                     />
                   </div>
                   
