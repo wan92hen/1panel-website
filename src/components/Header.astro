@@ -8,29 +8,30 @@ import { Icon } from 'astro-icon/components'
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
-        <img src="./images/logo-blue.png" alt="1Panel Logo" class="h-12">
+        <a href="/">
+          <img src="./images/logo-blue.png" alt="1Panel Logo" class="h-12">
+        </a>
       </div>
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-8">
-        <a href="https://vsbt.1panel.cn/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">产品优势</a>
         <a href="https://www.lxware.cn/1panel" target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
-          专业版
+          Pricing
           <span class="relative -left-1 bottom-2">
             🔥
           </span>
         </a>
-        <a href="#appstore" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">应用商店</a>
-        <a href="https://bbs.fit2cloud.com/c/1p/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">论坛求助</a>
-        <a href="https://1panel.cn/docs" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">使用手册</a>
+        <a href="#appstore" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">App Store</a>
+        <a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">Discussions</a>
+        <a href="https://1panel.pro/docs" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">Docs</a>
         <div class="flex items-center space-x-4">
           <a href="https://demo.1panel.cn/" target="_blank" class="btn-secondary text-sm inline-flex items-center">
             <Icon name="carbon:demo" class="w-5 h-5 mr-2" />
-            在线体验
+            Demo
           </a>
           <a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="btn-primary text-sm inline-flex items-center">
             <Icon name="carbon:logo-github" class="w-5 h-5 mr-2" />
-            代码仓库
+            GitHub
           </a>
         </div>
       </div>
@@ -46,23 +47,22 @@ import { Icon } from 'astro-icon/components'
     <!-- Mobile Navigation -->
     <div id="mobile-menu" class="lg:hidden hidden pb-4">
       <div class="flex flex-col space-y-4">
-        <a href="https://vsbt.1panel.cn/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">产品优势</a>
-        <a href="https://www.lxware.cn/1panel" target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
-          专业版
+        <a href="/pricing" target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
+          Pricing
           <span class="relative -left-1 bottom-2">
             🔥
           </span>
         </a>
-        <a href="#appstore" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">应用商店</a>
-        <a href="https://bbs.fit2cloud.com/c/1p/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">论坛求助</a>
-        <a href="https://1panel.cn/docs" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">使用手册</a>
+        <a href="#appstore" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">App Store</a>
+        <a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">Discussions</a>
+        <a href="https://1panel.pro/docs" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">Docs</a>
         <div class="flex flex-col space-y-3 pt-4">
           <a href="https://demo.1panel.cn/" target="_blank" class="btn-secondary text-sm text-center">
             <Icon name="carbon:demo" class="w-5 h-5 mr-3 text-gray-700" />
-            在线体验
+            Demo
           </a>
           <a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="btn-primary text-sm text-center">
-            代码仓库
+            GitHub
           </a>
         </div>
       </div>

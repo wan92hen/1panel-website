@@ -1,0 +1,570 @@
+---
+// Pricing section for 1Panel website
+import { Icon } from 'astro-icon/components';
+---
+
+<section id="pricing" class="section-padding bg-gradient-to-br from-gray-50 to-white">
+  <div class="container-custom">
+    <!-- Section Header -->
+    <div class="text-center mb-20">
+      <h2 class="fade-in-up text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+        Simple
+        <span class="text-1panel-gradient">Pricing</span>
+      </h2>
+      <p class="fade-in-up text-xl text-gray-600 max-w-3xl mx-auto" style="animation-delay: 0.2s;">
+        Choose the perfect plan for your needs. Start free and upgrade as you grow.
+      </p>
+    </div>
+
+    <!-- Pricing Cards -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto relative">
+      
+      <!-- OSS Edition -->
+      <div class="fade-in-up card group hover:scale-105 transition-transform duration-300" style="animation-delay: 0.3s;">
+        <div class="text-center p-4">
+          <!-- Plan Header -->
+          <div class="mb-6">
+            <div class="flex items-center justify-center space-x-2 font-medium text-gray-500 mb-2">
+              <Icon name="carbon:logo-github" class="w-5 h-5 flex-shrink-0" />
+              <span>OSS Edition</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Free to Use</h3>
+            <p class="text-gray-600">Open-source</p>
+          </div>
+
+          <!-- Features -->
+          <ul class="space-y-4 mb-8 text-left">
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">No cost</span>
+            </li>
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">Validated by millions of installations</span>
+            </li>
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">Community support</span>
+            </li>
+          </ul>
+
+          <!-- CTA Button -->
+          <a 
+            href="https://github.com/1Panel-dev/1Panel/releases" 
+            target="_blank"
+            class="w-full inline-flex justify-center items-center px-6 py-3 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:bg-gray-200 hover:border-gray-400"
+          >
+            Quick Start
+          </a>
+        </div>
+      </div>
+
+      <!-- Pro Edition - Perpetual -->
+      <div class="fade-in-up card group hover:scale-105 transition-transform duration-300 relative transform scale-105" style="animation-delay: 0.4s;">
+        <!-- Popular Badge -->
+        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+          <span class="bg-1panel-gradient text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+            Most Popular
+          </span>
+        </div>
+        
+        <div class="text-center p-4">
+          <!-- Plan Header -->
+          <div class="mb-6">
+            <div class="flex items-center justify-center space-x-2 font-medium text-gray-500 mb-2">
+              <Icon name="mdi:diamond-stone" class="w-5 h-5 text-yellow-500 flex-shrink-0" />
+              <span>Pro Edition</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Perpetual License</h3>
+            <div class="mb-6">
+              <div class="flex items-baseline justify-center">
+                <span class="text-5xl font-bold text-1panel">$200</span>
+                <span class="text-gray-600 text-sm ml-2">/ per License</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <ul class="space-y-4 mb-8 text-left">
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">All features of OSS Edition</span>
+            </li>
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">Enhanced features</span>
+            </li>
+            <li class="flex items-center">
+                            <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+
+              <span class="text-gray-700">Never expires</span>
+            </li>
+            <li class="flex items-center">
+                            <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+
+              <span class="text-gray-700">Costs less over time</span>
+            </li>
+            <li class="flex items-center">
+                            <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+
+              <span class="text-gray-700">Volume discount</span>
+            </li>
+          </ul>
+
+          <!-- CTA Button -->
+          <a 
+            href="https://demo.1panel.pro" 
+            target="_blank"
+            class="w-full inline-flex justify-center items-center px-6 py-3 bg-1panel-gradient text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
+          >
+            Buy now
+          </a>
+        </div>
+      </div>
+
+      <!-- Pro Edition - Subscription -->
+      <div class="fade-in-up card group hover:scale-105 transition-transform duration-300" style="animation-delay: 0.5s;">
+        <div class="text-center p-4">
+          <!-- Plan Header -->
+          <div class="mb-6">
+            <div class="flex items-center justify-center space-x-2 font-medium text-gray-500 mb-2">
+              <Icon name="mdi:diamond-stone" class="w-5 h-5 text-yellow-500 flex-shrink-0" />
+              <span>Pro Edition</span>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">Subscription</h3>
+            
+            <!-- Billing Toggle -->
+            <div class="mb-6">
+              <div class="flex items-center justify-center space-x-4 mb-4">
+                <span class="text-sm text-gray-600">Monthly</span>
+                <button 
+                  id="billing-toggle" 
+                  class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-1panel focus:ring-offset-2"
+                  role="switch"
+                  aria-checked="false"
+                >
+                  <span 
+                    id="billing-toggle-thumb"
+                    class="inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out translate-x-1"
+                  ></span>
+                </button>
+                <span class="text-sm text-gray-600">Yearly</span>
+                <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
+                  Save 16%
+                </span>
+              </div>
+              
+              <!-- Price Display -->
+              <div class="mb-2">
+                <div class="flex items-baseline justify-center">
+                  <span id="subscription-price" class="text-5xl font-bold text-gray-800">$8</span>
+                  <span id="subscription-period" class="text-gray-600 text-sm ml-2">/ per month</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Features -->
+          <ul class="space-y-4 mb-8 text-left">
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">All features of OSS Edition</span>
+            </li>
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">Enhanced features</span>
+            </li>
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">Start at a low cost</span>
+            </li>
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">Flexibility on payment</span>
+            </li>
+            <li class="flex items-center">
+              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+              <span class="text-gray-700">Enjoy the latest updates</span>
+            </li>
+          </ul>
+
+          <!-- CTA Button -->
+          <a 
+            href="https://demo.1panel.pro" 
+            target="_blank"
+            class="w-full inline-flex justify-center items-center px-6 py-3 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:bg-gray-200 hover:border-gray-400"
+          >
+            Buy now
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature Comparison Table -->
+    <div class="mt-20">
+      <div class="text-center mb-12">
+        <h3 class="fade-in-up text-3xl font-bold text-gray-800 mb-4">OSS Edition VS. Pro Edition</h3>
+        <p class="fade-in-up text-lg text-gray-600">Compare features to find the perfect plan for your needs</p>
+      </div>
+      
+      <div class="fade-in-up overflow-x-auto" style="animation-delay: 0.6s;">
+        <table class="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200">
+          <thead>
+            <tr class="border-b border-gray-200">
+              <th class="text-left p-6 font-semibold text-gray-800">Features</th>
+              <th class="text-center p-6 font-semibold text-gray-800">OSS Edition</th>
+              <th class="text-center p-6 font-semibold text-1panel">Pro Edition</th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Basic Features -->
+            <tr class="bg-gray-50">
+              <td class="p-6 font-medium text-gray-800" colspan="3">Basic Features</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">App Store</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Website Management</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Database Management</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Container Management</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">File Management</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Server Monitoring</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">GPU Monitoring</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">AI Model Management</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            
+            <!-- Enhanced Features -->
+            <tr class="bg-gray-50">
+              <td class="p-6 font-medium text-gray-800" colspan="3">Enhanced Features</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">App</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">WAF</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Site Integrity</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Website Monitoring</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Scheduled Virus Scanning</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Intranet Proxy Mode</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            
+            <!-- Customization -->
+            <tr class="bg-gray-50">
+              <td class="p-6 font-medium text-gray-800" colspan="3">Customization</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Custom Logo</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Custom Theme Colors</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            
+            <!-- Support -->
+            <tr class="bg-gray-50">
+              <td class="p-6 font-medium text-gray-800" colspan="3">Support</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Community</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Email</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="p-6 text-gray-700">Priority Service</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .card {
+    @apply bg-white rounded-xl shadow-lg border border-gray-200;
+  }
+  
+  .card:hover {
+    @apply shadow-xl border-1panel;
+  }
+  
+  /* Popular card styling */
+  .card.transform.scale-105 {
+    @apply shadow-xl border-1panel;
+  }
+  
+  /* Billing toggle active state */
+  .billing-toggle-active {
+    @apply bg-1panel;
+  }
+  
+  .billing-toggle-active .billing-toggle-thumb {
+    @apply translate-x-6;
+  }
+  
+  /* Price animation */
+  @keyframes pricePulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+  }
+  
+  .price-animation {
+    animation: pricePulse 0.3s ease-in-out;
+  }
+</style>
+
+<script>
+  // Billing toggle functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const billingToggle = document.getElementById('billing-toggle') as HTMLElement;
+    const billingToggleThumb = document.getElementById('billing-toggle-thumb') as HTMLElement;
+    const subscriptionPrice = document.getElementById('subscription-price') as HTMLElement;
+    const subscriptionPeriod = document.getElementById('subscription-period') as HTMLElement;
+    
+    if (!billingToggle || !billingToggleThumb || !subscriptionPrice || !subscriptionPeriod) {
+      return;
+    }
+    
+    let isYearly = false;
+    
+    billingToggle.addEventListener('click', function() {
+      isYearly = !isYearly;
+      
+      // Update toggle state
+      billingToggle.setAttribute('aria-checked', isYearly.toString());
+      billingToggle.classList.toggle('billing-toggle-active');
+      billingToggleThumb.classList.toggle('billing-toggle-thumb');
+      
+      // Update price and period
+      if (isYearly) {
+        // Yearly pricing: $8/month * 12 months * 0.84 (16% discount) = $80.64/year
+        subscriptionPrice.textContent = '$6.67';
+        subscriptionPeriod.textContent = '/ per month';
+      } else {
+        subscriptionPrice.textContent = '$8';
+        subscriptionPeriod.textContent = '/ per month';
+      }
+      
+      // Add price animation
+      subscriptionPrice.classList.add('price-animation');
+      setTimeout(() => {
+        subscriptionPrice.classList.remove('price-animation');
+      }, 300);
+    });
+  });
+</script>

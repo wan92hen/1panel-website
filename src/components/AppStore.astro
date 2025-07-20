@@ -1,23 +1,24 @@
 ---
 // AppStore section for 1Panel website
-// 获取应用商店数据并实现分类切换功能
+// Get app store data and implement category switching functionality
+
+import appStoreData from '../1panel.json';
 
 interface App {
-  id: string;
+  icon: string;
   name: string;
-  title?: string;
-  description?: string;
-  icon?: string;
-  downloads?: number;
-  tags?: string[];
-  additionalProperties?: {
-    enterprise?: boolean;
+  additionalProperties: {
+    description: {
+      zh: string;
+      en: string;
+    };
+    shortDescZh: string;
+    shortDescEn: string;
+    tags: string[];
+    key: string;
+    recommend?: number;
+    type?: string;
   };
-}
-
-interface SoftwareItem {
-  id: string;
-  apps?: App[];
 }
 
 interface Category {
@@ -27,89 +28,121 @@ interface Category {
   totalApps: number;
 }
 
-let appStoreData: SoftwareItem[] = [];
 let allApps: App[] = [];
 let categories: Category[] = [];
-let defaultCategory: Category = { key: 'all', name: '全部应用', apps: [], totalApps: 0 };
+let defaultCategory: Category = { key: 'all', name: 'All Apps', apps: [], totalApps: 0 };
 
 try {
-  const response = await fetch('https://apps.fit2cloud.com/app-store/v1/software');
-  const data: SoftwareItem[] = await response.json();
+  // Extract all apps
+  allApps = appStoreData.apps.map((app: any) => ({
+    icon: app.icon,
+    name: app.name,
+    additionalProperties: app.additionalProperties
+  }));
+
+  // Extract all categories
+  const categoryMap = new Map<string, App[]>();
   
-  // 查找 id 为 "1panel" 的应用
-  const panelData = data.find((item: SoftwareItem) => item.id === '1panel');
-  if (panelData && panelData.apps) {
-    // 按安装量降序排序
-    allApps = panelData.apps
-      .filter(app => app.downloads !== undefined)
-      .sort((a, b) => (b.downloads || 0) - (a.downloads || 0));
-    
-    // 提取所有分类
-    const categoryMap = new Map<string, App[]>();
-    
-    allApps.forEach(app => {
-      if (app.tags && app.tags.length > 0) {
-        app.tags.forEach(tag => {
-          if (!categoryMap.has(tag)) {
-            categoryMap.set(tag, []);
-          }
-          categoryMap.get(tag)!.push(app);
-        });
-      }
-    });
-    
-    // 创建分类列表，每个分类最多9个应用
-    categories = Array.from(categoryMap.entries())
-      .map(([key, apps]) => ({
+  allApps.forEach(app => {
+    if (app.additionalProperties.tags && app.additionalProperties.tags.length > 0) {
+      app.additionalProperties.tags.forEach((tag: string) => {
+        if (!categoryMap.has(tag)) {
+          categoryMap.set(tag, []);
+        }
+        categoryMap.get(tag)!.push(app);
+      });
+    }
+  });
+
+  // Create category list, maximum 9 apps per category
+  categories = Array.from(categoryMap.entries())
+    .map(([key, apps]) => {
+      // Sort apps by recommend field, keep original order if recommend is 0
+      const sortedApps = apps.sort((a, b) => {
+        const aRecommend = a.additionalProperties?.recommend || 0;
+        const bRecommend = b.additionalProperties?.recommend || 0;
+        
+        // If both have recommend > 0, sort by recommend (ascending)
+        if (aRecommend > 0 && bRecommend > 0) {
+          return aRecommend - bRecommend;
+        }
+        // If only one has recommend > 0, prioritize it
+        if (aRecommend > 0 && bRecommend === 0) {
+          return -1;
+        }
+        if (aRecommend === 0 && bRecommend > 0) {
+          return 1;
+        }
+        // If both have recommend === 0, maintain original order
+        return 0;
+      });
+      
+      return {
         key,
         name: getCategoryDisplayName(key),
-        apps: apps.slice(0, 9),
+        apps: sortedApps.slice(0, 9),
         totalApps: apps.length
-      }))
-      .filter(category => category.apps.length > 0)
-      .sort((a, b) => b.totalApps - a.totalApps); // 按应用数量排序
+      };
+    })
+    .filter(category => category.apps.length > 0)
+    .sort((a, b) => b.totalApps - a.totalApps);
+
+  // Add "All Apps" category with sorted apps
+  const sortedAllApps = allApps.sort((a, b) => {
+    const aRecommend = a.additionalProperties?.recommend || 0;
+    const bRecommend = b.additionalProperties?.recommend || 0;
     
-    // 添加"全部应用"分类
-    defaultCategory.apps = allApps.slice(0, 9);
-    defaultCategory.totalApps = allApps.length;
-    categories.unshift(defaultCategory);
-  }
+    // If both have recommend > 0, sort by recommend (ascending)
+    if (aRecommend > 0 && bRecommend > 0) {
+      return aRecommend - bRecommend;
+    }
+    // If only one has recommend > 0, prioritize it
+    if (aRecommend > 0 && bRecommend === 0) {
+      return -1;
+    }
+    if (aRecommend === 0 && bRecommend > 0) {
+      return 1;
+    }
+    // If both have recommend === 0, maintain original order
+    return 0;
+  });
+  
+  defaultCategory.apps = sortedAllApps.slice(0, 9);
+  defaultCategory.totalApps = allApps.length;
+  categories.unshift(defaultCategory);
+
 } catch (error) {
-  console.error('Failed to fetch app store data:', error);
+  console.error('Failed to load app data:', error);
 }
 
-// 获取分类显示名称
+// Get category display name
 function getCategoryDisplayName(key: string): string {
   const categoryNames: Record<string, string> = {
-    'Database': '数据库',
-    'web': '网站',
-    'cloud': '云平台',
-    'database': '数据库',
-    'general': '通用软件',
-    'Remote': '远程控制',
-    'Dev Tools': '开发工具',
-    'Network': '网络工具',
-    'Security': '安全工具',
-    'Media': '媒体工具',
-    'Business': '商务办公',
-    'Gaming': '游戏娱乐',
-    'Platform': '平台服务',
-    'Monitoring': '监控运维',
-    'Storage': '存储备份',
-    'Communication': '通讯协作'
+    'Database': 'Database',
+    'Website': 'Website',
+    'DevOps': 'DevOps',
+    'Security': 'Security',
+    'Media': 'Media',
+    'Tool': 'Tools',
+    'Development': 'Development',
+    'Monitoring': 'Monitoring',
+    'Storage': 'Storage',
+    'Network': 'Network'
   };
   return categoryNames[key] || key;
 }
 
-// 获取应用图标的函数
+// Get app icon
 function getAppIcon(app: App): string {
   return app.icon || './images/default-app-icon.png';
 }
 
-// 格式化下载数量
+// Format download count
 function formatDownloads(downloads: number): string {
-  if (downloads >= 1000) {
-    return `${(downloads / 1000).toFixed(1)}k`;
+  if (downloads >= 1000000) {
+    return (downloads / 1000000).toFixed(1) + 'M';
+  } else if (downloads >= 1000) {
+    return (downloads / 1000).toFixed(1) + 'K';
   }
   return downloads.toString();
 }
@@ -120,11 +153,11 @@ function formatDownloads(downloads: number): string {
     <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="fade-in-up text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-        丰富的
-        <span class="text-1panel-gradient">应用商店</span>
+        Rich
+        <span class="text-1panel-gradient">App Store</span>
       </h2>
       <p class="fade-in-up text-xl text-gray-600 max-w-3xl mx-auto mb-8" style="animation-delay: 0.2s;">
-        精选优质开源应用，一键安装部署，满足各种业务需求
+        Curated high-quality open source applications with one-click installation and deployment to meet diverse business needs
       </p>
       
       <!-- Category Tabs -->
@@ -172,38 +205,20 @@ function formatDownloads(downloads: number): string {
                   <div class="flex-1 min-w-0">
                     <div class="flex items-start justify-between mb-2">
                       <h3 class="text-lg font-semibold text-gray-800 truncate pr-2">{app.name}</h3>
-                      {app.downloads && (
-                        <div class="flex items-center text-xs text-gray-500 flex-shrink-0">
-                          <svg class="w-3 h-3 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
-                          </svg>
-                          {formatDownloads(app.downloads)}
-                        </div>
-                      )}
                     </div>
                     
                     <p class="text-sm text-gray-600 mb-3 line-clamp-2">
-                      {app.description || app.title}
+                      {app.additionalProperties?.description?.en || app.additionalProperties?.shortDescEn || 'No description available'}
                     </p>
                     
                     <!-- Tags -->
-                    {app.tags && app.tags.length > 0 && (
+                    {app.additionalProperties?.tags && app.additionalProperties.tags.length > 0 && (
                       <div class="flex flex-wrap gap-1 mb-3">
-                        {app.tags.slice(0, 2).map((tag: string) => (
+                        {app.additionalProperties.tags.slice(0, 2).map((tag: string) => (
                           <span class="inline-block px-2 py-1 text-xs rounded-md bg-1panel/10 text-1panel border border-1panel/20">
-                            {tag}
+                            {getCategoryDisplayName(tag)}
                           </span>
                         ))}
-                      </div>
-                    )}
-                    
-                    <!-- Enterprise Badge -->
-                    {app.additionalProperties?.enterprise && (
-                      <div class="flex items-center text-xs mb-2 text-yellow-600">
-                        <svg class="w-3 h-3 mr-1" fill="currentColor" viewBox="0 0 20 20">
-                          <path fill-rule="evenodd" d="M3 6a3 3 0 013-3h10a1 1 0 01.8 1.6L14.25 8l2.55 3.4A1 1 0 0116 13H6a1 1 0 00-1 1v3a1 1 0 11-2 0V6z" clip-rule="evenodd"></path>
-                        </svg>
-                        企业版
                       </div>
                     )}
                   </div>
@@ -215,17 +230,17 @@ function formatDownloads(downloads: number): string {
           <!-- Category Stats and View All Button -->
           <div class="text-center mt-8">
             <p class="text-sm text-gray-500 mb-4">
-              {category.name} • 共 {category.totalApps} 个应用
-              {category.key !== 'all' && ` • 按下载量排序`}
+              {category.name} • {category.totalApps} apps total
+              {category.key !== 'all' && ` • Sorted by recommendation`}
             </p>
             
             <!-- View All Button -->
             <a 
-              href="https://apps.fit2cloud.com/1panel" 
+              href="https://demo.1panel.pro/apps/all" 
               target="_blank" 
               class="inline-flex items-center px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:border-gray-400 hover:bg-gray-50 shadow-sm hover:shadow-md group"
             >
-              <span>查看全部应用</span>
+              <span>View All Apps on Demo</span>
               <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
               </svg>
@@ -243,8 +258,8 @@ function formatDownloads(downloads: number): string {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">暂无应用数据</h3>
-        <p class="text-gray-500">应用商店数据加载中，请稍后再试</p>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">No App Data Available</h3>
+        <p class="text-gray-500">App store data is loading, please try again later</p>
       </div>
     )}
   </div>
@@ -305,7 +320,7 @@ function formatDownloads(downloads: number): string {
 </style>
 
 <script>
-  // 分类切换功能
+  // Category switching functionality
   document.addEventListener('DOMContentLoaded', function() {
     const categoryTabs = document.querySelectorAll('.category-tab');
     const categoryContents = document.querySelectorAll('.category-content');
@@ -315,14 +330,14 @@ function formatDownloads(downloads: number): string {
         const target = event.currentTarget as HTMLElement;
         const targetCategory = target.getAttribute('data-category');
         
-        // 移除所有活动状态
+        // Remove all active states
         categoryTabs.forEach(t => t.classList.remove('active'));
         categoryContents.forEach(c => {
           c.classList.remove('active');
           c.classList.add('hidden');
         });
         
-        // 添加当前选中状态
+        // Add current selected state
         target.classList.add('active');
         const targetContent = document.querySelector(`[data-category="${targetCategory}"].category-content`);
         if (targetContent) {
