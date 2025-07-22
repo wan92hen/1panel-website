@@ -50,7 +50,7 @@ import { Icon } from 'astro-icon/components';
 
           <!-- CTA Button -->
           <a 
-            href="https://github.com/1Panel-dev/1Panel/releases" 
+            href="https://docs.1panel.pro/quick_start/" 
             target="_blank"
             class="w-full inline-flex justify-center items-center px-6 py-3 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:bg-gray-200 hover:border-gray-400"
           >
@@ -113,7 +113,7 @@ import { Icon } from 'astro-icon/components';
 
           <!-- CTA Button -->
           <a 
-            href="https://demo.1panel.pro" 
+            href="https://www.lxware.hk/cart/50954249765077:1?channel=buy_button" 
             target="_blank"
             class="w-full inline-flex justify-center items-center px-6 py-3 bg-1panel-gradient text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
           >
@@ -190,7 +190,8 @@ import { Icon } from 'astro-icon/components';
 
           <!-- CTA Button -->
           <a 
-            href="https://demo.1panel.pro" 
+            id="subscription-button"
+            href="https://www.lxware.hk/cart/50998152921301:1?channel=buy_button" 
             target="_blank"
             class="w-full inline-flex justify-center items-center px-6 py-3 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:bg-gray-200 hover:border-gray-400"
           >
@@ -568,6 +569,7 @@ import { Icon } from 'astro-icon/components';
     const billingToggleThumb = document.getElementById('billing-toggle-thumb') as HTMLElement;
     const subscriptionPrice = document.getElementById('subscription-price') as HTMLElement;
     const subscriptionPeriod = document.getElementById('subscription-period') as HTMLElement;
+    const subscriptionButton = document.getElementById('subscription-button') as HTMLElement;
     
     if (!billingToggle || !billingToggleThumb || !subscriptionPrice || !subscriptionPeriod) {
       return;
@@ -588,9 +590,11 @@ import { Icon } from 'astro-icon/components';
         // Yearly pricing: $8/month * 12 months * 0.84 (16% discount) = $80.64/year
         subscriptionPrice.textContent = '$6.67';
         subscriptionPeriod.textContent = '/ per month';
+        (subscriptionButton as HTMLAnchorElement).href = 'https://www.lxware.hk/cart/50998152954069:1?channel=buy_button';
       } else {
         subscriptionPrice.textContent = '$8';
         subscriptionPeriod.textContent = '/ per month';
+        (subscriptionButton as HTMLAnchorElement).href = 'https://www.lxware.hk/cart/50998152921301:1?channel=buy_button';
       }
       
       // Add price animation
