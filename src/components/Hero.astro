@@ -109,6 +109,7 @@ import { Icon } from "astro-icon/components";
             <div
               class="text-3xl font-bold counter text-1panel"
               data-target="29767"
+              id="stars-count"
             >
               0
             </div>
@@ -157,7 +158,7 @@ import { Icon } from "astro-icon/components";
           <!-- Action Buttons -->
           <div class="flex flex-col sm:flex-row gap-4">
             <a
-              href="https://demo.1panel.cn/"
+              href="https://demo.1panel.pro/"
               target="_blank"
               class="btn-primary text-lg px-8 py-4 group inline-flex items-center justify-center"
             >
@@ -301,59 +302,5 @@ import { Icon } from "astro-icon/components";
 
     // 延迟启动，等待fade-in动画完成
     setTimeout(typeWriter, 1000);
-  });
-
-  // 复制安装命令功能
-  document.addEventListener("DOMContentLoaded", function () {
-    const copyButton = document.getElementById("copy-install-cmd");
-    const installCommand =
-      'bash -c "$(curl -sSL https://resource.fit2cloud.com/1panel/package/v2/quick_start.sh)"';
-
-    if (copyButton) {
-      const originalContent = copyButton.innerHTML;
-
-      copyButton.addEventListener("click", async function () {
-        try {
-          await navigator.clipboard.writeText(installCommand);
-
-          // 更新按钮状态
-          copyButton.innerHTML = `
-            <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-            </svg>
-            已复制
-          `;
-          copyButton.classList.add("text-1panel");
-
-          // 2秒后恢复原状
-          setTimeout(() => {
-            copyButton.innerHTML = originalContent;
-            copyButton.classList.remove("text-1panel");
-          }, 2000);
-        } catch (err) {
-          console.error("复制失败:", err);
-          // 降级处理：选中文本
-          const textArea = document.createElement("textarea");
-          textArea.value = installCommand;
-          document.body.appendChild(textArea);
-          textArea.select();
-          try {
-            document.execCommand("copy");
-            copyButton.innerHTML = `
-              <svg class="w-4 h-4 mr-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-              </svg>
-              已复制
-            `;
-            setTimeout(() => {
-              copyButton.innerHTML = originalContent;
-            }, 2000);
-          } catch (fallbackErr) {
-            console.error("降级复制也失败:", fallbackErr);
-          }
-          document.body.removeChild(textArea);
-        }
-      });
-    }
   });
 </script>

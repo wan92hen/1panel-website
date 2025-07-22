@@ -208,34 +208,34 @@ import { Icon } from 'astro-icon/components';
       </div>
       
       <div class="fade-in-up overflow-x-auto" style="animation-delay: 0.6s;">
-        <table class="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200">
+        <table class="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden feature-table">
           <thead>
-            <tr class="border-b border-gray-200">
+            <tr class="border-b border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100">
               <th class="text-left p-6 font-semibold text-gray-800">Features</th>
-              <th class="text-center p-6 font-semibold text-gray-800">OSS Edition</th>
-              <th class="text-center p-6 font-semibold text-1panel">Pro Edition</th>
+              <th class="text-center p-6 font-semibold text-gray-800">
+                <span class="inline-flex items-center">
+                  <Icon name="carbon:logo-github" class="w-5 h-5 mr-2 flex-shrink-0" />OSS Edition
+                </span>
+              </th>
+              <th class="text-center p-6 font-semibold text-1panel">
+                <span class="inline-flex items-center">
+                  <Icon name="mdi:diamond-stone" class="w-5 h-5 text-yellow-500  mr-2 flex-shrink-0" />Pro Edition
+                </span>
+              </th>
             </tr>
           </thead>
           <tbody>
             <!-- Basic Features -->
-            <tr class="bg-gray-50">
-              <td class="p-6 font-medium text-gray-800" colspan="3">Basic Features</td>
-            </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">App Store</td>
-              <td class="p-6 text-center">
-                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </td>
-              <td class="p-6 text-center">
-                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
+            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
+              <td class="p-6 font-semibold text-blue-800" colspan="3">
+                <span class="inline-flex items-center">
+                  <Icon name="mdi:cube" class="w-5 h-5 mr-2 flex-shrink-0" />
+                  Basic Features
+                </span>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Website Management</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">App Store</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -247,8 +247,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Database Management</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Website Management</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -260,8 +260,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Container Management</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Database Management</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -273,8 +273,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">File Management</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Container Management</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -286,8 +286,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Server Monitoring</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">File Management</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -299,8 +299,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">GPU Monitoring</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Server Monitoring</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -312,8 +312,21 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">AI Model Management</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">GPU Monitoring</td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+              <td class="p-6 text-center">
+                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
+                </svg>
+              </td>
+            </tr>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">AI Model Management</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -327,11 +340,16 @@ import { Icon } from 'astro-icon/components';
             </tr>
             
             <!-- Enhanced Features -->
-            <tr class="bg-gray-50">
-              <td class="p-6 font-medium text-gray-800" colspan="3">Enhanced Features</td>
+            <tr class="bg-gradient-to-r from-purple-50 to-purple-100 border-b border-purple-200 category-row">
+              <td class="p-6 font-semibold text-purple-800" colspan="3">
+                <span class="inline-flex items-center">
+                  <Icon name="carbon:tool-box" class="w-5 h-5 mr-2 flex-shrink-0" />
+                  Enhanced Features
+                </span>
+              </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">App</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">App</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -343,8 +361,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">WAF</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">WAF</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -356,8 +374,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Site Integrity</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Site Integrity</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -369,8 +387,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Website Monitoring</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Website Monitoring</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -382,8 +400,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Scheduled Virus Scanning</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Scheduled Virus Scanning</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -395,8 +413,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Intranet Proxy Mode</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Intranet Proxy Mode</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -410,11 +428,16 @@ import { Icon } from 'astro-icon/components';
             </tr>
             
             <!-- Customization -->
-            <tr class="bg-gray-50">
-              <td class="p-6 font-medium text-gray-800" colspan="3">Customization</td>
+            <tr class="bg-gradient-to-r from-orange-50 to-orange-100 border-b border-orange-200 category-row">
+              <td class="p-6 font-semibold text-orange-800" colspan="3">
+                <span class="inline-flex items-center">
+                  <Icon name="carbon:color-palette" class="w-5 h-5 mr-2 flex-shrink-0" />
+                  Customization
+                </span>
+              </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Custom Logo</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Custom Logo</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -426,8 +449,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Custom Theme Colors</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Custom Theme Colors</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -441,11 +464,16 @@ import { Icon } from 'astro-icon/components';
             </tr>
             
             <!-- Support -->
-            <tr class="bg-gray-50">
-              <td class="p-6 font-medium text-gray-800" colspan="3">Support</td>
+            <tr class="bg-gradient-to-r from-green-50 to-green-100 border-b border-green-200 category-row">
+              <td class="p-6 font-semibold text-green-800" colspan="3">
+                <div class="flex items-center">
+                  <Icon name="carbon:help" class="w-5 h-5 mr-2 flex-shrink-0" />
+                  Support
+                </div>
+              </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Community</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Community</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
@@ -457,8 +485,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Email</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Email</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -470,8 +498,8 @@ import { Icon } from 'astro-icon/components';
                 </svg>
               </td>
             </tr>
-            <tr class="border-b border-gray-100">
-              <td class="p-6 text-gray-700">Priority Service</td>
+            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
+              <td class="p-6 text-gray-700 font-medium">Priority Service</td>
               <td class="p-6 text-center">
                 <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
@@ -526,6 +554,11 @@ import { Icon } from 'astro-icon/components';
   .price-animation {
     animation: pricePulse 0.3s ease-in-out;
   }
+  
+  .feature-table tr:hover {
+    @apply bg-gray-200;
+  }
+
 </style>
 
 <script>

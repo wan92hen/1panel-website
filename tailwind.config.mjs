@@ -27,7 +27,8 @@ export default {
           700: '#334155',
           800: '#1e293b',
           900: '#0f172a',
-        }
+        },
+        '1panel': '#005eeb'
       },
       animation: {
         'fade-in': 'fadeIn 0.8s ease-in-out',
