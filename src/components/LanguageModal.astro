@@ -11,20 +11,20 @@ import { Icon } from 'astro-icon/components';
             <Icon name="carbon:earth-filled" class="w-6 h-6 text-1panel" />
           </div>
           <div class="ml-2">
-            <h3 class="text-lg font-medium text-gray-900">Language Detection</h3>
+            <h3 class="text-lg font-medium text-gray-900">语言检测提示</h3>
           </div>
         </div>
         <div class="mb-6">
           <p class="text-sm text-gray-600">
-            Your browser language is not Chinese. Would you like to switch to our English site for a better experience?
+            您的浏览器语言为中文，是否切换到我们的中文网站以获得更好的体验？
           </p>
         </div>
         <div class="flex justify-end space-x-3">
           <button id="stay-here" class="px-4 py-2 text-sm font-medium text-gray-700 bg-gray-100 border border-gray-300 rounded-md hover:bg-gray-200 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-gray-500 transition-colors">
-            Stay Here
+            留在这里
           </button>
-          <button id="go-english" class="px-4 py-2 text-sm font-medium text-white bg-1panel border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
-            Go to English Site
+          <button id="go-chinese" class="px-4 py-2 text-sm font-medium text-white bg-1panel border border-transparent rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+            前往中文网站
           </button>
         </div>
       </div>
@@ -42,11 +42,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const browserLanguage = navigator.language;
     const isChinese = browserLanguage.startsWith('zh');
 
-    // 如果不是中文，显示弹框
-    if (!isChinese) {
+    // 如果是中文，显示弹框
+    if (isChinese) {
     const modal = document.getElementById('language-modal');
     const stayButton = document.getElementById('stay-here');
-    const goButton = document.getElementById('go-english');
+    const goButton = document.getElementById('go-chinese');
 
     if (modal && stayButton && goButton) {
         // 显示弹框
@@ -70,9 +70,9 @@ document.addEventListener('DOMContentLoaded', function() {
         hideModal();
         });
 
-        // 点击"前往英文网站"按钮
+        // 点击"前往中文网站"按钮
         goButton.addEventListener('click', function() {
-        window.location.href = 'https://1panel.pro';
+        window.location.href = 'https://1panel.cn';
         });
 
         // 点击背景关闭弹框
