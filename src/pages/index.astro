@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Statistics from '../components/Statistics.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
 import Features from '../components/Features.astro';
@@ -12,6 +13,7 @@ import '../styles/global.css';
 ---
 
 <Layout title="1Panel: Top-Rated Web-based Linux Server Management Tool">
+  <Statistics slot="head" />
   <Fragment slot="main">
     <Header />
     <main>
