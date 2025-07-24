@@ -5,6 +5,7 @@ node_modules/
 .env.*
 .vitepress/dist
 *.local
+.astro/
 
 # Log files
 npm-debug.log*
