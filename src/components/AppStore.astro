@@ -67,8 +67,7 @@ try {
     defaultCategory.apps = allApps.slice(0, 9);
     defaultCategory.totalApps = allApps.length;
     categories.unshift(defaultCategory);
-    categories.pop()
-    console.log(categories)
+    categories.pop();
   }
 } catch (error) {
   console.error('Failed to fetch app store data:', error);
