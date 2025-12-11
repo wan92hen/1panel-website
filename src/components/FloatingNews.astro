@@ -1,0 +1,98 @@
+---
+// Floating News section for 1Panel website
+---
+
+<div 
+  id="floating-news"
+  style="display: none;"
+  class="
+    fixed z-[60] flex flex-col gap-3
+    right-6 bottom-6
+    -translate-y-0
+    md:right-4 md:top-36 md:bottom-auto md:translate-y-0
+    md:w-[92vw] md:max-w-[96vw] md:min-w-0 md:items-end"
+>
+  <div
+    id="floating-news-card"
+    class="
+      relative flex items-center
+      bg-white/95 rounded-xl
+      shadow-lg
+      border border-gray-300
+      p-4
+      min-w-[280px] max-w-[350px]
+      transition-shadow
+      hover:shadow-xl
+      md:w-full md:min-w-0 md:p-4 md:text-[0.96rem]
+    "
+    style=""
+  >
+    <button
+      id="floating-news-close"
+      type="button"
+      title="关闭"
+      class="
+        absolute top-[10px] right-4
+        bg-none border-0
+        text-[16px] text-[#98a2b3] p-0
+        cursor-pointer z-20
+        transition-colors duration-200
+        hover:text-[#1d3a69]
+      "
+    >
+      <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 4l8 8M12 4l-8 8"/>
+      </svg>
+    </button>
+    <div>
+      <a
+        href="https://www.lxware.cn/fusionxpark"
+        target="_blank"
+        class="flex items-center gap-3 no-underline hover:bg-[#f4f9ff] rounded-[8px] transition-colors duration-100 px-1 py-1 group"
+        style="text-decoration:none;"
+      >
+        <img
+          src="./images/fusionxpark.png"
+          alt="FusionXpark 1Panel 设备"
+          class="w-24 h-24 object-cover"
+          style="flex-shrink:0;"
+        />
+        <div class="flex flex-col">
+          <span class="text-[#1d3a69] font-semibold text-[1.01rem] mb-1">
+            FusionXpark™ GB10
+          </span>
+          <span class="text-[#1d3a69] font-semibold text-[1.01rem] mb-1">
+            随身智能体开发平台
+          </span>
+          <span class="text-[#4e5969] text-[0.97rem] leading-[1.5]">
+            AI 应用尽在掌控之间
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  // Optionally only show this once per session
+  const STORAGE_KEY = 'floatingNewsClosed';
+  function showNews() {
+    const wasClosed = window.sessionStorage.getItem(STORAGE_KEY);
+    const el = document.getElementById('floating-news');
+    if (!wasClosed && el) {
+      el.style.display = '';
+    }
+  }
+  function closeNews() {
+    const el = document.getElementById('floating-news');
+    if (el) {
+      el.style.display = 'none';
+    }
+    window.sessionStorage.setItem(STORAGE_KEY, '1');
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('floating-news-close')?.addEventListener('click', closeNews);
+    showNews();
+  });
+})();
+</script>
