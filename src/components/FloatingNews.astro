@@ -1,13 +1,13 @@
 ---
 // Floating News section for 1Panel website
+import { Icon } from "astro-icon/components";
 ---
 
 <div 
   id="floating-news"
-  style="display: none;"
   class="
     fixed z-[60] flex flex-col gap-3
-    right-6 bottom-6
+    right-4 bottom-4
     -translate-y-0
     md:right-4 md:top-36 md:bottom-auto md:translate-y-0
     md:w-[92vw] md:max-w-[96vw] md:min-w-0 md:items-end"
@@ -45,6 +45,10 @@
       </svg>
     </button>
     <div>
+      <div class="inline-flex items-center gap-1 text-[#1d3a69] font-semibold text-lg mb-2">
+        <Icon name="carbon:bare-metal-server" class="w-4 h-4" />
+        <div>AI 硬件</div>
+      </div>
       <a
         href="https://www.lxware.cn/fusionxpark"
         target="_blank"
@@ -57,11 +61,11 @@
           class="w-24 h-24 object-cover"
           style="flex-shrink:0;"
         />
-        <div class="flex flex-col">
-          <span class="text-[#1d3a69] font-semibold text-[1.01rem] mb-1">
+        <div class="flex flex-col gap-2">
+          <span class="text-[#1d3a69] font-semibold text-[1.01rem]">
             FusionXpark™ GB10
           </span>
-          <span class="text-[#1d3a69] font-semibold text-[1.01rem] mb-1">
+          <span class="text-[#1d3a69] font-semibold text-[1.01rem]">
             随身智能体开发平台
           </span>
           <span class="text-[#4e5969] text-[0.97rem] leading-[1.5]">
@@ -75,11 +79,9 @@
 <script>
 (function(){
   // Optionally only show this once per session
-  const STORAGE_KEY = 'floatingNewsClosed';
   function showNews() {
-    const wasClosed = window.sessionStorage.getItem(STORAGE_KEY);
     const el = document.getElementById('floating-news');
-    if (!wasClosed && el) {
+    if (el) {
       el.style.display = '';
     }
   }
@@ -88,7 +90,6 @@
     if (el) {
       el.style.display = 'none';
     }
-    window.sessionStorage.setItem(STORAGE_KEY, '1');
   }
   document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('floating-news-close')?.addEventListener('click', closeNews);
