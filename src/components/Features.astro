@@ -16,7 +16,88 @@ import { Icon } from 'astro-icon/components'
       </p>
     </div>
 
-    <!-- Feature 1: High Efficiency Management -->
+    
+    <!-- Feature 1: AI-Powered Management -->
+    <div class="mb-32">
+      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
+        <!-- Image Carousel -->
+        <div class="fade-in-left order-1 lg:order-1 lg:col-span-3">
+          <div class="relative group">
+            <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
+              <!-- Carousel Container -->
+              <div class="carousel-container relative overflow-hidden" style="min-height: 400px;">
+                <!-- Image 1: AI Chat Interface -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="ai-chat">
+                  <img 
+                    src="./images/f13.png" 
+                    alt="1Panel AI 智能对话界面" 
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <!-- Image 2: AI Diagnosis -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-diagnosis">
+                  <img 
+                    src="./images/f14.png" 
+                    alt="1Panel AI 问题诊断界面" 
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <!-- Image 3: AI Optimization -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-optimization">
+                  <img 
+                    src="./images/f13.png" 
+                    alt="1Panel AI 性能优化界面" 
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+                <!-- Image 4: AI Automation -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-automation">
+                  <img 
+                    src="./images/f16.png" 
+                    alt="1Panel AI 自动化运维界面" 
+                    class="w-full h-full object-cover"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+            </div>
+          </div>
+        </div>
+        <!-- Content -->
+        <div class="fade-in-right order-2 lg:order-2 lg:col-span-2">
+          <div class="flex items-center mb-6">
+            <h3 class="text-3xl font-bold text-gray-800">全面拥抱 AI</h3>
+          </div>
+          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
+            集成大语言模型，提供智能化的服务器管理体验。通过AI助手快速诊断问题、优化配置、提供运维建议，让管理更加智能高效。
+          </p>
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="ai-chat">
+              <Icon name="carbon:ai" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">本地大模型管理</span>
+            </div>
+            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-diagnosis">
+              <Icon name="codicon:mcp" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">MCP 服务管理</span>
+            </div>
+            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-optimization">
+              <Icon name="mdi:gpu" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">智能体管理</span>
+            </div>
+            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-automation">
+              <Icon name="tabler:file-text-ai" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">AI 建站服务</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Feature 2: High Efficiency Management -->
     <div class="mb-32">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
         <!-- Content -->
@@ -98,7 +179,7 @@ import { Icon } from 'astro-icon/components'
       </div>
     </div>
 
-    <!-- Feature 2: Quick Website Deployment -->
+    <!-- Feature 3: Quick Website Deployment -->
     <div class="mb-32">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
         <!-- Image Carousel -->
@@ -178,7 +259,7 @@ import { Icon } from 'astro-icon/components'
       </div>
     </div>
 
-    <!-- Feature 3: App Store -->
+    <!-- Feature 4: App Store -->
     <div class="mb-32">
       <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
         <!-- Content -->
@@ -252,86 +333,6 @@ import { Icon } from 'astro-icon/components'
                 </div>
               </div>
               <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Feature 4: AI-Powered Management -->
-    <div class="mb-32">
-      <div class="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-        <!-- Image Carousel -->
-        <div class="fade-in-left order-1 lg:order-1 lg:col-span-3">
-          <div class="relative group">
-            <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
-              <!-- Carousel Container -->
-              <div class="carousel-container relative overflow-hidden" style="min-height: 400px;">
-                <!-- Image 1: AI Chat Interface -->
-                <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="ai-chat">
-                  <img 
-                    src="./images/f13.png" 
-                    alt="1Panel AI 智能对话界面" 
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <!-- Image 2: AI Diagnosis -->
-                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-diagnosis">
-                  <img 
-                    src="./images/f14.png" 
-                    alt="1Panel AI 问题诊断界面" 
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <!-- Image 3: AI Optimization -->
-                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-optimization">
-                  <img 
-                    src="./images/f13.png" 
-                    alt="1Panel AI 性能优化界面" 
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-                <!-- Image 4: AI Automation -->
-                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-automation">
-                  <img 
-                    src="./images/f16.png" 
-                    alt="1Panel AI 自动化运维界面" 
-                    class="w-full h-full object-cover"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-              <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            </div>
-          </div>
-        </div>
-        <!-- Content -->
-        <div class="fade-in-right order-2 lg:order-2 lg:col-span-2">
-          <div class="flex items-center mb-6">
-            <h3 class="text-3xl font-bold text-gray-800">全面拥抱 AI</h3>
-          </div>
-          <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            集成大语言模型，提供智能化的服务器管理体验。通过AI助手快速诊断问题、优化配置、提供运维建议，让管理更加智能高效。
-          </p>
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="ai-chat">
-              <Icon name="carbon:ai" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">本地大模型管理</span>
-            </div>
-            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-diagnosis">
-              <Icon name="codicon:mcp" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">MCP 服务管理</span>
-            </div>
-            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-optimization">
-              <Icon name="mdi:gpu" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">GPU 监控</span>
-            </div>
-            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-automation">
-              <Icon name="tabler:file-text-ai" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">AI 建站服务</span>
             </div>
           </div>
         </div>
