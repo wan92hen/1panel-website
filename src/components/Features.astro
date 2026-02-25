@@ -25,8 +25,17 @@ import { Icon } from 'astro-icon/components'
             <div class="relative bg-white rounded-lg shadow-2xl overflow-hidden transform group-hover:scale-105 transition-transform duration-700">
               <!-- Carousel Container -->
               <div class="carousel-container relative overflow-hidden" style="min-height: 400px;">
-                <!-- Image 1: AI Chat Interface -->
-                <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="ai-chat">
+                <!-- Image 1: OpenClaw -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="openclaw">
+                  <img 
+                    src="./images/feature-ai-agents.png" 
+                    alt="1Panel GPU Monitoring" 
+                    class="w-full h-full object-fill"
+                    loading="lazy"
+                  />
+                </div>                  
+                <!-- Image 2: Local LLMs -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="local-llms">
                   <img 
                     src="./images/f13.png" 
                     alt="1Panel LLM Management" 
@@ -34,8 +43,8 @@ import { Icon } from 'astro-icon/components'
                     loading="lazy"
                   />
                 </div>
-                <!-- Image 2: AI Diagnosis -->
-                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-diagnosis">
+                <!-- Image 3: MCP Servers -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="mcp-servers">
                   <img 
                     src="./images/f14.png" 
                     alt="1Panel MCP Server Management" 
@@ -43,15 +52,15 @@ import { Icon } from 'astro-icon/components'
                     loading="lazy"
                   />
                 </div>
-                <!-- Image 3: AI Optimization -->
-                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ai-optimization">
+                <!-- Image 4: GPU Monitoring -->
+                <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="gpu-monitoring">
                   <img 
                     src="./images/f15.png" 
                     alt="1Panel GPU Monitoring" 
                     class="w-full h-full object-fill"
                     loading="lazy"
                   />
-                </div>
+                </div>              
               </div>
               <div class="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
             </div>
@@ -60,23 +69,27 @@ import { Icon } from 'astro-icon/components'
         <!-- Content -->
         <div class="fade-in-right order-2 lg:order-2 lg:col-span-2">
           <div class="flex items-center mb-6">
-            <h3 class="text-3xl font-bold text-gray-800">AI-Powered Management</h3>
+            <h3 class="text-3xl font-bold text-gray-800">One-Click OpenClaw Deloyment</h3>
           </div>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Integrate large language models to provide an intelligent server management experience. Through AI assistants, quickly diagnose problems, optimize configurations, and provide operational suggestions, making management more intelligent and efficient.
+            Seamlessly deploy OpenClaw agents, host local LLMs via Ollama, and monitor GPU utilization—all within a unified workspace.
           </p>
           <div class="grid grid-cols-1 gap-4">
-            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="ai-chat">
-              <Icon name="carbon:ai" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Local LLM Management</span>
-            </div>
-            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-diagnosis">
-              <Icon name="codicon:mcp" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">MCP Server Management</span>
-            </div>
-            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ai-optimization">
+            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="openclaw">
               <Icon name="mdi:gpu" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">AI Agents Management</span>
+              <span class="text-gray-700 font-medium">OpenClaw Agents Management</span>
+            </div>
+            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="local-llms">
+              <Icon name="carbon:ai" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">Local LLMs Management</span>
+            </div>
+            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="mcp-servers">
+              <Icon name="codicon:mcp" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">MCP Servers Management</span>
+            </div>
+            <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="gpu-monitoring">
+              <Icon name="mdi:gpu" class="w-5 h-5 mr-3 text-1panel" />
+              <span class="text-gray-700 font-medium">GPU Monitoring</span>
             </div>
           </div>
         </div>
