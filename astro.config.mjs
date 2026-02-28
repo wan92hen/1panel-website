@@ -9,7 +9,8 @@ export default defineConfig({
   output: 'static',
   build: {
     assets: 'assets',
-    assetsPrefix: './'
+    assetsPrefix: './',
+    format: 'file'
   },
   server: {
     host: true,
@@ -21,3 +22,4 @@ export default defineConfig({
     ]
   }
 });
+
