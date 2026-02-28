@@ -2,25 +2,28 @@
 export interface Props {
   title: string;
   description?: string;
+  lang?: string;
+  basePath?: string;
 }
 
-const { title, description = "1Panel: Take full control of your VPS" } = Astro.props;
+const { title, description = "1Panel: Take full control of your VPS", lang = "en", basePath = "./" } = Astro.props;
+const htmlLang = lang === 'en' ? 'en' : lang === 'ja' ? 'ja' : lang === 'ko' ? 'ko' : lang === 'zh' ? 'zh-CN' : lang;
 ---
 
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang={htmlLang}>
 <head>
   <meta charset="UTF-8" />
   <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.png" />
+  <link rel="icon" type="image/svg+xml" href={`${basePath}favicon.png`} />
   <meta name="generator" content={Astro.generator} />
   
   <!-- SEO Meta Tags -->
   <meta property="og:title" content={title} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./images/overview-full.png" />
+  <meta property="og:image" content={`${basePath}images/overview-full.png`} />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content={title} />
   <meta name="twitter:description" content={description} />

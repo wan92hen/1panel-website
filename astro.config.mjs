@@ -5,11 +5,12 @@ import react from '@astrojs/react';
 import icon from 'astro-icon';
 
 export default defineConfig({
+  // base: './',
   integrations: [tailwind(), react(), icon()],
   output: 'static',
   build: {
     assets: 'assets',
-    assetsPrefix: './',
+    // assetsPrefix: './',
     format: 'file'
   },
   server: {

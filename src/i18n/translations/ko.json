@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "defaultTitle": "1Panel: VPS를 완전히 제어하세요",
+    "defaultDescription": "1Panel: VPS를 완전히 제어하세요"
+  },
+  "header": {
+    "pricing": "요금",
+    "appStore": "앱 스토어",
+    "discussions": "토론",
+    "docs": "문서",
+    "demo": "데모",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title1": "쉽게 관리",
+    "title2": "OpenClaw Agents",
+    "badgePowerful": "강력한",
+    "badgeOpenSource": "오픈 소스",
+    "subtitle": "1Panel은 직관적이고 깔끔한 웹 인터페이스를 통해 관리를 간소화하는 현대적인 오픈 소스 VPS 제어 패널입니다.",
+    "githubStars": "GitHub 스타",
+    "totalDownloads": "총 다운로드",
+    "demo": "데모",
+    "installNow": "지금 설치",
+    "scrollDown": "아래로 스크롤",
+    "typewriter": ["OpenClaw Agents", "로컬 LLM", "웹사이트", "데이터베이스", "파일", "예약 작업"]
+  },
+  "features": {
+    "title": "강력한",
+    "titleHighlight": "기능",
+    "subtitle": "포괄적인 Linux 서버 관리 기능으로 운영을 간단하고 효율적으로",
+    "openclaw": {
+      "title": "원클릭 OpenClaw 배포",
+      "desc": "OpenClaw 에이전트 배포, Ollama를 통한 로컬 LLM 호스팅, GPU 사용량 모니터링을 하나의 통합 워크스페이스에서 수행할 수 있습니다.",
+      "openclawAgents": "OpenClaw 에이전트 관리",
+      "localLLMs": "로컬 LLM 관리",
+      "mcpServers": "MCP 서버 관리",
+      "gpuMonitoring": "GPU 모니터링"
+    },
+    "efficient": {
+      "title": "효율적인 관리",
+      "desc": "사용자 친화적인 웹 GUI를 통해 1Panel로 Linux 서버를 손쉽게 관리할 수 있습니다. 호스트 모니터링, 파일 관리, DB 관리, 컨테이너 관리, LLM 관리를 제공합니다.",
+      "monitoring": "실시간 시스템 모니터링",
+      "files": "웹 파일 관리자",
+      "database": "데이터베이스 시각적 관리",
+      "containers": "Docker 관리"
+    },
+    "website": {
+      "title": "빠른 웹사이트 배포",
+      "desc": "WordPress와의 긴밀한 통합으로 도메인 바인딩 및 SSL 인증서 구성을 원클릭으로 완료할 수 있습니다.",
+      "wordpress": "원클릭 WordPress 배포",
+      "ssl": "자동 SSL 인증서 신청",
+      "domain": "도메인 관리 및 설정",
+      "multisite": "다중 사이트 관리"
+    },
+    "appStore": {
+      "title": "앱",
+      "titleHighlight": "스토어",
+      "desc": "1Panel은 다양한 고품질 오픈 소스 도구와 앱을 선별하여 설치 및 업데이트를 쉽게 합니다.",
+      "curated": "엄선된 오픈 소스 앱",
+      "install": "원클릭 설치 및 배포",
+      "updates": "자동 업데이트 관리",
+      "management": "데이터 백업 및 복구"
+    },
+    "backup": {
+      "title": "원클릭 백업",
+      "desc": "다양한 클라우드 스토리지로의 백업 및 복구를 지원하여 데이터 손실을 방지합니다."
+    },
+    "secure": {
+      "title": "안전하고 신뢰할 수 있는",
+      "desc": "취약점 노출을 줄이고, 바이러스 방어, 방화벽, 로그 감사를 제공하여 시스템 보안을 보장합니다."
+    }
+  },
+  "appStore": {
+    "title": "풍부한",
+    "titleHighlight": "앱 스토어",
+    "subtitle": "다양한 비즈니스 요구를 충족하는 원클릭 설치·배포의 고품질 오픈 소스 앱",
+    "allApps": "전체 앱",
+    "appsTotal": "개 앱",
+    "sortedByRecommendation": "추천순 정렬",
+    "viewAllApps": "데모에서 전체 앱 보기",
+    "noDataTitle": "앱 데이터 없음",
+    "noDataDesc": "앱 스토어 데이터를 불러오는 중입니다. 나중에 다시 시도해 주세요.",
+    "categories": {
+      "Database": "데이터베이스",
+      "Website": "웹사이트",
+      "DevOps": "DevOps",
+      "Security": "보안",
+      "Media": "미디어",
+      "Tool": "도구",
+      "Development": "개발",
+      "Monitoring": "모니터링",
+      "Storage": "스토리지",
+      "Network": "네트워크"
+    }
+  },
+  "quickstart": {
+    "title": "빠른",
+    "titleHighlight": "시작",
+    "subtitle": "Linux 서버에 1Panel 원클릭 설치",
+    "step1Title": "Linux 서버 준비",
+    "step1Desc1": "CentOS, Ubuntu, Debian 등 메이저 배포판을 지원하는 Linux 서버를 준비하세요.",
+    "step1Desc2": "x86_64, aarch64, armv7l, ppc64le, s390x 등 다양한 서버 아키텍처를 지원합니다.",
+    "step2Title": "설치 스크립트 실행",
+    "step2Desc": "root 사용자로 원클릭 설치 스크립트를 실행하면 1Panel이 자동으로 다운로드 및 설치됩니다.",
+    "copy": "복사",
+    "copied": "복사됨",
+    "step3Title": "관리 패널 접속",
+    "step3Desc": "설치 후 브라우저에서 스크립트가 안내하는 주소로 접속하여 1Panel을 사용할 수 있습니다.",
+    "needHelp": "도움이 필요하신가요?",
+    "viewDocs": "문서 보기",
+    "communityForum": "커뮤니티 포럼",
+    "issueFeedback": "이슈/피드백"
+  },
+  "cta": {
+    "title": "사용 시작하기",
+    "subtitle": "VPS를 완전히 제어하세요",
+    "onlineDemo": "온라인 데모",
+    "documentation": "문서"
+  },
+  "footer": {
+    "companyName": "LXware",
+    "companyDesc": "FIT2CLOUD의 자회사로, 오픈 소스 프로젝트 1Panel과 JumpServer의 글로벌 상업 운영을 담당합니다.",
+    "resources": "리소스",
+    "documentation": "문서",
+    "githubRepo": "GitHub 저장소",
+    "communityForum": "커뮤니티 포럼",
+    "followX": "X에서 팔로우",
+    "youtube": "YouTube 채널",
+    "discord": "Discord 채팅",
+    "links": "링크",
+    "jumpserver": "JumpServer",
+    "aboutLxware": "LXware 소개",
+    "contactUs": "문의하기",
+    "copyright": "All rights reserved.",
+    "termsOfService": "이용약관",
+    "privacyPolicy": "개인정보처리방침"
+  },
+  "pricing": {
+    "title": "간단한",
+    "titleHighlight": "요금",
+    "subtitle": "필요에 맞는 플랜을 선택하세요. 무료로 시작하고 성장에 맞춰 업그레이드하세요.",
+    "ossEdition": "OSS 에디션",
+    "freeToUse": "무료 사용",
+    "openSource": "오픈 소스",
+    "noCost": "무료",
+    "validated": "수백만 설치로 검증됨",
+    "communitySupport": "커뮤니티 지원",
+    "quickStart": "빠른 시작",
+    "proEdition": "Pro 에디션",
+    "perpetualLicense": "영구 라이선스",
+    "mostPopular": "가장 인기"
+  },
+  "selfHosted": {
+    "metaTitle": "1Panel 셀프 호스팅 솔루션 - 1Panel로 VPS 제어",
+    "metaDescription": "1Panel 셀프 호스팅 솔루션 - 셀프 호스팅을 간단하고 효율적으로 만드는 현대적인 오픈 소스 Linux 서버 관리 패널.",
+    "heroTitle": "1Panel 셀프 호스팅 솔루션",
+    "heroSubtitle": "비싼 SaaS 구독과 불확실한 데이터 보안에 지치셨나요? 셀프 호스팅으로 제어권을 되찾으세요.",
+    "whyTitle": "왜 셀프 호스팅을 선택하나요?",
+    "whySubtitle": "디지털 자산을 완전히 통제하고 데이터 주권을 누리세요",
+    "dataSovereigntyTitle": "데이터 주권",
+    "dataSovereigntyDesc": "GDPR, HIPAA 등 데이터 거주 및 감사 요건을 자체 환경에서 충족—국경 간 이전 위험 없음.",
+    "securityTitle": "보안",
+    "securityDesc": "온프레미스 배포로 데이터를 직접 통제하고 제3자의 민감 정보 접근을 차단하세요.",
+    "lowerCostTitle": "비용 절감",
+    "lowerCostDesc": "좌석당 구독료 없음, 예측 가능한 하드웨어·운영 비용, SaaS 갑작스런 인상 없음.",
+    "valueTitle": "1Panel + 오픈소스 대안 = 최고의 셀프 호스팅 솔루션",
+    "valueSubtitle": "셀프 호스팅을 간단하고 효율적으로 만드는 현대적인 Linux 서버 관리 패널",
+    "fastTitle": "빠름",
+    "fastDesc": "원클릭 배포와 원활한 지속적 업그레이드",
+    "completeTitle": "완전",
+    "completeDesc": "신뢰할 수 있는 오픈소스 앱의 원스톱 허브",
+    "reliableTitle": "안정적",
+    "reliableDesc": "내장 보안 및 예약 백업",
+    "appsTitle": "1Panel이 지원하는 인기 셀프 호스팅 앱",
+    "appsSubtitle": "다양한 요구에 맞는 오픈소스 대안",
+    "alternativeBadge": "대안",
+    "viewMoreApps": "1Panel 앱 스토어에서 더 많은 앱 발견하기"
+  }
+}

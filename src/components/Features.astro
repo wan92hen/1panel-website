@@ -1,6 +1,17 @@
 ---
 // Features section for 1Panel website
 import { Icon } from 'astro-icon/components'
+import { t, getTranslations } from '../i18n/utils';
+import type { TranslationDict } from '../i18n/utils';
+
+interface Props {
+  lang?: string;
+  basePath?: string;
+  translations?: TranslationDict;
+}
+
+const { basePath = './', translations: rawTranslations } = Astro.props;
+const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
 ---
 
 <section id="features" class="section-padding bg-gradient-to-br from-gray-50 to-white">
@@ -8,11 +19,11 @@ import { Icon } from 'astro-icon/components'
     <!-- Section Header -->
     <div class="text-center mb-20">
       <h2 class="fade-in-up text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-        Powerful
-        <span class="text-1panel-gradient">Features</span>
+        {t(translations, 'features.title')}
+        <span class="text-1panel-gradient">{t(translations, 'features.titleHighlight')}</span>
       </h2>
       <p class="fade-in-up text-xl text-gray-600 max-w-3xl mx-auto" style="animation-delay: 0.2s;">
-        Comprehensive Linux server management features,<br>making operations simple and efficient
+        {t(translations, 'features.subtitle')}
       </p>
     </div>
 
@@ -28,7 +39,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 1: OpenClaw -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="openclaw">
                   <img 
-                    src="./images/feature-ai-agents.png" 
+                    src={`${basePath}images/feature-ai-agents.png`} 
                     alt="1Panel GPU Monitoring" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -37,7 +48,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 2: Local LLMs -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="local-llms">
                   <img 
-                    src="./images/f13.png" 
+                    src={`${basePath}images/f13.png`} 
                     alt="1Panel LLM Management" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -46,7 +57,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 3: MCP Servers -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="mcp-servers">
                   <img 
-                    src="./images/f14.png" 
+                    src={`${basePath}images/f14.png`} 
                     alt="1Panel MCP Server Management" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -55,7 +66,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 4: GPU Monitoring -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="gpu-monitoring">
                   <img 
-                    src="./images/f15.png" 
+                    src={`${basePath}images/f15.png`} 
                     alt="1Panel GPU Monitoring" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -69,27 +80,27 @@ import { Icon } from 'astro-icon/components'
         <!-- Content -->
         <div class="fade-in-right order-2 lg:order-2 lg:col-span-2">
           <div class="flex items-center mb-6">
-            <h3 class="text-3xl font-bold text-gray-800">One-Click OpenClaw Deloyment</h3>
+            <h3 class="text-3xl font-bold text-gray-800">{t(translations, 'features.openclaw.title')}</h3>
           </div>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Seamlessly deploy OpenClaw agents, host local LLMs via Ollama, and monitor GPU utilization—all within a unified workspace.
+            {t(translations, 'features.openclaw.desc')}
           </p>
           <div class="grid grid-cols-1 gap-4">
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="openclaw">
               <Icon name="mdi:gpu" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">OpenClaw Agents Management</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.openclaw.openclawAgents')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="local-llms">
               <Icon name="carbon:ai" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Local LLMs Management</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.openclaw.localLLMs')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="mcp-servers">
               <Icon name="codicon:mcp" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">MCP Servers Management</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.openclaw.mcpServers')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="gpu-monitoring">
               <Icon name="mdi:gpu" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">GPU Monitoring</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.openclaw.gpuMonitoring')}</span>
             </div>
           </div>
         </div>
@@ -102,28 +113,27 @@ import { Icon } from 'astro-icon/components'
         <!-- Content -->
         <div class="fade-in-left order-2 lg:order-1 lg:col-span-2">
           <div class="flex items-center mb-6">
-            <h3 class="text-3xl font-bold text-gray-800">Efficient Management</h3>
+            <h3 class="text-3xl font-bold text-gray-800">{t(translations, 'features.efficient.title')}</h3>
           </div>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            Through a user-friendly web graphical interface, 1Panel enables users to effortlessly manage their Linux servers. Key features include host monitoring, file management, database administration, container management, LLMs management.
+            {t(translations, 'features.efficient.desc')}
           </p>
           <div class="grid grid-cols-1 gap-4">
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="monitoring">
               <Icon name="mdi:chart-multiline" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Real-time System Monitoring</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.efficient.monitoring')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="files">
               <Icon name="carbon:volume-file-storage" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Web File Manager</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.efficient.files')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="database">
               <Icon name="carbon:db2-database" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Database Visual Management</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.efficient.database')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="containers">
-              <!-- Containers: Docker logo icon -->
               <Icon name="mdi:docker" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Docker Management</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.efficient.containers')}</span>
             </div>
           </div>
         </div>
@@ -136,7 +146,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 1: System Monitoring -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="monitoring">
                   <img 
-                    src="./images/f1.png" 
+                    src={`${basePath}images/f1.png`} 
                     alt="1Panel 系统监控界面" 
                     class="w-full h-full"
                     loading="lazy"
@@ -145,7 +155,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 2: File Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="files">
                   <img 
-                    src="./images/f2.png" 
+                    src={`${basePath}images/f2.png`} 
                     alt="1Panel 文件管理界面" 
                     class="w-full h-full"
                     loading="lazy"
@@ -154,7 +164,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 3: Database Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="database">
                   <img 
-                    src="./images/f3.png" 
+                    src={`${basePath}images/f3.png`} 
                     alt="1Panel 数据库管理界面" 
                     class="w-full h-full"
                     loading="lazy"
@@ -163,7 +173,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 4: Container Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="containers">
                   <img 
-                    src="./images/f4.png" 
+                    src={`${basePath}images/f4.png`} 
                     alt="1Panel 容器管理界面" 
                     class="w-full h-full"
                     loading="lazy"
@@ -190,7 +200,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 1: WordPress Deployment -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="wordpress">
                   <img 
-                    src="./images/f5.png" 
+                    src={`${basePath}images/f5.png`} 
                     alt="1Panel WordPress部署界面" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -199,7 +209,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 2: SSL Certificate -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="ssl">
                   <img 
-                    src="./images/f6.png" 
+                    src={`${basePath}images/f6.png`} 
                     alt="1Panel SSL证书管理界面" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -208,7 +218,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 3: Domain Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="domain">
                   <img 
-                    src="./images/f7.png" 
+                    src={`${basePath}images/f7.png`} 
                     alt="1Panel 网站管理界面" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -217,7 +227,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 4: Multi-site Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="multisite">
                   <img 
-                    src="./images/f8.png" 
+                    src={`${basePath}images/f8.png`} 
                     alt="1Panel 多站点管理界面" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -231,27 +241,27 @@ import { Icon } from 'astro-icon/components'
         <!-- Content -->
         <div class="fade-in-right order-1 lg:order-2 lg:col-span-2">
           <div class="flex items-center mb-6">
-            <h3 class="text-3xl font-bold text-gray-800">Rapid Website Deployment</h3>
+            <h3 class="text-3xl font-bold text-gray-800">{t(translations, 'features.website.title')}</h3>
           </div>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            With deep integration of the popular open-source website building software WordPress, 1Panel streamlines the process of domain binding and SSL certificate configuration, all achievable with just one click.
+            {t(translations, 'features.website.desc')}
           </p>
           <div class="grid grid-cols-1 gap-4">
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="wordpress">
               <Icon name="mdi:wordpress" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">One-click WordPress Deployment</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.website.wordpress')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="ssl">
               <Icon name="carbon:security" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Automatic SSL Certificate Application</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.website.ssl')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="domain">
               <Icon name="carbon:dns-services" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Domain Management and Configuration</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.website.domain')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="multisite">
               <Icon name="carbon:web-services-service" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Multi-site Management</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.website.multisite')}</span>
             </div>
           </div>
         </div>
@@ -264,27 +274,27 @@ import { Icon } from 'astro-icon/components'
         <!-- Content -->
         <div class="fade-in-left order-2 lg:order-1 lg:col-span-2">
           <div class="flex items-center mb-6">
-            <h3 class="text-3xl font-bold text-gray-800">App Store</h3>
+            <h3 class="text-3xl font-bold text-gray-800">{t(translations, 'features.appStore.title')}</h3>
           </div>
           <p class="text-lg text-gray-600 mb-8 leading-relaxed">
-            1Panel curates a wide range of high-quality open-source tools and applications, facilitating easy installation and updates for its users.
+            {t(translations, 'features.appStore.desc')}
           </p>
           <div class="grid grid-cols-1 gap-4">
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer active" data-feature="store">
               <Icon name="carbon:application" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Curated Open-source Applications</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.appStore.curated')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="install">
               <Icon name="carbon:deploy" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">One-click Installation and Deployment</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.appStore.install')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="updates">
               <Icon name="carbon:update-now" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Automatic Update Management</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.appStore.updates')}</span>
             </div>
             <div class="feature-item flex items-center p-4 bg-white rounded-lg border border-gray-200 hover:border-1panel transition-all duration-300 cursor-pointer" data-feature="management">
               <Icon name="carbon:data-backup" class="w-5 h-5 mr-3 text-1panel" />
-              <span class="text-gray-700 font-medium">Data Backup and Recovery</span>
+              <span class="text-gray-700 font-medium">{t(translations, 'features.appStore.management')}</span>
             </div>
           </div>
         </div>
@@ -297,7 +307,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 1: App Store Overview -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500" data-feature="store">
                   <img 
-                    src="./images/f9.png" 
+                    src={`${basePath}images/f9.png`} 
                     alt="1Panel 应用商店界面" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -306,7 +316,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 2: App Installation -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="install">
                   <img 
-                    src="./images/f10.png" 
+                    src={`${basePath}images/f10.png`} 
                     alt="1Panel 应用安装界面" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -315,7 +325,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 3: App Updates -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="updates">
                   <img 
-                    src="./images/f11.png" 
+                    src={`${basePath}images/f11.png`} 
                     alt="1Panel 应用更新界面" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -324,7 +334,7 @@ import { Icon } from 'astro-icon/components'
                 <!-- Image 4: App Management -->
                 <div class="carousel-slide absolute inset-0 transition-opacity duration-500 opacity-0" data-feature="management">
                   <img 
-                    src="./images/f12.png" 
+                    src={`${basePath}images/f12.png`} 
                     alt="1Panel 应用管理界面" 
                     class="w-full h-full object-fill"
                     loading="lazy"
@@ -349,8 +359,8 @@ import { Icon } from 'astro-icon/components'
             </svg>
           </div>
           <div class="flex-1">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">One-click Backup</h3>
-            <p class="text-gray-600 leading-relaxed">Support data backup to various cloud storage media, and support recovery function, ensuring data is never lost.</p>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">{t(translations, 'features.backup.title')}</h3>
+            <p class="text-gray-600 leading-relaxed">{t(translations, 'features.backup.desc')}</p>
           </div>
         </div>
       </div>
@@ -362,8 +372,8 @@ import { Icon } from 'astro-icon/components'
             </svg>
           </div>
           <div class="flex-1">
-            <h3 class="text-xl font-bold text-gray-800 mb-2">Secure and Reliable</h3>
-            <p class="text-gray-600 leading-relaxed">1Panel effectively reduces vulnerability exposure, provides virus protection, firewall, and log audit functions, ensuring system security.</p>
+            <h3 class="text-xl font-bold text-gray-800 mb-2">{t(translations, 'features.secure.title')}</h3>
+            <p class="text-gray-600 leading-relaxed">{t(translations, 'features.secure.desc')}</p>
           </div>
         </div>
       </div>

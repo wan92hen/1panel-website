@@ -1,37 +1,53 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Statistics from '../components/Statistics.astro';
-import Header from '../components/Header.astro';
-import Hero from '../components/Hero.astro';
-import Features from '../components/Features.astro';
-import QuickStart from '../components/QuickStart.astro';
-import AppStore from '../components/AppStore.astro';
-import CTA from '../components/CTA.astro';
-import Footer from '../components/Footer.astro';
-import LanguageModal from '../components/LanguageModal.astro';
-import '../styles/global.css';
+// Redirect root to browser-preferred locale (with English as fallback)
+const base = import.meta.env.BASE_URL || './';
+const defaultLocale = 'en';
+const supportedLocales = ['en', 'ja', 'pt', 'ko', 'es', 'ms', 'tr', 'ru'];
+// Astro static build with format:file outputs en.html, ja.html etc. at root
+const defaultRedirectUrl = base.endsWith('/') ? base + defaultLocale + '.html' : base + defaultLocale + '.html';
+const supportedStr = supportedLocales.join(',');
 ---
 
-<Layout title="1Panel: Take full control of your VPS">
-  <Statistics slot="head" />
-  <Fragment slot="main">
-    <Header />
-    <main>
-      <Hero />
-      <Features />
-      <AppStore />
-      <QuickStart />
-      <CTA />
-    </main>
-    <Footer />
-    <LanguageModal />
-  </Fragment>
-</Layout>
-
-<style>
-  main {
-    position: relative;
-    z-index: 1;
-  }
-</style>
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content={`0;url=${defaultRedirectUrl}`} />
+  <link rel="canonical" href={defaultRedirectUrl} />
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting...</p>
+  <script is:inline define:vars={{ base, supportedStr }}>
+    (function() {
+      var supported = supportedStr;
+      var browserToLocale = {
+        'en': 'en', 'en-us': 'en', 'en-gb': 'en', 'en-au': 'en',
+        'ja': 'ja', 'ja-jp': 'ja',
+        'pt': 'pt', 'pt-br': 'pt', 'pt-pt': 'pt',
+        'ko': 'ko', 'ko-kr': 'ko',
+        'es': 'es', 'es-es': 'es', 'es-mx': 'es', 'es-ar': 'es',
+        'ms': 'ms', 'ms-my': 'ms',
+        'tr': 'tr', 'tr-tr': 'tr',
+        'ru': 'ru', 'ru-ru': 'ru'
+      };
+      var languages = navigator.languages && navigator.languages.length ? navigator.languages : [navigator.language || 'en'];
+      var locale = 'en';
+      for (var i = 0; i < languages.length; i++) {
+        var tag = (languages[i] || '').toLowerCase().replace('_', '-');
+        var primary = tag.split('-')[0];
+        var match = browserToLocale[tag] || browserToLocale[primary];
+        if (match && supported.indexOf(match) !== -1) {
+          locale = match;
+          break;
+        }
+      }
+      var url = base + locale + '.html';
+      window.location.replace(url);
+    })();
+  </script>
+  <noscript>
+    <p>Redirecting to <a href={defaultRedirectUrl}>English version</a>...</p>
+  </noscript>
+</body>
+</html>

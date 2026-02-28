@@ -1,0 +1,37 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import PricingContent from '../../components/Pricing.astro';
+import Footer from '../../components/Footer.astro';
+import LanguageModal from '../../components/LanguageModal.astro';
+import { SUPPORTED_LOCALES } from '../../i18n/config';
+import { getTranslations, t, getBasePath } from '../../i18n/utils';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return SUPPORTED_LOCALES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.params;
+const translations = getTranslations(lang ?? 'en');
+const basePath = getBasePath(lang);
+const title = t(translations, 'meta.defaultTitle');
+---
+
+<Layout title={title} lang={lang} basePath={basePath}>
+  <Fragment slot="main">
+    <Header lang={lang} basePath={basePath} translations={translations} />
+    <main>
+      <PricingContent lang={lang} basePath={basePath} translations={translations} />
+    </main>
+    <Footer lang={lang} basePath={basePath} translations={translations} />
+    <LanguageModal />
+  </Fragment>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    z-index: 1;
+  }
+</style>

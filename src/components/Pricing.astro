@@ -1,6 +1,17 @@
 ---
 // Pricing section for 1Panel website
 import { Icon } from 'astro-icon/components';
+import { t, getTranslations } from '../i18n/utils';
+import type { TranslationDict } from '../i18n/utils';
+
+interface Props {
+  lang?: string;
+  basePath?: string;
+  translations?: TranslationDict;
+}
+
+const { translations: rawTranslations } = Astro.props;
+const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
 ---
 
 <section id="pricing" class="section-padding bg-gradient-to-br from-gray-50 to-white">
@@ -8,11 +19,11 @@ import { Icon } from 'astro-icon/components';
     <!-- Section Header -->
     <div class="text-center mb-20">
       <h2 class="fade-in-up text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-        Simple
-        <span class="text-1panel-gradient">Pricing</span>
+        {t(translations, 'pricing.title')}
+        <span class="text-1panel-gradient">{t(translations, 'pricing.titleHighlight')}</span>
       </h2>
       <p class="fade-in-up text-xl text-gray-600 max-w-3xl mx-auto" style="animation-delay: 0.2s;">
-        Choose the perfect plan for your needs. Start free and upgrade as you grow.
+        {t(translations, 'pricing.subtitle')}
       </p>
     </div>
 
@@ -26,25 +37,25 @@ import { Icon } from 'astro-icon/components';
           <div class="mb-6">
             <div class="flex items-center justify-center space-x-2 font-medium text-gray-500 mb-2">
               <Icon name="carbon:logo-github" class="w-5 h-5 flex-shrink-0" />
-              <span>OSS Edition</span>
+              <span>{t(translations, 'pricing.ossEdition')}</span>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Free to Use</h3>
-            <p class="text-gray-600">Open-source</p>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">{t(translations, 'pricing.freeToUse')}</h3>
+            <p class="text-gray-600">{t(translations, 'pricing.openSource')}</p>
           </div>
 
           <!-- Features -->
           <ul class="space-y-4 mb-8 text-left">
             <li class="flex items-center">
               <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">No cost</span>
+              <span class="text-gray-700">{t(translations, 'pricing.noCost')}</span>
             </li>
             <li class="flex items-center">
               <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">Validated by millions of installations</span>
+              <span class="text-gray-700">{t(translations, 'pricing.validated')}</span>
             </li>
             <li class="flex items-center">
               <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">Community support</span>
+              <span class="text-gray-700">{t(translations, 'pricing.communitySupport')}</span>
             </li>
           </ul>
 
@@ -54,7 +65,7 @@ import { Icon } from 'astro-icon/components';
             target="_blank"
             class="w-full inline-flex justify-center items-center px-6 py-3 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:bg-gray-200 hover:border-gray-400"
           >
-            Quick Start
+            {t(translations, 'pricing.quickStart')}
           </a>
         </div>
       </div>
@@ -64,7 +75,7 @@ import { Icon } from 'astro-icon/components';
         <!-- Popular Badge -->
         <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
           <span class="bg-1panel-gradient text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
-            Most Popular
+            {t(translations, 'pricing.mostPopular')}
           </span>
         </div>
         
@@ -73,9 +84,9 @@ import { Icon } from 'astro-icon/components';
           <div class="mb-6">
             <div class="flex items-center justify-center space-x-2 font-medium text-gray-500 mb-2">
               <Icon name="mdi:diamond-stone" class="w-5 h-5 text-yellow-500 flex-shrink-0" />
-              <span>Pro Edition</span>
+              <span>{t(translations, 'pricing.proEdition')}</span>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">Perpetual License</h3>
+            <h3 class="text-2xl font-bold text-gray-800 mb-4">{t(translations, 'pricing.perpetualLicense')}</h3>
             <div class="mb-6">
               <div class="flex items-baseline justify-center">
                 <span class="text-5xl font-bold text-1panel">$200</span>

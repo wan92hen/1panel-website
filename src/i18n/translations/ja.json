@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "defaultTitle": "1Panel: VPSを完全にコントロール",
+    "defaultDescription": "1Panel: VPSを完全にコントロール"
+  },
+  "header": {
+    "pricing": "料金",
+    "appStore": "アプリストア",
+    "discussions": "ディスカッション",
+    "docs": "ドキュメント",
+    "demo": "デモ",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title1": "管理が簡単",
+    "title2": "OpenClaw Agents",
+    "badgePowerful": "高機能",
+    "badgeOpenSource": "オープンソース",
+    "subtitle": "1Panelは、直感的でクリーンなWebインターフェースで管理を効率化するモダンなオープンソースVPSコントロールパネルです。",
+    "githubStars": "GitHubスター",
+    "totalDownloads": "総ダウンロード数",
+    "demo": "デモ",
+    "installNow": "今すぐインストール",
+    "scrollDown": "下にスクロール",
+    "typewriter": ["OpenClaw Agents", "ローカルLLM", "ウェブサイト", "データベース", "ファイル", "スケジュールタスク"]
+  },
+  "features": {
+    "title": "強力な",
+    "titleHighlight": "機能",
+    "subtitle": "包括的なLinuxサーバー管理機能で、運用をシンプルかつ効率的に",
+    "openclaw": {
+      "title": "ワンクリックOpenClawデプロイ",
+      "desc": "OpenClawエージェントのデプロイ、OllamaによるローカルLLMのホスト、GPU使用率の監視を、統一されたワークスペースでシームレスに実行できます。",
+      "openclawAgents": "OpenClawエージェント管理",
+      "localLLMs": "ローカルLLM管理",
+      "mcpServers": "MCPサーバー管理",
+      "gpuMonitoring": "GPU監視"
+    },
+    "efficient": {
+      "title": "効率的な管理",
+      "desc": "使いやすいWeb GUIにより、1PanelでLinuxサーバーを手軽に管理できます。ホスト監視、ファイル管理、データベース管理、コンテナ管理、LLM管理などを提供します。",
+      "monitoring": "リアルタイムシステム監視",
+      "files": "Webファイルマネージャー",
+      "database": "データベース可視化管理",
+      "containers": "Docker管理"
+    },
+    "website": {
+      "title": "迅速なウェブサイトデプロイ",
+      "desc": "WordPressとの深い連携により、ドメイン binding とSSL証明書の設定をワンクリックで完了できます。",
+      "wordpress": "ワンクリックWordPressデプロイ",
+      "ssl": "自動SSL証明書申請",
+      "domain": "ドメイン管理と設定",
+      "multisite": "マルチサイト管理"
+    },
+    "appStore": {
+      "title": "アプリストア",
+      "desc": "1Panelは高品質なオープンソースツールとアプリを厳選し、簡単なインストールとアップデートを提供します。",
+      "curated": "厳選オープンソースアプリ",
+      "install": "ワンクリックインストール・デプロイ",
+      "updates": "自動アップデート管理",
+      "management": "データバックアップと復元"
+    },
+    "backup": {
+      "title": "ワンクリックバックアップ",
+      "desc": "各種クラウドストレージへのバックアップと復元をサポートし、データの紛失を防ぎます。"
+    },
+    "secure": {
+      "title": "安全で信頼性の高い",
+      "desc": "脆弱性の露出を抑え、ウイルス対策、ファイアウォール、ログ監査を提供し、システムの安全性を確保します。"
+    }
+  },
+  "appStore": {
+    "title": "豊富な",
+    "titleHighlight": "アプリストア",
+    "subtitle": "厳選された高品質オープンソースアプリをワンクリックでインストール・デプロイ",
+    "allApps": "すべてのアプリ",
+    "appsTotal": "件のアプリ",
+    "sortedByRecommendation": "おすすめ順",
+    "viewAllApps": "デモで全アプリを見る",
+    "noDataTitle": "アプリデータがありません",
+    "noDataDesc": "アプリストアのデータを読み込み中です。しばらくお待ちください。",
+    "categories": {
+      "Database": "データベース",
+      "Website": "ウェブサイト",
+      "DevOps": "DevOps",
+      "Security": "セキュリティ",
+      "Media": "メディア",
+      "Tool": "ツール",
+      "Development": "開発",
+      "Monitoring": "監視",
+      "Storage": "ストレージ",
+      "Network": "ネットワーク"
+    }
+  },
+  "quickstart": {
+    "title": "クイック",
+    "titleHighlight": "スタート",
+    "subtitle": "Linuxサーバーに1Panelをワンクリックでインストール",
+    "step1Title": "Linuxサーバーを準備",
+    "step1Desc1": "CentOS、Ubuntu、Debianなどメジャーなディストリビューションを実行しているLinuxサーバーを用意してください。",
+    "step1Desc2": "x86_64、aarch64、armv7l、ppc64le、s390xなどのアーキテクチャに対応しています。",
+    "step2Title": "インストールスクリプトを実行",
+    "step2Desc": "rootユーザーでワンクリックインストールスクリプトを実行し、1Panelを自動でダウンロード・インストールします。",
+    "copy": "コピー",
+    "copied": "コピーしました",
+    "step3Title": "管理パネルにアクセス",
+    "step3Desc": "インストール後、ブラウザでスクリプトが表示するアドレスにアクセスして1Panelを利用開始できます。",
+    "needHelp": "ヘルプが必要？",
+    "viewDocs": "ドキュメントを見る",
+    "communityForum": "コミュニティフォーラム",
+    "issueFeedback": "問題・フィードバック"
+  },
+  "cta": {
+    "title": "使い始める",
+    "subtitle": "VPSを完全にコントロール",
+    "onlineDemo": "オンラインデモ",
+    "documentation": "ドキュメント"
+  },
+  "footer": {
+    "companyName": "LXware",
+    "companyDesc": "FIT2CLOUDの完全子会社。オープンソースプロジェクト1PanelとJumpServerのグローバル市場における商業運営を担当しています。",
+    "resources": "リソース",
+    "documentation": "ドキュメント",
+    "githubRepo": "GitHubリポジトリ",
+    "communityForum": "コミュニティフォーラム",
+    "followX": "Xでフォロー",
+    "youtube": "YouTubeチャンネル",
+    "discord": "Discordでチャット",
+    "links": "リンク",
+    "jumpserver": "JumpServer",
+    "aboutLxware": "LXwareについて",
+    "contactUs": "お問い合わせ",
+    "copyright": "All rights reserved.",
+    "termsOfService": "利用規約",
+    "privacyPolicy": "プライバシーポリシー"
+  },
+  "pricing": {
+    "title": "シンプルな",
+    "titleHighlight": "料金",
+    "subtitle": "ニーズに合ったプランを選択。無料で始めて、成長に合わせてアップグレード。",
+    "ossEdition": "OSSエディション",
+    "freeToUse": "無料で利用",
+    "openSource": "オープンソース",
+    "noCost": "無料",
+    "validated": "数百万インストールで実績",
+    "communitySupport": "コミュニティサポート",
+    "quickStart": "クイックスタート",
+    "proEdition": "Proエディション",
+    "perpetualLicense": "永続ライセンス",
+    "mostPopular": "最も人気"
+  },
+  "selfHosted": {
+    "metaTitle": "1Panel セルフホストソリューション - 1PanelでVPSをコントロール",
+    "metaDescription": "1Panel セルフホストソリューション - セルフホスティングをシンプルかつ効率的にするモダンなオープンソースLinuxサーバー管理パネル。",
+    "heroTitle": "1Panel セルフホストソリューション",
+    "heroSubtitle": "高額なSaaSのサブスクリプションや不確かなデータセキュリティに悩んでいませんか？セルフホスティングでコントロールを取り戻しましょう。",
+    "whyTitle": "なぜセルフホスティングを選ぶのか？",
+    "whySubtitle": "デジタル資産を自ら管理し、完全なデータ主権を実現",
+    "dataSovereigntyTitle": "データ主権",
+    "dataSovereigntyDesc": "GDPR、HIPAAなどデータ居住・監査要件を自社環境で満たし、越境移転リスクを回避。",
+    "securityTitle": "セキュリティ",
+    "securityDesc": "オンプレミス導入でデータを自社管理し、第三者による機密情報へのアクセスを防ぎます。",
+    "lowerCostTitle": "コスト削減",
+    "lowerCostDesc": "従量課金なし、ハードウェアと運用コストの予測可能性、SaaSの急な値上げもありません。",
+    "valueTitle": "1Panel + オープンソース代替 = 最高のセルフホストソリューション",
+    "valueSubtitle": "セルフホスティングをシンプルかつ効率的にするモダンなLinuxサーバー管理パネル",
+    "fastTitle": "高速",
+    "fastDesc": "ワンクリックでデプロイ、スムーズな継続的アップグレード",
+    "completeTitle": "包括",
+    "completeDesc": "信頼できるオープンソースアプリのワンストップハブ",
+    "reliableTitle": "信頼性",
+    "reliableDesc": "組み込みセキュリティとスケジュールバックアップ",
+    "appsTitle": "1Panelがサポートする人気セルフホストアプリ",
+    "appsSubtitle": "多様なニーズに応えるオープンソース代替",
+    "alternativeBadge": "代替",
+    "viewMoreApps": "1Panelアプリストアでもっと見る"
+  }
+}

@@ -3,6 +3,17 @@
 // Get app store data and implement category switching functionality
 
 import appStoreData from '../1panel.json';
+import { t, getTranslations } from '../i18n/utils';
+import type { TranslationDict } from '../i18n/utils';
+
+interface Props {
+  lang?: string;
+  basePath?: string;
+  translations?: TranslationDict;
+}
+
+const { basePath = './', translations: rawTranslations } = Astro.props;
+const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
 
 interface App {
   icon: string;
@@ -31,6 +42,12 @@ interface Category {
 let allApps: App[] = [];
 let categories: Category[] = [];
 let defaultCategory: Category = { key: 'all', name: 'All Apps', apps: [], totalApps: 0 };
+
+function getCategoryDisplayNameFromTranslations(translations: TranslationDict, key: string): string {
+  if (key === 'all') return t(translations, 'appStore.allApps');
+  const val = t(translations, `appStore.categories.${key}`);
+  return val !== `appStore.categories.${key}` ? val : key;
+}
 
 try {
   // Extract all apps
@@ -133,8 +150,8 @@ function getCategoryDisplayName(key: string): string {
 }
 
 // Get app icon
-function getAppIcon(app: App): string {
-  return app.icon || './images/default-app-icon.png';
+function getAppIcon(app: App, basePath: string): string {
+  return app.icon || `${basePath}images/default-app-icon.png`;
 }
 
 // Format download count
@@ -153,11 +170,11 @@ function formatDownloads(downloads: number): string {
     <!-- Section Header -->
     <div class="text-center mb-16">
       <h2 class="fade-in-up text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-        Rich
-        <span class="text-1panel-gradient">App Store</span>
+        {t(translations, 'appStore.title')}
+        <span class="text-1panel-gradient">{t(translations, 'appStore.titleHighlight')}</span>
       </h2>
       <p class="fade-in-up text-xl text-gray-600 max-w-3xl mx-auto mb-8" style="animation-delay: 0.2s;">
-        Curated high-quality open source applications with one-click installation and deployment to meet diverse business needs
+        {t(translations, 'appStore.subtitle')}
       </p>
       
       <!-- Category Tabs -->
@@ -170,7 +187,7 @@ function formatDownloads(downloads: number): string {
               }`}
               data-category={category.key}
             >
-              {category.name}
+              {getCategoryDisplayNameFromTranslations(translations, category.key)}
               <span class="ml-2 text-xs opacity-75">({category.totalApps})</span>
             </button>
           ))}
@@ -193,11 +210,11 @@ function formatDownloads(downloads: number): string {
                   <!-- App Icon -->
                   <div class="flex-shrink-0">
                     <img 
-                      src={getAppIcon(app)} 
+                      src={getAppIcon(app, basePath)} 
                       alt={app.name}
                       class="w-16 h-16 rounded-xl object-cover group-hover:scale-110 transition-transform duration-300"
                       loading="lazy"
-                      onerror="this.src='./images/default-app-icon.png'"
+                      onerror={`this.src='${basePath}images/default-app-icon.png'`}
                     />
                   </div>
                   
@@ -216,7 +233,7 @@ function formatDownloads(downloads: number): string {
                       <div class="flex flex-wrap gap-1 mb-3">
                         {app.additionalProperties.tags.slice(0, 2).map((tag: string) => (
                           <span class="inline-block px-2 py-1 text-xs rounded-md bg-1panel/10 text-1panel border border-1panel/20">
-                            {getCategoryDisplayName(tag)}
+                            {getCategoryDisplayNameFromTranslations(translations, tag)}
                           </span>
                         ))}
                       </div>
@@ -230,8 +247,8 @@ function formatDownloads(downloads: number): string {
           <!-- Category Stats and View All Button -->
           <div class="text-center mt-8">
             <p class="text-sm text-gray-500 mb-4">
-              {category.name} • {category.totalApps} apps total
-              {category.key !== 'all' && ` • Sorted by recommendation`}
+              {getCategoryDisplayNameFromTranslations(translations, category.key)} • {category.totalApps} {t(translations, 'appStore.appsTotal')}
+              {category.key !== 'all' && ` • ${t(translations, 'appStore.sortedByRecommendation')}`}
             </p>
             
             <!-- View All Button -->
@@ -240,7 +257,7 @@ function formatDownloads(downloads: number): string {
               target="_blank" 
               class="inline-flex items-center px-6 py-3 bg-white border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:border-gray-400 hover:bg-gray-50 shadow-sm hover:shadow-md group"
             >
-              <span>View All Apps on Demo</span>
+              <span>{t(translations, 'appStore.viewAllApps')}</span>
               <svg class="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
               </svg>
@@ -258,8 +275,8 @@ function formatDownloads(downloads: number): string {
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10"></path>
           </svg>
         </div>
-        <h3 class="text-xl font-semibold text-gray-800 mb-2">No App Data Available</h3>
-        <p class="text-gray-500">App store data is loading, please try again later</p>
+        <h3 class="text-xl font-semibold text-gray-800 mb-2">{t(translations, 'appStore.noDataTitle')}</h3>
+        <p class="text-gray-500">{t(translations, 'appStore.noDataDesc')}</p>
       </div>
     )}
   </div>

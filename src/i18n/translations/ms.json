@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "defaultTitle": "1Panel: Kawal sepenuhnya VPS anda",
+    "defaultDescription": "1Panel: Kawal sepenuhnya VPS anda"
+  },
+  "header": {
+    "pricing": "Harga",
+    "appStore": "App Store",
+    "discussions": "Perbincangan",
+    "docs": "Dokumentasi",
+    "demo": "Demo",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title1": "Mudah diurus",
+    "title2": "OpenClaw Agents",
+    "badgePowerful": "Berkuasa",
+    "badgeOpenSource": "Sumber terbuka",
+    "subtitle": "1Panel ialah panel kawalan VPS sumber terbuka moden yang memudahkan pentadbiran melalui antara muka web yang intuitif dan bersih.",
+    "githubStars": "Bintang GitHub",
+    "totalDownloads": "Jumlah muat turun",
+    "demo": "Demo",
+    "installNow": "Pasang Sekarang",
+    "scrollDown": "Tatal ke bawah",
+    "typewriter": ["OpenClaw Agents", "LLM Tempatan", "Laman web", "Pangkalan data", "Fail", "Tugas berjadual"]
+  },
+  "features": {
+    "title": "Ciri",
+    "titleHighlight": "berkuasa",
+    "subtitle": "Ciri pengurusan pelayan Linux yang menyeluruh, menjadikan operasi mudah dan cekap",
+    "openclaw": {
+      "title": "Penempatan OpenClaw satu klik",
+      "desc": "Jalankan agen OpenClaw, hos LLM tempatan melalui Ollama, dan pantau penggunaan GPU—semua dalam satu ruang kerja.",
+      "openclawAgents": "Pengurusan Agen OpenClaw",
+      "localLLMs": "Pengurusan LLM Tempatan",
+      "mcpServers": "Pengurusan Pelayan MCP",
+      "gpuMonitoring": "Pemantauan GPU"
+    },
+    "efficient": {
+      "title": "Pengurusan cekap",
+      "desc": "Melalui antara muka web grafik yang mesra pengguna, 1Panel membolehkan pengurusan pelayan Linux dengan mudah. Ciri termasuk pemantauan hos, pengurusan fail, pentadbiran pangkalan data, pengurusan kontena, pengurusan LLM.",
+      "monitoring": "Pemantauan sistem masa nyata",
+      "files": "Pengurus fail web",
+      "database": "Pengurusan pangkalan data visual",
+      "containers": "Pengurusan Docker"
+    },
+    "website": {
+      "title": "Penempatan laman web pantas",
+      "desc": "Dengan integrasi mendalam WordPress, 1Panel memudahkan pengikatan domain dan konfigurasi sijil SSL, semuanya dengan satu klik.",
+      "wordpress": "Penempatan WordPress satu klik",
+      "ssl": "Permohonan sijil SSL automatik",
+      "domain": "Pengurusan dan konfigurasi domain",
+      "multisite": "Pengurusan pelbagai laman"
+    },
+    "appStore": {
+      "title": "App",
+      "titleHighlight": "Store",
+      "desc": "1Panel menyediakan pelbagai alat dan aplikasi sumber terbuka berkualiti tinggi, memudahkan pemasangan dan kemas kini.",
+      "curated": "Aplikasi sumber terbuka terpilih",
+      "install": "Pemasangan dan penempatan satu klik",
+      "updates": "Pengurusan kemas kini automatik",
+      "management": "Sandaran dan pemulihan data"
+    },
+    "backup": {
+      "title": "Sandaran satu klik",
+      "desc": "Sokongan sandaran data ke pelbagai media storan awan dan pemulihan, memastikan data tidak hilang."
+    },
+    "secure": {
+      "title": "Selamat dan boleh dipercayai",
+      "desc": "1Panel mengurangkan pendedahan kerentanan, menyediakan perlindungan virus, firewall, dan audit log, memastikan keselamatan sistem."
+    }
+  },
+  "appStore": {
+    "title": "App Store",
+    "titleHighlight": "kaya",
+    "subtitle": "Aplikasi sumber terbuka berkualiti tinggi dengan pemasangan dan penempatan satu klik untuk pelbagai keperluan",
+    "allApps": "Semua aplikasi",
+    "appsTotal": "aplikasi keseluruhan",
+    "sortedByRecommendation": "Disusun mengikut cadangan",
+    "viewAllApps": "Lihat semua aplikasi dalam Demo",
+    "noDataTitle": "Tiada data aplikasi tersedia",
+    "noDataDesc": "Data app store sedang dimuatkan. Sila cuba lagi nanti.",
+    "categories": {
+      "Database": "Pangkalan data",
+      "Website": "Laman web",
+      "DevOps": "DevOps",
+      "Security": "Keselamatan",
+      "Media": "Media",
+      "Tool": "Alat",
+      "Development": "Pembangunan",
+      "Monitoring": "Pemantauan",
+      "Storage": "Storan",
+      "Network": "Rangkaian"
+    }
+  },
+  "quickstart": {
+    "title": "Permulaan",
+    "titleHighlight": "pantas",
+    "subtitle": "Pemasangan 1Panel satu klik pada pelayan Linux anda",
+    "step1Title": "Sediakan pelayan Linux",
+    "step1Desc1": "Pastikan anda mempunyai pelayan Linux yang menyokong CentOS, Ubuntu, Debian dan edaran arus perdana lain.",
+    "step1Desc2": "Menyokong pelbagai seni bina: x86_64, aarch64, armv7l, ppc64le, s390x.",
+    "step2Title": "Jalankan skrip pemasangan",
+    "step2Desc": "Jalankan skrip pemasangan satu klik sebagai root untuk memuat turun dan memasang 1Panel secara automatik.",
+    "copy": "Salin",
+    "copied": "Disalin",
+    "step3Title": "Akses panel pengurusan",
+    "step3Desc": "Selepas pemasangan, akses alamat yang diberikan oleh skrip melalui pelayar untuk mula menggunakan 1Panel.",
+    "needHelp": "Perlukan bantuan?",
+    "viewDocs": "Lihat dokumentasi",
+    "communityForum": "Forum komuniti",
+    "issueFeedback": "Maklum balas isu"
+  },
+  "cta": {
+    "title": "Mula menggunakan",
+    "subtitle": "Kawal sepenuhnya VPS anda",
+    "onlineDemo": "Demo dalam talian",
+    "documentation": "Dokumentasi"
+  },
+  "footer": {
+    "companyName": "LXware",
+    "companyDesc": "Anak syarikat FIT2CLOUD yang bertanggungjawab bagi operasi komersial projek sumber terbuka 1Panel dan JumpServer di pasaran global.",
+    "resources": "Sumber",
+    "documentation": "Dokumentasi",
+    "githubRepo": "Repositori GitHub",
+    "communityForum": "Forum komuniti",
+    "followX": "Ikuti kami di X",
+    "youtube": "Saluran YouTube",
+    "discord": "Sembang di Discord",
+    "links": "Pautan",
+    "jumpserver": "JumpServer",
+    "aboutLxware": "Tentang LXware",
+    "contactUs": "Hubungi kami",
+    "copyright": "Hak cipta terpelihara.",
+    "termsOfService": "Terma perkhidmatan",
+    "privacyPolicy": "Dasar privasi"
+  },
+  "pricing": {
+    "title": "Harga",
+    "titleHighlight": "mudah",
+    "subtitle": "Pilih pelan yang sesuai. Mula percuma dan naik taraf mengikut keperluan.",
+    "ossEdition": "Edisi OSS",
+    "freeToUse": "Percuma",
+    "openSource": "Sumber terbuka",
+    "noCost": "Tanpa kos",
+    "validated": "Disahkan oleh berjuta-juta pemasangan",
+    "communitySupport": "Sokongan komuniti",
+    "quickStart": "Permulaan pantas",
+    "proEdition": "Edisi Pro",
+    "perpetualLicense": "Lesen kekal",
+    "mostPopular": "Paling popular"
+  },
+  "selfHosted": {
+    "metaTitle": "1Panel Penyelesaian Self-Hosted - Kawal VPS anda dengan 1Panel",
+    "metaDescription": "1Panel Penyelesaian Self-Hosted - Panel pengurusan pelayan Linux sumber terbuka moden yang memudahkan self-hosting.",
+    "heroTitle": "1Panel Penyelesaian Self-Hosted",
+    "heroSubtitle": "Penat dengan langganan SaaS yang mahal dan keselamatan data yang tidak menentu? Ambil kawalan dengan self-hosting.",
+    "whyTitle": "Mengapa pilih Self-Hosting?",
+    "whySubtitle": "Kawal aset digital anda dan nikmati kedaulatan data penuh",
+    "dataSovereigntyTitle": "Kedaulatan Data",
+    "dataSovereigntyDesc": "Patuhi dengan mudah: simpan data dalam persekitaran anda sendiri untuk GDPR, HIPAA dan keperluan tempat tinggal serta audit—tiada risiko pindahan merentas sempadan.",
+    "securityTitle": "Keselamatan",
+    "securityDesc": "Perkukuhkan pertahanan: penyebaran di premis memastikan data anda di bawah kawalan anda dan jauh dari akses pihak ketiga ke maklumat sensitif.",
+    "lowerCostTitle": "Kos Lebih Rendah",
+    "lowerCostDesc": "Kurangkan kos: tiada yuran langganan setiap tempat duduk, kos perkakasan dan operasi yang boleh diramal, tiada kenaikan harga SaaS yang mengejutkan.",
+    "valueTitle": "1Panel + Alternatif Sumber Terbuka = Penyelesaian Self-Hosted Terbaik",
+    "valueSubtitle": "Panel pengurusan pelayan Linux moden yang memudahkan self-hosting",
+    "fastTitle": "Pantas",
+    "fastDesc": "Penyebaran satu klik dengan peningkatan berterusan yang lancar",
+    "completeTitle": "Lengkap",
+    "completeDesc": "Hab sekali henti untuk aplikasi sumber terbuka yang dipercayai",
+    "reliableTitle": "Boleh Dipercayai",
+    "reliableDesc": "Keselamatan terbina dalam dan sandaran berjadual",
+    "appsTitle": "Aplikasi Self-Hosted Popular Disokong oleh 1Panel",
+    "appsSubtitle": "Alternatif sumber terbuka untuk pelbagai keperluan anda",
+    "alternativeBadge": "Alternatif",
+    "viewMoreApps": "Temui lebih banyak aplikasi di 1Panel App Store"
+  }
+}

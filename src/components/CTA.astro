@@ -1,5 +1,16 @@
 ---
 // CTA (Call-to-Action) section for 1Panel website
+import { t, getTranslations } from '../i18n/utils';
+import type { TranslationDict } from '../i18n/utils';
+
+interface Props {
+  lang?: string;
+  basePath?: string;
+  translations?: TranslationDict;
+}
+
+const { basePath = './', translations: rawTranslations } = Astro.props;
+const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
 ---
 
 <section id="cta" class="relative py-20 lg:py-32 overflow-hidden">
@@ -20,15 +31,15 @@
     <div class="text-center max-w-3xl mx-auto">
       <!-- Main heading -->
       <h2 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-tight" style="animation-delay: 0.2s;">
-        Start Using
+        {t(translations, 'cta.title')}
         <span class="block">
-          <img src="./images/logo-blue.png" alt="1Panel" class="mt-4 inline-block h-12 md:h-16 lg:h-20" />
+          <img src={`${basePath}images/logo-blue.png`} alt="1Panel" class="mt-4 inline-block h-12 md:h-16 lg:h-20" />
         </span>
       </h2>
 
       <!-- Subtitle -->
       <p class="fade-in-up text-xl text-blue-100 mb-12 leading-relaxed" style="animation-delay: 0.4s;">
-        Take full control of your VPS
+        {t(translations, 'cta.subtitle')}
       </p>
 
       <!-- Action buttons -->
@@ -39,7 +50,7 @@
           target="_blank" 
           class="group bg-white text-1panel font-bold text-xl px-12 py-5 rounded-2xl transition-all duration-300 transform hover:scale-105 shadow-2xl hover:shadow-3xl inline-flex items-center"
         >
-          Online Demo
+          {t(translations, 'cta.onlineDemo')}
           <svg class="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"></path>
           </svg>
@@ -51,7 +62,7 @@
           target="_blank" 
           class="group border-2 border-white/30 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 hover:bg-white/10 hover:border-white/50 backdrop-blur-sm inline-flex items-center"
         >
-          Documentation
+          {t(translations, 'cta.documentation')}
           <svg class="w-5 h-5 ml-3 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.746 0 3.332.477 4.5 1.253v13C19.832 18.477 18.246 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
           </svg>

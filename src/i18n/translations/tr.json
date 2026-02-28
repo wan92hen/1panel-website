@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "defaultTitle": "1Panel: VPS'inizin tam kontrolü",
+    "defaultDescription": "1Panel: VPS'inizin tam kontrolü"
+  },
+  "header": {
+    "pricing": "Fiyatlandırma",
+    "appStore": "Uygulama Mağazası",
+    "discussions": "Tartışmalar",
+    "docs": "Dökümanlar",
+    "demo": "Demo",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title1": "Yönetmesi kolay",
+    "title2": "OpenClaw Agents",
+    "badgePowerful": "Güçlü",
+    "badgeOpenSource": "Açık kaynak",
+    "subtitle": "1Panel, sezgisel ve sade bir web arayüzüyle yönetimi kolaylaştıran modern, açık kaynak bir VPS kontrol panelidir.",
+    "githubStars": "GitHub yıldızları",
+    "totalDownloads": "Toplam indirme",
+    "demo": "Demo",
+    "installNow": "Şimdi yükle",
+    "scrollDown": "Aşağı kaydır",
+    "typewriter": ["OpenClaw Agents", "Yerel LLM'ler", "Web siteleri", "Veritabanları", "Dosyalar", "Zamanlanmış görevler"]
+  },
+  "features": {
+    "title": "Güçlü",
+    "titleHighlight": "özellikler",
+    "subtitle": "Kapsamlı Linux sunucu yönetim özellikleriyle işlemleri basit ve verimli hale getirir",
+    "openclaw": {
+      "title": "Tek tıkla OpenClaw dağıtımı",
+      "desc": "OpenClaw ajanlarını dağıtın, Ollama ile yerel LLM'leri barındırın ve GPU kullanımını izleyin—hepsi tek bir çalışma alanında.",
+      "openclawAgents": "OpenClaw ajan yönetimi",
+      "localLLMs": "Yerel LLM yönetimi",
+      "mcpServers": "MCP sunucu yönetimi",
+      "gpuMonitoring": "GPU izleme"
+    },
+    "efficient": {
+      "title": "Verimli yönetim",
+      "desc": "Kullanıcı dostu web arayüzüyle 1Panel, Linux sunucularını kolayca yönetmenizi sağlar: ana bilgisayar izleme, dosya yönetimi, veritabanı yönetimi, konteyner ve LLM yönetimi.",
+      "monitoring": "Gerçek zamanlı sistem izleme",
+      "files": "Web dosya yöneticisi",
+      "database": "Görsel veritabanı yönetimi",
+      "containers": "Docker yönetimi"
+    },
+    "website": {
+      "title": "Hızlı web sitesi dağıtımı",
+      "desc": "WordPress ile derin entegrasyon sayesinde 1Panel, alan adı bağlama ve SSL sertifikası yapılandırmasını tek tıkla tamamlamanızı sağlar.",
+      "wordpress": "Tek tıkla WordPress dağıtımı",
+      "ssl": "Otomatik SSL sertifikası başvurusu",
+      "domain": "Alan adı yönetimi ve yapılandırma",
+      "multisite": "Çoklu site yönetimi"
+    },
+    "appStore": {
+      "title": "Uygulama",
+      "titleHighlight": "mağazası",
+      "desc": "1Panel, yüksek kaliteli açık kaynak araçlar ve uygulamalar sunar; kurulum ve güncellemeler kolaydır.",
+      "curated": "Seçilmiş açık kaynak uygulamalar",
+      "install": "Tek tıkla kurulum ve dağıtım",
+      "updates": "Otomatik güncelleme yönetimi",
+      "management": "Veri yedekleme ve kurtarma"
+    },
+    "backup": {
+      "title": "Tek tıkla yedekleme",
+      "desc": "Çeşitli bulut depolama ortamlarına yedekleme ve kurtarma desteği; verilerinizi güvende tutar."
+    },
+    "secure": {
+      "title": "Güvenli ve güvenilir",
+      "desc": "1Panel güvenlik açığı maruziyetini azaltır; virüs koruması, güvenlik duvarı ve log denetimi sunar."
+    }
+  },
+  "appStore": {
+    "title": "Zengin",
+    "titleHighlight": "uygulama mağazası",
+    "subtitle": "Farklı ihtiyaçlar için tek tıkla kurulum ve dağıtımlı, seçkin açık kaynak uygulamalar",
+    "allApps": "Tüm uygulamalar",
+    "appsTotal": "uygulama toplam",
+    "sortedByRecommendation": "Öneriye göre sıralı",
+    "viewAllApps": "Demoda tüm uygulamaları gör",
+    "noDataTitle": "Uygulama verisi yok",
+    "noDataDesc": "Uygulama mağazası verisi yükleniyor. Lütfen daha sonra tekrar deneyin.",
+    "categories": {
+      "Database": "Veritabanı",
+      "Website": "Web sitesi",
+      "DevOps": "DevOps",
+      "Security": "Güvenlik",
+      "Media": "Medya",
+      "Tool": "Araçlar",
+      "Development": "Geliştirme",
+      "Monitoring": "İzleme",
+      "Storage": "Depolama",
+      "Network": "Ağ"
+    }
+  },
+  "quickstart": {
+    "title": "Hızlı",
+    "titleHighlight": "başlangıç",
+    "subtitle": "Linux sunucunuza tek tıkla 1Panel kurulumu",
+    "step1Title": "Linux sunucusu hazırlayın",
+    "step1Desc1": "CentOS, Ubuntu, Debian ve diğer yaygın dağıtımları destekleyen bir Linux sunucunuz olduğundan emin olun.",
+    "step1Desc2": "x86_64, aarch64, armv7l, ppc64le, s390x gibi çeşitli mimariler desteklenir.",
+    "step2Title": "Kurulum betiğini çalıştırın",
+    "step2Desc": "Root kullanıcı olarak tek tıkla kurulum betiğini çalıştırarak 1Panel otomatik indirilir ve kurulur.",
+    "copy": "Kopyala",
+    "copied": "Kopyalandı",
+    "step3Title": "Yönetim paneline erişin",
+    "step3Desc": "Kurulumdan sonra tarayıcıdan betiğin verdiği adrese giderek 1Panel'i kullanmaya başlayın.",
+    "needHelp": "Yardım mı lazım?",
+    "viewDocs": "Dökümanlara bak",
+    "communityForum": "Topluluk forumu",
+    "issueFeedback": "Geri bildirim"
+  },
+  "cta": {
+    "title": "Kullanmaya başlayın",
+    "subtitle": "VPS'inizin tam kontrolü",
+    "onlineDemo": "Çevrimiçi demo",
+    "documentation": "Dökümanlar"
+  },
+  "footer": {
+    "companyName": "LXware",
+    "companyDesc": "FIT2CLOUD'ın iştiraki; 1Panel ve JumpServer açık kaynak projelerinin küresel pazar operasyonlarından sorumludur.",
+    "resources": "Kaynaklar",
+    "documentation": "Dökümanlar",
+    "githubRepo": "GitHub deposu",
+    "communityForum": "Topluluk forumu",
+    "followX": "X'te takip edin",
+    "youtube": "YouTube kanalı",
+    "discord": "Discord'da sohbet",
+    "links": "Bağlantılar",
+    "jumpserver": "JumpServer",
+    "aboutLxware": "LXware hakkında",
+    "contactUs": "İletişim",
+    "copyright": "Tüm hakları saklıdır.",
+    "termsOfService": "Hizmet şartları",
+    "privacyPolicy": "Gizlilik politikası"
+  },
+  "pricing": {
+    "title": "Basit",
+    "titleHighlight": "fiyatlandırma",
+    "subtitle": "İhtiyacınıza uygun planı seçin. Ücretsiz başlayın, büyüdükçe yükseltin.",
+    "ossEdition": "OSS sürümü",
+    "freeToUse": "Ücretsiz kullanım",
+    "openSource": "Açık kaynak",
+    "noCost": "Ücretsiz",
+    "validated": "Milyonlarca kurulumla doğrulanmış",
+    "communitySupport": "Topluluk desteği",
+    "quickStart": "Hızlı başlangıç",
+    "proEdition": "Pro sürümü",
+    "perpetualLicense": "Süresiz lisans",
+    "mostPopular": "En popüler"
+  },
+  "selfHosted": {
+    "metaTitle": "1Panel Self-Hosted Çözüm - VPS'inizi 1Panel ile yönetin",
+    "metaDescription": "1Panel Self-Hosted Çözüm - Self-hosting'i basit ve verimli kılan modern, açık kaynak Linux sunucu yönetim paneli.",
+    "heroTitle": "1Panel Self-Hosted Çözüm",
+    "heroSubtitle": "Pahalı SaaS abonelikleri ve belirsiz veri güvenliğinden yoruldunuz mu? Self-hosting ile kontrolü elinize alın.",
+    "whyTitle": "Neden self-hosting?",
+    "whySubtitle": "Dijital varlıklarınızın kontrolünü alın ve tam veri egemenliğinin keyfini çıkarın",
+    "dataSovereigntyTitle": "Veri egemenliği",
+    "dataSovereigntyDesc": "GDPR, HIPAA ve diğer veri yerleşimi ve denetim gereksinimlerini kendi ortamınızda karşılayın—sınır ötesi aktarım riski yok.",
+    "securityTitle": "Güvenlik",
+    "securityDesc": "Savunmalarınızı güçlendirin: şirket içi dağıtım verilerinizi kontrolünüzde tutar ve hassas bilgilere üçüncü taraf erişimini uzak tutar.",
+    "lowerCostTitle": "Daha düşük maliyet",
+    "lowerCostDesc": "Maliyetleri düşürün: kullanıcı başı abonelik yok, öngörülebilir donanım ve operasyon maliyetleri, sürpriz SaaS fiyat artışları yok.",
+    "valueTitle": "1Panel + açık kaynak alternatifler = En iyi self-hosted çözüm",
+    "valueSubtitle": "Self-hosting'i basit ve verimli kılan modern bir Linux sunucu yönetim paneli",
+    "fastTitle": "Hızlı",
+    "fastDesc": "Tek tıkla dağıtım ve sorunsuz, sürekli güncellemeler",
+    "completeTitle": "Eksiksiz",
+    "completeDesc": "Güvenilir açık kaynak uygulamalar için tek adres",
+    "reliableTitle": "Güvenilir",
+    "reliableDesc": "Yerleşik güvenlik ve zamanlanmış yedekleme",
+    "appsTitle": "1Panel tarafından desteklenen popüler self-hosted uygulamalar",
+    "appsSubtitle": "Farklı ihtiyaçlarınız için açık kaynak alternatifler",
+    "alternativeBadge": "Alternatif",
+    "viewMoreApps": "1Panel App Store'da daha fazla uygulama keşfedin"
+  }
+}

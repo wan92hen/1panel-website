@@ -1,0 +1,48 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Statistics from '../../components/Statistics.astro';
+import Header from '../../components/Header.astro';
+import Hero from '../../components/Hero.astro';
+import Features from '../../components/Features.astro';
+import QuickStart from '../../components/QuickStart.astro';
+import AppStore from '../../components/AppStore.astro';
+import CTA from '../../components/CTA.astro';
+import Footer from '../../components/Footer.astro';
+import LanguageModal from '../../components/LanguageModal.astro';
+import { SUPPORTED_LOCALES } from '../../i18n/config';
+import { getTranslations, t, getBasePath } from '../../i18n/utils';
+import '../../styles/global.css';
+
+export function getStaticPaths() {
+  return SUPPORTED_LOCALES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.params;
+const translations = getTranslations(lang ?? 'en');
+const basePath = getBasePath(lang);
+const title = t(translations, 'meta.defaultTitle');
+const description = t(translations, 'meta.defaultDescription');
+---
+
+<Layout title={title} description={description} lang={lang} basePath={basePath}>
+  <Statistics slot="head" />
+  <Fragment slot="main">
+    <Header lang={lang} basePath={basePath} translations={translations} />
+    <main>
+      <Hero lang={lang} basePath={basePath} translations={translations} />
+      <Features lang={lang} basePath={basePath} translations={translations} />
+      <AppStore lang={lang} basePath={basePath} translations={translations} />
+      <QuickStart lang={lang} basePath={basePath} translations={translations} />
+      <CTA lang={lang} basePath={basePath} translations={translations} />
+    </main>
+    <Footer lang={lang} basePath={basePath} translations={translations} />
+    <LanguageModal />
+  </Fragment>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    z-index: 1;
+  }
+</style>

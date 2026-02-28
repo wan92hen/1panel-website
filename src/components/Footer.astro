@@ -1,6 +1,17 @@
 ---
 // Footer component for 1Panel website
 import { Icon } from 'astro-icon/components'
+import { t, getTranslations } from '../i18n/utils';
+import type { TranslationDict } from '../i18n/utils';
+
+interface Props {
+  lang?: string;
+  basePath?: string;
+  translations?: TranslationDict;
+}
+
+const { translations: rawTranslations } = Astro.props;
+const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
 ---
 
 <footer class="bg-dark-900 border-t border-gray-800 py-12">
@@ -10,32 +21,32 @@ import { Icon } from 'astro-icon/components'
       <!-- Company Info -->
       <div class="col-span-1 lg:col-span-2">
         <div class="flex items-center space-x-3 mb-4">
-          <span class="text-xl font-bold text-white">LXware</span>
+          <span class="text-xl font-bold text-white">{t(translations, 'footer.companyName')}</span>
         </div>
         <p class="text-gray-400 mb-6 max-w-md">
-          A wholly-owned subsidiary of FIT2CLOUD, responsible for the commercial operation of FIT2CLOUD's open-source projects 1Panel and JumpServer in the global market.
+          {t(translations, 'footer.companyDesc')}
         </p>
       </div>
 
       <div></div>
       <!-- Resources -->
       <div>
-        <h4 class="text-lg font-semibold text-white mb-4">Resources</h4>
+        <h4 class="text-lg font-semibold text-white mb-4">{t(translations, 'footer.resources')}</h4>
         <ul class="space-y-3">
-          <li><a href="https://docs.1panel.pro" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:documentation" class="w-4 h-4 mr-2" />Documentation</a></li>
-          <li><a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-github" class="w-4 h-4 mr-2" />GitHub Repository</a></li>
-          <li><a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:forum" class="w-4 h-4 mr-2" />Community Forum</a></li>
-          <li><a href="https://x.com/lxware_x" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-x" class="w-4 h-4 mr-2" />Follow us on X</a></li>
-          <li><a href="https://www.youtube.com/@1Panel-linux" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-youtube" class="w-4 h-4 mr-2" />Youtube Channel</a></li>
-          <li><a href="https://discord.gg/bUpUqWqdRr" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-discord" class="w-4 h-4 mr-2" />Chat on Discord</a></li>
+          <li><a href="https://docs.1panel.pro" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:documentation" class="w-4 h-4 mr-2" />{t(translations, 'footer.documentation')}</a></li>
+          <li><a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-github" class="w-4 h-4 mr-2" />{t(translations, 'footer.githubRepo')}</a></li>
+          <li><a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:forum" class="w-4 h-4 mr-2" />{t(translations, 'footer.communityForum')}</a></li>
+          <li><a href="https://x.com/lxware_x" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-x" class="w-4 h-4 mr-2" />{t(translations, 'footer.followX')}</a></li>
+          <li><a href="https://www.youtube.com/@1Panel-linux" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-youtube" class="w-4 h-4 mr-2" />{t(translations, 'footer.youtube')}</a></li>
+          <li><a href="https://discord.gg/bUpUqWqdRr" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-discord" class="w-4 h-4 mr-2" />{t(translations, 'footer.discord')}</a></li>
       </div>
       <!-- Quick Links -->
       <div>
-        <h4 class="text-lg font-semibold text-white mb-4">Links</h4>
+        <h4 class="text-lg font-semibold text-white mb-4">{t(translations, 'footer.links')}</h4>
         <ul class="space-y-3">
-          <li><a href="https://jumpserver.com" class="text-gray-400 hover:text-white transition-colors duration-300">JumpServer</a></li>
-          <li><a href="https://lxware.hk/pages/about" class="text-gray-400 hover:text-white transition-colors duration-300">About LXware</a></li>
-          <li><a href="mailto:hi@lxware.hk" class="text-gray-400 hover:text-white transition-colors duration-300">Contact Us</a></li>
+          <li><a href="https://jumpserver.com" class="text-gray-400 hover:text-white transition-colors duration-300">{t(translations, 'footer.jumpserver')}</a></li>
+          <li><a href="https://lxware.hk/pages/about" class="text-gray-400 hover:text-white transition-colors duration-300">{t(translations, 'footer.aboutLxware')}</a></li>
+          <li><a href="mailto:hi@lxware.hk" class="text-gray-400 hover:text-white transition-colors duration-300">{t(translations, 'footer.contactUs')}</a></li>
         </ul>
       </div>
     </div>
@@ -44,7 +55,7 @@ import { Icon } from 'astro-icon/components'
     <div class="border-t border-gray-800 pt-8">
       <div class="flex flex-col md:flex-row justify-between items-center">
         <div class="text-gray-400 text-sm mb-4 md:mb-0">
-          © <span id="footer-year"></span> LXware. All rights reserved.
+          © <span id="footer-year"></span> LXware. {t(translations, 'footer.copyright')}
         </div>
         <script is:inline>
           document.addEventListener('DOMContentLoaded', function() {
@@ -55,8 +66,8 @@ import { Icon } from 'astro-icon/components'
           });
         </script>
         <div class="flex space-x-6 text-sm">
-          <a href="https://www.lxware.hk/policies/terms-of-service" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">Terms of Service</a>
-          <a href="https://www.lxware.hk/policies/privacy-policy" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">Privacy Policy</a>
+          <a href="https://www.lxware.hk/policies/terms-of-service" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">{t(translations, 'footer.termsOfService')}</a>
+          <a href="https://www.lxware.hk/policies/privacy-policy" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300">{t(translations, 'footer.privacyPolicy')}</a>
       </div>
     </div>
 

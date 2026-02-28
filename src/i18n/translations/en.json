@@ -1,0 +1,178 @@
+{
+  "meta": {
+    "defaultTitle": "1Panel: Take full control of your VPS",
+    "defaultDescription": "1Panel: Take full control of your VPS"
+  },
+  "header": {
+    "pricing": "Pricing",
+    "appStore": "App Store",
+    "discussions": "Discussions",
+    "docs": "Docs",
+    "demo": "Demo",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title1": "Easy to manage",
+    "title2": "OpenClaw Agents",
+    "badgePowerful": "Powerful",
+    "badgeOpenSource": "Open Source",
+    "subtitle": "1Panel is a modern, open-source VPS control panel that streamlines administration through an intuitive, clean web interface.",
+    "githubStars": "GitHub Stars",
+    "totalDownloads": "Total Downloads",
+    "demo": "Demo",
+    "installNow": "Install Now",
+    "scrollDown": "Scroll Down",
+    "typewriter": ["OpenClaw Agents", "Local LLMs", "Websites", "Databases", "Files", "Scheduled Tasks"]
+  },
+  "features": {
+    "title": "Powerful",
+    "titleHighlight": "Features",
+    "subtitle": "Comprehensive Linux server management features, making operations simple and efficient",
+    "openclaw": {
+      "title": "One-Click OpenClaw Deloyment",
+      "desc": "Seamlessly deploy OpenClaw agents, host local LLMs via Ollama, and monitor GPU utilization—all within a unified workspace.",
+      "openclawAgents": "OpenClaw Agents Management",
+      "localLLMs": "Local LLMs Management",
+      "mcpServers": "MCP Servers Management",
+      "gpuMonitoring": "GPU Monitoring"
+    },
+    "efficient": {
+      "title": "Efficient Management",
+      "desc": "Through a user-friendly web graphical interface, 1Panel enables users to effortlessly manage their Linux servers. Key features include host monitoring, file management, database administration, container management, LLMs management.",
+      "monitoring": "Real-time System Monitoring",
+      "files": "Web File Manager",
+      "database": "Database Visual Management",
+      "containers": "Docker Management"
+    },
+    "website": {
+      "title": "Rapid Website Deployment",
+      "desc": "With deep integration of the popular open-source website building software WordPress, 1Panel streamlines the process of domain binding and SSL certificate configuration, all achievable with just one click.",
+      "wordpress": "One-click WordPress Deployment",
+      "ssl": "Automatic SSL Certificate Application",
+      "domain": "Domain Management and Configuration",
+      "multisite": "Multi-site Management"
+    },
+    "appStore": {
+      "title": "App Store",
+      "desc": "1Panel curates a wide range of high-quality open-source tools and applications, facilitating easy installation and updates for its users.",
+      "curated": "Curated Open-source Applications",
+      "install": "One-click Installation and Deployment",
+      "updates": "Automatic Update Management",
+      "management": "Data Backup and Recovery"
+    },
+    "backup": {
+      "title": "One-click Backup",
+      "desc": "Support data backup to various cloud storage media, and support recovery function, ensuring data is never lost."
+    },
+    "secure": {
+      "title": "Secure and Reliable",
+      "desc": "1Panel effectively reduces vulnerability exposure, provides virus protection, firewall, and log audit functions, ensuring system security."
+    }
+  },
+  "appStore": {
+    "title": "Rich",
+    "titleHighlight": "App Store",
+    "subtitle": "Curated high-quality open source applications with one-click installation and deployment to meet diverse business needs",
+    "allApps": "All Apps",
+    "appsTotal": "apps total",
+    "sortedByRecommendation": "Sorted by recommendation",
+    "viewAllApps": "View All Apps on Demo",
+    "noDataTitle": "No App Data Available",
+    "noDataDesc": "App store data is loading, please try again later",
+    "categories": {
+      "Database": "Database",
+      "Website": "Website",
+      "DevOps": "DevOps",
+      "Security": "Security",
+      "Media": "Media",
+      "Tool": "Tools",
+      "Development": "Development",
+      "Monitoring": "Monitoring",
+      "Storage": "Storage",
+      "Network": "Network"
+    }
+  },
+  "quickstart": {
+    "title": "Quick",
+    "titleHighlight": "Start",
+    "subtitle": "One-click installation of 1Panel on your Linux server",
+    "step1Title": "Prepare Linux Server",
+    "step1Desc1": "Ensure you have a Linux server running, supporting CentOS, Ubuntu, Debian, and other mainstream distributions.",
+    "step1Desc2": "Supports various server architectures: x86_64, aarch64, armv7l, ppc64le, s390x.",
+    "step2Title": "Run Installation Script",
+    "step2Desc": "Run the one-click installation script as the root user to automatically download and install 1Panel.",
+    "copy": "Copy",
+    "copied": "Copied",
+    "step3Title": "Access Management Panel",
+    "step3Desc": "After installation, access the address provided by the installation script through a browser to start using 1Panel.",
+    "needHelp": "Need Help?",
+    "viewDocs": "View Documentation",
+    "communityForum": "Community Forum",
+    "issueFeedback": "Issue Feedback"
+  },
+  "cta": {
+    "title": "Start Using",
+    "subtitle": "Take full control of your VPS",
+    "onlineDemo": "Online Demo",
+    "documentation": "Documentation"
+  },
+  "footer": {
+    "companyName": "LXware",
+    "companyDesc": "A wholly-owned subsidiary of FIT2CLOUD, responsible for the commercial operation of FIT2CLOUD's open-source projects 1Panel and JumpServer in the global market.",
+    "resources": "Resources",
+    "documentation": "Documentation",
+    "githubRepo": "GitHub Repository",
+    "communityForum": "Community Forum",
+    "followX": "Follow us on X",
+    "youtube": "Youtube Channel",
+    "discord": "Chat on Discord",
+    "links": "Links",
+    "jumpserver": "JumpServer",
+    "aboutLxware": "About LXware",
+    "contactUs": "Contact Us",
+    "copyright": "All rights reserved.",
+    "termsOfService": "Terms of Service",
+    "privacyPolicy": "Privacy Policy"
+  },
+  "pricing": {
+    "title": "Simple",
+    "titleHighlight": "Pricing",
+    "subtitle": "Choose the perfect plan for your needs. Start free and upgrade as you grow.",
+    "ossEdition": "OSS Edition",
+    "freeToUse": "Free to Use",
+    "openSource": "Open-source",
+    "noCost": "No cost",
+    "validated": "Validated by millions of installations",
+    "communitySupport": "Community support",
+    "quickStart": "Quick Start",
+    "proEdition": "Pro Edition",
+    "perpetualLicense": "Perpetual License",
+    "mostPopular": "Most Popular"
+  },
+  "selfHosted": {
+    "metaTitle": "1Panel Self-Hosted Solution - Take control of your VPS with 1Panel",
+    "metaDescription": "1Panel Self-Hosted Solution - A modern, open-source Linux server management panel that makes self-hosting simple and efficient.",
+    "heroTitle": "1Panel Self-Hosted Solution",
+    "heroSubtitle": "Tired of expensive SaaS subscriptions and uncertain data security? Take back control with self-hosting.",
+    "whyTitle": "Why Choose Self-Hosting?",
+    "whySubtitle": "Take control of your digital assets and enjoy full data sovereignty",
+    "dataSovereigntyTitle": "Data Sovereignty",
+    "dataSovereigntyDesc": "Achieve compliance easily: keep data in your own environment to meet GDPR, HIPAA, and other data residency and audit requirements—no cross-border transfer risks.",
+    "securityTitle": "Security",
+    "securityDesc": "Strengthen your defenses: on-premises deployment keeps your data under your control and away from third-party access to sensitive information (e.g., customer data, internal documents).",
+    "lowerCostTitle": "Lower Cost",
+    "lowerCostDesc": "Reduce costs: no per-seat subscription fees, predictable hardware and ops costs, and no surprise SaaS price hikes.",
+    "valueTitle": "1Panel + Open-Source Alternatives = The Best Self-Hosted Solution",
+    "valueSubtitle": "A modern Linux server management panel that makes self-hosting simple and efficient",
+    "fastTitle": "Fast",
+    "fastDesc": "One-click deployment with smooth, continuous upgrades",
+    "completeTitle": "Complete",
+    "completeDesc": "One-stop hub for trusted open-source applications",
+    "reliableTitle": "Reliable",
+    "reliableDesc": "Built-in security and scheduled backups",
+    "appsTitle": "Popular Self-Hosted Apps Supported by 1Panel",
+    "appsSubtitle": "Open-source alternatives for your diverse needs",
+    "alternativeBadge": "Alternative",
+    "viewMoreApps": "Discover more apps in the 1Panel App Store"
+  }
+}

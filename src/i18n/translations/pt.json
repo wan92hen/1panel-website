@@ -1,0 +1,179 @@
+{
+  "meta": {
+    "defaultTitle": "1Panel: Controle total do seu VPS",
+    "defaultDescription": "1Panel: Controle total do seu VPS"
+  },
+  "header": {
+    "pricing": "Preços",
+    "appStore": "Loja de Apps",
+    "discussions": "Discussões",
+    "docs": "Documentação",
+    "demo": "Demo",
+    "github": "GitHub"
+  },
+  "hero": {
+    "title1": "Fácil de gerenciar",
+    "title2": "OpenClaw Agents",
+    "badgePowerful": "Poderoso",
+    "badgeOpenSource": "Código aberto",
+    "subtitle": "1Panel é um painel de controle VPS moderno e de código aberto que simplifica a administração por meio de uma interface web intuitiva e limpa.",
+    "githubStars": "Estrelas no GitHub",
+    "totalDownloads": "Total de downloads",
+    "demo": "Demo",
+    "installNow": "Instalar agora",
+    "scrollDown": "Role para baixo",
+    "typewriter": ["OpenClaw Agents", "LLMs locais", "Sites", "Bancos de dados", "Arquivos", "Tarefas agendadas"]
+  },
+  "features": {
+    "title": "Recursos",
+    "titleHighlight": "poderosos",
+    "subtitle": "Recursos abrangentes de gerenciamento de servidor Linux, tornando as operações simples e eficientes",
+    "openclaw": {
+      "title": "Implantação OpenClaw em um clique",
+      "desc": "Implante agentes OpenClaw, hospede LLMs locais via Ollama e monitore o uso da GPU — tudo em um workspace unificado.",
+      "openclawAgents": "Gerenciamento de agentes OpenClaw",
+      "localLLMs": "Gerenciamento de LLMs locais",
+      "mcpServers": "Gerenciamento de servidores MCP",
+      "gpuMonitoring": "Monitoramento de GPU"
+    },
+    "efficient": {
+      "title": "Gerenciamento eficiente",
+      "desc": "Por meio de uma interface web gráfica amigável, o 1Panel permite gerenciar servidores Linux com facilidade. Recursos incluem monitoramento de host, gerenciamento de arquivos, administração de banco de dados, gerenciamento de contêineres e LLMs.",
+      "monitoring": "Monitoramento do sistema em tempo real",
+      "files": "Gerenciador de arquivos web",
+      "database": "Gerenciamento visual de banco de dados",
+      "containers": "Gerenciamento Docker"
+    },
+    "website": {
+      "title": "Implantação rápida de sites",
+      "desc": "Com integração profunda do WordPress, o 1Panel simplifica a vinculação de domínios e a configuração de certificados SSL, tudo com um clique.",
+      "wordpress": "Implantação WordPress em um clique",
+      "ssl": "Aplicação automática de certificado SSL",
+      "domain": "Gerenciamento e configuração de domínio",
+      "multisite": "Gerenciamento multi-site"
+    },
+    "appStore": {
+      "title": "Loja de",
+      "titleHighlight": "apps",
+      "desc": "O 1Panel reúne ferramentas e aplicativos de código aberto de alta qualidade, facilitando instalação e atualizações.",
+      "curated": "Aplicativos open-source curados",
+      "install": "Instalação e implantação em um clique",
+      "updates": "Gerenciamento automático de atualizações",
+      "management": "Backup e recuperação de dados"
+    },
+    "backup": {
+      "title": "Backup em um clique",
+      "desc": "Suporte a backup em vários armazenamentos em nuvem e recuperação, garantindo que os dados nunca se percam."
+    },
+    "secure": {
+      "title": "Seguro e confiável",
+      "desc": "O 1Panel reduz a exposição a vulnerabilidades, oferece proteção contra vírus, firewall e auditoria de logs, garantindo a segurança do sistema."
+    }
+  },
+  "appStore": {
+    "title": "Loja de",
+    "titleHighlight": "apps",
+    "subtitle": "Aplicativos open-source de alta qualidade com instalação e implantação em um clique para diversas necessidades",
+    "allApps": "Todos os apps",
+    "appsTotal": "apps no total",
+    "sortedByRecommendation": "Ordenado por recomendação",
+    "viewAllApps": "Ver todos os apps na demo",
+    "noDataTitle": "Nenhum dado de app disponível",
+    "noDataDesc": "Os dados da loja estão carregando. Tente novamente mais tarde.",
+    "categories": {
+      "Database": "Banco de dados",
+      "Website": "Website",
+      "DevOps": "DevOps",
+      "Security": "Segurança",
+      "Media": "Mídia",
+      "Tool": "Ferramentas",
+      "Development": "Desenvolvimento",
+      "Monitoring": "Monitoramento",
+      "Storage": "Armazenamento",
+      "Network": "Rede"
+    }
+  },
+  "quickstart": {
+    "title": "Início",
+    "titleHighlight": "rápido",
+    "subtitle": "Instalação do 1Panel no seu servidor Linux em um clique",
+    "step1Title": "Preparar servidor Linux",
+    "step1Desc1": "Certifique-se de ter um servidor Linux com CentOS, Ubuntu, Debian ou outras distribuições principais.",
+    "step1Desc2": "Suporta várias arquiteturas: x86_64, aarch64, armv7l, ppc64le, s390x.",
+    "step2Title": "Executar script de instalação",
+    "step2Desc": "Execute o script de instalação como root para baixar e instalar o 1Panel automaticamente.",
+    "copy": "Copiar",
+    "copied": "Copiado",
+    "step3Title": "Acessar o painel",
+    "step3Desc": "Após a instalação, acesse pelo navegador o endereço indicado pelo script para começar a usar o 1Panel.",
+    "needHelp": "Precisa de ajuda?",
+    "viewDocs": "Ver documentação",
+    "communityForum": "Fórum da comunidade",
+    "issueFeedback": "Enviar feedback"
+  },
+  "cta": {
+    "title": "Comece a usar",
+    "subtitle": "Controle total do seu VPS",
+    "onlineDemo": "Demo online",
+    "documentation": "Documentação"
+  },
+  "footer": {
+    "companyName": "LXware",
+    "companyDesc": "Subsidiária da FIT2CLOUD, responsável pela operação comercial dos projetos open-source 1Panel e JumpServer no mercado global.",
+    "resources": "Recursos",
+    "documentation": "Documentação",
+    "githubRepo": "Repositório GitHub",
+    "communityForum": "Fórum da comunidade",
+    "followX": "Siga-nos no X",
+    "youtube": "Canal no YouTube",
+    "discord": "Chat no Discord",
+    "links": "Links",
+    "jumpserver": "JumpServer",
+    "aboutLxware": "Sobre a LXware",
+    "contactUs": "Contato",
+    "copyright": "Todos os direitos reservados.",
+    "termsOfService": "Termos de serviço",
+    "privacyPolicy": "Política de privacidade"
+  },
+  "pricing": {
+    "title": "Preços",
+    "titleHighlight": "simples",
+    "subtitle": "Escolha o plano ideal. Comece grátis e faça upgrade conforme crescer.",
+    "ossEdition": "Edição OSS",
+    "freeToUse": "Uso gratuito",
+    "openSource": "Código aberto",
+    "noCost": "Sem custo",
+    "validated": "Validado por milhões de instalações",
+    "communitySupport": "Suporte da comunidade",
+    "quickStart": "Início rápido",
+    "proEdition": "Edição Pro",
+    "perpetualLicense": "Licença perpétua",
+    "mostPopular": "Mais popular"
+  },
+  "selfHosted": {
+    "metaTitle": "1Panel Solução Self-Hosted - Controle seu VPS com 1Panel",
+    "metaDescription": "1Panel Solução Self-Hosted - Um painel moderno e open source de gerenciamento de servidor Linux que torna o self-hosting simples e eficiente.",
+    "heroTitle": "1Panel Solução Self-Hosted",
+    "heroSubtitle": "Cansado de assinaturas SaaS caras e segurança de dados incerta? Assuma o controle com self-hosting.",
+    "whyTitle": "Por que escolher self-hosting?",
+    "whySubtitle": "Controle seus ativos digitais e tenha soberania total dos dados",
+    "dataSovereigntyTitle": "Soberania de dados",
+    "dataSovereigntyDesc": "Cumpra requisitos com facilidade: mantenha os dados no seu ambiente para GDPR, HIPAA e outras exigências de residência e auditoria—sem riscos de transferência transfronteiriça.",
+    "securityTitle": "Segurança",
+    "securityDesc": "Reforce suas defesas: implantação on-premises mantém seus dados sob seu controle e longe de acesso de terceiros a informações sensíveis.",
+    "lowerCostTitle": "Menor custo",
+    "lowerCostDesc": "Reduza custos: sem taxas por assento, custos de hardware e operação previsíveis, sem aumentos surpresa de preços SaaS.",
+    "valueTitle": "1Panel + alternativas open source = A melhor solução self-hosted",
+    "valueSubtitle": "Um painel moderno de gerenciamento de servidor Linux que torna o self-hosting simples e eficiente",
+    "fastTitle": "Rápido",
+    "fastDesc": "Implantação em um clique com atualizações contínuas e suaves",
+    "completeTitle": "Completo",
+    "completeDesc": "Hub único para aplicações open source confiáveis",
+    "reliableTitle": "Confiável",
+    "reliableDesc": "Segurança integrada e backups agendados",
+    "appsTitle": "Aplicativos self-hosted populares suportados pelo 1Panel",
+    "appsSubtitle": "Alternativas open source para suas diversas necessidades",
+    "alternativeBadge": "Alternativa",
+    "viewMoreApps": "Descubra mais aplicativos na 1Panel App Store"
+  }
+}
