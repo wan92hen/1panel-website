@@ -62,8 +62,8 @@
       "management": "Veri yedekleme ve kurtarma"
     },
     "backup": {
-      "title": "Tek tıkla yedekleme",
-      "desc": "Çeşitli bulut depolama ortamlarına yedekleme ve kurtarma desteği; verilerinizi güvende tutar."
+      "title": "Zamanlanmış yedekleme",
+      "desc": "Verilerin çeşitli bulut depolama ortamlarına zamanlanmış yedeklenmesi ve kurtarma işlevi desteği; verilerin kaybolmamasını sağlar."
     },
     "secure": {
       "title": "Güvenli ve güvenilir",

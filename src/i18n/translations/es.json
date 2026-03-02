@@ -62,8 +62,8 @@
       "management": "Copia de seguridad y recuperación"
     },
     "backup": {
-      "title": "Copia de seguridad en un clic",
-      "desc": "Soporte de copias de seguridad en distintos almacenamientos en la nube y recuperación, para no perder datos."
+      "title": "Copia de seguridad programada",
+      "desc": "Soporta copias de seguridad de datos en varios almacenamientos en la nube de forma programada y función de recuperación, para no perder datos."
     },
     "secure": {
       "title": "Seguro y fiable",

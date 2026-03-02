@@ -62,8 +62,8 @@
       "management": "Backup e recuperação de dados"
     },
     "backup": {
-      "title": "Backup em um clique",
-      "desc": "Suporte a backup em vários armazenamentos em nuvem e recuperação, garantindo que os dados nunca se percam."
+      "title": "Backup agendado",
+      "desc": "Suporte a backup de dados em vários armazenamentos em nuvem de forma agendada e função de recuperação, garantindo que os dados nunca se percam."
     },
     "secure": {
       "title": "Seguro e confiável",

@@ -29,7 +29,7 @@
     "titleHighlight": "Features",
     "subtitle": "Comprehensive Linux server management features, making operations simple and efficient",
     "openclaw": {
-      "title": "One-Click OpenClaw Deloyment",
+      "title": "One-Click OpenClaw Deployment",
       "desc": "Seamlessly deploy OpenClaw agents, host local LLMs via Ollama, and monitor GPU utilization—all within a unified workspace.",
       "openclawAgents": "OpenClaw Agents Management",
       "localLLMs": "Local LLMs Management",
@@ -61,8 +61,8 @@
       "management": "Data Backup and Recovery"
     },
     "backup": {
-      "title": "One-click Backup",
-      "desc": "Support data backup to various cloud storage media, and support recovery function, ensuring data is never lost."
+      "title": "Scheduled Backup",
+      "desc": "Support data backup to various cloud storage media scheduledly, and support recovery function, ensuring data is never lost."
     },
     "secure": {
       "title": "Secure and Reliable",
