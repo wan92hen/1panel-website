@@ -144,32 +144,11 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
             </div>
             <h3 class="text-2xl font-bold text-gray-800 mb-4">Subscription</h3>
             
-            <!-- Billing Toggle -->
-            <div class="mb-6">
-              <div class="flex items-center justify-center space-x-4 mb-4">
-                <span class="text-sm text-gray-600">Monthly</span>
-                <button 
-                  id="billing-toggle" 
-                  class="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors duration-200 ease-in-out focus:outline-none focus:ring-2 focus:ring-1panel focus:ring-offset-2"
-                  role="switch"
-                  aria-checked="false"
-                >
-                  <span 
-                    id="billing-toggle-thumb"
-                    class="inline-block h-4 w-4 transform rounded-full bg-white transition duration-200 ease-in-out translate-x-1"
-                  ></span>
-                </button>
-                <span class="text-sm text-gray-600">Yearly</span>
-                <span class="inline-flex items-center px-2 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800">
-                  Save 16%
-                </span>
-              </div>
-              
               <!-- Price Display -->
               <div class="mb-2">
                 <div class="flex items-baseline justify-center">
-                  <span id="subscription-price" class="text-5xl font-bold text-gray-800">$8</span>
-                  <span id="subscription-period" class="text-gray-600 text-sm ml-2">/ per month</span>
+                  <span id="subscription-price" class="text-5xl font-bold text-gray-800">$80</span>
+                  <span id="subscription-period" class="text-gray-600 text-sm ml-2">/ per year</span>
                 </div>
               </div>
             </div>
@@ -202,7 +181,7 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
           <!-- CTA Button -->
           <a 
             id="subscription-button"
-            href="https://www.lxware.hk/cart/50998152921301:1?channel=buy_button" 
+            href="https://www.lxware.hk/cart/50998152954069:1?channel=buy_button" 
             target="_blank"
             class="w-full inline-flex justify-center items-center px-6 py-3 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:bg-gray-200 hover:border-gray-400"
           >
@@ -543,16 +522,7 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
   .card.transform.scale-105 {
     @apply shadow-xl border-1panel;
   }
-  
-  /* Billing toggle active state */
-  .billing-toggle-active {
-    @apply bg-1panel;
-  }
-  
-  .billing-toggle-active .billing-toggle-thumb {
-    @apply translate-x-6;
-  }
-  
+   
   /* Price animation */
   @keyframes pricePulse {
     0%, 100% {
@@ -572,47 +542,3 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
   }
 
 </style>
-
-<script>
-  // Billing toggle functionality
-  document.addEventListener('DOMContentLoaded', function() {
-    const billingToggle = document.getElementById('billing-toggle') as HTMLElement;
-    const billingToggleThumb = document.getElementById('billing-toggle-thumb') as HTMLElement;
-    const subscriptionPrice = document.getElementById('subscription-price') as HTMLElement;
-    const subscriptionPeriod = document.getElementById('subscription-period') as HTMLElement;
-    const subscriptionButton = document.getElementById('subscription-button') as HTMLElement;
-    
-    if (!billingToggle || !billingToggleThumb || !subscriptionPrice || !subscriptionPeriod) {
-      return;
-    }
-    
-    let isYearly = false;
-    
-    billingToggle.addEventListener('click', function() {
-      isYearly = !isYearly;
-      
-      // Update toggle state
-      billingToggle.setAttribute('aria-checked', isYearly.toString());
-      billingToggle.classList.toggle('billing-toggle-active');
-      billingToggleThumb.classList.toggle('billing-toggle-thumb');
-      
-      // Update price and period
-      if (isYearly) {
-        // Yearly pricing: $8/month * 12 months * 0.84 (16% discount) = $80.64/year
-        subscriptionPrice.textContent = '$6.67';
-        subscriptionPeriod.textContent = '/ per month';
-        (subscriptionButton as HTMLAnchorElement).href = 'https://www.lxware.hk/cart/50998152954069:1?channel=buy_button';
-      } else {
-        subscriptionPrice.textContent = '$8';
-        subscriptionPeriod.textContent = '/ per month';
-        (subscriptionButton as HTMLAnchorElement).href = 'https://www.lxware.hk/cart/50998152921301:1?channel=buy_button';
-      }
-      
-      // Add price animation
-      subscriptionPrice.classList.add('price-animation');
-      setTimeout(() => {
-        subscriptionPrice.classList.remove('price-animation');
-      }, 300);
-    });
-  });
-</script>
