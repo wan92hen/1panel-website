@@ -27,7 +27,7 @@
   "features": {
     "title": "Potentes",
     "titleHighlight": "funciones",
-    "subtitle": "Funciones completas de gestión de servidores Linux para operar de forma simple y eficiente",
+    "subtitle": "Funciones completas de gestión de VPS para operar de forma simple y eficiente",
     "openclaw": {
       "title": "Despliegue OpenClaw en un clic",
       "desc": "Despliega agentes OpenClaw, aloja LLMs locales con Ollama y monitoriza el uso de GPU, todo en un único espacio de trabajo.",

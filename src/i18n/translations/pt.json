@@ -27,7 +27,7 @@
   "features": {
     "title": "Recursos",
     "titleHighlight": "poderosos",
-    "subtitle": "Recursos abrangentes de gerenciamento de servidor Linux, tornando as operações simples e eficientes",
+    "subtitle": "Recursos abrangentes de gerenciamento de VPS, tornando as operações simples e eficientes",
     "openclaw": {
       "title": "Implantação OpenClaw em um clique",
       "desc": "Implante agentes OpenClaw, hospede LLMs locais via Ollama e monitore o uso da GPU — tudo em um workspace unificado.",

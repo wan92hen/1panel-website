@@ -27,7 +27,7 @@
   "features": {
     "title": "Ciri",
     "titleHighlight": "berkuasa",
-    "subtitle": "Ciri pengurusan pelayan Linux yang menyeluruh, menjadikan operasi mudah dan cekap",
+    "subtitle": "Ciri pengurusan VPS yang menyeluruh, menjadikan operasi mudah dan cekap",
     "openclaw": {
       "title": "Penempatan OpenClaw satu klik",
       "desc": "Jalankan agen OpenClaw, hos LLM tempatan melalui Ollama, dan pantau penggunaan GPU—semua dalam satu ruang kerja.",

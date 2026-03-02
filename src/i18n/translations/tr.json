@@ -27,7 +27,7 @@
   "features": {
     "title": "Güçlü",
     "titleHighlight": "özellikler",
-    "subtitle": "Kapsamlı Linux sunucu yönetim özellikleriyle işlemleri basit ve verimli hale getirir",
+    "subtitle": "Kapsamlı VPS yönetim özellikleriyle işlemleri basit ve verimli hale getirir",
     "openclaw": {
       "title": "Tek tıkla OpenClaw dağıtımı",
       "desc": "OpenClaw ajanlarını dağıtın, Ollama ile yerel LLM'leri barındırın ve GPU kullanımını izleyin—hepsi tek bir çalışma alanında.",

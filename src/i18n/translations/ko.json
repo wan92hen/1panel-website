@@ -27,7 +27,7 @@
   "features": {
     "title": "강력한",
     "titleHighlight": "기능",
-    "subtitle": "포괄적인 Linux 서버 관리 기능으로 운영을 간단하고 효율적으로",
+    "subtitle": "포괄적인 VPS 관리 기능으로 운영을 간단하고 효율적으로",
     "openclaw": {
       "title": "원클릭 OpenClaw 배포",
       "desc": "OpenClaw 에이전트 배포, Ollama를 통한 로컬 LLM 호스팅, GPU 사용량 모니터링을 하나의 통합 워크스페이스에서 수행할 수 있습니다.",

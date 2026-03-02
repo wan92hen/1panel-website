@@ -27,7 +27,7 @@
   "features": {
     "title": "強力な",
     "titleHighlight": "機能",
-    "subtitle": "包括的なLinuxサーバー管理機能で、運用をシンプルかつ効率的に",
+    "subtitle": "包括的なVPS管理機能で、運用をシンプルかつ効率的に",
     "openclaw": {
       "title": "ワンクリックOpenClawデプロイ",
       "desc": "OpenClawエージェントのデプロイ、OllamaによるローカルLLMのホスト、GPU使用率の監視を、統一されたワークスペースでシームレスに実行できます。",

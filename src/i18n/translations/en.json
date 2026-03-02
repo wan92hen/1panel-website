@@ -27,7 +27,7 @@
   "features": {
     "title": "Powerful",
     "titleHighlight": "Features",
-    "subtitle": "Comprehensive Linux server management features, making operations simple and efficient",
+    "subtitle": "Comprehensive VPS management features, making operations simple and efficient",
     "openclaw": {
       "title": "One-Click OpenClaw Deployment",
       "desc": "Seamlessly deploy OpenClaw agents, host local LLMs via Ollama, and monitor GPU utilization—all within a unified workspace.",
