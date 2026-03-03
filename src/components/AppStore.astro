@@ -37,6 +37,7 @@ interface Category {
   name: string;
   apps: App[];
   totalApps: number;
+  sort?: number;
 }
 
 let allApps: App[] = [];
@@ -50,6 +51,17 @@ function getCategoryDisplayNameFromTranslations(translations: TranslationDict, k
 }
 
 try {
+  // Build tag sort order from additionalProperties.tags (key -> sort)
+  const tagSortMap = new Map<string, number>();
+  const rootTags = (appStoreData as any).additionalProperties?.tags;
+  if (Array.isArray(rootTags)) {
+    rootTags.forEach((t: { key: string; sort?: number }) => {
+      if (t?.key != null && typeof t.sort === 'number') {
+        tagSortMap.set(t.key, t.sort);
+      }
+    });
+  }
+
   // Extract all apps
   allApps = appStoreData.apps.map((app: any) => ({
     icon: app.icon,
@@ -71,7 +83,7 @@ try {
     }
   });
 
-  // Create category list, maximum 9 apps per category
+  // Create category list, maximum 9 apps per category; sort categories by tag sort from 1panel.json
   categories = Array.from(categoryMap.entries())
     .map(([key, apps]) => {
       // Sort apps by recommend field, keep original order if recommend is 0
@@ -98,11 +110,12 @@ try {
         key,
         name: getCategoryDisplayName(key),
         apps: sortedApps.slice(0, 9),
-        totalApps: apps.length
+        totalApps: apps.length,
+        sort: tagSortMap.has(key) ? tagSortMap.get(key)! : 9999
       };
     })
     .filter(category => category.apps.length > 0)
-    .sort((a, b) => b.totalApps - a.totalApps);
+    .sort((a, b) => a.sort - b.sort);
 
   // Add "All Apps" category with sorted apps
   const sortedAllApps = allApps.sort((a, b) => {
