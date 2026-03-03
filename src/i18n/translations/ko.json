@@ -175,5 +175,9 @@
     "appsSubtitle": "다양한 요구에 맞는 오픈소스 대안",
     "alternativeBadge": "대안",
     "viewMoreApps": "1Panel 앱 스토어에서 더 많은 앱 발견하기"
+  },
+  "floatingNews": {
+    "title": "🚀 원클릭 OpenClaw 배포",
+    "subtitle": "나만의 AI 어시스턴트 맞춤 설정 🤖"
   }
 }

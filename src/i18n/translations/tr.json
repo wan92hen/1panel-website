@@ -175,5 +175,9 @@
     "appsSubtitle": "Farklı ihtiyaçlarınız için açık kaynak alternatifler",
     "alternativeBadge": "Alternatif",
     "viewMoreApps": "1Panel App Store'da daha fazla uygulama keşfedin"
+  },
+  "floatingNews": {
+    "title": "🚀 Tek tıkla OpenClaw dağıtımı",
+    "subtitle": "Kendi yapay zeka asistanınızı özelleştirin 🤖"
   }
 }

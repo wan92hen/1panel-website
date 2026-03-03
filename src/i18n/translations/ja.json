@@ -174,5 +174,9 @@
     "appsSubtitle": "多様なニーズに応えるオープンソース代替",
     "alternativeBadge": "代替",
     "viewMoreApps": "1Panelアプリストアでもっと見る"
+  },
+  "floatingNews": {
+    "title": "🚀 ワンクリックOpenClawデプロイ",
+    "subtitle": "自分だけのAIアシスタントをカスタマイズ 🤖"
   }
 }

@@ -175,5 +175,9 @@
     "appsSubtitle": "Альтернативы с открытым кодом для разных задач",
     "alternativeBadge": "Альтернатива",
     "viewMoreApps": "Больше приложений в 1Panel App Store"
+  },
+  "floatingNews": {
+    "title": "🚀 Развёртывание OpenClaw в один клик",
+    "subtitle": "Настройте своего ИИ-помощника 🤖"
   }
 }

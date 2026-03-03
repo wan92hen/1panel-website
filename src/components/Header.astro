@@ -44,7 +44,7 @@ const prefix = lang ? `/${lang}` : '';
               <Icon name="carbon:earth" class="w-5 h-5 mr-1" />
               <span>{getLocaleLabel(lang)}</span>
             </button>
-            <div class="absolute top-full right-0 py-1 w-40 bg-white rounded-lg shadow-lg border border-gray-200 hidden group-hover:block z-50" role="menu">
+            <div class="absolute top-full right-0 py-1 w-40 bg-white rounded-lg shadow-lg border border-gray-200 hidden group-hover:block z-[90]" role="menu">
               {SUPPORTED_LOCALES.filter((l) => l !== lang).map((locale) => (
                 <a href={`/${locale}/`} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{getLocaleLabel(locale)}</a>
               ))}

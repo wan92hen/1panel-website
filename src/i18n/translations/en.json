@@ -174,5 +174,9 @@
     "appsSubtitle": "Open-source alternatives for your diverse needs",
     "alternativeBadge": "Alternative",
     "viewMoreApps": "Discover more apps in the 1Panel App Store"
+  },
+  "floatingNews": {
+    "title": "🚀 One-Click OpenClaw Deployment",
+    "subtitle": "Customize your own AI assistant 🤖"
   }
 }

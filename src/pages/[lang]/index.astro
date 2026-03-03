@@ -9,6 +9,7 @@ import AppStore from '../../components/AppStore.astro';
 import CTA from '../../components/CTA.astro';
 import Footer from '../../components/Footer.astro';
 import LanguageModal from '../../components/LanguageModal.astro';
+import FloatingNews from '../../components/FloatingNews.astro';
 import { SUPPORTED_LOCALES } from '../../i18n/config';
 import { getTranslations, t, getBasePath } from '../../i18n/utils';
 import '../../styles/global.css';
@@ -37,6 +38,7 @@ const description = t(translations, 'meta.defaultDescription');
     </main>
     <Footer lang={lang} basePath={basePath} translations={translations} />
     <LanguageModal />
+    <FloatingNews lang={lang} basePath={basePath} translations={translations} />
   </Fragment>
 </Layout>
 

@@ -1,0 +1,104 @@
+---
+// Floating News section for 1Panel website
+import { Icon } from "astro-icon/components";
+import { t, getTranslations } from '../i18n/utils';
+import type { TranslationDict } from '../i18n/utils';
+
+interface Props {
+  lang?: string;
+  basePath?: string;
+  translations?: TranslationDict;
+}
+
+const { translations: rawTranslations } = Astro.props;
+const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
+
+---
+
+<div 
+  id="floating-news"
+  class="
+    fixed z-[30] flex flex-col gap-3
+    right-4 bottom-4
+    -translate-y-0
+    md:right-4 md:top-36 md:bottom-auto md:translate-y-0
+    md:w-[92vw] md:max-w-[96vw] md:min-w-0 md:items-end"
+>
+  <div
+    id="floating-news-card"
+    class="
+      relative flex items-center
+      bg-white/95 rounded-xl
+      shadow-lg
+      border border-gray-300
+      p-4
+      min-w-[280px] max-w-[400px]
+      transition-shadow
+      hover:shadow-xl
+      md:w-full md:min-w-0 md:p-4 md:text-[0.96rem]
+    "
+    style=""
+  >
+    <button
+      id="floating-news-close"
+      type="button"
+      title="Close"
+      class="
+        absolute top-[10px] right-4
+        bg-none border-0
+        text-[16px] text-[#98a2b3] p-0
+        cursor-pointer z-20
+        transition-colors duration-200
+        hover:text-[#1d3a69]
+      "
+    >
+      <svg width="16" height="16" fill="none" viewBox="0 0 16 16">
+        <path stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 4l8 8M12 4l-8 8"/>
+      </svg>
+    </button>
+    <div>
+      <a
+        href="https://openclaw.club/zh-cn/guides/quick-start"
+        target="_blank"
+        class="flex items-center gap-3 no-underline hover:bg-[#f4f9ff] rounded-[8px] transition-colors duration-100 px-1 py-1 group"
+        style="text-decoration:none;"
+      >
+        <div class="flex flex-col items-center gap-2">
+          <img
+            src="https://mintcdn.com/clawdhub/-t5HSeZ3Y_0_wH4i/assets/openclaw-logo-text-dark.png?w=1650&fit=max&auto=format&n=-t5HSeZ3Y_0_wH4i&q=85&s=6eaae3d9d226837a0c97999308cc5774"
+            alt="OpenClaw Logo"
+            class="w-full h-24 object-contain mb-1"
+            style="flex-shrink:0;"
+          />
+          <span class="text-[#1d3a69] font-semibold text-[1rem]">
+            {t(translations, 'floatingNews.title')}
+          </span>
+          <span class="text-[#1d3a69] font-semibold text-[0.875rem]">
+            {t(translations, 'floatingNews.subtitle')}
+          </span>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  // Optionally only show this once per session
+  function showNews() {
+    const el = document.getElementById('floating-news');
+    if (el) {
+      el.style.display = '';
+    }
+  }
+  function closeNews() {
+    const el = document.getElementById('floating-news');
+    if (el) {
+      el.style.display = 'none';
+    }
+  }
+  document.addEventListener('DOMContentLoaded', function () {
+    document.getElementById('floating-news-close')?.addEventListener('click', closeNews);
+    showNews();
+  });
+})();
+</script>
