@@ -1734,8 +1734,8 @@
       },
       "versions": [
         {
-          "name": "2.335.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.335.1/casdoor-2.335.1.tar.gz",
+          "name": "2.336.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.336.0/casdoor-2.336.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -1898,8 +1898,8 @@
       },
       "versions": [
         {
-          "name": "0.54.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/changedetectionio/0.54.1/changedetectionio-0.54.1.tar.gz",
+          "name": "0.54.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/changedetectionio/0.54.3/changedetectionio-0.54.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -1964,8 +1964,8 @@
       },
       "versions": [
         {
-          "name": "26.1.3-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clickhouse/26.1.3-alpine/clickhouse-26.1.3-alpine.tar.gz",
+          "name": "26.2.3-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clickhouse/26.2.3-alpine/clickhouse-26.2.3-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2086,8 +2086,8 @@
       },
       "versions": [
         {
-          "name": "25.3.5",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cloudbeaver/25.3.5/cloudbeaver-25.3.5.tar.gz",
+          "name": "26.0.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cloudbeaver/26.0.0/cloudbeaver-26.0.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2219,8 +2219,8 @@
       },
       "versions": [
         {
-          "name": "4.109.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/code-server/4.109.2/code-server-4.109.2.tar.gz",
+          "name": "4.109.5",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/code-server/4.109.5/code-server-4.109.5.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2328,8 +2328,8 @@
       },
       "versions": [
         {
-          "name": "1.22.4",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/consul/1.22.4/consul-1.22.4.tar.gz",
+          "name": "1.22.5",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/consul/1.22.5/consul-1.22.5.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2446,7 +2446,7 @@
     {
       "icon": "https://apps.1panel.pro/stable/1panel/copaw/logo.png",
       "name": "CoPaw",
-      "readMe": "## Introduction\n\n**CoPAW** is your Personal AI Assistant; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.\n\n## Core capabilities\n\n* **Every channel** — DingTalk, Feishu, QQ, Discord, iMessage, and more. One assistant, connect as you need.\n* **Under your control** — Memory and personalization under your control. Deploy locally or in the cloud; scheduled reminders to any channel.\n* **Skills** — Built-in cron; custom skills in your workspace, auto-loaded. No lock-in.\n",
+      "readMe": "## Introduction\n\n**CoPaw** is an open-source AI personal assistant from Alibaba; easy to install, deploy on your own machine or on the cloud; supports multiple chat apps with easily extensible capabilities.\n\n## Core capabilities\n\n* **Every channel** — DingTalk, Feishu, QQ, Discord, iMessage, and more. One assistant, connect as you need.\n* **Under your control** — Memory and personalization under your control. Deploy locally or in the cloud; scheduled reminders to any channel.\n* **Skills** — Built-in cron; custom skills in your workspace, auto-loaded. No lock-in.\n",
       "additionalProperties": {
         "architectures": [
           "amd64",
@@ -2455,14 +2455,14 @@
         "batchInstallSupport": true,
         "crossVersionUpdate": true,
         "description": {
-          "en": "Your Personal AI Assistant",
-          "ja": "あなたの AI パーソナルアシスタント",
-          "ko": "당신의 AI 개인 비서",
-          "ms": "Pembantu AI Peribadi Anda",
-          "pt-br": "Seu Assistente Pessoal de IA",
-          "ru": "Ваш персональный AI-ассистент",
-          "zh": "你的 AI 个人助理",
-          "zh-Hant": "你的 AI 个人助理"
+          "en": "An open-source AI personal assistant by Alibaba",
+          "ja": "アリババがオープンソース化したAIパーソナルアシスタント",
+          "ko": "알리바바의 오픈 소스 AI 개인 비서",
+          "ms": "Asisten Pribadi AI sumber terbuka oleh Alibaba",
+          "pt-br": "Um assistente pessoal de IA de código aberto da Alibaba",
+          "ru": "Открытый персональный помощник ИИ от Alibaba",
+          "zh": "阿里开源的 AI 个人助理",
+          "zh-Hant": "阿里開源的 AI 個人助理"
         },
         "document": "https://copaw.agentscope.io/docs/intro",
         "github": "https://github.com/agentscope-ai/copaw",
@@ -2470,8 +2470,8 @@
         "limit": 0,
         "name": "CoPaw",
         "recommend": 16,
-        "shortDescEn": "Your Personal AI Assistant",
-        "shortDescZh": "你的 AI 个人助理",
+        "shortDescEn": "An open-source AI personal assistant by Alibaba",
+        "shortDescZh": "阿里开源的 AI 个人助理",
         "tags": [
           "AI"
         ],
@@ -2480,8 +2480,8 @@
       },
       "versions": [
         {
-          "name": "0.0.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/0.0.3/copaw-0.0.3.tar.gz",
+          "name": "0.0.4",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/0.0.4/copaw-0.0.4.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -3933,8 +3933,8 @@
           }
         },
         {
-          "name": "8.19.11",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/elasticsearch/8.19.11/elasticsearch-8.19.11.tar.gz",
+          "name": "8.19.12",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/elasticsearch/8.19.12/elasticsearch-8.19.12.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -4369,8 +4369,8 @@
       },
       "versions": [
         {
-          "name": "2.60.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/filebrowser/2.60.0/filebrowser-2.60.0.tar.gz",
+          "name": "2.61.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/filebrowser/2.61.0/filebrowser-2.61.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -5124,8 +5124,8 @@
       },
       "versions": [
         {
-          "name": "12.7.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/forgejo-runner/12.7.0/forgejo-runner-12.7.0.tar.gz",
+          "name": "12.7.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/forgejo-runner/12.7.1/forgejo-runner-12.7.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -5438,8 +5438,8 @@
       },
       "versions": [
         {
-          "name": "6.19.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ghost/6.19.2/ghost-6.19.2.tar.gz",
+          "name": "6.19.4",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ghost/6.19.4/ghost-6.19.4.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -6054,8 +6054,8 @@
       },
       "versions": [
         {
-          "name": "2.9.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/gotify/2.9.0/gotify-2.9.0.tar.gz",
+          "name": "2.9.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/gotify/2.9.1/gotify-2.9.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -8739,8 +8739,8 @@
       },
       "versions": [
         {
-          "name": "1.36.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/logto/1.36.0/logto-1.36.0.tar.gz",
+          "name": "1.37.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/logto/1.37.1/logto-1.37.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9721,8 +9721,8 @@
       },
       "versions": [
         {
-          "name": "1.36.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/meilisearch/1.36.0/meilisearch-1.36.0.tar.gz",
+          "name": "1.37.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/meilisearch/1.37.0/meilisearch-1.37.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9987,8 +9987,8 @@
       },
       "versions": [
         {
-          "name": "0.58.7",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/metabase/0.58.7/metabase-0.58.7.tar.gz",
+          "name": "0.59.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/metabase/0.59.1/metabase-0.59.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13229,8 +13229,8 @@
       },
       "versions": [
         {
-          "name": "2.0.6",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.6/nocobase-2.0.6.tar.gz",
+          "name": "2.0.9",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.9/nocobase-2.0.9.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13431,8 +13431,8 @@
       },
       "versions": [
         {
-          "name": "0.301.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocodb/0.301.2/nocodb-0.301.2.tar.gz",
+          "name": "0.301.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocodb/0.301.3/nocodb-0.301.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13812,8 +13812,8 @@
       },
       "versions": [
         {
-          "name": "4.8.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nodebb/4.8.1/nodebb-4.8.1.tar.gz",
+          "name": "4.9.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nodebb/4.9.1/nodebb-4.9.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14381,8 +14381,8 @@
       },
       "versions": [
         {
-          "name": "0.17.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.17.1/ollama-0.17.1.tar.gz",
+          "name": "0.17.5",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.17.5/ollama-0.17.5.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14447,8 +14447,8 @@
       },
       "versions": [
         {
-          "name": "0.8.5",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama-webui/0.8.5/ollama-webui-0.8.5.tar.gz",
+          "name": "0.8.8",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama-webui/0.8.8/ollama-webui-0.8.8.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14776,8 +14776,8 @@
       },
       "versions": [
         {
-          "name": "2026.2.26",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/openclaw/2026.2.26/openclaw-2026.2.26.tar.gz",
+          "name": "2026.3.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/openclaw/2026.3.2/openclaw-2026.3.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -18045,8 +18045,8 @@
       },
       "versions": [
         {
-          "name": "2.0.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/planka/2.0.2/planka-2.0.2.tar.gz",
+          "name": "2.0.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/planka/2.0.3/planka-2.0.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -18539,8 +18539,8 @@
           }
         },
         {
-          "name": "14.21-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/14.21-alpine/postgresql-14.21-alpine.tar.gz",
+          "name": "14.22-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/14.22-alpine/postgresql-14.22-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -18605,8 +18605,8 @@
           }
         },
         {
-          "name": "15.16-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/15.16-alpine/postgresql-15.16-alpine.tar.gz",
+          "name": "15.17-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/15.17-alpine/postgresql-15.17-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -18671,8 +18671,8 @@
           }
         },
         {
-          "name": "16.12-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/16.12-alpine/postgresql-16.12-alpine.tar.gz",
+          "name": "16.13-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/16.13-alpine/postgresql-16.13-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -18737,8 +18737,8 @@
           }
         },
         {
-          "name": "17.8-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/17.8-alpine/postgresql-17.8-alpine.tar.gz",
+          "name": "17.9-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/17.9-alpine/postgresql-17.9-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -18803,8 +18803,8 @@
           }
         },
         {
-          "name": "18.2-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/18.2-alpine/postgresql-18.2-alpine.tar.gz",
+          "name": "18.3-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/postgresql/18.3-alpine/postgresql-18.3-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
