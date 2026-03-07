@@ -1,0 +1,331 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { Icon } from 'astro-icon/components'
+import "../styles/global.css";
+
+const CONSULT_URL = "https://work.weixin.qq.com/kfid/kfcb76a07704d4079d8";
+---
+
+<Layout
+  title="OpenClaw 一体机 - 1Panel OpenClaw 一体机，专为部门级部署而设计"
+  description="软硬一体、深度优化，开源即用。1Panel 运维面板 + MaxKB 知识库 + OpenClaw 智能体 + 本地 AI 模型 + FusionXpark 硬件，数据不出域，隐私与性能兼得。"
+>
+  <Fragment slot="main">
+    <Header />
+    <main class="relative z-10">
+    <!-- Hero（与站点首页 Hero 视觉一致） -->
+    <section id="heroSection" class="relative min-[80vh] flex items-center overflow-hidden bg-gray-50">
+      <!-- 浮动装饰（与 Hero.astro 一致） -->
+      <div class="absolute inset-0 overflow-hidden">
+        <div class="absolute top-20 left-10 w-20 h-20 rounded-full blur-2xl animate-float bg-1panel opacity-20"></div>
+        <div class="absolute top-40 right-20 w-32 h-32 rounded-full blur-2xl animate-float bg-1panel opacity-30" style="animation-delay: -2s;"></div>
+        <div class="absolute bottom-20 left-20 w-24 h-24 rounded-full blur-2xl animate-float bg-1panel opacity-40" style="animation-delay: -4s;"></div>
+        <div class="absolute bottom-40 right-10 w-16 h-16 rounded-full blur-2xl animate-float bg-1panel opacity-60" style="animation-delay: -6s;"></div>
+      </div>
+
+      <div class="relative z-10 container-custom pt-18 sm:pt-20 pb-20 sm:pb-28">
+        <div class="text-center max-w-4xl mx-auto">
+          <div class="fade-in-up inline-flex items-center px-4 py-2 mb-6 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
+            给员工一只虾🦞，给虾🦞一个家🏡
+          </div>
+          <h1 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8" style="animation-delay: 0.2s;">
+            <span class="block text-gray-800 mb-3">OpenClaw 一体机</span>
+            <span class="block text-1panel-gradient">专为部门级部署而生，支持同时运行 10 个小龙虾</span>
+          </h1>
+          <p class="fade-in-up text-base sm:text-lg text-gray-500 mb-10 leading-relaxed" style="animation-delay: 0.4s;">
+            数据不出域，隐私与性能兼得
+          </p>
+          <div class="fade-in-up" style="animation-delay: 0.5s;">
+            <a href={CONSULT_URL} target="_blank" rel="noopener noreferrer" class="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center">
+              立即咨询
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 软硬一体、深度优化：管知智模 + 硬件底座 -->
+    <section class="section-padding bg-gradient-to-b from-gray-50 to-white">
+      <div class="container-custom">
+        <div class="soft-hard-section rounded-3xl bg-white border border-gray-100 shadow-sm shadow-gray-200/60 overflow-hidden">
+          <!-- 标题区 -->
+          <div class="px-6 sm:px-10 pt-10 pb-8 text-center border-b border-gray-100">
+            <h2 class="text-3xl sm:text-4xl font-bold text-gray-800 mb-2">软硬一体、<span class="text-1panel-gradient">深度优化</span></h2>
+<p class="text-base text-gray-500 max-w-xl mx-auto">开源即用，专为部门级部署而生</p>
+          </div>
+
+          <!-- 上层：管知智模 四卡片 -->
+          <div class="p-6 sm:p-8">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5">
+              <div class="soft-hard-card rounded-xl bg-gray-50/80 border border-gray-100 p-5 transition-all duration-200 hover:border-indigo-100 hover:shadow-md">
+                <div class="w-11 h-11 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-base mb-3">管</div>
+                <h3 class="text-base font-bold text-gray-900 mb-1.5">1Panel 运维面板</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">1Panel 提供直观易用的 Web 管理界面，让用户轻松部署和管理 AI 智能体和模型。</p>
+              </div>
+              <div class="soft-hard-card rounded-xl bg-gray-50/80 border border-gray-100 p-5 transition-all duration-200 hover:border-indigo-100 hover:shadow-md">
+                <div class="w-11 h-11 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-base mb-3">知</div>
+                <h3 class="text-base font-bold text-gray-900 mb-1.5">MaxKB AI 知识库</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">高效构建部门专属知识库，支持多种格式的文档导入， 支持文本自动拆分和向量化。</p>
+              </div>
+              <div class="soft-hard-card rounded-xl bg-gray-50/80 border border-gray-100 p-5 transition-all duration-200 hover:border-indigo-100 hover:shadow-md">
+                <div class="w-11 h-11 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-base mb-3">智</div>
+                <h3 class="text-base font-bold text-gray-900 mb-1.5">能做事的 AI 助理</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">支持 OpenClaw / Copaw 多实例同时运行，支持对接国内主流聊天软件，内置常用 Skills。</p>
+              </div>
+              <div class="soft-hard-card rounded-xl bg-gray-50/80 border border-gray-100 p-5 transition-all duration-200 hover:border-indigo-100 hover:shadow-md">
+                <div class="w-11 h-11 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-base mb-3">模</div>
+                <h3 class="text-base font-bold text-gray-900 mb-1.5">本地 AI 模型</h3>
+                <p class="text-sm text-gray-600 leading-relaxed">基于 vLLM 运行 Qwen3.5-35B-A3B 多模态模型，智能密度高，并发效率高。</p>
+                <p class="text-xs text-gray-500 mt-2">Benchmark：<a href="https://github.com/adadrag/qwen3.5-dgx-spark" target="_blank" rel="noopener noreferrer" class="text-indigo-600 hover:underline">qwen3.5-dgx-spark</a></p>
+              </div>
+            </div>
+
+            <!-- 底座：硬件 -->
+            <div class="mt-6 rounded-xl bg-gradient-to-r from-gray-50 to-indigo-50/40 border border-gray-100 border-t-2 border-t-indigo-200 p-5 flex flex-col sm:flex-row sm:items-center gap-4">
+              <div class="w-12 h-12 rounded-lg bg-indigo-100 flex items-center justify-center text-indigo-600 font-bold text-lg shrink-0">硬</div>
+              <div class="min-w-0">
+                <h3 class="text-base font-bold text-gray-900 mb-1">FusionXpark 硬件</h3>
+                <p class="text-sm text-gray-600">巴掌大个人 AI 超算：128GB 统一内存、1 PFLOPS 算力、2TB 存储，1.2kg，办公桌即放即用。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 限时优惠 -->
+    <section class="relative w-full overflow-hidden bg-cover bg-no-repeat bg-center xpark-promo-bg">
+      <div class="relative w-full 2xl:w-1/2 xl:w-2/3">
+        <div class="py-12 sm:py-16 lg:py-20 px-6 sm:px-10 lg:pl-48 lg:pr-20">
+          <div class="promo-card rounded-3xl bg-white/90 backdrop-blur border border-gray-100 shadow-xl overflow-hidden">
+            <div class="px-6 sm:px-8 py-8 sm:py-10 space-y-8">
+              <div>
+                <h2 class="text-2xl sm:text-3xl font-bold text-gray-900 mb-3">抢鲜入手，尊享限时优惠</h2>
+                <p class="text-sm text-gray-600 leading-relaxed">
+                  <span class="font-semibold text-gray-800">飞致云</span> 与 <span class="font-semibold text-gray-800">超聚变</span> 为用户带来专属限时优惠。
+                </p>
+              </div>
+
+              <div class="space-y-8">
+                <!-- 软硬件统一条目 -->
+                <div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-4">硬件规格</h3>
+                  <div class="promo-item flex items-center gap-4 rounded-xl border-2 border-indigo-200 bg-white px-6 py-5 transition-all hover:border-indigo-300 hover:shadow-md">
+                    <div class="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-xl shrink-0">2T</div>
+                    <div class="min-w-0 flex-1">
+                      <div class="flex items-center mb-1">
+                        <span class="text-base sm:text-lg font-semibold text-gray-900">FusionXpark™ 2T</span>
+                        <span class="ml-3 px-2 py-0.5 text-xs rounded bg-indigo-100 text-indigo-600 font-semibold shrink-0">硬件</span>
+                      </div>
+                      <p class="text-sm text-gray-500">巴掌大个人 AI 超算，128GB 统一内存、1 PFLOPS 算力、2TB 存储，1.2kg，办公桌即放即用</p>
+                      <p class="text-xs text-gray-400 mt-2">* 含一年硬件保修服务</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-4">软件服务</h3>
+                  <div class="flex flex-col gap-4">
+                    <div class="promo-item flex items-center gap-4 rounded-xl border-2 border-indigo-200 bg-white px-6 py-5 transition-all hover:border-indigo-300 hover:shadow-md">
+                      <div class="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                        <img src="/favicon.png" alt="1Panel" class="w-8 h-8" />
+                      </div>
+                      <div class="min-w-0 flex-1">
+                        <div class="flex items-center mb-1">
+                          <span class="text-base sm:text-lg font-semibold text-gray-900">1Panel 专业版</span>
+                          <span class="ml-3 px-2 py-0.5 text-xs rounded bg-indigo-100 text-indigo-600 font-semibold shrink-0">软件</span>
+                        </div>
+                        <p class="text-sm text-gray-500">为 AI 场景设计的运维管理面板，零门槛一键部署与管理，不懂 IT 也能轻松上手。</p>
+                      </div>
+                    </div>
+                    <div class="promo-item flex items-center gap-4 rounded-xl border-2 border-indigo-200 bg-white px-6 py-5 transition-all hover:border-indigo-300 hover:shadow-md">
+                      <div class="w-14 h-14 rounded-xl bg-indigo-50 flex items-center justify-center shrink-0">
+                        <img src="/images/maxkb-icon.png" alt="MaxKB" class="w-8 h-8" />
+                      </div>
+                      <div class="min-w-0 flex-1">
+                        <div class="flex items-center mb-1">
+                          <span class="text-base sm:text-lg font-semibold text-gray-900">MaxKB 专业版</span>
+                          <span class="ml-3 px-2 py-0.5 text-xs rounded bg-indigo-100 text-indigo-600 font-semibold shrink-0">软件</span>
+                        </div>
+                        <p class="text-sm text-gray-500">高效构建部门专属知识库，支持多格式文档导入、文本自动拆分及向量检索。</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- 专属交流群权益说明 -->
+                <div>
+                  <h3 class="text-lg font-bold text-gray-900 mb-4">专属交流群</h3>
+                  <div class="promo-item flex items-center gap-4 rounded-xl border-2 border-purple-200 bg-white px-6 py-5 transition-all hover:border-purple-300 hover:shadow-md">
+                    <div class="w-14 h-14 rounded-xl bg-purple-50 flex items-center justify-center text-purple-500 font-bold text-xl shrink-0">
+                      <Icon name="tabler:users" class="w-8 h-8" />
+                    </div>
+                    <div class="min-w-0 flex-1">
+                      <div class="flex items-center mb-1">
+                        <span class="text-base sm:text-lg font-semibold text-gray-900">专属用户交流群</span>
+                        <span class="ml-3 px-2 py-0.5 text-xs rounded bg-purple-100 text-purple-600 font-semibold shrink-0">福利</span>
+                      </div>
+                      <p class="text-sm text-gray-500">
+                        购机后可加入专属 OpenClaw 用户交流群：应用场景、实践经验与案例分享，产品动态与最佳实践同步，与同行一起成长。
+                      </p>
+                      <p class="text-xs text-gray-400 mt-2">* 加群方式请见购机后产品说明或联系 1Panel 团队</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-5 pt-6 border-t border-gray-200">
+                <div>
+                  <p class="text-xs uppercase tracking-wider text-gray-400 mb-1">限时组合优惠</p>
+                  <h3 class="text-lg font-bold text-gray-900">价格合计</h3>
+                </div>
+                <div class="flex flex-wrap items-baseline gap-4 sm:gap-6">
+                  <span class="text-sm text-gray-500">原价合计 <span class="line-through ml-1 text-gray-600 font-semibold text-xl">¥99,000</span></span>
+                  <span class="text-sm font-semibold text-indigo-600">限时到手价 <span class="ml-1 text-2xl sm:text-3xl font-bold text-indigo-600">¥89,000</span></span>
+                  <a href="https://www.lxware.cn/uc/cloud/integral-mall/integral-product-zk6dauly/exchange" target="_blank" rel="noopener noreferrer" class="btn-primary w-full sm:w-auto inline-flex justify-center items-center px-6 py-3 text-base">立即咨询</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 硬件规格 -->
+    <section class="section-padding bg-white border-t border-gray-100 relative z-10">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+            <span class="text-1panel-gradient">硬件规格</span>
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">FusionXpark™ GB10 详细参数</p>
+        </div>
+        <div class="overflow-x-auto rounded-xl border border-gray-100 shadow-lg">
+          <table class="w-full text-left text-sm sm:text-base">
+            <thead class="bg-gray-50">
+              <tr>
+                <th class="px-6 sm:px-8 py-5 text-left text-base font-bold text-gray-800">规格名称</th>
+                <th class="px-6 sm:px-8 py-5 text-left text-base font-bold text-gray-800">规格参数</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-100 bg-white">
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">产品型号</td><td class="px-6 sm:px-8 py-5 text-gray-900">FusionXpark™ GB10</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">架构</td><td class="px-6 sm:px-8 py-5 text-gray-900">NVIDIA Grace Blackwell</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">GPU</td><td class="px-6 sm:px-8 py-5 text-gray-900">Blackwell 架构</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">CPU</td><td class="px-6 sm:px-8 py-5 text-gray-900">20 core Arm, 10 Cortex-X925 + 10 Cortex-A725</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">CUDA Core</td><td class="px-6 sm:px-8 py-5 text-gray-900 font-semibold">6144</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">Tensor Core</td><td class="px-6 sm:px-8 py-5 text-gray-900">第五代</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">Tensor 性能</td><td class="px-6 sm:px-8 py-5 text-gray-900 font-semibold">1 petaFLOP</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">系统内存</td><td class="px-6 sm:px-8 py-5 text-gray-900 font-semibold">128 GB LPDDR5x，统一系统内存</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">显存接口 | 显存带宽</td><td class="px-6 sm:px-8 py-5 text-gray-900">256 位 | 273 GB/s</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">存储</td><td class="px-6 sm:px-8 py-5 text-gray-900">2 TB NVMe M.2（自加密）</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">USB</td><td class="px-6 sm:px-8 py-5 text-gray-900">4 个 USB4 Type C</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">以太网</td><td class="px-6 sm:px-8 py-5 text-gray-900">1 个 RJ-45，10 GE</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">NIC</td><td class="px-6 sm:px-8 py-5 text-gray-900">ConnectX-7 Smart NIC</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">Wi-Fi</td><td class="px-6 sm:px-8 py-5 text-gray-900">Wi-Fi 7</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">蓝牙</td><td class="px-6 sm:px-8 py-5 text-gray-900">BT 5.4</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">显示器接口</td><td class="px-6 sm:px-8 py-5 text-gray-900">1× HDMI 2.1a</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">重量</td><td class="px-6 sm:px-8 py-5 text-gray-900">1.2 kg</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">尺寸</td><td class="px-6 sm:px-8 py-5 text-gray-900">150 mm × 150 mm × 50.5 mm</td></tr>
+              <tr class="hover:bg-indigo-50/50 transition-colors"><td class="px-6 sm:px-8 py-5 text-gray-700 font-medium">OS</td><td class="px-6 sm:px-8 py-5 text-gray-900">预装 NVIDIA DGX OS</td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- 本地 AI 模型性能（基于同款硬件实测） -->
+    <section class="section-padding bg-gradient-to-b from-white to-gray-50 border-t border-gray-100">
+      <div class="container-custom">
+        <div class="text-center mb-16">
+          <h2 class="text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+            <span class="text-1panel-gradient">本地 AI 模型</span>
+            性能
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">基于 FusionXpark（NVIDIA DGX Spark / GB10）同款硬件的 Qwen3.5-35B-A3B 实测数据，开源可复现</p>
+        </div>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 mb-8">
+          <!-- 推理速度 -->
+          <div class="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 bg-indigo-50/50">
+              <h3 class="text-lg font-bold text-gray-900">推理速度（vLLM，BF16）</h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-3 text-left font-semibold text-gray-700">场景</th>
+                    <th class="px-4 py-3 text-left font-semibold text-gray-700">输出长度</th>
+                    <th class="px-4 py-3 text-right font-semibold text-gray-700">速度</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr><td class="px-4 py-3 text-gray-700">短回复</td><td class="px-4 py-3 text-gray-600">128 tokens</td><td class="px-4 py-3 text-right font-semibold text-indigo-600">约 31 tok/s</td></tr>
+                  <tr><td class="px-4 py-3 text-gray-700">中等回复</td><td class="px-4 py-3 text-gray-600">1,024 tokens</td><td class="px-4 py-3 text-right font-semibold text-indigo-600">约 32 tok/s</td></tr>
+                  <tr><td class="px-4 py-3 text-gray-700">长回复</td><td class="px-4 py-3 text-gray-600">3,831 tokens</td><td class="px-4 py-3 text-right font-semibold text-indigo-600">约 32 tok/s</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="px-6 py-3 text-xs text-gray-500 border-t border-gray-100">首 token 延迟约 0.1s，输出长度变化下速度稳定</p>
+          </div>
+
+          <!-- 多用户并发 -->
+          <div class="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden">
+            <div class="px-6 py-4 border-b border-gray-100 bg-indigo-50/50">
+              <h3 class="text-lg font-bold text-gray-900">多用户并发（RAG 场景）</h3>
+            </div>
+            <div class="overflow-x-auto">
+              <table class="w-full text-sm">
+                <thead class="bg-gray-50">
+                  <tr>
+                    <th class="px-4 py-3 text-left font-semibold text-gray-700">并发用户</th>
+                    <th class="px-4 py-3 text-left font-semibold text-gray-700">适用场景</th>
+                    <th class="px-4 py-3 text-right font-semibold text-gray-700">总吞吐</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-gray-100">
+                  <tr><td class="px-4 py-3 text-gray-700">5～10 人</td><td class="px-4 py-3 text-gray-600">小团队助手</td><td class="px-4 py-3 text-right font-semibold text-indigo-600">65～82 tok/s</td></tr>
+                  <tr><td class="px-4 py-3 text-gray-700">20～50 人</td><td class="px-4 py-3 text-gray-600">部门级部署</td><td class="px-4 py-3 text-right font-semibold text-indigo-600">186～308 tok/s</td></tr>
+                  <tr><td class="px-4 py-3 text-gray-700">100 人</td><td class="px-4 py-3 text-gray-600">企业峰值</td><td class="px-4 py-3 text-right font-semibold text-indigo-600">约 424 tok/s</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="px-6 py-3 text-xs text-gray-500 border-t border-gray-100">200 token 回复、思考模式关闭，零错误完成</p>
+          </div>
+        </div>
+
+        <div class="rounded-2xl bg-white border border-gray-100 shadow-sm overflow-hidden mb-8">
+          <div class="px-6 py-4 border-b border-gray-100 bg-indigo-50/50">
+            <h3 class="text-lg font-bold text-gray-900">能力与基准</h3>
+          </div>
+          <div class="px-6 py-5">
+            <ul class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3 text-sm text-gray-700">
+              <li class="flex items-start gap-2"><span class="text-indigo-500 font-bold">·</span> 35B 总参数、3B 激活（MoE），推理成本低</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-500 font-bold">·</span> 原生 262K 上下文，可扩展至 1M+</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-500 font-bold">·</span> 多模态：文本、图像、视频输入</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-500 font-bold">·</span> 思考模式、工具调用 / MCP</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-500 font-bold">·</span> MMLU-Pro 85.3、GPQA Diamond 84.2</li>
+              <li class="flex items-start gap-2"><span class="text-indigo-500 font-bold">·</span> 经典推理题全通过，Apache 2.0 开源</li>
+            </ul>
+          </div>
+        </div>
+
+        <p class="text-center text-sm text-gray-500 mt-8">
+          数据来源：<a href="https://github.com/adadrag/qwen3.5-dgx-spark" target="_blank" rel="noopener noreferrer" class="text-1panel hover:underline font-medium">Qwen3.5-35B-A3B on NVIDIA DGX Spark</a>（安装、配置、Benchmark 与故障排查完整指南）
+jiajia        </p>
+      </div>
+    </section>
+    </main>
+    <Footer />
+  </Fragment>
+</Layout>
+
+<style>
+  .xpark-promo-bg {
+    background-image: url('https://www.xfusion.com/wp-content/uploads/2025/09/xpark-1-1.png');
+  }
+</style>
+
