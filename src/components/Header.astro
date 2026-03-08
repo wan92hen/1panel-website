@@ -1,7 +1,7 @@
 ---
 // Header component for 1Panel website
 import { Icon } from "astro-icon/components";
-import Fit2cloudHeader from "./Fit2cloudHeader.astro"
+import Fit2cloudHeader from "./Fit2cloudHeader.astro";
 ---
 
 <Fit2cloudHeader />
@@ -19,6 +19,14 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro"
 
       <!-- Desktop Navigation -->
       <div class="hidden lg:flex items-center space-x-8">
+        <a
+          href="/openclaw.html"
+          target="_blank"
+          class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group"
+        >
+          OpenClaw一体机
+          <span class="relative -left-1 bottom-2"> 🔥 </span>
+        </a>
         <a
           href="https://www.lxware.cn/1panel?code=bunus"
           target="_blank"
@@ -82,18 +90,18 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro"
     <div id="mobile-menu" class="lg:hidden hidden pb-4">
       <div class="flex flex-col space-y-4">
         <a
-          href="https://vsbt.1panel.cn/"
+          href="/openclaw.html"
           target="_blank"
           class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          >产品优势</a
-        >
+          >OpenClaw一体机
+          <span class="relative -left-1 bottom-2"> 🔥 </span>
+        </a>
         <a
           href="https://www.lxware.cn/1panel?code=bunus"
           target="_blank"
           class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group"
         >
           专业版
-          <span class="relative -left-1 bottom-2"> 🔥 </span>
         </a>
         <a
           href="https://1panel.cn/docs/v2/installation/package_installation/"
