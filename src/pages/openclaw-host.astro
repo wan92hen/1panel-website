@@ -4,13 +4,11 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { Icon } from 'astro-icon/components'
 import "../styles/global.css";
-
-const CONSULT_URL = "https://work.weixin.qq.com/kfid/kfcb76a07704d4079d8";
 ---
 
 <Layout
   title="OpenClaw一体机 | 飞致云与超聚变联合打造"
-  description="专为团队/部门级部署而生的OpenClaw软硬一体机，数据不出域，隐私与性能兼得。"
+  description="专为团队/部门级部署而生的OpenClaw一体机，数据不出域，隐私与性能兼得。"
 >
   <Fragment slot="main">
     <Header />
@@ -60,7 +58,7 @@ const CONSULT_URL = "https://work.weixin.qq.com/kfid/kfcb76a07704d4079d8";
       </div>
     </section>
 
-    <!-- 软硬一体、深度优化：管知智模 + 硬件底座 -->
+    <!-- 一站式配齐、深度优化：管知智模 + 硬件底座 -->
     <section class="section-padding bg-gradient-to-b from-gray-50 to-white">
       <div class="container-custom">
         <div class="soft-hard-section rounded-3xl bg-white border border-gray-100 shadow-sm shadow-gray-200/60 overflow-hidden">
@@ -91,7 +89,7 @@ const CONSULT_URL = "https://work.weixin.qq.com/kfid/kfcb76a07704d4079d8";
               <div class="soft-hard-card rounded-xl bg-gray-50/80 border border-gray-100 p-5 transition-all duration-200 hover:border-indigo-100 hover:shadow-md">
                 <div class="w-11 h-11 rounded-lg bg-indigo-50 flex items-center justify-center text-indigo-600 font-bold text-base mb-3">模</div>
                 <h3 class="text-base font-bold text-gray-900 mb-1.5">本地 AI 模型</h3>
-                <p class="text-sm text-gray-600 leading-relaxed">基于 vLLM 运行 Qwen3.5-35B-A3B 多模态模型，智能密度高，并发效率高。</p>
+                <p class="text-sm text-gray-600 leading-relaxed">基于 vLLM 运行 Qwen3.5-35B-A3B-FP8 多模态模型，智能密度高，并发效率高。</p>
               </div>
             </div>
 
@@ -308,6 +306,8 @@ const CONSULT_URL = "https://work.weixin.qq.com/kfid/kfcb76a07704d4079d8";
 
         <p class="text-center text-sm text-gray-500 mt-8">
           数据来源：<a href="https://github.com/adadrag/qwen3.5-dgx-spark" target="_blank" rel="noopener noreferrer" class="text-1panel hover:underline font-medium">Qwen3.5-35B-A3B on NVIDIA DGX Spark</a>、<a href="https://blog.csdn.net/u010026928/article/details/158582591" target="_blank" rel="noopener noreferrer" class="text-1panel hover:underline font-medium">【实测】NVIDIA DGX Spark 本地部署 Qwen3.5-35B-A3B-FP8 完整教程</a></p>
+        <p class="text-center text-sm text-gray-500 mt-8">
+          Model Card：<a href="https://huggingface.co/Qwen/Qwen3.5-35B-A3B-FP8" target="_blank" rel="noopener noreferrer" class="text-1panel hover:underline font-medium">Huggingface: Qwen3.5-35B-A3B-FP8</a></p>
       </div>
     </section>
     </main>
