@@ -102,11 +102,17 @@ jobs:
           ref: master
           token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
+      - name: Download build artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: github-pages
+          path: dist
+
       - name: Copy build output to website-2020/1panel
         run: |
           rm -rf website-2020/1panel
           mkdir -p website-2020/1panel
-          cp -r ${{ env.BUILD_PATH }}/dist/* website-2020/1panel/
+          cp -r dist/* website-2020/1panel/
 
       - name: Configure Git
         run: |
