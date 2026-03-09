@@ -100,7 +100,7 @@ jobs:
           repository: fit2cloud-dev/website-2020
           path: website-2020
           ref: master
-          token: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
       - name: Copy build output to website-2020/1panel
         run: |
