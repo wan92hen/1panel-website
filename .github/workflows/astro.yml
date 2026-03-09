@@ -89,3 +89,39 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
+  sync-website-2020:
+    name: Sync to website-2020 1panel Directory
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Checkout website-2020 repository
+        uses: actions/checkout@v4
+        with:
+          repository: fit2cloud-dev/website-2020
+          path: website-2020
+          ref: master
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Copy build output to website-2020/1panel
+        run: |
+          rm -rf website-2020/1panel
+          mkdir -p website-2020/1panel
+          cp -r ${{ env.BUILD_PATH }}/dist/* website-2020/1panel/
+
+      - name: Configure Git
+        run: |
+          cd website-2020
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+
+      - name: Create Pull Request to website-2020
+        uses: peter-evans/create-pull-request@v6
+        with:
+          path: website-2020
+          commit-message: "chore: 更新 1panel 目录为最新构建内容"
+          branch: update-1panel-from-prod
+          title: "chore: 自动同步 1panel 目录内容"
+          body: |
+            通过自动化流程同步 1panel 目录内容至最新
+            来源: https://github.com/${{ github.repository }}
+          base: master
