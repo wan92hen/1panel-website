@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
+import Statistics from "../components/Statistics.astro";
 import { Icon } from 'astro-icon/components'
 import "../styles/global.css";
 ---
@@ -10,6 +11,7 @@ import "../styles/global.css";
   title="OpenClaw一体机 | 飞致云与超聚变联合打造"
   description="专为团队/部门级部署而生的OpenClaw一体机，数据不出域，隐私与性能兼得。"
 >
+  <Statistics slot="head" />
   <Fragment slot="main">
     <Header />
     <main class="relative z-10">
