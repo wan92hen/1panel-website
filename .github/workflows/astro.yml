@@ -112,7 +112,10 @@ jobs:
         run: |
           rm -rf website-2020/1panel
           mkdir -p website-2020/1panel
-          cp -r dist/* website-2020/1panel/
+          cd dist
+          tar -cvf artifact.tar
+          rm -rf artifact.tar
+          cp -r ./* ../website-2020/1panel/
 
       - name: Configure Git
         run: |
