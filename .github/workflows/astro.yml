@@ -113,7 +113,7 @@ jobs:
           rm -rf website-2020/1panel
           mkdir -p website-2020/1panel
           cd dist
-          tar -cvf artifact.tar
+          tar -xvf artifact.tar
           rm -rf artifact.tar
           cp -r ./* ../website-2020/1panel/
 
