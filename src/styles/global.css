@@ -75,6 +75,54 @@
   .container-custom {
     @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
   }
+
+  /* Blog article: Markdown → HTML (plain selectors so Tailwind applies reliably) */
+  .blog-content {
+    @apply text-gray-800 text-base leading-[1.8];
+  }
+  .blog-content h2 {
+    @apply text-2xl font-bold text-gray-900 mt-14 mb-5 scroll-mt-24;
+  }
+  .blog-content h3 {
+    @apply text-xl font-semibold text-gray-900 mt-6 mb-4;
+  }
+  .blog-content p {
+    @apply text-gray-800 leading-[1.85] mb-6 last:mb-0;
+  }
+  .blog-content ul,
+  .blog-content ol {
+    @apply text-gray-800 mb-4 pl-6 space-y-3;
+  }
+  .blog-content ul > li {
+    @apply list-disc marker:text-1panel;
+  }
+  .blog-content ol > li {
+    @apply list-decimal marker:text-gray-500;
+  }
+  .blog-content a {
+    @apply text-1panel font-medium underline decoration-1panel/30 underline-offset-2 hover:decoration-1panel hover:text-blue-700 transition-colors;
+  }
+  .blog-content img {
+    @apply rounded-xl border border-gray-200/80 my-6 max-w-full h-auto shadow-md;
+  }
+  .blog-content hr {
+    @apply my-14 border-gray-200;
+  }
+  .blog-content strong {
+    @apply font-semibold text-gray-900;
+  }
+  .blog-content blockquote {
+    @apply border-l-4 border-1panel/40 pl-5 py-2 my-10 text-gray-700 italic bg-gray-50/90 rounded-r-lg;
+  }
+  .blog-content code {
+    @apply text-sm px-1.5 py-0.5 rounded bg-gray-100 text-gray-900 font-mono;
+  }
+  .blog-content pre {
+    @apply rounded-xl border border-gray-200 bg-gray-100 text-gray-900 p-5 overflow-x-auto my-10 text-sm leading-relaxed;
+  }
+  .blog-content pre code {
+    @apply bg-transparent text-gray-900 p-0 rounded-none text-sm font-mono;
+  }
 }
 
 @layer utilities {

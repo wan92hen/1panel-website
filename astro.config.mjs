@@ -1,12 +1,14 @@
 import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import react from '@astrojs/react';
+import sitemap from '@astrojs/sitemap';
 
 import icon from 'astro-icon';
 
 export default defineConfig({
+  site: 'https://1panel.pro',
   // base: './',
-  integrations: [tailwind(), react(), icon()],
+  integrations: [tailwind(), react(), icon(), sitemap()],
   output: 'static',
   build: {
     assets: 'assets',

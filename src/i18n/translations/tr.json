@@ -5,11 +5,20 @@
   },
   "header": {
     "pricing": "Fiyatlandırma",
+    "blog": "Blog",
     "appStore": "Uygulama Mağazası",
     "discussions": "Tartışmalar",
     "docs": "Dökümanlar",
     "demo": "Demo",
     "github": "GitHub"
+  },
+  "blogs": {
+    "pageTitle": "Blog",
+    "pageDescription": "1Panel, self-hosting ve sunucu yönetimi hakkında öğreticiler ve haberler.",
+    "heading": "Blog",
+    "subheading": "1Panel ekibinden kılavuzlar ve güncellemeler.",
+    "articleLanguages": "Makaleyi diğer dillerde okuyun",
+    "fallbackToEnglish": "Bu makale seçilen dilde henüz yok. İngilizce sürüm gösteriliyor."
   },
   "hero": {
     "title1": "Yönetmesi kolay",

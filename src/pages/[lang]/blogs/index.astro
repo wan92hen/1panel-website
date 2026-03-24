@@ -1,0 +1,114 @@
+---
+import { Icon } from 'astro-icon/components';
+import Layout from '../../../layouts/Layout.astro';
+import Header from '../../../components/Header.astro';
+import Footer from '../../../components/Footer.astro';
+import LanguageModal from '../../../components/LanguageModal.astro';
+import BlogPageDecor from '../../../components/blog/BlogPageDecor.astro';
+import { getCollection } from 'astro:content';
+import { SUPPORTED_LOCALES } from '../../../i18n/config';
+import { getTranslations, t, getBasePath } from '../../../i18n/utils';
+import {
+  sortPostsByDate,
+  blogPostPath,
+  getPostsForLocale,
+  articleSlugFromEntry,
+  BLOG_DATE_LOCALE,
+} from '../../../lib/blog';
+import type { Locale } from '../../../i18n/config';
+import '../../../styles/global.css';
+
+export function getStaticPaths() {
+  return SUPPORTED_LOCALES.map((lang) => ({ params: { lang }, props: { lang } }));
+}
+
+const { lang } = Astro.params;
+const translations = getTranslations(lang ?? 'en');
+const basePath = getBasePath(lang);
+const title = `${t(translations, 'blogs.pageTitle')} | 1Panel`;
+const description = t(translations, 'blogs.pageDescription');
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const allPosts = await getCollection('blog');
+const posts = sortPostsByDate(getPostsForLocale(allPosts, lang ?? 'en'));
+const dateLocale = BLOG_DATE_LOCALE[(lang ?? 'en') as Locale] ?? 'en-US';
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  basePath={basePath}
+  canonicalUrl={canonicalUrl}
+  keywords="1Panel,blog,PHP,WordPress,Linux,OpenResty,SSL,tutorial"
+>
+  <Fragment slot="main">
+    <Header lang={lang} basePath={basePath} translations={translations} />
+    <main class="relative z-10 min-h-screen">
+      <div class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
+        <BlogPageDecor />
+        <section class="section-padding relative z-10">
+          <div class="container-custom max-w-4xl">
+            <header class="text-center mb-14 lg:mb-16">
+              <h1 class="fade-in-up text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
+                <span class="text-1panel-gradient">{t(translations, 'blogs.heading')}</span>
+              </h1>
+              <p
+                class="fade-in-up text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
+                style="animation-delay: 0.1s;"
+              >
+                {t(translations, 'blogs.subheading')}
+              </p>
+            </header>
+            <ul class="space-y-5">
+              {posts.map((post, i) => (
+                <li class="fade-in-up" style={`animation-delay: ${0.15 + i * 0.05}s`}>
+                  <a
+                    href={blogPostPath(lang, articleSlugFromEntry(post))}
+                    class="card group flex gap-4 sm:gap-5 p-5 sm:p-6 hover:border-1panel hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
+                  >
+                    <div
+                      class="flex-shrink-0 w-12 h-12 sm:w-14 sm:h-14 rounded-xl bg-gradient-to-br from-blue-50 to-white flex items-center justify-center border border-blue-100/80 shadow-sm group-hover:border-1panel/30 transition-colors"
+                      aria-hidden="true"
+                    >
+                      <Icon name="carbon:document-blank" class="w-6 h-6 sm:w-7 sm:h-7 text-1panel" />
+                    </div>
+                    <div class="min-w-0 flex-1 text-left">
+                      <h2 class="text-lg sm:text-xl font-semibold text-gray-800 group-hover:text-1panel transition-colors mb-2">
+                        {post.data.title}
+                      </h2>
+                      <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-3 line-clamp-2">
+                        {post.data.description}
+                      </p>
+                      <div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
+                        <Icon name="carbon:calendar" class="w-4 h-4 flex-shrink-0 opacity-70" />
+                        <time datetime={post.data.pubDate.toISOString()}>
+                          {post.data.pubDate.toLocaleDateString(dateLocale, {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric',
+                          })}
+                        </time>
+                      </div>
+                    </div>
+                    <div class="hidden sm:flex flex-shrink-0 items-center self-center text-gray-400 group-hover:text-1panel transition-colors">
+                      <Icon name="carbon:chevron-right" class="w-5 h-5" />
+                    </div>
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </section>
+      </div>
+    </main>
+    <Footer lang={lang} basePath={basePath} translations={translations} />
+    <LanguageModal />
+  </Fragment>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    z-index: 1;
+  }
+</style>

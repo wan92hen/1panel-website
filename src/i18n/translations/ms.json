@@ -5,11 +5,20 @@
   },
   "header": {
     "pricing": "Harga",
+    "blog": "Blog",
     "appStore": "App Store",
     "discussions": "Perbincangan",
     "docs": "Dokumentasi",
     "demo": "Demo",
     "github": "GitHub"
+  },
+  "blogs": {
+    "pageTitle": "Blog",
+    "pageDescription": "Tutorial dan berita tentang 1Panel, self-hosting, dan pengurusan pelayan.",
+    "heading": "Blog",
+    "subheading": "Panduan dan kemas kini daripada pasukan 1Panel.",
+    "articleLanguages": "Artikel dalam bahasa lain",
+    "fallbackToEnglish": "Artikel belum tersedia dalam bahasa yang dipilih. Memaparkan versi bahasa Inggeris."
   },
   "hero": {
     "title1": "Mudah diurus",

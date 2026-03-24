@@ -5,11 +5,20 @@
   },
   "header": {
     "pricing": "요금",
+    "blog": "블로그",
     "appStore": "앱 스토어",
     "discussions": "토론",
     "docs": "문서",
     "demo": "데모",
     "github": "GitHub"
+  },
+  "blogs": {
+    "pageTitle": "블로그",
+    "pageDescription": "1Panel, 셀프 호스팅 및 서버 관리에 대한 튜토리얼과 뉴스.",
+    "heading": "블로그",
+    "subheading": "1Panel 팀의 가이드와 업데이트.",
+    "articleLanguages": "다른 언어로 읽기",
+    "fallbackToEnglish": "선택한 언어로 된 글이 아직 없습니다. 영어 버전을 표시합니다."
   },
   "hero": {
     "title1": "쉽게 관리",

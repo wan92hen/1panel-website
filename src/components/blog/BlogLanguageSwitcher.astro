@@ -1,0 +1,44 @@
+---
+import { SUPPORTED_LOCALES, LOCALE_LABELS, type Locale } from '../../i18n/config';
+import { blogPostPath } from '../../lib/blog';
+import { t, type TranslationDict } from '../../i18n/utils';
+
+interface Props {
+  currentLang: Locale;
+  articleSlug: string;
+  translations: TranslationDict;
+}
+
+const { currentLang, articleSlug, translations } = Astro.props;
+---
+
+<nav
+  class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-3 pt-6 mt-8 border-t border-gray-100"
+  aria-label={t(translations, 'blogs.articleLanguages')}
+>
+  <span class="text-sm font-medium text-gray-600">{t(translations, 'blogs.articleLanguages')}</span>
+  <ul class="flex flex-wrap gap-2">
+    {SUPPORTED_LOCALES.map((locale) => {
+      const isCurrent = locale === currentLang;
+      const href = locale === 'en' ? blogPostPath(undefined, articleSlug) : blogPostPath(locale, articleSlug);
+      return (
+        <li>
+          <a
+            href={href}
+            hreflang={locale}
+            lang={locale}
+            class:list={[
+              'inline-block text-sm px-3 py-1.5 rounded-full border transition-colors',
+              isCurrent
+                ? 'font-semibold border-1panel bg-blue-50 text-1panel'
+                : 'border-gray-200 text-gray-600 hover:border-1panel/40 hover:text-1panel hover:bg-blue-50/50',
+            ]}
+            aria-current={isCurrent ? 'page' : undefined}
+          >
+            {LOCALE_LABELS[locale]}
+          </a>
+        </li>
+      );
+    })}
+  </ul>
+</nav>

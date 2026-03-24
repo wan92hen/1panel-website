@@ -5,11 +5,20 @@
   },
   "header": {
     "pricing": "料金",
+    "blog": "ブログ",
     "appStore": "アプリストア",
     "discussions": "ディスカッション",
     "docs": "ドキュメント",
     "demo": "デモ",
     "github": "GitHub"
+  },
+  "blogs": {
+    "pageTitle": "ブログ",
+    "pageDescription": "1Panel、セルフホスティング、サーバー管理に関するチュートリアルとニュース。",
+    "heading": "ブログ",
+    "subheading": "1Panelチームからのガイドと最新情報。",
+    "articleLanguages": "他の言語で読む",
+    "fallbackToEnglish": "この言語の記事はまだありません。英語版を表示しています。"
   },
   "hero": {
     "title1": "管理が簡単",

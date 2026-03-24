@@ -4,6 +4,7 @@ import { Icon } from 'astro-icon/components'
 import { SUPPORTED_LOCALES, getLocaleLabel } from '../i18n/config';
 import { t, getTranslations } from '../i18n/utils';
 import type { TranslationDict } from '../i18n/utils';
+import { publicAsset } from '../lib/asset';
 
 interface Props {
   lang?: string;
@@ -12,6 +13,7 @@ interface Props {
 }
 
 const { lang, basePath = './', translations: rawTranslations } = Astro.props;
+const logoSrc = publicAsset('images/logo-blue.png');
 const translations = rawTranslations && Object.keys(rawTranslations).length > 0 ? rawTranslations : getTranslations('en');
 const prefix = lang ? `/${lang}` : '';
 ---
@@ -21,8 +23,14 @@ const prefix = lang ? `/${lang}` : '';
     <div class="flex items-center justify-between h-16 lg:h-20">
       <!-- Logo -->
       <div class="flex items-center space-x-3">
-        <a href={prefix || '/'}>
-          <img src={`${basePath}images/logo-blue.png`} alt="1Panel Logo" class="h-12">
+        <a href={prefix || '/'} class="inline-flex items-center shrink-0">
+          <img
+            src={logoSrc}
+            alt="1Panel Logo"
+            class="h-12 w-auto max-h-12 object-contain object-left"
+            loading="eager"
+            decoding="async"
+          />
         </a>
       </div>
 
@@ -30,7 +38,10 @@ const prefix = lang ? `/${lang}` : '';
       <div class="hidden lg:flex items-center space-x-8">
         <a href={`${prefix}/pricing`} target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
           {t(translations, 'header.pricing')}
-        </a>        
+        </a>
+        <a href={prefix ? `${prefix}/blogs.html` : '/blogs.html'} class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
+          {t(translations, 'header.blog')}
+        </a>
         <a href="https://docs.1panel.pro/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">{t(translations, 'header.docs')}</a>
         <a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">{t(translations, 'header.discussions')}</a>
         <!-- Language Switcher -->
@@ -72,7 +83,10 @@ const prefix = lang ? `/${lang}` : '';
       <div class="flex flex-col space-y-4">
         <a href={`${prefix}/pricing`} target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
           {t(translations, 'header.pricing')}
-        </a>        
+        </a>
+        <a href={prefix ? `${prefix}/blogs.html` : '/blogs.html'} class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
+          {t(translations, 'header.blog')}
+        </a>
         <a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">{t(translations, 'header.discussions')}</a>
         <a href="https://1panel.pro/docs" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">{t(translations, 'header.docs')}</a>
         {lang && (

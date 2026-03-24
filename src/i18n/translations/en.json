@@ -5,11 +5,20 @@
   },
   "header": {
     "pricing": "Pricing",
+    "blog": "Blog",
     "appStore": "App Store",
     "discussions": "Discussions",
     "docs": "Docs",
     "demo": "Demo",
     "github": "GitHub"
+  },
+  "blogs": {
+    "pageTitle": "Blog",
+    "pageDescription": "Tutorials and news about 1Panel, self-hosting, and server management.",
+    "heading": "Blog",
+    "subheading": "Guides and updates from the 1Panel team.",
+    "articleLanguages": "Article in other languages",
+    "fallbackToEnglish": "This article is not yet available in your selected language. Showing the English version."
   },
   "hero": {
     "title1": "Easy to manage",

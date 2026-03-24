@@ -5,11 +5,20 @@
   },
   "header": {
     "pricing": "Цены",
+    "blog": "Блог",
     "appStore": "Магазин приложений",
     "discussions": "Обсуждения",
     "docs": "Документация",
     "demo": "Демо",
     "github": "GitHub"
+  },
+  "blogs": {
+    "pageTitle": "Блог",
+    "pageDescription": "Руководства и новости о 1Panel, self-hosting и администрировании серверов.",
+    "heading": "Блог",
+    "subheading": "Руководства и обновления от команды 1Panel.",
+    "articleLanguages": "Статья на других языках",
+    "fallbackToEnglish": "Эта статья пока недоступна на выбранном языке. Показана английская версия."
   },
   "hero": {
     "title1": "Легко управлять",
