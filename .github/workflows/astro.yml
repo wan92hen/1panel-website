@@ -99,7 +99,7 @@ jobs:
         with:
           repository: fit2cloud-dev/website-2026
           path: website-2026
-          ref: master
+          ref: main
           token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
       - name: Download build artifact
