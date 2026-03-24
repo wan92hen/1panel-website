@@ -134,4 +134,4 @@ jobs:
           body: |
             通过自动化流程同步 1panel 目录内容至最新
             来源: https://github.com/${{ github.repository }}
-          base: master
+          base: main
