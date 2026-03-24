@@ -89,16 +89,16 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-  sync-website-2020:
-    name: Sync to website-2020 1panel Directory
+  sync-website-2026:
+    name: Sync to website-2026 1panel Directory
     runs-on: ubuntu-latest
     needs: build
     steps:
-      - name: Checkout website-2020 repository
+      - name: Checkout website-2026 repository
         uses: actions/checkout@v4
         with:
-          repository: fit2cloud-dev/website-2020
-          path: website-2020
+          repository: fit2cloud-dev/website-2026
+          path: website-2026
           ref: master
           token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
@@ -108,26 +108,26 @@ jobs:
           name: github-pages
           path: dist
 
-      - name: Copy build output to website-2020/1panel
+      - name: Copy build output to website-2026/1panel
         run: |
-          rm -rf website-2020/1panel
-          mkdir -p website-2020/1panel
+          rm -rf website-2026/1panel
+          mkdir -p website-2026/1panel
           cd dist
           tar -xvf artifact.tar
           rm -rf artifact.tar
-          cp -r ./* ../website-2020/1panel/
+          cp -r ./* ../website-2026/1panel/
 
       - name: Configure Git
         run: |
-          cd website-2020
+          cd website-2026
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
 
-      - name: Create Pull Request to website-2020
+      - name: Create Pull Request to website-2026
         uses: peter-evans/create-pull-request@v6
         with:
           token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
-          path: website-2020
+          path: website-2026
           commit-message: "chore: 更新 1panel 目录为最新构建内容"
           branch: update-1panel-from-prod
           title: "chore: 自动同步 1panel 目录内容"
