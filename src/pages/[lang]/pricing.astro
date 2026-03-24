@@ -15,7 +15,7 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const translations = getTranslations(lang ?? 'en');
 const basePath = getBasePath(lang);
-const title = t(translations, 'meta.defaultTitle');
+const title = `${t(translations, 'header.pricing')} - 1Panel`;
 ---
 
 <Layout title={title} lang={lang} basePath={basePath}>
