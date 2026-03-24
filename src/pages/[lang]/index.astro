@@ -1,6 +1,5 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import Statistics from '../../components/Statistics.astro';
 import Header from '../../components/Header.astro';
 import Hero from '../../components/Hero.astro';
 import Features from '../../components/Features.astro';
@@ -26,7 +25,6 @@ const description = t(translations, 'meta.defaultDescription');
 ---
 
 <Layout title={title} description={description} lang={lang} basePath={basePath}>
-  <Statistics slot="head" />
   <Fragment slot="main">
     <Header lang={lang} basePath={basePath} translations={translations} />
     <main>
