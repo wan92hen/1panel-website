@@ -10,9 +10,10 @@ interface Props {
   translations?: TranslationDict;
 }
 
-const { basePath = './', translations: rawTranslations } = Astro.props;
+const { lang, basePath = './', translations: rawTranslations } = Astro.props;
 const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
 const typewriterTexts = (translations.hero as Record<string, unknown>)?.typewriter as string[] | undefined ?? ['OpenClaw Agents', 'Local LLMs', 'Websites', 'Databases', 'Files', 'Scheduled Tasks'];
+const prefix = lang ? `/${lang}` : '';
 ---
 
 <section
@@ -110,6 +111,14 @@ const typewriterTexts = (translations.hero as Record<string, unknown>)?.typewrit
         >
         {t(translations, 'hero.subtitle')}
         </p>
+
+        <div class="fade-in-up mb-8" style="animation-delay: 0.45s;">
+          <div class="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-4 py-2 text-sm text-blue-900">
+            <Icon name="carbon:currency-dollar" class="w-4 h-4" />
+            <span>Free OSS forever. Pro plans from $80/year.</span>
+            <a href={`${prefix}/pricing`} class="font-semibold underline underline-offset-2 hover:text-blue-700">See pricing</a>
+          </div>
+        </div>
 
         <!-- Statistics -->
         <div
