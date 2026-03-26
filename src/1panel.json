@@ -15687,14 +15687,14 @@
       },
       "versions": [
         {
-          "name": "2026.3.13",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/openclaw/2026.3.13/openclaw-2026.3.13.tar.gz",
+          "name": "2026.3.24",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/openclaw/2026.3.24/openclaw-2026.3.24.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
                 "default": 18789,
                 "edit": true,
-                "envKey": "PANEL_APP_PORT_HTTPS",
+                "envKey": "PANEL_APP_PORT_HTTP",
                 "label": {
                   "en": "Web UI Port",
                   "es-es": "Puerto web",
