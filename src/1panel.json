@@ -1859,8 +1859,8 @@
       },
       "versions": [
         {
-          "name": "2.368.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.368.0/casdoor-2.368.0.tar.gz",
+          "name": "2.369.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.369.0/casdoor-2.369.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -3737,8 +3737,8 @@
       },
       "versions": [
         {
-          "name": "29.6.5",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/drawio/29.6.5/drawio-29.6.5.tar.gz",
+          "name": "29.6.6",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/drawio/29.6.6/drawio-29.6.6.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -6195,8 +6195,8 @@
       },
       "versions": [
         {
-          "name": "18.10.0-ce.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/gitlab/18.10.0-ce.0/gitlab-18.10.0-ce.0.tar.gz",
+          "name": "18.10.1-ce.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/gitlab/18.10.1-ce.0/gitlab-18.10.1-ce.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -7206,8 +7206,8 @@
       },
       "versions": [
         {
-          "name": "12.4.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/grafana/12.4.1/grafana-12.4.1.tar.gz",
+          "name": "12.4.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/grafana/12.4.2/grafana-12.4.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9316,8 +9316,8 @@
       },
       "versions": [
         {
-          "name": "1.8.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/langflow/1.8.1/langflow-1.8.1.tar.gz",
+          "name": "1.8.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/langflow/1.8.2/langflow-1.8.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9848,8 +9848,8 @@
       },
       "versions": [
         {
-          "name": "0.8.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/maddy-mail/0.8.2/maddy-mail-0.8.2.tar.gz",
+          "name": "0.9.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/maddy-mail/0.9.1/maddy-mail-0.9.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -11523,239 +11523,6 @@
                 "required": true,
                 "rule": "paramPort",
                 "type": "number"
-              }
-            ]
-          }
-        }
-      ]
-    },
-    {
-      "icon": "https://apps.1panel.pro/stable/1panel/moltbot/logo.png",
-      "name": "Moltbot",
-      "readMe": "## Introduction\n\n**Moltbot** is an open-source, self-hosted personal AI assistant and multi-model gateway. It centralizes model access, sessions, and tool execution in a private environment, making it suitable for teams or individuals who need controlled AI automation.\n\n## Highlights\n\n- **Self-hosted**: Deploy locally or in a private environment with full data control.\n- **Multi-model**: One entry point for multiple model providers and configs.\n- **Extensible**: Supports tool calling and multi-channel integrations.\n- **Lightweight**: Runs with Docker and fits well into 1Panel workflows.\n\n## Common Providers \u0026 Models\n\n- OpenAI: `openai/gpt-4o-mini`\n- Anthropic: `anthropic/claude-3-7-sonnet`\n- Gemini: `gemini/gemini-1.5-pro`\n- Groq: `groq/llama-3.1-70b-versatile`\n- Mistral: `mistral/large-latest`\n- Cohere: `cohere/command-r-plus`\n- MiniMax: `minimax/MiniMax-M2.1`\n- Moonshot (Kimi): `moonshot/kimi-k2.5`\n- Qwen: `qwen/qwen2.5-coder-32b-instruct`\n- ZAI (GLM): `zai/glm-4.7`\n- DeepSeek: `deepseek/deepseek-chat`\n\n\n\n## Obtain the Moltbot Token\n\nOpen the **moltbot.json** file and copy the value of `\"gateway.auth.token\"`.  \nUse this token to access the Moltbot application.\n\n```yaml\n  \"gateway\": {\n    \"mode\": \"local\",\n    \"auth\": {\n      \"mode\": \"token\",\n      \"token\": \"c9917c5a066beeb26266d09baed99495e7563b33c771e89a\"\n    },\n    ***\n```\n",
-      "additionalProperties": {
-        "architectures": [
-          "amd64"
-        ],
-        "batchInstallSupport": true,
-        "crossVersionUpdate": true,
-        "description": {
-          "en": "Your own personal AI assistant",
-          "es-es": "Tu propio asistente personal de IA",
-          "ja": "あなた専用のパーソナルAIアシスタント",
-          "ko": "나만의 개인 AI 비서",
-          "ms": "Pembantu AI peribadi anda sendiri",
-          "pt-br": "Seu assistente pessoal de IA",
-          "ru": "Ваш личный помощник на базе ИИ",
-          "tr": "Kendi kisisel yapay zeka asistaniniz",
-          "zh": "开源、自托管的个人 AI 助手",
-          "zh-Hant": "開源、自托管的個人 AI 助手"
-        },
-        "document": "https://docs.molt.bot/install/docker",
-        "github": "https://github.com/moltbot/moltbot",
-        "key": "moltbot",
-        "limit": 0,
-        "name": "Moltbot",
-        "recommend": 0,
-        "shortDescEn": "Your own personal AI assistant",
-        "shortDescZh": "开源、自托管的个人 AI 助手",
-        "tags": [
-          "AI"
-        ],
-        "type": "website",
-        "website": "https://docs.molt.bot"
-      },
-      "versions": [
-        {
-          "name": "2026.1.25",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/moltbot/2026.1.25/moltbot-2026.1.25.tar.gz",
-          "additionalProperties": {
-            "formFields": [
-              {
-                "default": 18789,
-                "edit": true,
-                "envKey": "PANEL_APP_PORT_HTTP",
-                "label": {
-                  "en": "Web UI Port",
-                  "es-es": "Puerto web",
-                  "ja": "Web UIポート",
-                  "ko": "웹 UI 포트",
-                  "ms": "Port Web UI",
-                  "pt-br": "Porta da Web UI",
-                  "ru": "Порт веб-интерфейса",
-                  "tr": "Web UI Bağlantı Noktası",
-                  "zh": "Web UI 端口",
-                  "zh-Hant": "Web UI 埠"
-                },
-                "labelEn": "Web UI Port",
-                "labelZh": "Web UI 端口",
-                "required": true,
-                "rule": "paramPort",
-                "type": "number"
-              },
-              {
-                "default": 18790,
-                "edit": true,
-                "envKey": "PANEL_APP_PORT_BRIDGE",
-                "label": {
-                  "en": "Bridge Port",
-                  "es-es": "Bridge Puerto",
-                  "ja": "ブリッジポート",
-                  "ko": "브리지 포트",
-                  "ms": "Port Bridge",
-                  "pt-br": "Porta Bridge",
-                  "ru": "Порт моста",
-                  "tr": "Bridge Bağlantı Noktası",
-                  "zh": "Bridge 端口",
-                  "zh-Hant": "Bridge 埠"
-                },
-                "labelEn": "Bridge Port",
-                "labelZh": "Bridge 端口",
-                "required": true,
-                "rule": "paramPort",
-                "type": "number"
-              },
-              {
-                "default": "deepseek",
-                "edit": true,
-                "envKey": "PROVIDER",
-                "label": {
-                  "en": "Provider",
-                  "es-es": "Proveedor",
-                  "ja": "プロバイダー",
-                  "ko": "공급자",
-                  "ms": "Penyedia",
-                  "pt-br": "Provedor",
-                  "ru": "Провайдер",
-                  "tr": "Saglayici",
-                  "zh": "模型提供商",
-                  "zh-Hant": "供應商"
-                },
-                "labelEn": "Provider",
-                "labelZh": "模型提供商",
-                "required": true,
-                "type": "select",
-                "values": [
-                  {
-                    "label": "DeepSeek",
-                    "value": "deepseek"
-                  },
-                  {
-                    "label": "MiniMax",
-                    "value": "minimax"
-                  },
-                  {
-                    "label": "Moonshot (Kimi)",
-                    "value": "moonshot"
-                  },
-                  {
-                    "label": "Qwen",
-                    "value": "qwen"
-                  },
-                  {
-                    "label": "OpenAI",
-                    "value": "openai"
-                  },
-                  {
-                    "label": "Anthropic",
-                    "value": "anthropic"
-                  },
-                  {
-                    "label": "Gemini",
-                    "value": "gemini"
-                  },
-                  {
-                    "label": "Groq",
-                    "value": "groq"
-                  },
-                  {
-                    "label": "Mistral",
-                    "value": "mistral"
-                  },
-                  {
-                    "label": "Cohere",
-                    "value": "cohere"
-                  },
-                  {
-                    "label": "ZAI (GLM)",
-                    "value": "zai"
-                  }
-                ]
-              },
-              {
-                "default": "deepseek/deepseek-chat",
-                "edit": true,
-                "envKey": "MODEL",
-                "label": {
-                  "en": "Model",
-                  "es-es": "Modelo",
-                  "ja": "モデル",
-                  "ko": "모델",
-                  "ms": "Model",
-                  "pt-br": "Modelo",
-                  "ru": "Модель",
-                  "tr": "Model adi",
-                  "zh": "模型",
-                  "zh-Hant": "模型"
-                },
-                "labelEn": "Model",
-                "labelZh": "模型",
-                "required": true,
-                "type": "text"
-              },
-              {
-                "default": "",
-                "edit": true,
-                "envKey": "API_KEY",
-                "label": {
-                  "en": "API Key",
-                  "es-es": "API Clave",
-                  "ja": "APIキー",
-                  "ko": "API 키",
-                  "ms": "Kunci API",
-                  "pt-br": "Chave da API",
-                  "ru": "API ключ",
-                  "tr": "API Anahtarı",
-                  "zh": "API Key",
-                  "zh-Hant": "API 金鑰"
-                },
-                "labelEn": "API Key",
-                "labelZh": "API Key",
-                "required": true,
-                "type": "text"
-              },
-              {
-                "default": "",
-                "description": {
-                  "en": "After installation, enter the installation directory and obtain the Token from the ./data/conf/moltbot.json file. You can later click the Parameters button to edit the application and enter the Token into the input field for convenient use.\nAfter opening the page in your browser, append ?token=xxx to the URL, for example: http://your_address:port?token=xxx, to access it.",
-                  "es-es": "Despues de la instalacion, entre en el directorio de instalacion y obtenga el token del archivo ./data/conf/moltbot.json. Mas adelante puede hacer clic en el boton Parametros para editar la aplicacion e introducir el token en el campo correspondiente para usarlo comodamente.\nDespues de abrir la pagina en el navegador, anada ?token=xxx a la URL, por ejemplo: http://your_address:port?token=xxx, para acceder.",
-                  "ja": "インストール後、インストールディレクトリに入り、./data/conf/moltbot.json ファイルからトークンを取得します。後でパラメータボタンをクリックしてアプリケーションを編集し、そのトークンを入力フィールドに入力して便利に使用できます。\nブラウザでページを開いた後、URL に ?token=xxx を追加します。例：http://your_address:port?token=xxx でアクセスできます。",
-                  "ko": "설치 후 설치 디렉토리로 이동하여 ./data/conf/moltbot.json 파일에서 토큰을 가져옵니다. 나중에 매개변수 버튼을 클릭하여 애플리케이션을 편집하고 입력 필드에 토큰을 입력하여 편리하게 사용할 수 있습니다.\n브라우저에서 페이지를 연 후 URL에 ?token=xxx를 추가합니다. 예: http://your_address:port?token=xxx에 액세스할 수 있습니다.",
-                  "ms": "Selepas pemasangan, masuk ke direktori pemasangan dan dapatkan Token dari fail ./data/conf/moltbot.json. Anda boleh klik butang Parameter kemudian untuk mengedit aplikasi dan masukkan Token ke dalam medan input untuk kemudahan penggunaan.\nSelepas membuka halaman di pelayar anda, tambahkan ?token=xxx pada URL, contohnya: http://your_address:port?token=xxx, untuk mengaksesnya.",
-                  "pt-br": "Após a instalação, entre no diretório de instalação e obtenha o Token do arquivo ./data/conf/moltbot.json. Você pode clicar no botão Parâmetros posteriormente para editar o aplicativo e inserir o Token no campo de entrada para uso conveniente.\nApós abrir a página no seu navegador, adicione ?token=xxx ao URL, por exemplo: http://your_address:port?token=xxx, para acessá-lo.",
-                  "ru": "После установки войдите в каталог установки и получите токен из файла ./data/conf/moltbot.json. Позже вы можете нажать кнопку Параметры, чтобы отредактировать приложение и ввести токен в поле ввода для удобного использования.\nПосле открытия страницы в вашем браузере добавьте ?token=xxx к URL, например: http://your_address:port?token=xxx, чтобы получить к нему доступ.",
-                  "tr": "Yüklemeden sonra, yükleme dizinine girin ve ./data/conf/moltbot.json dosyasından Token'ı alın. Daha sonra Parametreler düğmesine tıklayarak uygulamayı düzenleyebilir ve Token'ı giriş alanına girerek kolay kullanım sağlayabilirsiniz.\nTarayıcınızda sayfayı açtıktan sonra URL'ye ?token=xxx ekleyin, örneğin: http://your_address:port?token=xxx, erişmek için.",
-                  "zh": "安装成功后，进入安装目录，从 ./data/conf/moltbot.json 文件中获取 Token，后续可以点击参数按钮编辑应用，将该 Token 填入输入框，方便使用。\n浏览器打开后，在地址栏 URL 后追加 ?token=xxx，如：http://your_address:port?token=xxx 即可访问。",
-                  "zh-hant": "安裝成功後，進入安裝目錄，從 ./data/conf/moltbot.json 文件中獲取 Token，後續可以點擊參數按鈕編輯應用，將該 Token 填入輸入框，方便使用。\n瀏覽器打開後，在地址欄 URL 後追加 ?token=xxx，如：http://your_address:port?token=xxx 即可訪問。"
-                },
-                "disabled": true,
-                "edit": true,
-                "envKey": "MOLTBOT_GATEWAY_TOKEN",
-                "label": {
-                  "en": "Token",
-                  "es-es": "Token de acceso",
-                  "ja": "トークン",
-                  "ko": "토큰",
-                  "ms": "Token",
-                  "pt-br": "Token",
-                  "ru": "Токен",
-                  "tr": "Belirteç",
-                  "zh": "令牌",
-                  "zh-Hant": "權杖"
-                },
-                "labelEn": "Token",
-                "labelZh": "令牌",
-                "type": "text"
               }
             ]
           }
@@ -13480,8 +13247,8 @@
       },
       "versions": [
         {
-          "name": "2.13.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/n8n/2.13.2/n8n-2.13.2.tar.gz",
+          "name": "2.13.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/n8n/2.13.3/n8n-2.13.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14256,8 +14023,8 @@
       },
       "versions": [
         {
-          "name": "2.0.25",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.25/nocobase-2.0.25.tar.gz",
+          "name": "2.0.26",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.26/nocobase-2.0.26.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14882,8 +14649,8 @@
       },
       "versions": [
         {
-          "name": "4.10.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nodebb/4.10.0/nodebb-4.10.0.tar.gz",
+          "name": "4.10.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nodebb/4.10.1/nodebb-4.10.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -15497,8 +15264,8 @@
       },
       "versions": [
         {
-          "name": "0.18.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.18.2/ollama-0.18.2.tar.gz",
+          "name": "0.18.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.18.3/ollama-0.18.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -15567,8 +15334,8 @@
       },
       "versions": [
         {
-          "name": "0.8.10",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama-webui/0.8.10/ollama-webui-0.8.10.tar.gz",
+          "name": "0.8.11",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama-webui/0.8.11/ollama-webui-0.8.11.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -20541,8 +20308,8 @@
       },
       "versions": [
         {
-          "name": "2.39.1-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/portainer-ce/2.39.1-alpine/portainer-ce-2.39.1-alpine.tar.gz",
+          "name": "2.40.0-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/portainer-ce/2.40.0-alpine/portainer-ce-2.40.0-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -25573,8 +25340,8 @@
       },
       "versions": [
         {
-          "name": "4.0.7",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/starrocks/4.0.7/starrocks-4.0.7.tar.gz",
+          "name": "4.0.8",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/starrocks/4.0.8/starrocks-4.0.8.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
