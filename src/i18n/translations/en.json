@@ -127,7 +127,7 @@
   },
   "footer": {
     "companyName": "LXware",
-    "companyDesc": "A wholly-owned subsidiary of FIT2CLOUD, responsible for the commercial operation of FIT2CLOUD's open-source projects 1Panel and JumpServer in the global market.",
+    "companyDesc": "LWware is responsible for the commercial operation of FIT2CLOUD's open-source projects 1Panel and JumpServer in the global market.",
     "resources": "Resources",
     "documentation": "Documentation",
     "githubRepo": "GitHub Repository",
@@ -136,7 +136,6 @@
     "youtube": "Youtube Channel",
     "discord": "Chat on Discord",
     "links": "Links",
-    "fit2cloud": "FIT2CLOUD",
     "jumpserver": "JumpServer",
     "aboutLxware": "About LXware",
     "contactUs": "Contact Us",

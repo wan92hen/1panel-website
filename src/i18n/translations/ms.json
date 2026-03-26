@@ -31,7 +31,14 @@
     "demo": "Demo",
     "installNow": "Pasang Sekarang",
     "scrollDown": "Tatal ke bawah",
-    "typewriter": ["OpenClaw Agents", "LLM Tempatan", "Laman web", "Pangkalan data", "Fail", "Tugas berjadual"]
+    "typewriter": [
+      "OpenClaw Agents",
+      "LLM Tempatan",
+      "Laman web",
+      "Pangkalan data",
+      "Fail",
+      "Tugas berjadual"
+    ]
   },
   "features": {
     "title": "Ciri",
@@ -63,7 +70,6 @@
     },
     "appStore": {
       "title": "App",
-      "titleHighlight": "Store",
       "desc": "1Panel menyediakan pelbagai alat dan aplikasi sumber terbuka berkualiti tinggi, memudahkan pemasangan dan kemas kini.",
       "curated": "Aplikasi sumber terbuka terpilih",
       "install": "Pemasangan dan penempatan satu klik",
@@ -128,7 +134,7 @@
   },
   "footer": {
     "companyName": "LXware",
-    "companyDesc": "Anak syarikat FIT2CLOUD yang bertanggungjawab bagi operasi komersial projek sumber terbuka 1Panel dan JumpServer di pasaran global.",
+    "companyDesc": "LXware bertanggungjawab terhadap operasi komersial projek sumber terbuka FIT2CLOUD, 1Panel dan JumpServer, di pasaran global.",
     "resources": "Sumber",
     "documentation": "Dokumentasi",
     "githubRepo": "Repositori GitHub",
@@ -137,7 +143,6 @@
     "youtube": "Saluran YouTube",
     "discord": "Sembang di Discord",
     "links": "Pautan",
-    "fit2cloud": "FIT2CLOUD",
     "jumpserver": "JumpServer",
     "aboutLxware": "Tentang LXware",
     "contactUs": "Hubungi kami",

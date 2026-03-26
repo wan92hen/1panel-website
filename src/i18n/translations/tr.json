@@ -31,7 +31,14 @@
     "demo": "Demo",
     "installNow": "Şimdi yükle",
     "scrollDown": "Aşağı kaydır",
-    "typewriter": ["OpenClaw Agents", "Yerel LLM'ler", "Web siteleri", "Veritabanları", "Dosyalar", "Zamanlanmış görevler"]
+    "typewriter": [
+      "OpenClaw Agents",
+      "Yerel LLM'ler",
+      "Web siteleri",
+      "Veritabanları",
+      "Dosyalar",
+      "Zamanlanmış görevler"
+    ]
   },
   "features": {
     "title": "Güçlü",
@@ -63,7 +70,6 @@
     },
     "appStore": {
       "title": "Uygulama",
-      "titleHighlight": "mağazası",
       "desc": "1Panel, yüksek kaliteli açık kaynak araçlar ve uygulamalar sunar; kurulum ve güncellemeler kolaydır.",
       "curated": "Seçilmiş açık kaynak uygulamalar",
       "install": "Tek tıkla kurulum ve dağıtım",
@@ -128,7 +134,7 @@
   },
   "footer": {
     "companyName": "LXware",
-    "companyDesc": "FIT2CLOUD'ın iştiraki; 1Panel ve JumpServer açık kaynak projelerinin küresel pazar operasyonlarından sorumludur.",
+    "companyDesc": "LXware, FIT2CLOUD'ın açık kaynak projeleri olan 1Panel ve JumpServer'ın küresel pazardaki ticari operasyonlarından sorumludur.",
     "resources": "Kaynaklar",
     "documentation": "Dökümanlar",
     "githubRepo": "GitHub deposu",
@@ -137,7 +143,6 @@
     "youtube": "YouTube kanalı",
     "discord": "Discord'da sohbet",
     "links": "Bağlantılar",
-    "fit2cloud": "FIT2CLOUD",
     "jumpserver": "JumpServer",
     "aboutLxware": "LXware hakkında",
     "contactUs": "İletişim",

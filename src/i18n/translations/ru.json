@@ -31,7 +31,14 @@
     "demo": "Демо",
     "installNow": "Установить",
     "scrollDown": "Прокрутите вниз",
-    "typewriter": ["OpenClaw Agents", "Локальные LLM", "Сайты", "Базы данных", "Файлы", "Запланированные задачи"]
+    "typewriter": [
+      "OpenClaw Agents",
+      "Локальные LLM",
+      "Сайты",
+      "Базы данных",
+      "Файлы",
+      "Запланированные задачи"
+    ]
   },
   "features": {
     "title": "Мощные",
@@ -63,7 +70,6 @@
     },
     "appStore": {
       "title": "Магазин",
-      "titleHighlight": "приложений",
       "desc": "1Panel предлагает набор качественных приложений с открытым кодом с простой установкой и обновлением.",
       "curated": "Подборка приложений с открытым кодом",
       "install": "Установка и развёртывание в один клик",
@@ -128,7 +134,7 @@
   },
   "footer": {
     "companyName": "LXware",
-    "companyDesc": "Дочерняя компания FIT2CLOUD; коммерческая эксплуатация открытых проектов 1Panel и JumpServer на мировом рынке.",
+    "companyDesc": "LXware отвечает за коммерческую эксплуатацию open-source проектов FIT2CLOUD — 1Panel и JumpServer — на глобальном рынке.",
     "resources": "Ресурсы",
     "documentation": "Документация",
     "githubRepo": "Репозиторий GitHub",
@@ -137,7 +143,6 @@
     "youtube": "Канал YouTube",
     "discord": "Чат в Discord",
     "links": "Ссылки",
-    "fit2cloud": "FIT2CLOUD",
     "jumpserver": "JumpServer",
     "aboutLxware": "О LXware",
     "contactUs": "Связаться с нами",

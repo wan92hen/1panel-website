@@ -31,7 +31,14 @@
     "demo": "Demo",
     "installNow": "Instalar ahora",
     "scrollDown": "Desplazar hacia abajo",
-    "typewriter": ["OpenClaw Agents", "LLMs locales", "Sitios web", "Bases de datos", "Archivos", "Tareas programadas"]
+    "typewriter": [
+      "OpenClaw Agents",
+      "LLMs locales",
+      "Sitios web",
+      "Bases de datos",
+      "Archivos",
+      "Tareas programadas"
+    ]
   },
   "features": {
     "title": "Potentes",
@@ -63,7 +70,6 @@
     },
     "appStore": {
       "title": "Tienda de",
-      "titleHighlight": "apps",
       "desc": "1Panel ofrece una amplia selección de herramientas y aplicaciones de código abierto de alta calidad, con instalación y actualizaciones sencillas.",
       "curated": "Aplicaciones open source seleccionadas",
       "install": "Instalación y despliegue en un clic",
@@ -128,7 +134,7 @@
   },
   "footer": {
     "companyName": "LXware",
-    "companyDesc": "Filial de FIT2CLOUD responsable de la operación comercial de los proyectos open source 1Panel y JumpServer en el mercado global.",
+    "companyDesc": "LXware es responsable de la operación comercial de los proyectos de código abierto 1Panel y JumpServer de FIT2CLOUD en el mercado global.",
     "resources": "Recursos",
     "documentation": "Documentación",
     "githubRepo": "Repositorio en GitHub",
@@ -137,7 +143,6 @@
     "youtube": "Canal de YouTube",
     "discord": "Chat en Discord",
     "links": "Enlaces",
-    "fit2cloud": "FIT2CLOUD",
     "jumpserver": "JumpServer",
     "aboutLxware": "Sobre LXware",
     "contactUs": "Contacto",

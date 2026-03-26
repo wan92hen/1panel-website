@@ -31,7 +31,14 @@
     "demo": "デモ",
     "installNow": "今すぐインストール",
     "scrollDown": "下にスクロール",
-    "typewriter": ["OpenClaw Agents", "ローカルLLM", "ウェブサイト", "データベース", "ファイル", "スケジュールタスク"]
+    "typewriter": [
+      "OpenClaw Agents",
+      "ローカルLLM",
+      "ウェブサイト",
+      "データベース",
+      "ファイル",
+      "スケジュールタスク"
+    ]
   },
   "features": {
     "title": "強力な",
@@ -127,7 +134,7 @@
   },
   "footer": {
     "companyName": "LXware",
-    "companyDesc": "FIT2CLOUDの完全子会社。オープンソースプロジェクト1PanelとJumpServerのグローバル市場における商業運営を担当しています。",
+    "companyDesc": "LXwareは、FIT2CLOUDのオープンソースプロジェクトである1PanelとJumpServerのグローバル市場における商業運営を担当しています。",
     "resources": "リソース",
     "documentation": "ドキュメント",
     "githubRepo": "GitHubリポジトリ",
@@ -136,7 +143,6 @@
     "youtube": "YouTubeチャンネル",
     "discord": "Discordでチャット",
     "links": "リンク",
-    "fit2cloud": "FIT2CLOUD",
     "jumpserver": "JumpServer",
     "aboutLxware": "LXwareについて",
     "contactUs": "お問い合わせ",

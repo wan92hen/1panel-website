@@ -31,7 +31,14 @@
     "demo": "데모",
     "installNow": "지금 설치",
     "scrollDown": "아래로 스크롤",
-    "typewriter": ["OpenClaw Agents", "로컬 LLM", "웹사이트", "데이터베이스", "파일", "예약 작업"]
+    "typewriter": [
+      "OpenClaw Agents",
+      "로컬 LLM",
+      "웹사이트",
+      "데이터베이스",
+      "파일",
+      "예약 작업"
+    ]
   },
   "features": {
     "title": "강력한",
@@ -63,7 +70,6 @@
     },
     "appStore": {
       "title": "앱",
-      "titleHighlight": "스토어",
       "desc": "1Panel은 다양한 고품질 오픈 소스 도구와 앱을 선별하여 설치 및 업데이트를 쉽게 합니다.",
       "curated": "엄선된 오픈 소스 앱",
       "install": "원클릭 설치 및 배포",
@@ -128,7 +134,7 @@
   },
   "footer": {
     "companyName": "LXware",
-    "companyDesc": "FIT2CLOUD의 자회사로, 오픈 소스 프로젝트 1Panel과 JumpServer의 글로벌 상업 운영을 담당합니다.",
+    "companyDesc": "LXware는 FIT2CLOUD의 오픈 소스 프로젝트인 1Panel과 JumpServer의 글로벌 시장 상업 운영을 담당합니다.",
     "resources": "리소스",
     "documentation": "문서",
     "githubRepo": "GitHub 저장소",
@@ -137,7 +143,6 @@
     "youtube": "YouTube 채널",
     "discord": "Discord 채팅",
     "links": "링크",
-    "fit2cloud": "FIT2CLOUD",
     "jumpserver": "JumpServer",
     "aboutLxware": "LXware 소개",
     "contactUs": "문의하기",
