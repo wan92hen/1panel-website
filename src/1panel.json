@@ -1652,8 +1652,8 @@
       },
       "versions": [
         {
-          "name": "3.16.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/bytebase/3.16.0/bytebase-3.16.0.tar.gz",
+          "name": "3.16.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/bytebase/3.16.1/bytebase-3.16.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -1859,8 +1859,8 @@
       },
       "versions": [
         {
-          "name": "2.364.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.364.2/casdoor-2.364.2.tar.gz",
+          "name": "2.368.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.368.0/casdoor-2.368.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2237,8 +2237,8 @@
       },
       "versions": [
         {
-          "name": "26.0.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cloudbeaver/26.0.0/cloudbeaver-26.0.0.tar.gz",
+          "name": "26.0.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cloudbeaver/26.0.1/cloudbeaver-26.0.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2657,8 +2657,8 @@
       },
       "versions": [
         {
-          "name": "0.1.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/0.1.0/copaw-0.1.0.tar.gz",
+          "name": "0.2.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/0.2.0/copaw-0.2.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2728,8 +2728,8 @@
       },
       "versions": [
         {
-          "name": "3.1.12",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dashy/3.1.12/dashy-3.1.12.tar.gz",
+          "name": "3.1.13",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dashy/3.1.13/dashy-3.1.13.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2798,8 +2798,8 @@
       },
       "versions": [
         {
-          "name": "0.19.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dbhub/0.19.0/dbhub-0.19.0.tar.gz",
+          "name": "0.19.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dbhub/0.19.1/dbhub-0.19.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -3737,8 +3737,8 @@
       },
       "versions": [
         {
-          "name": "29.6.4",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/drawio/29.6.4/drawio-29.6.4.tar.gz",
+          "name": "29.6.5",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/drawio/29.6.5/drawio-29.6.5.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -5493,8 +5493,8 @@
       },
       "versions": [
         {
-          "name": "12.7.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/forgejo-runner/12.7.2/forgejo-runner-12.7.2.tar.gz",
+          "name": "12.7.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/forgejo-runner/12.7.3/forgejo-runner-12.7.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -7505,8 +7505,8 @@
       },
       "versions": [
         {
-          "name": "2026.3.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/home-assistant/2026.3.3/home-assistant-2026.3.3.tar.gz",
+          "name": "2026.3.4",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/home-assistant/2026.3.4/home-assistant-2026.3.4.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -10667,8 +10667,8 @@
       },
       "versions": [
         {
-          "name": "1.39.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/meilisearch/1.39.0/meilisearch-1.39.0.tar.gz",
+          "name": "1.40.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/meilisearch/1.40.0/meilisearch-1.40.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13480,8 +13480,8 @@
       },
       "versions": [
         {
-          "name": "2.12.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/n8n/2.12.3/n8n-2.12.3.tar.gz",
+          "name": "2.13.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/n8n/2.13.2/n8n-2.13.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14072,8 +14072,8 @@
       },
       "versions": [
         {
-          "name": "3.90.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nexus/3.90.1/nexus-3.90.1.tar.gz",
+          "name": "3.90.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nexus/3.90.2/nexus-3.90.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14256,8 +14256,8 @@
       },
       "versions": [
         {
-          "name": "2.0.24",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.24/nocobase-2.0.24.tar.gz",
+          "name": "2.0.25",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.25/nocobase-2.0.25.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14810,8 +14810,8 @@
       },
       "versions": [
         {
-          "name": "4.1.7",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/node-red/4.1.7/node-red-4.1.7.tar.gz",
+          "name": "4.1.8",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/node-red/4.1.8/node-red-4.1.8.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -22922,8 +22922,8 @@
           }
         },
         {
-          "name": "8.6.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/redis/8.6.1/redis-8.6.1.tar.gz",
+          "name": "8.6.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/redis/8.6.2/redis-8.6.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -25684,8 +25684,8 @@
       },
       "versions": [
         {
-          "name": "2.7.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/stirling-pdf/2.7.3/stirling-pdf-2.7.3.tar.gz",
+          "name": "2.8.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/stirling-pdf/2.8.0/stirling-pdf-2.8.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -25755,8 +25755,8 @@
       },
       "versions": [
         {
-          "name": "1.149.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/synapse/1.149.1/synapse-1.149.1.tar.gz",
+          "name": "1.150.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/synapse/1.150.0/synapse-1.150.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -26480,8 +26480,8 @@
       },
       "versions": [
         {
-          "name": "6.5.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/trendradar/6.5.1/trendradar-6.5.1.tar.gz",
+          "name": "6.5.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/trendradar/6.5.2/trendradar-6.5.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -27704,8 +27704,8 @@
       },
       "versions": [
         {
-          "name": "4.7.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/wallos/4.7.3/wallos-4.7.3.tar.gz",
+          "name": "4.8.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/wallos/4.8.0/wallos-4.8.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {

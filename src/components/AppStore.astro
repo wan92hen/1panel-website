@@ -12,8 +12,9 @@ interface Props {
   translations?: TranslationDict;
 }
 
-const { basePath = './', translations: rawTranslations } = Astro.props;
+const { lang, basePath = './', translations: rawTranslations } = Astro.props;
 const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
+const prefix = lang ? `/${lang}` : '';
 
 interface App {
   icon: string;
@@ -218,7 +219,12 @@ function formatDownloads(downloads: number): string {
           <!-- Apps Grid -->
           <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {category.apps.map((app: App, index: number) => (
-              <div class="fade-in-up card group hover:scale-105" style={`animation-delay: ${index * 0.05}s;`}>
+              <a
+                href={`/apps/${app.additionalProperties?.key ?? ''}`}
+                class="fade-in-up card group hover:scale-105 block focus:outline-none focus:ring-2 focus:ring-1panel/40"
+                style={`animation-delay: ${index * 0.05}s;`}
+                aria-label={`View ${app.name} deployment guide`}
+              >
                 <div class="flex items-start space-x-4">
                   <!-- App Icon -->
                   <div class="flex-shrink-0">
@@ -253,7 +259,7 @@ function formatDownloads(downloads: number): string {
                     )}
                   </div>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
           
