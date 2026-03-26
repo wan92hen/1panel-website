@@ -63,9 +63,9 @@ const prefix = lang ? `/${lang}` : '';
             <Icon name="carbon:demo" class="w-5 h-5 mr-2" />
             {t(translations, 'header.demo')}
           </a>
-          <a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="btn-primary text-sm inline-flex items-center">
-            <Icon name="carbon:logo-github" class="w-5 h-5 mr-2" />
-            {t(translations, 'header.github')}
+          <a href="mailto:hi@lxware.hk" target="_blank" class="btn-primary text-sm inline-flex items-center">
+            <Icon name="carbon:email" class="w-5 h-5 mr-2" />
+            {t(translations, 'header.freeTrial')}
           </a>
         </div>
       </div>
@@ -79,33 +79,90 @@ const prefix = lang ? `/${lang}` : '';
     </div>
 
     <!-- Mobile Navigation -->
-    <div id="mobile-menu" class="lg:hidden hidden pb-4">
-      <div class="flex flex-col space-y-4">
-        <a href={`${prefix}/pricing`} target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
-          {t(translations, 'header.pricing')}
-        </a>
-        <a href={prefix ? `${prefix}/blogs.html` : '/blogs.html'} class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
-          {t(translations, 'header.blog')}
-        </a>
-        <a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">{t(translations, 'header.discussions')}</a>
-        <a href="https://1panel.pro/docs" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">{t(translations, 'header.docs')}</a>
+    <div
+      id="mobile-menu"
+      class="lg:hidden fixed inset-0 z-[99] bg-white transition-all duration-300 overflow-y-auto hidden"
+      style="touch-action:manipulation; min-height: 100vh; height: 100vh;"
+    >
+      <div class="relative w-full max-w-[440px] mx-auto flex flex-col min-h-screen px-5 pt-8 pb-8"
+           style="height: 100vh; min-height: 100vh; box-sizing: border-box;">
+        <button
+          type="button"
+          class="absolute top-3 right-3 rounded-full p-3 bg-gray-100 hover:bg-gray-200 transition"
+          aria-label="Close menu"
+          onclick="document.getElementById('mobile-menu').classList.add('hidden')"
+        >
+          <svg class="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"/>
+          </svg>
+        </button>
+
+        <nav class="flex flex-col gap-1 mt-2">
+          <a
+            href={`${prefix}/pricing`}
+            target="_blank"
+            class="block rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 active:bg-gray-200 transition"
+          >
+            {t(translations, 'header.pricing')}
+          </a>
+          <a
+            href={prefix ? `${prefix}/blogs.html` : '/blogs.html'}
+            class="block rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 active:bg-gray-200 transition"
+          >
+            {t(translations, 'header.blog')}
+          </a>
+          <a
+            href="https://github.com/1Panel-dev/1Panel/discussions"
+            target="_blank"
+            class="block rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 active:bg-gray-200 transition"
+          >
+            {t(translations, 'header.discussions')}
+          </a>
+          <a
+            href="https://docs.1panel.pro/"
+            target="_blank"
+            class="block rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 active:bg-gray-200 transition"
+          >
+            {t(translations, 'header.docs')}
+          </a>
+        </nav>
+
         {lang && (
-          <div class="pt-2">
-            <span class="text-gray-500 text-sm block mb-2">{getLocaleLabel(lang)}</span>
+          <div class="pt-5 border-t border-gray-100 mt-5">
+            <div class="mb-2 text-gray-500 text-[15px] font-medium flex items-center gap-1">
+              <Icon name="carbon:earth" class="w-4 h-4" />
+              {getLocaleLabel(lang)}
+            </div>
             <div class="flex flex-wrap gap-2">
               {SUPPORTED_LOCALES.filter((l) => l !== lang).map((locale) => (
-                <a href={`/${locale}/`} class="text-sm text-1panel hover:underline">{getLocaleLabel(locale)}</a>
+                <a
+                  href={`/${locale}/`}
+                  class="py-1 px-3 text-[15px] text-blue-600 font-medium bg-blue-50 rounded hover:bg-blue-100 transition"
+                  style="min-width:72px;text-align:center;"
+                >
+                  {getLocaleLabel(locale)}
+                </a>
               ))}
             </div>
           </div>
         )}
-        <div class="flex flex-col space-y-3 pt-4">
-          <a href="https://demo.1panel.pro/" target="_blank" class="btn-secondary text-sm text-center">
-            <Icon name="carbon:demo" class="w-5 h-5 mr-3 text-gray-700" />
+
+        <div class="flex flex-col gap-3 pt-8 mt-auto">
+          <a
+            href="https://demo.1panel.pro/"
+            target="_blank"
+            class="btn-secondary text-base px-4 py-3 rounded-lg flex items-center justify-center font-semibold"
+          >
+            <Icon name="carbon:demo" class="w-5 h-5 mr-2 text-blue-700" />
             {t(translations, 'header.demo')}
           </a>
-          <a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="btn-primary text-sm text-center">
-            {t(translations, 'header.github')}
+          <a
+            href="mailto:hi@lxware.hk"
+            target="_blank"
+            class="btn-primary text-base px-4 py-3 rounded-lg flex items-center justify-center font-semibold"
+          >
+            <Icon name="carbon:email" class="w-5 h-5 mr-2" />
+            {t(translations, 'header.freeTrial')}
           </a>
         </div>
       </div>
