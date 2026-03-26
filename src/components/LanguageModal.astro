@@ -32,15 +32,33 @@ import { Icon } from 'astro-icon/components';
 </div>
 <script is:inline>
 document.addEventListener('DOMContentLoaded', function() {
-    // 检查是否已经显示过弹框
-    const hasShownModal = sessionStorage.getItem('languageModalShown');
-    if (hasShownModal) {
-    return;
-    }
+    // 全站统一去重：同一站点只提醒一次（带过期），避免切换页面重复提醒
+    const STORAGE_KEY = '1panel:langPrompt:dismissedUntil:v1';
+    const SESSION_KEY = '1panel:langPrompt:shownThisTab:v1';
+    const now = Date.now();
 
-    // 获取浏览器语言
-    const browserLanguage = navigator.language;
-    const isChinese = browserLanguage.startsWith('zh');
+    // 如果当前就在中文站点，不提示
+    try {
+      if (typeof location !== 'undefined' && /(^|\\.)1panel\\.cn$/i.test(location.hostname)) return;
+    } catch (_) {}
+
+    // 同一 Tab 内已经展示过就不再展示
+    try {
+      if (sessionStorage.getItem(SESSION_KEY) === 'true') return;
+    } catch (_) {}
+
+    // 读取全站去重（默认 30 天）
+    try {
+      const dismissedUntilRaw = localStorage.getItem(STORAGE_KEY);
+      const dismissedUntil = dismissedUntilRaw ? Number(dismissedUntilRaw) : 0;
+      if (Number.isFinite(dismissedUntil) && dismissedUntil > now) return;
+    } catch (_) {}
+
+    // 获取浏览器语言（优先 languages）
+    const languages = (navigator.languages && navigator.languages.length)
+      ? navigator.languages
+      : [navigator.language || ''];
+    const isChinese = languages.some((l) => String(l || '').toLowerCase().startsWith('zh'));
 
     // 如果是中文，显示弹框
     if (isChinese) {
@@ -62,8 +80,9 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         }, 10);
 
-        // 标记已显示
-        sessionStorage.setItem('languageModalShown', 'true');
+        // 标记已显示（Tab 内 & 全站 30 天不重复）
+        try { sessionStorage.setItem(SESSION_KEY, 'true'); } catch (_) {}
+        try { localStorage.setItem(STORAGE_KEY, String(now + 30 * 24 * 60 * 60 * 1000)); } catch (_) {}
 
         // 点击"留在这里"按钮
         stayButton.addEventListener('click', function() {
@@ -72,6 +91,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // 点击"前往中文网站"按钮
         goButton.addEventListener('click', function() {
+        try { localStorage.setItem(STORAGE_KEY, String(now + 180 * 24 * 60 * 60 * 1000)); } catch (_) {}
         window.location.href = 'https://1panel.cn';
         });
 

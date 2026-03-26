@@ -3,7 +3,6 @@ import { Icon } from 'astro-icon/components';
 import Layout from '../../../layouts/Layout.astro';
 import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
-import LanguageModal from '../../../components/LanguageModal.astro';
 import BlogPageDecor from '../../../components/blog/BlogPageDecor.astro';
 import BlogLanguageSwitcher from '../../../components/blog/BlogLanguageSwitcher.astro';
 import { getCollection } from 'astro:content';
@@ -151,7 +150,7 @@ const jsonLd = {
                     )}
                     {post.data.tags.length > 0 && (
                       <div class="flex flex-wrap gap-2">
-                        {post.data.tags.map((tag) => (
+                        {post.data.tags.map((tag: string) => (
                           <span class="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-50 text-blue-800 border border-blue-100">
                             {tag}
                           </span>
@@ -171,7 +170,6 @@ const jsonLd = {
       </div>
     </main>
     <Footer lang={lang} basePath={basePath} translations={translations} />
-    <LanguageModal />
   </Fragment>
 </Layout>
 
