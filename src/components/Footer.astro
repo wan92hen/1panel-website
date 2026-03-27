@@ -26,19 +26,49 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
         <p class="text-gray-400 mb-6 max-w-md">
           {t(translations, 'footer.companyDesc')}
         </p>
+        <!-- 社区图标 -->
+        <ul class="flex space-x-4 mt-2">
+          <li>
+            <a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center" aria-label="GitHub">
+              <Icon name="carbon:logo-github" class="w-5 h-5" />
+            </a>
+          </li>
+          <li>
+            <a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center" aria-label="Community Forum">
+              <Icon name="carbon:forum" class="w-5 h-5" />
+            </a>
+          </li>
+          <li>
+            <a href="https://x.com/lxware_x" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center" aria-label="X">
+              <Icon name="carbon:logo-x" class="w-5 h-5" />
+            </a>
+          </li>
+          <li>
+            <a href="https://www.youtube.com/@1Panel-linux" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center" aria-label="YouTube">
+              <Icon name="carbon:logo-youtube" class="w-5 h-5" />
+            </a>
+          </li>
+          <li>
+            <a href="https://discord.gg/bUpUqWqdRr" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center" aria-label="Discord">
+              <Icon name="carbon:logo-discord" class="w-5 h-5" />
+            </a>
+          </li>
+        </ul>
       </div>
 
-      <div></div>
       <!-- Resources -->
       <div>
         <h4 class="text-lg font-semibold text-white mb-4">{t(translations, 'footer.resources')}</h4>
         <ul class="space-y-3">
+          <li><a href="/en/blogs.html" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:blog" class="w-4 h-4 mr-2" />{t(translations, 'footer.blog')}</a></li>
           <li><a href="https://docs.1panel.pro" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:documentation" class="w-4 h-4 mr-2" />{t(translations, 'footer.documentation')}</a></li>
-          <li><a href="https://github.com/1Panel-dev/1Panel" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-github" class="w-4 h-4 mr-2" />{t(translations, 'footer.githubRepo')}</a></li>
-          <li><a href="https://github.com/1Panel-dev/1Panel/discussions" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:forum" class="w-4 h-4 mr-2" />{t(translations, 'footer.communityForum')}</a></li>
-          <li><a href="https://x.com/lxware_x" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-x" class="w-4 h-4 mr-2" />{t(translations, 'footer.followX')}</a></li>
-          <li><a href="https://www.youtube.com/@1Panel-linux" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-youtube" class="w-4 h-4 mr-2" />{t(translations, 'footer.youtube')}</a></li>
-          <li><a href="https://discord.gg/bUpUqWqdRr" target="_blank" class="text-gray-400 hover:text-white transition-colors duration-300 inline-flex items-center"><Icon name="carbon:logo-discord" class="w-4 h-4 mr-2" />{t(translations, 'footer.discord')}</a></li>
+      </div>
+      <!-- Compare -->
+      <div>
+        <h4 class="text-lg font-semibold text-white mb-4">{t(translations, 'footer.compare')}</h4>
+        <ul class="space-y-3">
+          <li><a href="/1panel-vs-cpanel.html" class="text-gray-400 hover:text-white transition-colors duration-300"> VS cPanel</a></li>
+        </ul>
       </div>
       <!-- Quick Links -->
       <div>
