@@ -1,0 +1,23 @@
+---
+const base = import.meta.env.BASE_URL || './';
+const redirectUrl = base.endsWith('/') ? `${base}en/1panel-vs-webmin.html` : `${base}/en/1panel-vs-webmin.html`;
+---
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="refresh" content={`0;url=${redirectUrl}`} />
+  <link rel="canonical" href={redirectUrl} />
+  <title>Redirecting...</title>
+</head>
+<body>
+  <p>Redirecting...</p>
+  <script is:inline define:vars={{ redirectUrl }}>
+    window.location.replace(redirectUrl);
+  </script>
+  <noscript>
+    <p>Redirecting to <a href={redirectUrl}>1Panel vs Webmin</a>...</p>
+  </noscript>
+</body>
+</html>
