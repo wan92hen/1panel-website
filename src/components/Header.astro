@@ -57,7 +57,7 @@ const prefix = lang ? `/${lang}` : '';
             </button>
             <div class="absolute top-full right-0 py-1 w-40 bg-white rounded-lg shadow-lg border border-gray-200 hidden group-hover:block z-[90]" role="menu">
               {SUPPORTED_LOCALES.filter((l) => l !== lang).map((locale) => (
-                <a href={`/${locale}/`} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{getLocaleLabel(locale)}</a>
+                <a href={`/${locale}/`} data-locale-link data-locale={locale} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{getLocaleLabel(locale)}</a>
               ))}
             </div>
           </div>
@@ -137,6 +137,8 @@ const prefix = lang ? `/${lang}` : '';
               {SUPPORTED_LOCALES.filter((l) => l !== lang).map((locale) => (
                 <a
                   href={`/${locale}/`}
+                  data-locale-link
+                  data-locale={locale}
                   class="py-1 px-3 text-[15px] text-blue-600 font-medium bg-blue-50 rounded hover:bg-blue-100 transition"
                   style="min-width:72px;text-align:center;"
                 >
@@ -189,6 +191,23 @@ const prefix = lang ? `/${lang}` : '';
         });
       });
     }
+
+    // Keep current page when switching language:
+    // /en/foo/bar -> /ja/foo/bar (instead of /ja/)
+    const localeLinks = document.querySelectorAll('[data-locale-link]');
+    const supported = ['en', 'ja', 'pt', 'ko', 'es', 'ms', 'tr', 'ru'];
+    const currentPath = window.location.pathname || '/';
+    const segments = currentPath.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
+    const hasLocalePrefix = segments.length > 0 && supported.includes(segments[0]);
+    const rest = hasLocalePrefix ? segments.slice(1).join('/') : segments.join('/');
+    const suffix = rest ? `/${rest}` : '/';
+
+    localeLinks.forEach((link) => {
+      const targetLocale = link.getAttribute('data-locale');
+      if (!targetLocale) return;
+      const href = `/${targetLocale}${suffix === '/' ? '/' : suffix}`;
+      link.setAttribute('href', href);
+    });
   });
 </script>
 
