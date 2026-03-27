@@ -20,9 +20,9 @@ const prefix = lang ? `/${lang}` : '';
 
 <header class="sticky top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
   <nav class="container-custom">
-    <div class="flex items-center justify-between h-16 lg:h-20">
-      <!-- Logo -->
-      <div class="flex items-center space-x-3">
+    <div class="flex items-center justify-between h-16 lg:h-20 w-full gap-3">
+      <!-- Left: Logo -->
+      <div class="flex items-center space-x-3 shrink-0 min-w-0">
         <a href={prefix || '/'} class="inline-flex items-center shrink-0">
           <img
             src={logoSrc}
@@ -33,17 +33,20 @@ const prefix = lang ? `/${lang}` : '';
           />
         </a>
       </div>
-
-      <!-- Desktop Navigation -->
-      <div class="hidden lg:flex items-center space-x-8">
+      <!-- Center: 主菜单 -->
+      <div id="header-center-nav" class="hidden lg:flex items-center justify-center space-x-8 min-w-0 flex-1">
         <a href={`${prefix}/pricing`} target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
           {t(translations, 'header.pricing')}
         </a>
         <a href={prefix ? `${prefix}/blogs.html` : '/blogs.html'} class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
           {t(translations, 'header.blog')}
         </a>
-        <a href="https://docs.1panel.pro/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">{t(translations, 'header.docs')}</a>
-        <!-- Language Switcher -->
+        <a href="https://docs.1panel.pro/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
+          {t(translations, 'header.docs')}
+        </a>
+      </div>
+      <!-- Right: 语言切换及按钮 -->
+      <div id="header-right-actions" class="hidden lg:flex items-center space-x-4 shrink-0 justify-end">
         {lang && (
           <div class="relative group" id="lang-switcher-desktop">
             <button type="button" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 inline-flex items-center" aria-haspopup="true" aria-expanded="false">
@@ -57,26 +60,22 @@ const prefix = lang ? `/${lang}` : '';
             </div>
           </div>
         )}
-        <div class="flex items-center space-x-4">
-          <a href="https://demo.1panel.pro/" target="_blank" class="btn-secondary text-sm inline-flex items-center">
-            <Icon name="carbon:demo" class="w-5 h-5 mr-2" />
-            {t(translations, 'header.demo')}
-          </a>
-          <a href="mailto:hi@lxware.hk?subject=1Panel Pro: 30-Day Free Trial Request" target="_blank" class="btn-primary text-sm inline-flex items-center">
-            <Icon name="carbon:email" class="w-5 h-5 mr-2" />
-            {t(translations, 'header.freeTrial')}
-          </a>
-        </div>
+        <a href="https://demo.1panel.pro/" target="_blank" class="btn-secondary text-sm inline-flex items-center">
+          <Icon name="carbon:demo" class="w-5 h-5 mr-2" />
+          {t(translations, 'header.demo')}
+        </a>
+        <a href="mailto:hi@lxware.hk?subject=1Panel Pro: 30-Day Free Trial Request" target="_blank" class="btn-primary text-sm inline-flex items-center">
+          <Icon name="carbon:email" class="w-5 h-5 mr-2" />
+          {t(translations, 'header.freeTrial')}
+        </a>
       </div>
-
       <!-- Mobile menu button -->
-      <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700 hover:text-gray-900">
+      <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700 hover:text-gray-900 shrink-0" aria-label="Open menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
       </button>
     </div>
-
     <!-- Mobile Navigation -->
     <div
       id="mobile-menu"
@@ -190,3 +189,12 @@ const prefix = lang ? `/${lang}` : '';
     }
   });
 </script>
+
+<style>
+  @media (max-width: 1023px) {
+    #header-center-nav,
+    #header-right-actions {
+      display: none !important;
+    }
+  }
+</style>
