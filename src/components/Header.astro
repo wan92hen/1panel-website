@@ -20,7 +20,9 @@ const prefix = lang ? `/${lang}` : '';
 
 <header class="sticky top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
   <nav class="container-custom">
-    <div class="flex items-center justify-between h-16 lg:h-20 w-full gap-3">
+    <div 
+      class="grid grid-cols-3 items-center h-16 lg:h-20 w-full"
+    >
       <!-- Left: Logo -->
       <div class="flex items-center space-x-3 shrink-0 min-w-0">
         <a href={prefix || '/'} class="inline-flex items-center shrink-0">
