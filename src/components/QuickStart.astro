@@ -148,7 +148,7 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
   document.addEventListener("DOMContentLoaded", function () {
     const copyButton = document.getElementById("copy-install-cmd");
     const installCommand =
-      'bash -c "$(curl -sSL https://resource.1panel.pro/quick_start.sh)"';
+      'bash -c "$(curl -sSL https://resource.1panel.pro/v2/quick_start.sh)"';
 
     if (copyButton) {
       const originalContent = copyButton.innerHTML;
