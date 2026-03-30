@@ -119,13 +119,6 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
 </section>
 
 <script>
-  AsciinemaPlayer.create('/recordings/demo.cast', document.getElementById('terminal-container'), {
-    preload: true,
-    autoplay: true,
-    loop: true,
-    theme: 'asciinema',
-  });
-  
   // 复制安装命令功能
   document.addEventListener("DOMContentLoaded", function () {
     const copyButton = document.getElementById("copy-install-cmd");
