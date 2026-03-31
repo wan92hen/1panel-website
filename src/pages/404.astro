@@ -1,0 +1,36 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { getBasePath } from '../i18n/utils';
+import '../styles/global.css';
+
+const lang = 'en';
+const basePath = getBasePath(undefined);
+const title = '404 - Page Not Found | 1Panel';
+const description = 'The page you are looking for does not exist or has moved.';
+---
+
+<Layout title={title} description={description} lang={lang} basePath={basePath}>
+  <Fragment slot="main">
+    <Header lang={lang} basePath={basePath} />
+    <main class="relative z-10 min-h-screen">
+      <section class="section-padding">
+        <div class="container-custom max-w-3xl text-center">
+          <div class="card p-10 md:p-14">
+            <p class="text-sm font-semibold text-blue-600 mb-3">404</p>
+            <h1 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Page not found</h1>
+            <p class="text-gray-600 mb-8">
+              The URL may be incorrect, or the page has been moved.
+            </p>
+            <div class="flex flex-col sm:flex-row justify-center gap-3">
+              <a href="/" class="btn-primary">Back to Home</a>
+              <a href="/blog" class="btn-secondary">View Blog</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer lang={lang} basePath={basePath} />
+  </Fragment>
+</Layout>
