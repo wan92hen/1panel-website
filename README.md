@@ -35,7 +35,7 @@ pnpm preview          # 预览构建产物
 
 ## 如何新增博客文章（多语言）
 
-> **说明**：请勿在仓库根目录使用 `blogs/` 存放文章或图片；正文与资源分别以 `src/content/blog/` 与 `public/blog/` 为准。
+> **说明**：请勿在仓库根目录使用 `blog/` 存放文章或图片；正文与资源分别以 `src/content/blog/` 与 `public/blog/` 为准。
 
 博客使用 Astro **Content Collection**，集合名为 `blog`。每篇文章在**每种语言**下各有一个 Markdown 文件，文件名（不含 `.md`）即为 **文章 slug**，所有语言必须**同名**，否则无法正确匹配语言切换与 `hreflang`。
 
@@ -56,7 +56,7 @@ src/content/blog/
 - **文件名**：`{article-slug}.md`，例如 `deploy-wordpress-php-runtime.md`。  
   生成的集合内 `slug` 为 `{locale}/{article-slug}`（如 `en/deploy-wordpress-php-runtime`）。
 
-根路径英文列表 `/blogs.html` 只展示 **`en/`** 下的文章；`/{lang}/blogs.html` 只展示该语言目录下的文章。
+根路径英文列表 `/blog.html` 只展示 **`en/`** 下的文章；`/{lang}/blog.html` 只展示该语言目录下的文章。
 
 ### 2. Frontmatter（必填）
 
@@ -82,7 +82,7 @@ tags:
 
 ### 4. 未提供某语言译文时
 
-若某语言缺少对应文件（例如只有 `en/my-new-post.md`，没有 `ja/my-new-post.md`），访问 `/{lang}/blogs/my-new-post.html` 时会**自动回退到英语正文**，并在页面顶部显示提示（文案键：`blogs.fallbackToEnglish`）。建议重要文章尽量补全各语言，或至少提供英语。
+若某语言缺少对应文件（例如只有 `en/my-new-post.md`，没有 `ja/my-new-post.md`），访问 `/{lang}/blog/my-new-post.html` 时会**自动回退到英语正文**，并在页面顶部显示提示（文案键：`blog.fallbackToEnglish`）。建议重要文章尽量补全各语言，或至少提供英语。
 
 ### 5. 构建与验证
 
@@ -97,8 +97,8 @@ pnpm build
 ### 6. 相关代码（进阶）
 
 - 博客列表过滤、文章解析、回退逻辑：`src/lib/blog.ts`
-- 博客列表页：`src/pages/blogs/index.astro`、`src/pages/[lang]/blogs/index.astro`
-- 博客详情页：`src/pages/blogs/[slug].astro`（英文）、`src/pages/[lang]/blogs/[slug].astro`（带语言前缀）
+- 博客列表页：`src/pages/blog/index.astro`、`src/pages/[lang]/blog/index.astro`
+- 博客详情页：`src/pages/blog/[slug].astro`（英文）、`src/pages/[lang]/blog/[slug].astro`（带语言前缀）
 - 文末多语言切换：`src/components/blog/BlogLanguageSwitcher.astro`
 
 ---

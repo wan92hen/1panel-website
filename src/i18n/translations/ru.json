@@ -13,7 +13,7 @@
     "github": "GitHub",
     "freeTrial": "Бесплатная пробная версия"
   },
-  "blogs": {
+  "blog": {
     "pageTitle": "Блог",
     "pageDescription": "Руководства и новости о 1Panel, self-hosting и администрировании серверов.",
     "heading": "Блог",

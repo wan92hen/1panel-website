@@ -14,9 +14,9 @@ const { currentLang, articleSlug, translations } = Astro.props;
 
 <nav
   class="flex flex-col sm:flex-row sm:flex-wrap sm:items-center gap-2 sm:gap-3 pt-6 mt-8 border-t border-gray-100"
-  aria-label={t(translations, 'blogs.articleLanguages')}
+  aria-label={t(translations, 'blog.articleLanguages')}
 >
-  <span class="text-sm font-medium text-gray-600">{t(translations, 'blogs.articleLanguages')}</span>
+  <span class="text-sm font-medium text-gray-600">{t(translations, 'blog.articleLanguages')}</span>
   <ul class="flex flex-wrap gap-2">
     {SUPPORTED_LOCALES.map((locale) => {
       const isCurrent = locale === currentLang;

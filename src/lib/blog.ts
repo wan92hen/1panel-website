@@ -15,14 +15,14 @@ export const BLOG_DATE_LOCALE: Record<Locale, string> = {
   ru: 'ru-RU',
 };
 
-/** Paths match `build.format: 'file'` output (e.g. `/blogs.html`, `/en/blogs/post-slug.html`). */
+/** Paths match `build.format: 'file'` output (e.g. `/blog.html`, `/en/blog/post-slug.html`). */
 export function blogListPath(lang: string | undefined): string {
-  return lang ? `/${lang}/blogs.html` : '/blogs.html';
+  return lang ? `/${lang}/blog.html` : '/blog.html';
 }
 
 /** `articleSlug` is the filename without locale (e.g. `deploy-wordpress-php-runtime`). */
 export function blogPostPath(lang: string | undefined, articleSlug: string): string {
-  return lang ? `/${lang}/blogs/${articleSlug}.html` : `/blogs/${articleSlug}.html`;
+  return lang ? `/${lang}/blog/${articleSlug}.html` : `/blog/${articleSlug}.html`;
 }
 
 export function sortPostsByDate(posts: BlogPost[]): BlogPost[] {

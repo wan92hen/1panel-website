@@ -41,7 +41,7 @@ const prefix = !lang || lang === DEFAULT_LOCALE ? '' : `/${lang}`;
         <a href={`${prefix}/pricing`} target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
           {t(translations, 'header.pricing')}
         </a>
-        <a href={prefix ? `${prefix}/blogs.html` : '/blogs.html'} class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
+        <a href={prefix ? `${prefix}/blog.html` : '/blog.html'} class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
           {t(translations, 'header.blog')}
         </a>
         <a href="https://1panel.pro/docs/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
@@ -107,7 +107,7 @@ const prefix = !lang || lang === DEFAULT_LOCALE ? '' : `/${lang}`;
             {t(translations, 'header.pricing')}
           </a>
           <a
-            href={prefix ? `${prefix}/blogs.html` : '/blogs.html'}
+            href={prefix ? `${prefix}/blog.html` : '/blog.html'}
             class="block rounded-lg px-4 py-3 text-base font-medium text-gray-900 hover:bg-gray-100 active:bg-gray-200 transition"
           >
             {t(translations, 'header.blog')}

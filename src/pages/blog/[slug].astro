@@ -1,53 +1,37 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Layout from '../../../layouts/Layout.astro';
-import Header from '../../../components/Header.astro';
-import Footer from '../../../components/Footer.astro';
-import BlogPageDecor from '../../../components/blog/BlogPageDecor.astro';
-import BlogLanguageSwitcher from '../../../components/blog/BlogLanguageSwitcher.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogPageDecor from '../../components/blog/BlogPageDecor.astro';
+import BlogLanguageSwitcher from '../../components/blog/BlogLanguageSwitcher.astro';
 import { getCollection } from 'astro:content';
-import { NON_DEFAULT_LOCALES, SUPPORTED_LOCALES } from '../../../i18n/config';
-import type { Locale } from '../../../i18n/config';
-import { getTranslations, t, getBasePath } from '../../../i18n/utils';
+import { getTranslations, t, getBasePath } from '../../i18n/utils';
+import { SUPPORTED_LOCALES } from '../../i18n/config';
+import type { Locale } from '../../i18n/config';
 import {
   blogListPath,
-  type BlogPost,
-  collectArticleSlugs,
-  resolvePost,
+  getPostsForLocale,
   articleSlugFromEntry,
   absoluteBlogPostUrl,
   BLOG_DATE_LOCALE,
-  schemaInLanguage,
-} from '../../../lib/blog';
-import '../../../styles/global.css';
+} from '../../lib/blog';
+import { DEFAULT_LOCALE } from '../../i18n/config';
+import '../../styles/global.css';
 
 export async function getStaticPaths() {
   const all = await getCollection('blog');
-  const articleSlugs = collectArticleSlugs(all);
-  const paths: {
-    params: { lang: string; slug: string };
-    props: { post: BlogPost; lang: string; articleSlug: string; isFallback: boolean };
-  }[] = [];
-
-  for (const lang of NON_DEFAULT_LOCALES) {
-    for (const articleSlug of articleSlugs) {
-      const post = resolvePost(all, lang, articleSlug);
-      if (!post) continue;
-      const isFallback = post.slug !== `${lang}/${articleSlug}`;
-      paths.push({
-        params: { lang, slug: articleSlug },
-        props: { post, lang, articleSlug, isFallback },
-      });
-    }
-  }
-  return paths;
+  return getPostsForLocale(all, DEFAULT_LOCALE).map((post) => ({
+    params: { slug: articleSlugFromEntry(post) },
+    props: { post },
+  }));
 }
 
-const { post, lang, articleSlug, isFallback } = Astro.props;
+const { post } = Astro.props;
+const articleSlug = articleSlugFromEntry(post);
 const { Content } = await post.render();
-const locale = (lang ?? 'en') as Locale;
-const translations = getTranslations(lang ?? 'en');
-const basePath = getBasePath(lang);
+const translations = getTranslations('en');
+const basePath = getBasePath(undefined);
 const title = `${post.data.title} | 1Panel`;
 const description = post.data.description;
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
@@ -57,7 +41,7 @@ const ogImageUrl = post.data.heroImage
   ? new URL(post.data.heroImage, Astro.site).href
   : undefined;
 const keywords = ['1Panel', 'blog', ...post.data.tags].join(',');
-const dateLocale = BLOG_DATE_LOCALE[locale] ?? 'en-US';
+const dateLocale = BLOG_DATE_LOCALE.en;
 
 const jsonLd = {
   '@context': 'https://schema.org',
@@ -67,7 +51,7 @@ const jsonLd = {
   datePublished: publishedIso,
   dateModified: modifiedIso,
   url: canonicalUrl,
-  inLanguage: schemaInLanguage(lang ?? 'en'),
+  inLanguage: 'en',
   image: ogImageUrl ? [ogImageUrl] : undefined,
   author: {
     '@type': 'Organization',
@@ -83,7 +67,7 @@ const jsonLd = {
 <Layout
   title={title}
   description={description}
-  lang={lang}
+  lang="en"
   basePath={basePath}
   ogType="article"
   canonicalUrl={canonicalUrl}
@@ -104,7 +88,7 @@ const jsonLd = {
     <link rel="alternate" hreflang="x-default" href={absoluteBlogPostUrl(Astro.site, undefined, articleSlug)} />
   </Fragment>
   <Fragment slot="main">
-    <Header lang={lang} basePath={basePath} translations={translations} />
+    <Header lang="en" basePath={basePath} translations={translations} />
     <main class="relative z-10 min-h-screen">
       <div class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white text-gray-900">
         <BlogPageDecor />
@@ -114,9 +98,9 @@ const jsonLd = {
               class="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-600 mb-5 px-4 py-2.5 rounded-full bg-white/90 border border-gray-200/90 shadow-sm backdrop-blur-sm"
               aria-label="Breadcrumb"
             >
-              <a href={blogListPath(lang)} class="inline-flex items-center gap-1.5 hover:text-1panel transition-colors font-medium">
+              <a href={blogListPath(undefined)} class="inline-flex items-center gap-1.5 hover:text-1panel transition-colors font-medium">
                 <Icon name="carbon:arrow-left" class="w-4 h-4" />
-                {t(translations, 'blogs.heading')}
+                {t(translations, 'blog.heading')}
               </a>
               <span class="text-gray-300 select-none" aria-hidden="true">/</span>
               <span class="text-gray-800 font-medium line-clamp-2">{post.data.title}</span>
@@ -124,11 +108,6 @@ const jsonLd = {
 
             <div class="card p-6 sm:p-8 lg:p-10 shadow-lg border-gray-200/90">
               <article>
-                {isFallback && (
-                  <p class="text-sm text-amber-900 bg-amber-50 border border-amber-200/80 rounded-lg px-4 py-3 mb-6" role="status">
-                    {t(translations, 'blogs.fallbackToEnglish')}
-                  </p>
-                )}
                 <header class="mb-8 pb-6 border-b border-gray-100">
                   <h1 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-bold text-gray-900 leading-tight mb-3">
                     {post.data.title}
@@ -162,14 +141,14 @@ const jsonLd = {
                 <div class="blog-content">
                   <Content />
                 </div>
-                <BlogLanguageSwitcher currentLang={locale} articleSlug={articleSlug} translations={translations} />
+                <BlogLanguageSwitcher currentLang={'en' as Locale} articleSlug={articleSlug} translations={translations} />
               </article>
             </div>
           </div>
         </section>
       </div>
     </main>
-    <Footer lang={lang} basePath={basePath} translations={translations} />
+    <Footer translations={translations} />
   </Fragment>
 </Layout>
 

@@ -1,47 +1,39 @@
 ---
 import { Icon } from 'astro-icon/components';
-import Layout from '../../../layouts/Layout.astro';
-import Header from '../../../components/Header.astro';
-import Footer from '../../../components/Footer.astro';
-import BlogPageDecor from '../../../components/blog/BlogPageDecor.astro';
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogPageDecor from '../../components/blog/BlogPageDecor.astro';
 import { getCollection } from 'astro:content';
-import { NON_DEFAULT_LOCALES } from '../../../i18n/config';
-import { getTranslations, t, getBasePath } from '../../../i18n/utils';
+import { getTranslations, t, getBasePath } from '../../i18n/utils';
 import {
   sortPostsByDate,
   blogPostPath,
   getPostsForLocale,
   articleSlugFromEntry,
-  BLOG_DATE_LOCALE,
-} from '../../../lib/blog';
-import type { Locale } from '../../../i18n/config';
-import '../../../styles/global.css';
+} from '../../lib/blog';
+import { DEFAULT_LOCALE } from '../../i18n/config';
+import '../../styles/global.css';
 
-export function getStaticPaths() {
-  return NON_DEFAULT_LOCALES.map((lang) => ({ params: { lang }, props: { lang } }));
-}
-
-const { lang } = Astro.params;
-const translations = getTranslations(lang ?? 'en');
-const basePath = getBasePath(lang);
-const title = `${t(translations, 'blogs.pageTitle')} | 1Panel`;
-const description = t(translations, 'blogs.pageDescription');
+const translations = getTranslations('en');
+const basePath = getBasePath(undefined);
+const title = `${t(translations, 'blog.pageTitle')} | 1Panel`;
+const description = t(translations, 'blog.pageDescription');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const allPosts = await getCollection('blog');
-const posts = sortPostsByDate(getPostsForLocale(allPosts, lang ?? 'en'));
-const dateLocale = BLOG_DATE_LOCALE[(lang ?? 'en') as Locale] ?? 'en-US';
+const posts = sortPostsByDate(getPostsForLocale(allPosts, DEFAULT_LOCALE));
 ---
 
 <Layout
   title={title}
   description={description}
-  lang={lang}
+  lang="en"
   basePath={basePath}
   canonicalUrl={canonicalUrl}
   keywords="1Panel,blog,PHP,WordPress,Linux,OpenResty,SSL,tutorial"
 >
   <Fragment slot="main">
-    <Header lang={lang} basePath={basePath} translations={translations} />
+    <Header lang="en" basePath={basePath} translations={translations} />
     <main class="relative z-10 min-h-screen">
       <div class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         <BlogPageDecor />
@@ -49,20 +41,20 @@ const dateLocale = BLOG_DATE_LOCALE[(lang ?? 'en') as Locale] ?? 'en-US';
           <div class="container-custom max-w-4xl">
             <header class="text-center mb-14 lg:mb-16">
               <h1 class="fade-in-up text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
-                <span class="text-1panel-gradient">{t(translations, 'blogs.heading')}</span>
+                <span class="text-1panel-gradient">{t(translations, 'blog.heading')}</span>
               </h1>
               <p
                 class="fade-in-up text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed"
                 style="animation-delay: 0.1s;"
               >
-                {t(translations, 'blogs.subheading')}
+                {t(translations, 'blog.subheading')}
               </p>
             </header>
             <ul class="space-y-5">
               {posts.map((post, i) => (
                 <li class="fade-in-up" style={`animation-delay: ${0.15 + i * 0.05}s`}>
                   <a
-                    href={blogPostPath(lang, articleSlugFromEntry(post))}
+                    href={blogPostPath(undefined, articleSlugFromEntry(post))}
                     class="card group flex gap-4 sm:gap-5 p-5 sm:p-6 hover:border-1panel hover:shadow-xl transition-all duration-300 hover:-translate-y-0.5"
                   >
                     <div
@@ -81,7 +73,7 @@ const dateLocale = BLOG_DATE_LOCALE[(lang ?? 'en') as Locale] ?? 'en-US';
                       <div class="flex items-center gap-2 text-xs sm:text-sm text-gray-500">
                         <Icon name="carbon:calendar" class="w-4 h-4 flex-shrink-0 opacity-70" />
                         <time datetime={post.data.pubDate.toISOString()}>
-                          {post.data.pubDate.toLocaleDateString(dateLocale, {
+                          {post.data.pubDate.toLocaleDateString('en-US', {
                             year: 'numeric',
                             month: 'long',
                             day: 'numeric',
@@ -100,7 +92,7 @@ const dateLocale = BLOG_DATE_LOCALE[(lang ?? 'en') as Locale] ?? 'en-US';
         </section>
       </div>
     </main>
-    <Footer lang={lang} basePath={basePath} translations={translations} />
+    <Footer translations={translations} />
   </Fragment>
 </Layout>
 
