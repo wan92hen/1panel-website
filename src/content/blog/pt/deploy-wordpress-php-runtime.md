@@ -183,7 +183,7 @@ Visite `https://seu-dominio` e confirme TLS.
 
 ## Ligações relacionadas
 
-- [Documentação 1Panel](https://docs.1panel.pro/)
+- [Documentação 1Panel](https://1panel.pro/docs/)
 - [1Panel community forum](https://github.com/1Panel-dev/1Panel/discussions)
 
 ---

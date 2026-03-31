@@ -78,7 +78,7 @@ If you want the shortest explanation, it is this:
 - **Parameterized creation**: name, version, ports, model provider, token-set once per instance.
 - **Repeatability**: follow the same click-path for instance 2, 3, and beyond.
 
-For the official OpenClaw deployment flow in 1Panel (including default ports and parameters), see: [OpenClaw visual install in 1Panel App Store docs](https://docs.1panel.pro/v2/user_manual/appstore/openclaw/) and [AI Agent deployment guide](https://docs.1panel.pro/v2/user_manual/ai/agent/)
+For the official OpenClaw deployment flow in 1Panel (including default ports and parameters), see: [OpenClaw visual install in 1Panel App Store docs](https://1panel.pro/docs/v2/user_manual/appstore/openclaw/) and [AI Agent deployment guide](https://1panel.pro/docs/v2/user_manual/ai/agent/)
 
 ## Practical guide: host multiple OpenClaw instances with 1Panel
 
@@ -168,5 +168,5 @@ Yes. Use 1Panel websites/reverse proxy to bind a domain for each instance, then 
 
 - OpenClaw for team/department deployments: [OpenClaw team deployments](https://1panel.cn/openclaw.html)
 - OpenClaw guide: [Quick start](https://openclaw.club/zh-cn/guides/quick-start)
-- 1Panel docs (App Store): [Install OpenClaw visually](https://docs.1panel.pro/v2/user_manual/appstore/openclaw/)
-- 1Panel docs (AI Agent): [AI Agent deployment guide](https://docs.1panel.pro/v2/user_manual/ai/agent/)
+- 1Panel docs (App Store): [Install OpenClaw visually](https://1panel.pro/docs/v2/user_manual/appstore/openclaw/)
+- 1Panel docs (AI Agent): [AI Agent deployment guide](https://1panel.pro/docs/v2/user_manual/ai/agent/)

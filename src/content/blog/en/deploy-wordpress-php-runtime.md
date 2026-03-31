@@ -183,7 +183,7 @@ Visit `https://your-domain` and confirm the site loads over TLS.
 
 ## Related links
 
-- [1Panel documentation](https://docs.1panel.pro/)
+- [1Panel documentation](https://1panel.pro/docs/)
 - [1Panel community forum](https://github.com/1Panel-dev/1Panel/discussions)
 
 ---

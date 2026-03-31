@@ -183,7 +183,7 @@ Lawati `https://domain-anda` dan sahkan TLS.
 
 ## Pautan berkaitan
 
-- [Dokumentasi 1Panel](https://docs.1panel.pro/)
+- [Dokumentasi 1Panel](https://1panel.pro/docs/)
 - [Forum komuniti 1Panel](https://github.com/1Panel-dev/1Panel/discussions)
 
 ---

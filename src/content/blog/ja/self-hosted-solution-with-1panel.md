@@ -67,7 +67,7 @@ Most teams get the best results by rolling out self-hosting in layers:
 3. **Add backups and upgrade rules** (upgrade in small batches; verify after each change).
 4. **Harden the edge** (HTTPS, reverse proxy rules, and access restrictions for admin surfaces).
 
-If you want a walkthrough-style example, see how 1Panel manages deployments in its documentation: [1Panel docs](https://docs.1panel.pro/).
+If you want a walkthrough-style example, see how 1Panel manages deployments in its documentation: [1Panel docs](https://1panel.pro/docs/).
 
 ## FAQ
 

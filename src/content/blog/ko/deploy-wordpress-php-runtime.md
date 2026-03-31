@@ -183,7 +183,7 @@ DNS 공급자(Cloudflare, Alibaba Cloud 등)에서:
 
 ## 관련 링크
 
-- [1Panel 문서](https://docs.1panel.pro/)
+- [1Panel 문서](https://1panel.pro/docs/)
 - [1Panel 커뮤니티](https://github.com/1Panel-dev/1Panel/discussions)
 
 ---

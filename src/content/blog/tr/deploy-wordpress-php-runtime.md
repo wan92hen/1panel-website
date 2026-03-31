@@ -183,7 +183,7 @@ Tarayıcıda **alan adınızı** açın. WordPress ana sayfası yükleniyorsa DN
 
 ## İlgili bağlantılar
 
-- [1Panel dokümantasyonu](https://docs.1panel.pro/)
+- [1Panel dokümantasyonu](https://1panel.pro/docs/)
 - [1Panel topluluk forumu](https://github.com/1Panel-dev/1Panel/discussions)
 
 ---
