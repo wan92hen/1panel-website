@@ -39,5 +39,5 @@ export function t(translations: TranslationDict, path: string): string {
 }
 
 export function getBasePath(lang: string | undefined): string {
-  return lang ? '../' : './';
+  return !lang || lang === DEFAULT_LOCALE ? './' : '../';
 }

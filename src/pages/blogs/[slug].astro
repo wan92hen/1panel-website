@@ -88,7 +88,7 @@ const jsonLd = {
     <link rel="alternate" hreflang="x-default" href={absoluteBlogPostUrl(Astro.site, undefined, articleSlug)} />
   </Fragment>
   <Fragment slot="main">
-    <Header basePath={basePath} translations={translations} />
+    <Header lang="en" basePath={basePath} translations={translations} />
     <main class="relative z-10 min-h-screen">
       <div class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white text-gray-900">
         <BlogPageDecor />

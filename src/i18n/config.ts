@@ -13,6 +13,7 @@ export const SUPPORTED_LOCALES = [
   'ru',
 ] as const;
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
+export const NON_DEFAULT_LOCALES = SUPPORTED_LOCALES.filter((loc) => loc !== DEFAULT_LOCALE) as Exclude<Locale, typeof DEFAULT_LOCALE>[];
 
 export const LOCALE_LABELS: Record<Locale, string> = {
   en: 'English',

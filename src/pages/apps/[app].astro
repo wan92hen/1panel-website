@@ -140,13 +140,13 @@ const jsonLdGraph = {
           "@type": "ListItem",
           position: 1,
           name: "Home",
-          item: `${siteOrigin}/en.html`,
+          item: `${siteOrigin}/`,
         },
         {
           "@type": "ListItem",
           position: 2,
           name: "App Store",
-          item: `${siteOrigin}/en.html#appstore`,
+          item: `${siteOrigin}/#appstore`,
         },
         {
           "@type": "ListItem",
@@ -187,7 +187,7 @@ const jsonLdGraph = {
   ogImageUrl={ogImageUrl}
 >
   <Fragment slot="main">
-    <Header />
+    <Header lang="en" />
     <main class="relative z-10 min-h-screen">
       <div
         class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white text-gray-900"
@@ -202,7 +202,7 @@ const jsonLdGraph = {
               aria-label="Breadcrumb"
             >
               <a
-                href="/en.html"
+                href="/"
                 class="inline-flex items-center gap-1.5 hover:text-1panel transition-colors font-medium"
               >
                 <Icon name="carbon:arrow-left" class="w-4 h-4" />
@@ -211,7 +211,7 @@ const jsonLdGraph = {
               <span class="text-gray-300 select-none" aria-hidden="true">/</span
               >
               <a
-                href="/en.html#appstore"
+                href="/#appstore"
                 class="inline-flex items-center gap-1.5 hover:text-1panel transition-colors font-medium"
                 >Apps</a
               >

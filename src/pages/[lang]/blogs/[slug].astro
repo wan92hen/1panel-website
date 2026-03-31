@@ -6,7 +6,7 @@ import Footer from '../../../components/Footer.astro';
 import BlogPageDecor from '../../../components/blog/BlogPageDecor.astro';
 import BlogLanguageSwitcher from '../../../components/blog/BlogLanguageSwitcher.astro';
 import { getCollection } from 'astro:content';
-import { SUPPORTED_LOCALES } from '../../../i18n/config';
+import { NON_DEFAULT_LOCALES, SUPPORTED_LOCALES } from '../../../i18n/config';
 import type { Locale } from '../../../i18n/config';
 import { getTranslations, t, getBasePath } from '../../../i18n/utils';
 import {
@@ -29,7 +29,7 @@ export async function getStaticPaths() {
     props: { post: BlogPost; lang: string; articleSlug: string; isFallback: boolean };
   }[] = [];
 
-  for (const lang of SUPPORTED_LOCALES) {
+  for (const lang of NON_DEFAULT_LOCALES) {
     for (const articleSlug of articleSlugs) {
       const post = resolvePost(all, lang, articleSlug);
       if (!post) continue;

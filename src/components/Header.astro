@@ -1,7 +1,7 @@
 ---
 // Header component for 1Panel website
 import { Icon } from 'astro-icon/components'
-import { SUPPORTED_LOCALES, getLocaleLabel } from '../i18n/config';
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES, getLocaleLabel } from '../i18n/config';
 import { t, getTranslations } from '../i18n/utils';
 import type { TranslationDict } from '../i18n/utils';
 import { publicAsset } from '../lib/asset';
@@ -15,7 +15,8 @@ interface Props {
 const { lang, basePath = './', translations: rawTranslations } = Astro.props;
 const logoSrc = publicAsset('images/logo-blue.png');
 const translations = rawTranslations && Object.keys(rawTranslations).length > 0 ? rawTranslations : getTranslations('en');
-const prefix = lang ? `/${lang}` : '';
+const currentLocale = lang ?? DEFAULT_LOCALE;
+const prefix = !lang || lang === DEFAULT_LOCALE ? '' : `/${lang}`;
 ---
 
 <header class="sticky top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
@@ -49,15 +50,15 @@ const prefix = lang ? `/${lang}` : '';
       </div>
       <!-- Right: 语言切换及按钮 -->
       <div id="header-right-actions" class="hidden lg:flex items-center space-x-4 shrink-0 justify-end">
-        {lang && (
+        {(
           <div class="relative group" id="lang-switcher-desktop">
             <button type="button" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 inline-flex items-center" aria-haspopup="true" aria-expanded="false">
               <Icon name="carbon:earth" class="w-5 h-5 mr-1" />
-              <span>{getLocaleLabel(lang)}</span>
+              <span>{getLocaleLabel(currentLocale)}</span>
             </button>
             <div class="absolute top-full right-0 py-1 w-40 bg-white rounded-lg shadow-lg border border-gray-200 hidden group-hover:block z-[90]" role="menu">
-              {SUPPORTED_LOCALES.filter((l) => l !== lang).map((locale) => (
-                <a href={`/${locale}/`} data-locale-link data-locale={locale} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{getLocaleLabel(locale)}</a>
+              {SUPPORTED_LOCALES.filter((l) => l !== currentLocale).map((locale) => (
+                <a href={locale === DEFAULT_LOCALE ? '/' : `/${locale}/`} data-locale-link data-locale={locale} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{getLocaleLabel(locale)}</a>
               ))}
             </div>
           </div>
@@ -127,16 +128,16 @@ const prefix = lang ? `/${lang}` : '';
           </a>
         </nav>
 
-        {lang && (
+        {(
           <div class="pt-5 border-t border-gray-100 mt-5">
             <div class="mb-2 text-gray-500 text-[15px] font-medium flex items-center gap-1">
               <Icon name="carbon:earth" class="w-4 h-4" />
-              {getLocaleLabel(lang)}
+              {getLocaleLabel(currentLocale)}
             </div>
             <div class="flex flex-wrap gap-2">
-              {SUPPORTED_LOCALES.filter((l) => l !== lang).map((locale) => (
+              {SUPPORTED_LOCALES.filter((l) => l !== currentLocale).map((locale) => (
                 <a
-                  href={`/${locale}/`}
+                  href={locale === DEFAULT_LOCALE ? '/' : `/${locale}/`}
                   data-locale-link
                   data-locale={locale}
                   class="py-1 px-3 text-[15px] text-blue-600 font-medium bg-blue-50 rounded hover:bg-blue-100 transition"
@@ -193,7 +194,7 @@ const prefix = lang ? `/${lang}` : '';
     }
 
     // Keep current page when switching language:
-    // /en/foo/bar -> /ja/foo/bar (instead of /ja/)
+    // /foo/bar -> /ja/foo/bar, /ja/foo/bar -> /foo/bar
     const localeLinks = document.querySelectorAll('[data-locale-link]');
     const supported = ['en', 'ja', 'pt', 'ko', 'es', 'ms', 'tr', 'ru'];
     const currentPath = window.location.pathname || '/';
@@ -205,7 +206,7 @@ const prefix = lang ? `/${lang}` : '';
     localeLinks.forEach((link) => {
       const targetLocale = link.getAttribute('data-locale');
       if (!targetLocale) return;
-      const href = `/${targetLocale}${suffix === '/' ? '/' : suffix}`;
+      const href = targetLocale === 'en' ? (suffix === '/' ? '/' : suffix) : `/${targetLocale}${suffix === '/' ? '/' : suffix}`;
       link.setAttribute('href', href);
     });
   });

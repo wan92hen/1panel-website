@@ -1,24 +1,31 @@
 ---
-const base = import.meta.env.BASE_URL || './';
-const redirectUrl = base.endsWith('/') ? `${base}en/pricing.html` : `${base}/en/pricing.html`;
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/Header.astro';
+import PricingContent from '../components/Pricing.astro';
+import Footer from '../components/Footer.astro';
+import { getTranslations, t, getBasePath } from '../i18n/utils';
+import '../styles/global.css';
+
+const lang = 'en';
+const translations = getTranslations(lang);
+const basePath = getBasePath(undefined);
+const title = `${t(translations, 'header.pricing')} - 1Panel`;
 ---
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="refresh" content={`0;url=${redirectUrl}`} />
-  <link rel="canonical" href={redirectUrl} />
-  <title>Redirecting...</title>
-</head>
-<body>
-  <p>Redirecting...</p>
-  <script is:inline define:vars={{ redirectUrl }}>
-    window.location.replace(redirectUrl);
-  </script>
-  <noscript>
-    <p>Redirecting to <a href={redirectUrl}>English pricing page</a>...</p>
-  </noscript>
-</body>
-</html>
+<Layout title={title} lang={lang} basePath={basePath}>
+  <Fragment slot="main">
+    <Header lang={lang} basePath={basePath} translations={translations} />
+    <main>
+      <PricingContent lang={lang} basePath={basePath} translations={translations} />
+    </main>
+    <Footer lang={lang} basePath={basePath} translations={translations} />
+  </Fragment>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    z-index: 1;
+  }
+</style>
 

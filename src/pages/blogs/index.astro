@@ -33,7 +33,7 @@ const posts = sortPostsByDate(getPostsForLocale(allPosts, DEFAULT_LOCALE));
   keywords="1Panel,blog,PHP,WordPress,Linux,OpenResty,SSL,tutorial"
 >
   <Fragment slot="main">
-    <Header basePath={basePath} translations={translations} />
+    <Header lang="en" basePath={basePath} translations={translations} />
     <main class="relative z-10 min-h-screen">
       <div class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white">
         <BlogPageDecor />
