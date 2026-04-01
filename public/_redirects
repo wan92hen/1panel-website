@@ -7,6 +7,8 @@
 /en/1panel-vs-plesk.html /1panel-vs-plesk.html 301
 /zh-tw/* /zh-hant/:splat 301
 /zh-tw /zh-hant 301
+/sitemap.xml /sitemap-index.xml 301
+/sitemap /sitemap-index.xml 301
 
 # Cloudflare Pages fallback for unknown routes
 /* /404.html 404
