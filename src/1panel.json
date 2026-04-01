@@ -1859,8 +1859,8 @@
       },
       "versions": [
         {
-          "name": "2.376.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.376.0/casdoor-2.376.0.tar.gz",
+          "name": "2.377.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.377.0/casdoor-2.377.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2689,6 +2689,71 @@
       ]
     },
     {
+      "icon": "https://apps.1panel.pro/stable/1panel/cyberchef/logo.png",
+      "name": "CyberChef",
+      "readMe": "## Introduction\n\nCyberChef, officially described as \"The Cyber Swiss Army Knife\", is a browser-based data processing toolkit. It is well suited for encoding, decoding, encryption, decryption, compression, hashing, format conversion, and forensic-style analysis without writing scripts.\n\n## Features\n\n- Supports operations such as Base64, XOR, AES, DES, and Blowfish.\n- Supports compression, decompression, hashes, checksums, binary dumps, and hex dumps.\n- Supports parsing and converting IPv6, X.509, and character encodings.\n- Supports drag and drop, Auto Bake, breakpoints, and saving/loading recipes.\n- Most processing happens locally in the browser, making it suitable for offline or internal-network use.\n\n## Access After Installation\n\nAfter installation, visit `http://\u003cServerIP\u003e:\u003cPANEL_APP_PORT_HTTP\u003e`.\n\nCyberChef does not require an initial account setup and can be used directly.\n\n## Data Storage\n\nThe current 1Panel template is stateless. If you need to preserve recipes, you can rely on browser local storage or extend the deployment according to the official documentation.\n\n## Notes\n\nThe official project is still actively evolving. It is best suited for analysis and transformation workflows and should not be treated as a substitute for security-audited cryptographic products.\n\n## Official Links\n\n- Live Demo: https://gchq.github.io/CyberChef/\n- Documentation: https://github.com/gchq/CyberChef/wiki\n- Source Code: https://github.com/gchq/CyberChef\n",
+      "additionalProperties": {
+        "crossVersionUpdate": true,
+        "description": {
+          "en": "Browser-based toolbox for encoding, decoding and data analysis",
+          "es-es": "Caja de herramientas en el navegador para codificacion, decodificacion y analisis de datos",
+          "ja": "ブラウザで使えるデータのエンコード、デコード、解析ツール",
+          "ko": "브라우저 기반 데이터 인코딩, 디코딩 및 분석 도구",
+          "ms": "Kotak alat berasaskan pelayar untuk pengekodan, penyahkodan dan analisis data",
+          "pt-br": "Caixa de ferramentas no navegador para codificacao, decodificacao e analise de dados",
+          "ru": "Набор инструментов в браузере для кодирования, декодирования и анализа данных",
+          "tr": "Tarayici tabanli kodlama, kod cozumleme ve veri analizi araci",
+          "zh": "浏览器中的数据编码、解码与分析工具",
+          "zh-Hant": "瀏覽器中的資料編碼、解碼與分析工具"
+        },
+        "document": "https://github.com/gchq/CyberChef/wiki",
+        "github": "https://github.com/gchq/CyberChef",
+        "key": "cyberchef",
+        "limit": 0,
+        "name": "CyberChef",
+        "recommend": 0,
+        "shortDescEn": "Browser-based toolbox for encoding, decoding and data analysis",
+        "shortDescZh": "浏览器中的数据编码、解码与分析工具",
+        "tags": [
+          "Tool"
+        ],
+        "type": "website",
+        "website": "https://gchq.github.io/CyberChef/"
+      },
+      "versions": [
+        {
+          "name": "10.22.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cyberchef/10.22.1/cyberchef-10.22.1.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": 8080,
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "WebUI port",
+                  "es-es": "Puerto de WebUI",
+                  "ja": "WebUI ポート",
+                  "ko": "WebUI 포트",
+                  "ms": "Port WebUI",
+                  "pt-br": "Porta da WebUI",
+                  "ru": "Порт WebUI",
+                  "tr": "WebUI baglanti noktasi",
+                  "zh": "WebUI 端口",
+                  "zh-Hant": "WebUI 連接埠"
+                },
+                "labelEn": "WebUI port",
+                "labelZh": "WebUI 端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "icon": "https://apps.1panel.pro/stable/1panel/dashy/logo.png",
       "name": "Dashy",
       "readMe": "## Introduction\n\n**Dashy** is a powerful open-source dashboard application for organizing and managing your bookmarks, links, and frequently used applications. It allows users to create a customized dashboard interface for easy access to daily tools and services.\n\n## Features\n\n- **Highly Customizable**: Users can customize the layout and appearance of the dashboard through configuration files to suit their needs and preferences.\n- **Multiple Integrations**: Supports integration with various services and applications, such as Docker, Kubernetes, GitHub, and more, providing real-time monitoring and quick actions.\n- **Easy to Set Up and Use**: Offers simple configuration files (YAML/JSON) for users to easily add, edit, and delete items.\n- **Responsive Design**: Works well on various devices, ensuring a great experience on both desktop and mobile devices.\n- **Secure**: Supports multiple authentication methods, such as username/password and OAuth2, to ensure data security.\n- **Community Support**: As an open-source project, it has an active community where users can get support and contribute to the project's development.\n",
@@ -2728,8 +2793,8 @@
       },
       "versions": [
         {
-          "name": "3.2.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dashy/3.2.0/dashy-3.2.0.tar.gz",
+          "name": "3.2.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dashy/3.2.1/dashy-3.2.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -3463,8 +3528,8 @@
       },
       "versions": [
         {
-          "name": "0.70.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/docmost/0.70.3/docmost-0.70.3.tar.gz",
+          "name": "0.71.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/docmost/0.71.0/docmost-0.71.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -3737,8 +3802,8 @@
       },
       "versions": [
         {
-          "name": "29.6.6",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/drawio/29.6.6/drawio-29.6.6.tar.gz",
+          "name": "29.6.7",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/drawio/29.6.7/drawio-29.6.7.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -4317,6 +4382,110 @@
               }
             ]
           }
+        },
+        {
+          "name": "9.3.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/elasticsearch/9.3.2/elasticsearch-9.3.2.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": 9200,
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "HTTP Port",
+                  "es-es": "Puerto HTTP",
+                  "ja": "HTTPポート",
+                  "ko": "HTTP 포트",
+                  "ms": "Port HTTP",
+                  "pt-br": "Porta HTTP",
+                  "ru": "HTTP-порт",
+                  "tr": "HTTP Bağlantı Noktası",
+                  "zh": "HTTP端口",
+                  "zh-Hant": "HTTP連接埠"
+                },
+                "labelEn": "HTTP Port",
+                "labelZh": "HTTP端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              },
+              {
+                "default": "true",
+                "edit": true,
+                "envKey": "ELASTIC_SECURITY",
+                "label": {
+                  "en": "Password Verification",
+                  "es-es": "Contraseña Verification",
+                  "ja": "パスワード検証",
+                  "ko": "비밀번호 확인",
+                  "ms": "Pengesahan Kata Laluan",
+                  "pt-br": "Verificação de Senha",
+                  "ru": "Проверка пароля",
+                  "tr": "Parola Doğrulama",
+                  "zh": "开启密码验证",
+                  "zh-Hant": "開啟密碼驗證"
+                },
+                "labelEn": "Password Verification",
+                "labelZh": "开启密码验证",
+                "required": true,
+                "type": "select",
+                "values": [
+                  {
+                    "label": "True",
+                    "value": "true"
+                  },
+                  {
+                    "label": "False",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "default": "Elastic",
+                "edit": true,
+                "envKey": "ELASTIC_PASSWORD",
+                "label": {
+                  "en": "Password",
+                  "es-es": "Contraseña",
+                  "ja": "パスワード",
+                  "ko": "비밀번호",
+                  "ms": "Kata laluan",
+                  "pt-br": "Senha",
+                  "ru": "Пароль",
+                  "tr": "Parola",
+                  "zh": "密码",
+                  "zh-Hant": "密碼"
+                },
+                "labelEn": "Password",
+                "labelZh": "密码",
+                "random": true,
+                "required": true,
+                "type": "password"
+              },
+              {
+                "default": "ES_JAVA_OPTS=-Xlog:disable -Xlog:gc=debug:stderr -Xms512m -Xmx512m",
+                "edit": true,
+                "envKey": "P_ES_JAVA_OPTS",
+                "label": {
+                  "en": "ES JAVA OPTS",
+                  "es-es": "Opciones JAVA de ES",
+                  "ja": "ES JAVA オプション",
+                  "ko": "ES JAVA 옵션",
+                  "ms": "Pilihan ES JAVA",
+                  "pt-br": "Opções ES JAVA",
+                  "ru": "Параметры ES JAVA",
+                  "tr": "ES JAVA secenekleri",
+                  "zh": "ES JAVA OPTS",
+                  "zh-Hant": "ES JAVA 選項"
+                },
+                "labelEn": "ES JAVA OPTS",
+                "labelZh": "ES JAVA OPTS",
+                "required": true,
+                "type": "text"
+              }
+            ]
+          }
         }
       ]
     },
@@ -4360,8 +4529,8 @@
       },
       "versions": [
         {
-          "name": "6.1.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/emqx/6.1.1/emqx-6.1.1.tar.gz",
+          "name": "6.2.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/emqx/6.2.0/emqx-6.2.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -7598,8 +7767,8 @@
       },
       "versions": [
         {
-          "name": "1.12.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/homepage/1.12.1/homepage-1.12.1.tar.gz",
+          "name": "1.12.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/homepage/1.12.2/homepage-1.12.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -8146,8 +8315,8 @@
       },
       "versions": [
         {
-          "name": "10.11.6",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/jellyfin/10.11.6/jellyfin-10.11.6.tar.gz",
+          "name": "10.11.7",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/jellyfin/10.11.7/jellyfin-10.11.7.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9269,6 +9438,36 @@
               }
             ]
           }
+        },
+        {
+          "name": "9.3.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/kibana/9.3.2/kibana-9.3.2.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": 5601,
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "WebUI port",
+                  "es-es": "Puerto de WebUI",
+                  "ja": "WebUI ポート",
+                  "ko": "WebUI 포트",
+                  "ms": "Port WebUI",
+                  "pt-br": "Porta da WebUI",
+                  "ru": "Порт WebUI",
+                  "tr": "WebUI portu",
+                  "zh": "WebUI 端口",
+                  "zh-Hant": "WebUI 連接埠"
+                },
+                "labelEn": "WebUI port",
+                "labelZh": "WebUI 端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              }
+            ]
+          }
         }
       ]
     },
@@ -9671,8 +9870,8 @@
       },
       "versions": [
         {
-          "name": "1.37.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/logto/1.37.1/logto-1.37.1.tar.gz",
+          "name": "1.38.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/logto/1.38.0/logto-1.38.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -11318,8 +11517,8 @@
       },
       "versions": [
         {
-          "name": "0.59.4",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/metabase/0.59.4/metabase-0.59.4.tar.gz",
+          "name": "0.59.5",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/metabase/0.59.5/metabase-0.59.5.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13685,8 +13884,8 @@
       },
       "versions": [
         {
-          "name": "0.60.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/navidrome/0.60.3/navidrome-0.60.3.tar.gz",
+          "name": "0.61.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/navidrome/0.61.0/navidrome-0.61.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13756,8 +13955,8 @@
       },
       "versions": [
         {
-          "name": "5.26.23",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/neo4j/5.26.23/neo4j-5.26.23.tar.gz",
+          "name": "5.26.24",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/neo4j/5.26.24/neo4j-5.26.24.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -27015,8 +27214,8 @@
       },
       "versions": [
         {
-          "name": "1.19.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/twenty/1.19.1/twenty-1.19.1.tar.gz",
+          "name": "1.20.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/twenty/1.20.0/twenty-1.20.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
