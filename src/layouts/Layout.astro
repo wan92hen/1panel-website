@@ -15,6 +15,8 @@ export interface Props {
   keywords?: string;
   /** Absolute URL for og:image / twitter:image */
   ogImageUrl?: string;
+  /** Load homepage-only GitHub/download counters */
+  enableHomepageStats?: boolean;
 }
 
 import { publicAsset } from '../lib/asset';
@@ -34,6 +36,7 @@ const {
   articleModifiedTime,
   keywords = "1Panel,Linux,server,github,panel,docker,container,website,database,management,wordpress,php",
   ogImageUrl,
+  enableHomepageStats = false,
 } = Astro.props;
 const defaultOgImage = `${siteOrigin}/images/overview-full.png`;
 const resolvedOgImage = ogImageUrl ?? defaultOgImage;
@@ -100,7 +103,7 @@ const htmlLang =
   <LanguageModal />
   
   <!-- Global scripts -->
-  <script>
+  <script is:inline define:vars={{ enableHomepageStats }}>
     // 获取 Stars 数量和下载量并在获取后再执行动画
     async function fetchStarsAndDownloadCountAndAnimate() {
       let starsCount = 30000; // 默认值
@@ -274,7 +277,12 @@ const htmlLang =
 
     // 初始化
     document.addEventListener('DOMContentLoaded', () => {
-      fetchStarsAndDownloadCountAndAnimate();
+      if (enableHomepageStats) {
+        fetchStarsAndDownloadCountAndAnimate();
+      } else {
+        setupAnimations();
+        animateCounters();
+      }
       createParticles();
       setupSmoothScroll();
       setupTypingEffect();

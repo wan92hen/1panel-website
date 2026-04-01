@@ -23,7 +23,7 @@ const description = t(translations, 'meta.defaultDescription');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
-<Layout title={title} description={description} lang={lang} basePath={basePath} canonicalUrl={canonicalUrl}>
+<Layout title={title} description={description} lang={lang} basePath={basePath} canonicalUrl={canonicalUrl} enableHomepageStats={true}>
   <Fragment slot="head">
     {SUPPORTED_LOCALES.map((loc) => (
       <link
