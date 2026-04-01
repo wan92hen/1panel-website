@@ -1,0 +1,647 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogPageDecor from '../../components/blog/BlogPageDecor.astro';
+import { getTranslations, getBasePath } from '../../i18n/utils';
+import '../../styles/global.css';
+
+interface Props {
+  /** UI locale for header/footer; article body is English until translated per locale. */
+  lang?: string;
+}
+
+const { lang: langProp } = Astro.props;
+const lang = langProp ?? 'en';
+const translations = getTranslations(lang);
+const basePath = getBasePath(lang);
+const title = '1Panel vs Plesk: Cloud-Native Open Source vs Commercial Hosting Stack (2026)';
+const description =
+  'Compare 1Panel and Plesk across Docker-native architecture, resource footprint, licensing model, AI automation (MCP), DNS integrations, and team fit for modern VPS workloads.';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const keywords =
+  '1Panel vs Plesk,Plesk alternative,open source control panel,Docker server panel,VPS management,WebPros Plesk,cloud native hosting panel,self-hosted panel';
+
+const faq = [
+  {
+    q: 'What is the fundamental architecture difference between 1Panel and Plesk?',
+    a: '1Panel is built around Docker-native isolation: apps and runtimes ship as containers with clear boundaries. Plesk historically centers on deep OS integration and a broad commercial extension ecosystem, with heavier coupling to the host stack even when optional container features exist.',
+  },
+  {
+    q: 'Which panel is usually lighter on RAM for a small VPS?',
+    a: 'In typical deployments, 1Panel’s Go-based core and containerized services commonly leave more headroom on 1–2 GB instances. Plesk’s integrated services and extensions often consume substantially more idle memory; always validate against your exact edition and enabled modules.',
+  },
+  {
+    q: 'How do licensing models differ?',
+    a: '1Panel’s core is GPLv3 and free; Pro is priced per node without domain-count ladders. Plesk commonly uses tiered commercial licensing (often domain- or edition-based) with many premium capabilities delivered as paid extensions—check current WebPros pricing for your region.',
+  },
+  {
+    q: 'Which product is stronger for AI-assisted operations in 2026?',
+    a: '1Panel emphasizes AI-era workflows such as MCP-based automation and easier paths to run local LLM stacks alongside apps. Plesk’s AI features are often application-layer add-ons rather than first-class infrastructure automation for models and agents.',
+  },
+  {
+    q: 'When might Plesk still be the pragmatic choice?',
+    a: 'Teams standardized on Plesk across agencies and Windows/Linux mixed estates, or those relying on specific Plesk extensions and reseller workflows, may prefer continuity until a migration plan is justified by cost or architecture goals.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  basePath={basePath}
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+>
+  <Fragment slot="head">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  </Fragment>
+
+  <Fragment slot="main">
+    <Header lang={lang} basePath={basePath} translations={translations} />
+    <main class="relative z-10 min-h-screen compare-page">
+      <div class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50/40">
+        <BlogPageDecor />
+        <section class="section-padding relative z-10">
+          <div class="container-custom max-w-5xl space-y-12">
+            <header class="text-center">
+              <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                1Panel vs Plesk:
+                <span class="block text-indigo-600">Docker-Native Ops vs Traditional Commercial Suite</span>
+              </h1>
+              <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                In 2026, hosting control planes split between cloud-native, container-first stacks and long-running commercial suites with deep
+                extension marketplaces. This page translates that shift into practical decision criteria for VPS, agency, and product teams.
+              </p>
+              <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#recommendation" class="compare-btn-primary">See Recommendation</a>
+                <a href="#matrix" class="compare-btn-secondary">View Detailed Matrix</a>
+              </div>
+            </header>
+
+            <section id="overview" class="scroll-mt-24">
+              <div class="card p-6 sm:p-8">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">Executive Summary</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                  <div class="compare-radar-wrap">
+                    <canvas id="overviewRadarChart"></canvas>
+                  </div>
+                  <div>
+                    <ul class="space-y-3 text-slate-700 leading-relaxed">
+                      <li>
+                        <strong>1Panel</strong> fits teams optimizing for container isolation, lean panel overhead, transparent open-core
+                        economics, and forward-looking automation (including MCP-style AI operations).
+                      </li>
+                      <li>
+                        <strong>Plesk</strong> remains entrenched in traditional hosting and agency workflows, with Windows/Linux breadth and a
+                        mature catalog of commercial extensions—often at higher baseline resource and license complexity.
+                      </li>
+                      <li>
+                        If your roadmap is Docker-first, API-driven, and AI-adjacent, 1Panel usually aligns better; if you are preserving a
+                        Plesk-standardized reseller estate, continuity may outweigh migration cost in the short term.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Architecture: Docker-Native Isolation vs Host-Integrated Suite</h2>
+              <div class="space-y-4 text-slate-700 leading-relaxed">
+                <p>
+                  <strong>1Panel</strong> treats the panel as a control plane over containerized workloads: web servers, databases, and language
+                  runtimes commonly run as images with strong process and filesystem boundaries. Different sites can pin different PHP or Node
+                  versions without fighting shared host packages, upgrades can be rolled forward or back at the image level, and migrations often
+                  reduce to moving volumes and compose-style definitions rather than replaying brittle package state.
+                </p>
+                <p>
+                  <strong>Plesk</strong> orchestrates a wide surface area—web, mail, security, and reseller flows—tightly against the operating
+                  system. Installations pull in large dependency graphs; an outage in a core component can impact both the panel and hosted
+                  services. Recent container-related features improve some workflows, but the product’s center of gravity remains integrated
+                  suite operations rather than immutable, image-first delivery.
+                </p>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Resource Efficiency: Implementation Stack and Idle Footprint</h2>
+              <p class="text-slate-700 leading-relaxed mb-5">
+                Panel overhead matters on small instances. Figures below summarize commonly reported ranges from community and industry write-ups;
+                your exact numbers depend on enabled extensions, mail stacks, and monitoring agents—measure on your own VPS before budgeting.
+              </p>
+              <div class="overflow-x-auto rounded-xl border border-slate-200 mb-6">
+                <table class="w-full text-left text-sm text-slate-700">
+                  <thead class="bg-slate-50 text-slate-900 font-semibold">
+                    <tr>
+                      <th class="px-4 py-3">Dimension</th>
+                      <th class="px-4 py-3">1Panel (modern stack)</th>
+                      <th class="px-4 py-3">Plesk (commercial suite)</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200">
+                    <tr>
+                      <td class="px-4 py-3 font-medium">Core implementation</td>
+                      <td class="px-4 py-3">Go (static binary, efficient concurrency)</td>
+                      <td class="px-4 py-3">Mixed Perl / PHP / C++ services and daemons</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-3 font-medium">Concurrency model</td>
+                      <td class="px-4 py-3">Goroutines, low per-connection overhead</td>
+                      <td class="px-4 py-3">Multi-process services and background workers</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-3 font-medium">Typical idle RAM (indicative)</td>
+                      <td class="px-4 py-3">Often roughly 200 MB–500 MB for the panel layer</td>
+                      <td class="px-4 py-3">Often roughly 1 GB–2.5 GB+ with common bundles</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-3 font-medium">UI delivery</td>
+                      <td class="px-4 py-3">SPA-style interactions, fewer full page reloads</td>
+                      <td class="px-4 py-3">Classic multi-page UI; heavier session and module load</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="text-sm text-slate-500 mb-3">
+                Illustrative comparison using midpoint estimates from the ranges above (not a substitute for production profiling).
+              </p>
+              <div class="compare-ram-chart-wrap">
+                <canvas id="ramFootprintChart"></canvas>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Economic Model: Open Core vs Tiered Commercial Licensing</h2>
+              <div class="space-y-4 text-slate-700 leading-relaxed">
+                <p>
+                  <strong>1Panel</strong> ships core functionality under <strong>GPLv3</strong> with no artificial caps on domains or accounts.
+                  <strong>Pro</strong> adds enterprise-oriented capabilities (for example advanced WAF, tamper protection, and multi-node
+                  operations) priced <strong>per node</strong>, which avoids the “tax on growth” pattern of counting every hostname.
+                </p>
+                <p>
+                  <strong>Plesk</strong>, under WebPros, historically relies on <strong>edition and domain-tier licensing</strong>, with many
+                  security, backup, and toolkit features monetized as extensions. Industry commentary in 2025–2026 highlights recurring price
+                  pressure on unlimited-domain tiers—always validate list price, promos, and partner programs in your currency before modeling TCO.
+                </p>
+                <p>
+                  For operators managing many small sites, license line items can rival hardware spend; for agencies already amortizing Plesk
+                  across seats, the spreadsheet may still close in Plesk’s favor until architecture goals change.
+                </p>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8 border-indigo-200 bg-gradient-to-br from-indigo-50/60 to-white">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Intelligent Operations: MCP, Local LLMs, and Extension-Layer AI</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="rounded-xl border border-indigo-200 bg-white p-5">
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">1Panel Direction</h3>
+                  <p class="text-slate-700 leading-relaxed">
+                    Official <strong>Model Context Protocol (MCP)</strong> integration lets approved agents translate natural-language intent into
+                    panel operations—ideal for runbooks, incident triage, and scripted maintenance. The stack also supports deploying
+                    <strong>local inference runtimes</strong> (for example Ollama or vLLM) so GPU-backed models live beside your apps with observable
+                    resource usage.
+                  </p>
+                </div>
+                <div class="rounded-xl border border-sky-200 bg-white p-5">
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">Plesk Direction</h3>
+                  <p class="text-slate-700 leading-relaxed">
+                    Plesk’s AI story today is largely <strong>application-level extensions</strong>—content helpers, marketing add-ons, and similar
+                    plugins—rather than a unified automation plane for infrastructure and model lifecycles. Deep AI-Ops still leans on external
+                    tooling outside the panel’s core design center.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Global Integrations and Developer Experience</h2>
+              <div class="space-y-4 text-slate-700 leading-relaxed">
+                <p>
+                  <strong>1Panel</strong> emphasizes turnkey DNS and certificate automation across <strong>Cloudflare</strong>,
+                  <strong>AWS Route 53</strong>, <strong>Azure DNS</strong>, <strong>Google Cloud DNS</strong>, <strong>DigitalOcean</strong>, and
+                  related providers—reducing toil for wildcard <strong>Let’s Encrypt</strong> issuance and renewal. Flexible Docker registry
+                  mirrors and proxy options help teams in varied network environments pull images reliably.
+                </p>
+                <p>
+                  The project’s <strong>GitHub</strong> traction and rapid release cadence mean feature requests from practitioners surface in
+                  shipping builds quickly. <strong>Plesk</strong> counters with a polished commercial marketplace, partner certifications, and
+                  long-standing Windows/Linux coverage valued by traditional hosters—strengths that matter when extensions, not containers, define
+                  your delivery model.
+                </p>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8 bg-slate-50/80 border border-slate-200">
+              <h2 class="text-2xl font-bold text-slate-900 mb-3">Related Comparisons</h2>
+              <p class="text-slate-600 mb-4 leading-relaxed">
+                Exploring other control panels? These guides use the same evaluation framework—architecture, cost curve, and team workflow fit.
+              </p>
+              <ul class="flex flex-wrap gap-3">
+                <li>
+                  <a
+                    href="./1panel-vs-cpanel.html"
+                    class="inline-flex items-center px-4 py-2 rounded-lg border border-slate-300 bg-white text-slate-800 font-medium hover:bg-slate-50 transition"
+                    >1Panel vs cPanel</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="./1panel-vs-webmin.html"
+                    class="inline-flex items-center px-4 py-2 rounded-lg border border-slate-300 bg-white text-slate-800 font-medium hover:bg-slate-50 transition"
+                    >1Panel vs Webmin</a
+                  >
+                </li>
+              </ul>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Scenario-Based Recommendation</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="rounded-xl border border-indigo-200 bg-indigo-50 p-5">
+                  <h3 class="text-lg font-semibold text-indigo-900 mb-3">Choose 1Panel if you are:</h3>
+                  <ul class="space-y-2 text-indigo-900">
+                    <li>- Standardizing on Docker for websites, APIs, and data services</li>
+                    <li>- Minimizing idle RAM and maximizing workload headroom on small VPS tiers</li>
+                    <li>- Adopting AI agents, MCP automation, or on-server LLM infrastructure</li>
+                    <li>- Preferring GPLv3 core with predictable per-node Pro upgrades</li>
+                  </ul>
+                </div>
+                <div class="rounded-xl border border-sky-200 bg-sky-50 p-5">
+                  <h3 class="text-lg font-semibold text-sky-900 mb-3">Choose Plesk if you are:</h3>
+                  <ul class="space-y-2 text-sky-900">
+                    <li>- Operating a legacy Plesk multi-tenant or agency footprint with trained staff</li>
+                    <li>- Dependent on specific commercial extensions (WP Toolkit tiers, premium security bundles, etc.)</li>
+                    <li>- Need turnkey Windows/Linux parity in one vendor-supported suite today</li>
+                    <li>- Prioritizing vendor certification paths over container-first refactor</li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+
+            <section id="matrix" class="scroll-mt-24">
+              <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3">Detailed Comparison Matrix</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">
+                  Switch tabs to compare deployment philosophy, commercial packaging, and automation depth.
+                </p>
+              </div>
+              <div class="card p-0 overflow-hidden">
+                <div class="flex flex-wrap border-b border-slate-200" id="tabContainer">
+                  <button class="compare-tab tab-active" data-target="tab-arch">Architecture</button>
+                  <button class="compare-tab tab-inactive" data-target="tab-commercial">Commercial Model</button>
+                  <button class="compare-tab tab-inactive" data-target="tab-auto">Automation & AI</button>
+                </div>
+                <div class="p-6 md:p-8">
+                  <div id="tab-arch" class="tab-panel section-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="compare-col compare-col-1p">
+                        <h3 class="text-xl font-bold mb-3">1Panel Architecture</h3>
+                        <p>
+                          Docker-native boundaries, per-app runtime versions, minimal host pollution, and migration patterns centered on images and
+                          volumes rather than monolithic package state.
+                        </p>
+                      </div>
+                      <div class="compare-col compare-col-pl">
+                        <h3 class="text-xl font-bold mb-3">Plesk Architecture</h3>
+                        <p>
+                          Deep OS integration for web, mail, and security subsystems; broad service footprint; optional container features without
+                          abandoning the integrated-suite model.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab-commercial" class="tab-panel hidden section-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="compare-col compare-col-1p">
+                        <h3 class="text-xl font-bold mb-3">1Panel Economics</h3>
+                        <p>
+                          Free GPLv3 core; Pro licensed per node with advanced security and multi-node tooling—no domain-count ladder for the open
+                          edition.
+                        </p>
+                      </div>
+                      <div class="compare-col compare-col-pl">
+                        <h3 class="text-xl font-bold mb-3">Plesk Economics</h3>
+                        <p>
+                          Subscription editions with domain or feature tiers; many capabilities delivered as paid extensions—verify current WebPros
+                          quotes and partner incentives.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab-auto" class="tab-panel hidden section-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="compare-col compare-col-1p">
+                        <h3 class="text-xl font-bold mb-3">1Panel Automation</h3>
+                        <p>
+                          MCP-aware operations, API-first workflows, and native paths to run and monitor local LLM stacks next to containerized
+                          applications.
+                        </p>
+                      </div>
+                      <div class="compare-col compare-col-pl">
+                        <h3 class="text-xl font-bold mb-3">Plesk Automation</h3>
+                        <p>
+                          Mature scheduling and extension hooks focused on hosting delivery; AI features skew toward end-user site tools rather than
+                          infrastructure-level agent orchestration.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-gray-800 mb-4">FAQ</h2>
+              <div class="space-y-4">
+                {faq.map((item) => (
+                  <details class="faq-item rounded-lg border border-gray-200 bg-white p-4">
+                    <summary class="cursor-pointer font-semibold text-gray-800 pr-7">{item.q}</summary>
+                    <p class="mt-3 text-gray-600">{item.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            <section id="recommendation" class="card p-8 md:p-10 bg-gradient-to-br from-indigo-900 to-indigo-700 text-white">
+              <h2 class="text-3xl font-extrabold mb-4">Final Recommendation</h2>
+              <p class="text-indigo-100 text-lg leading-relaxed mb-6">
+                <strong>Plesk</strong> remains a capable incumbent when your business is anchored to its extension marketplace, reseller workflows,
+                or mixed Windows/Linux hosting contracts. <strong>1Panel</strong> is the stronger strategic fit when you want Docker isolation, lean
+                resource use, transparent open-core economics, and automation that embraces MCP and modern AI infrastructure—especially on
+                Linux-first VPS estates.
+              </p>
+              <a
+                href="./pricing.html"
+                class="inline-flex items-center px-7 py-3 rounded-lg bg-white text-indigo-800 font-semibold hover:bg-indigo-50 transition"
+              >
+                Compare 1Panel Plans
+              </a>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+    <Footer lang={lang} basePath={basePath} translations={translations} />
+  </Fragment>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  .compare-page {
+    overflow-x: hidden;
+  }
+
+  :global(html),
+  :global(body) {
+    overflow-x: hidden;
+  }
+
+  .compare-btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-white font-medium shadow-sm transition;
+    background: linear-gradient(135deg, #4f46e5 0%, #005eeb 100%);
+  }
+
+  .compare-btn-primary:hover {
+    @apply shadow-lg;
+  }
+
+  .compare-btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-300 text-slate-700 bg-white font-medium transition;
+  }
+
+  .compare-btn-secondary:hover {
+    @apply bg-slate-50;
+  }
+
+  .compare-tab {
+    @apply flex-1 min-w-[160px] py-4 px-6 text-center font-medium transition border-b-2;
+  }
+
+  .tab-active {
+    border-bottom-color: #4f46e5;
+    color: #4f46e5;
+    font-weight: 700;
+  }
+
+  .tab-inactive {
+    border-bottom-color: transparent;
+    color: #64748b;
+  }
+
+  .tab-inactive:hover {
+    color: #334155;
+    border-bottom-color: #cbd5e1;
+  }
+
+  .compare-col {
+    @apply rounded-xl p-5 border;
+  }
+
+  .compare-col p {
+    @apply text-slate-700 leading-relaxed;
+  }
+
+  .compare-col-1p {
+    @apply bg-indigo-50 border-indigo-100 text-indigo-900;
+  }
+
+  .compare-col-pl {
+    @apply bg-sky-50 border-sky-100 text-sky-900;
+  }
+
+  .compare-radar-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    height: 360px;
+  }
+
+  .compare-ram-chart-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 560px;
+    margin: 0 auto;
+    height: 280px;
+  }
+
+  @media (max-width: 767px) {
+    .compare-radar-wrap {
+      height: 320px;
+    }
+
+    .compare-ram-chart-wrap {
+      height: 240px;
+    }
+  }
+
+  .section-fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .faq-item summary {
+    list-style: none;
+    position: relative;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #005eeb;
+    font-weight: 700;
+  }
+
+  .faq-item[open] summary::after {
+    content: "-";
+  }
+</style>
+
+<script>
+  // @ts-nocheck
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Chart !== 'undefined') {
+      const radar = document.getElementById('overviewRadarChart');
+      if (radar) {
+        new Chart(radar, {
+          type: 'radar',
+          data: {
+            labels: [
+              'Cloud-Native Architecture',
+              'Panel Resource Efficiency',
+              'Licensing Transparency',
+              'AI & Automation Depth',
+              'Legacy Hosting / Agency Fit',
+            ],
+            datasets: [
+              {
+                label: '1Panel',
+                data: [95, 93, 91, 90, 44],
+                backgroundColor: 'rgba(79, 70, 229, 0.20)',
+                borderColor: 'rgba(79, 70, 229, 1)',
+                pointBackgroundColor: 'rgba(79, 70, 229, 1)',
+                borderWidth: 2,
+              },
+              {
+                label: 'Plesk',
+                data: [54, 36, 34, 30, 90],
+                backgroundColor: 'rgba(14, 165, 233, 0.18)',
+                borderColor: 'rgba(2, 132, 199, 1)',
+                pointBackgroundColor: 'rgba(2, 132, 199, 1)',
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              r: {
+                min: 0,
+                max: 100,
+                ticks: { display: false },
+                grid: { color: 'rgba(15, 23, 42, 0.10)' },
+                pointLabels: { color: '#475569', font: { size: 11 } },
+              },
+            },
+            plugins: {
+              legend: { position: 'bottom' },
+            },
+          },
+        });
+      }
+
+      const ram = document.getElementById('ramFootprintChart');
+      if (ram) {
+        new Chart(ram, {
+          type: 'bar',
+          data: {
+            labels: ['1Panel (midpoint of common range)', 'Plesk (midpoint of common range)'],
+            datasets: [
+              {
+                label: 'Idle RAM (MB, illustrative)',
+                data: [350, 1750],
+                backgroundColor: ['rgba(79, 70, 229, 0.85)', 'rgba(2, 132, 199, 0.78)'],
+                borderRadius: 8,
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                title: { display: true, text: 'Megabytes (illustrative)' },
+                grid: { color: 'rgba(15, 23, 42, 0.08)' },
+              },
+              x: {
+                grid: { display: false },
+              },
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => ` ~${ctx.parsed.y} MB (${ctx.label})`,
+                },
+              },
+            },
+          },
+        });
+      }
+    }
+
+    const tabs = document.querySelectorAll('#tabContainer button');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => {
+          t.classList.remove('tab-active');
+          t.classList.add('tab-inactive');
+        });
+        tab.classList.remove('tab-inactive');
+        tab.classList.add('tab-active');
+
+        document.querySelectorAll('.tab-panel').forEach((p) => p.classList.add('hidden'));
+        const targetId = tab.getAttribute('data-target');
+        if (!targetId) return;
+        const panel = document.getElementById(targetId);
+        if (panel) panel.classList.remove('hidden');
+      });
+    });
+  });
+</script>

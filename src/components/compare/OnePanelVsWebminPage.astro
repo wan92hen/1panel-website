@@ -1,0 +1,471 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Header from '../../components/Header.astro';
+import Footer from '../../components/Footer.astro';
+import BlogPageDecor from '../../components/blog/BlogPageDecor.astro';
+import { getTranslations, getBasePath } from '../../i18n/utils';
+import '../../styles/global.css';
+
+interface Props {
+  /** UI locale for header/footer; article body is English until translated per locale. */
+  lang?: string;
+}
+
+const { lang: langProp } = Astro.props;
+const lang = langProp ?? 'en';
+const translations = getTranslations(lang);
+const basePath = getBasePath(lang);
+const title = '1Panel vs Webmin: Open-Source Control Panel Comparison (2026)';
+const description =
+  'A practical comparison of 1Panel and Webmin across architecture, deployment workflow, security model, operations efficiency, and team fit.';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const keywords =
+  '1Panel vs Webmin,Webmin alternative,open source server control panel,containerized server management,linux admin panel';
+
+const faq = [
+  {
+    q: 'What is the biggest difference between 1Panel and Webmin?',
+    a: '1Panel is app-centric and container-oriented, while Webmin is system-centric and focused on deep OS/service administration.',
+  },
+  {
+    q: 'Which one is better for modern self-hosted app delivery?',
+    a: '1Panel is usually better for modern app delivery because it aligns with containerized workflows and faster one-click operations.',
+  },
+  {
+    q: 'Which one is better for deep Linux system administration?',
+    a: 'Webmin is stronger when you need low-level system control, service-by-service tuning, and direct host-level operations.',
+  },
+  {
+    q: 'Can teams use both 1Panel and Webmin together?',
+    a: 'Yes. Some teams use 1Panel for application lifecycle and web delivery, while using Webmin for specialized host-level administration tasks.',
+  },
+];
+
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: faq.map((f) => ({
+    '@type': 'Question',
+    name: f.q,
+    acceptedAnswer: {
+      '@type': 'Answer',
+      text: f.a,
+    },
+  })),
+};
+---
+
+<Layout
+  title={title}
+  description={description}
+  lang={lang}
+  basePath={basePath}
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+>
+  <Fragment slot="head">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
+  </Fragment>
+
+  <Fragment slot="main">
+    <Header lang={lang} basePath={basePath} translations={translations} />
+    <main class="relative z-10 min-h-screen compare-page">
+      <div class="relative overflow-hidden bg-gradient-to-br from-slate-50 via-white to-indigo-50/40">
+        <BlogPageDecor />
+        <section class="section-padding relative z-10">
+          <div class="container-custom max-w-5xl space-y-12">
+            <header class="text-center">
+              <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                1Panel vs Webmin:
+                <span class="block text-indigo-600">App-Centric Ops vs System-Centric Administration</span>
+              </h1>
+              <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                Both are powerful open-source tools, but they solve different problems. This page helps you choose the right control plane
+                for your next 12-24 months of infrastructure growth.
+              </p>
+              <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="#recommendation" class="compare-btn-primary">See Recommendation</a>
+                <a href="#matrix" class="compare-btn-secondary">View Detailed Matrix</a>
+              </div>
+            </header>
+
+            <section id="overview" class="scroll-mt-24">
+              <div class="card p-6 sm:p-8">
+                <h2 class="text-2xl font-bold text-slate-900 mb-5">Executive Summary</h2>
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 items-center">
+                  <div class="compare-radar-wrap">
+                    <canvas id="overviewRadarChart"></canvas>
+                  </div>
+                  <div>
+                    <ul class="space-y-3 text-slate-700 leading-relaxed">
+                      <li><strong>1Panel</strong> is usually the better default for modern self-hosted delivery: faster deployment workflow, cleaner container isolation, and simpler day-2 operations.</li>
+                      <li><strong>Webmin</strong> is usually stronger for deep host-level administration where you need granular control over Linux services and system internals.</li>
+                      <li>For most product teams, 1Panel improves delivery efficiency. For classic sysadmin-heavy environments, Webmin remains highly valuable.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Architecture and Operations Model</h2>
+              <div class="space-y-4 text-slate-700 leading-relaxed">
+                <p>
+                  1Panel is designed around a modern app lifecycle mindset: deploy apps quickly, isolate workloads through container-friendly operations,
+                  and keep common infrastructure tasks unified in one interface.
+                </p>
+                <p>
+                  Webmin is built around direct host/service administration. It excels when administrators need precision control over OS internals, service
+                  configuration files, and traditional Linux operational depth.
+                </p>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Deployment Efficiency Snapshot</h2>
+              <p class="text-slate-700 leading-relaxed mb-5">
+                This chart illustrates relative operational effort for a typical modern setup task (web service + data service + reverse proxy path), based on
+                representative workflow complexity rather than exact benchmark timing.
+              </p>
+              <div class="compare-efficiency-chart-wrap">
+                <canvas id="efficiencyChart"></canvas>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8 border-indigo-200 bg-gradient-to-br from-indigo-50/60 to-white">
+              <h2 class="text-2xl font-bold text-slate-900 mb-4">Security and Control Philosophy</h2>
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+                <div class="rounded-xl border border-indigo-200 bg-white p-5">
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">1Panel Focus</h3>
+                  <p class="text-slate-700 leading-relaxed">
+                    Strong for application-level security workflows and service isolation patterns in modern self-hosted stacks.
+                  </p>
+                </div>
+                <div class="rounded-xl border border-teal-200 bg-white p-5">
+                  <h3 class="text-lg font-semibold text-slate-900 mb-2">Webmin Focus</h3>
+                  <p class="text-slate-700 leading-relaxed">
+                    Strong for host-level administration, permission granularity, and deep service control in traditional Linux operations.
+                  </p>
+                </div>
+              </div>
+            </section>
+
+            <section id="matrix" class="scroll-mt-24">
+              <div class="text-center mb-8">
+                <h2 class="text-3xl font-bold text-slate-900 mb-3">Detailed Comparison Matrix</h2>
+                <p class="text-slate-600 max-w-3xl mx-auto">
+                  Compare practical trade-offs across architecture, UX model, and operations depth.
+                </p>
+              </div>
+              <div class="card p-0 overflow-hidden">
+                <div class="flex flex-wrap border-b border-slate-200" id="tabContainer">
+                  <button class="compare-tab tab-active" data-target="tab-arch">Architecture</button>
+                  <button class="compare-tab tab-inactive" data-target="tab-ux">UX</button>
+                  <button class="compare-tab tab-inactive" data-target="tab-ops">Ops Depth</button>
+                </div>
+                <div class="p-6 md:p-8">
+                  <div id="tab-arch" class="tab-panel section-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="compare-col compare-col-1p">
+                        <h3 class="text-xl font-bold mb-3">1Panel Architecture</h3>
+                        <p>Designed for modern app delivery with container-friendly operational patterns and cleaner environment boundaries.</p>
+                      </div>
+                      <div class="compare-col compare-col-wm">
+                        <h3 class="text-xl font-bold mb-3">Webmin Architecture</h3>
+                        <p>Built for direct Unix/Linux service control with deep module-based administration across core system capabilities.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab-ux" class="tab-panel hidden section-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="compare-col compare-col-1p">
+                        <h3 class="text-xl font-bold mb-3">1Panel UX</h3>
+                        <p>Workflow-first interface that reduces friction for developers and product teams operating self-hosted services.</p>
+                      </div>
+                      <div class="compare-col compare-col-wm">
+                        <h3 class="text-xl font-bold mb-3">Webmin UX</h3>
+                        <p>Feature-dense administration experience preferred by administrators who want explicit, fine-grained control.</p>
+                      </div>
+                    </div>
+                  </div>
+                  <div id="tab-ops" class="tab-panel hidden section-fade-in">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div class="compare-col compare-col-1p">
+                        <h3 class="text-xl font-bold mb-3">1Panel Ops Depth</h3>
+                        <p>Excellent for application lifecycle speed, website operations, and growth from single-node to multi-node workflows.</p>
+                      </div>
+                      <div class="compare-col compare-col-wm">
+                        <h3 class="text-xl font-bold mb-3">Webmin Ops Depth</h3>
+                        <p>Excellent for advanced host-level service tuning, low-level troubleshooting, and classic sysadmin responsibilities.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <section class="card p-6 sm:p-8">
+              <h2 class="text-2xl font-bold text-gray-800 mb-4">FAQ</h2>
+              <div class="space-y-4">
+                {faq.map((item) => (
+                  <details class="faq-item rounded-lg border border-gray-200 bg-white p-4">
+                    <summary class="cursor-pointer font-semibold text-gray-800 pr-7">{item.q}</summary>
+                    <p class="mt-3 text-gray-600">{item.a}</p>
+                  </details>
+                ))}
+              </div>
+            </section>
+
+            <section id="recommendation" class="card p-8 md:p-10 bg-gradient-to-br from-indigo-900 to-indigo-700 text-white">
+              <h2 class="text-3xl font-extrabold mb-4">Final Recommendation</h2>
+              <p class="text-indigo-100 text-lg leading-relaxed mb-6">
+                For most modern product and growth teams, 1Panel is the more practical default because it aligns with app-centric operations.
+                Choose Webmin when your primary requirement is deep host-level Linux administration and system service control.
+              </p>
+              <a href="./pricing.html" class="inline-flex items-center px-7 py-3 rounded-lg bg-white text-indigo-800 font-semibold hover:bg-indigo-50 transition">
+                Compare 1Panel Plans
+              </a>
+            </section>
+          </div>
+        </section>
+      </div>
+    </main>
+    <Footer lang={lang} basePath={basePath} translations={translations} />
+  </Fragment>
+</Layout>
+
+<style>
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  .compare-page {
+    overflow-x: hidden;
+  }
+
+  :global(html),
+  :global(body) {
+    overflow-x: hidden;
+  }
+
+  .compare-btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg text-white font-medium shadow-sm transition;
+    background: linear-gradient(135deg, #4f46e5 0%, #005eeb 100%);
+  }
+
+  .compare-btn-primary:hover {
+    @apply shadow-lg;
+  }
+
+  .compare-btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-300 text-slate-700 bg-white font-medium transition;
+  }
+
+  .compare-btn-secondary:hover {
+    @apply bg-slate-50;
+  }
+
+  .compare-tab {
+    @apply flex-1 min-w-[160px] py-4 px-6 text-center font-medium transition border-b-2;
+  }
+
+  .tab-active {
+    border-bottom-color: #4f46e5;
+    color: #4f46e5;
+    font-weight: 700;
+  }
+
+  .tab-inactive {
+    border-bottom-color: transparent;
+    color: #64748b;
+  }
+
+  .tab-inactive:hover {
+    color: #334155;
+    border-bottom-color: #cbd5e1;
+  }
+
+  .compare-col {
+    @apply rounded-xl p-5 border;
+  }
+
+  .compare-col p {
+    @apply text-slate-700 leading-relaxed;
+  }
+
+  .compare-col-1p {
+    @apply bg-indigo-50 border-indigo-100 text-indigo-900;
+  }
+
+  .compare-col-wm {
+    @apply bg-teal-50 border-teal-100 text-teal-900;
+  }
+
+  .compare-radar-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 430px;
+    margin: 0 auto;
+    height: 360px;
+  }
+
+  .compare-efficiency-chart-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 860px;
+    margin: 0 auto;
+    height: 280px;
+  }
+
+  @media (max-width: 767px) {
+    .compare-radar-wrap {
+      height: 320px;
+    }
+
+    .compare-efficiency-chart-wrap {
+      height: 260px;
+    }
+  }
+
+  .section-fade-in {
+    animation: fadeIn 0.4s ease-in-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(8px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .faq-item summary {
+    list-style: none;
+    position: relative;
+  }
+
+  .faq-item summary::-webkit-details-marker {
+    display: none;
+  }
+
+  .faq-item summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: #005eeb;
+    font-weight: 700;
+  }
+
+  .faq-item[open] summary::after {
+    content: "-";
+  }
+</style>
+
+<script>
+  // @ts-nocheck
+  document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Chart !== 'undefined') {
+      const radar = document.getElementById('overviewRadarChart');
+      if (radar) {
+        new Chart(radar, {
+          type: 'radar',
+          data: {
+            labels: ['Modern UX', 'App Deployment Speed', 'Container Alignment', 'Deep OS Control', 'Legacy Admin Fit'],
+            datasets: [
+              {
+                label: '1Panel',
+                data: [95, 96, 94, 45, 55],
+                backgroundColor: 'rgba(79, 70, 229, 0.20)',
+                borderColor: 'rgba(79, 70, 229, 1)',
+                pointBackgroundColor: 'rgba(79, 70, 229, 1)',
+                borderWidth: 2,
+              },
+              {
+                label: 'Webmin',
+                data: [58, 52, 48, 96, 92],
+                backgroundColor: 'rgba(13, 148, 136, 0.20)',
+                borderColor: 'rgba(13, 148, 136, 1)',
+                pointBackgroundColor: 'rgba(13, 148, 136, 1)',
+                borderWidth: 2,
+              },
+            ],
+          },
+          options: {
+            maintainAspectRatio: false,
+            scales: {
+              r: {
+                min: 0,
+                max: 100,
+                ticks: { display: false },
+                grid: { color: 'rgba(15, 23, 42, 0.10)' },
+                pointLabels: { color: '#475569', font: { size: 12 } },
+              },
+            },
+            plugins: {
+              legend: { position: 'bottom' },
+            },
+          },
+        });
+      }
+
+      const efficiency = document.getElementById('efficiencyChart');
+      if (efficiency) {
+        new Chart(efficiency, {
+          type: 'bar',
+          data: {
+            labels: ['Estimated setup time (minutes)', 'Operation touchpoints'],
+            datasets: [
+              {
+                label: '1Panel',
+                data: [4, 5],
+                backgroundColor: 'rgba(79, 70, 229, 0.85)',
+                borderRadius: 6,
+              },
+              {
+                label: 'Webmin',
+                data: [20, 14],
+                backgroundColor: 'rgba(13, 148, 136, 0.85)',
+                borderRadius: 6,
+              },
+            ],
+          },
+          options: {
+            indexAxis: 'y',
+            maintainAspectRatio: false,
+            scales: {
+              x: { beginAtZero: true, grid: { color: 'rgba(15,23,42,.06)' } },
+              y: { grid: { display: false } },
+            },
+            plugins: {
+              legend: { position: 'bottom' },
+            },
+          },
+        });
+      }
+    }
+
+    const tabs = document.querySelectorAll('#tabContainer button');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach((t) => {
+          t.classList.remove('tab-active');
+          t.classList.add('tab-inactive');
+        });
+        tab.classList.remove('tab-inactive');
+        tab.classList.add('tab-active');
+
+        document.querySelectorAll('.tab-panel').forEach((p) => p.classList.add('hidden'));
+        const targetId = tab.getAttribute('data-target');
+        if (!targetId) return;
+        const panel = document.getElementById(targetId);
+        if (panel) panel.classList.remove('hidden');
+      });
+    });
+  });
+</script>
