@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "astro dev",
     "start": "astro dev",
+    "check:i18n": "node scripts/check-i18n-keys.cjs",
     "build": "node scripts/fetch-1panel-json.cjs && astro build",
     "preview": "astro preview",
     "astro": "astro"
