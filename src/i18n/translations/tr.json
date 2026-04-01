@@ -1,7 +1,8 @@
 {
   "meta": {
     "defaultTitle": "1Panel: Açık kaynak VPS kontrol paneli | cPanel alternatifi",
-    "defaultDescription": "1Panel, Linux sunucu yönetimi için modern bir açık kaynak VPS kontrol panelidir. Web sitelerini, veritabanlarını, Docker uygulamalarını ve SSL'i tek bir panelden yönetin."
+    "defaultDescription": "1Panel, AI çağı için modern ve açık kaynaklı bir VPS kontrol panelidir. Ollama dağıtın, yerel LLM çalıştırın, MCP sunucularını yönetin ve GPU kullanımını tek panelde izleyin.",
+    "ogDescription": "Modern cPanel alternatifi. Ollama dağıtın, DeepSeek veya Qwen’i yerelde çalıştırın; Docker, SSL ve web sitelerini tek bir panelden yönetin."
   },
   "header": {
     "pricing": "Fiyatlandırma",
@@ -15,7 +16,7 @@
   },
   "blog": {
     "pageTitle": "Blog",
-    "pageDescription": "1Panel, self-hosting ve sunucu yönetimi hakkında öğreticiler ve haberler.",
+    "pageDescription": "1Panel ekibinden self-hosting, VPS yönetimi, Docker, yerel AI dağıtımı ve açık kaynak araçlar üzerine rehberler ve güncellemeler.",
     "heading": "Blog",
     "subheading": "1Panel ekibinden kılavuzlar ve güncellemeler.",
     "articleLanguages": "Makaleyi diğer dillerde okuyun",
@@ -26,7 +27,7 @@
     "title2": "VPS kontrol paneli",
     "badgePowerful": "Güçlü",
     "badgeOpenSource": "Açık kaynak",
-    "subtitle": "1Panel, sezgisel ve sade bir web arayüzüyle yönetimi kolaylaştıran modern, açık kaynak bir VPS kontrol panelidir.",
+    "subtitle": "1Panel, AI çağı için tasarlanmış modern ve açık kaynaklı bir VPS panelidir. Yerel LLM, Docker konteynerleri ve web sitelerini tek dashboarddan yönetin.",
     "githubStars": "GitHub yıldızları",
     "totalDownloads": "Toplam indirme",
     "demo": "Demo",

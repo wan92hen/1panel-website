@@ -1,7 +1,8 @@
 {
   "meta": {
     "defaultTitle": "1Panel: オープンソースVPSコントロールパネル | cPanel代替",
-    "defaultDescription": "1Panelは、Linuxサーバー管理向けのモダンなオープンソースVPSコントロールパネルです。Webサイト、データベース、Dockerアプリ、SSLを1つのダッシュボードで管理できます。"
+    "defaultDescription": "1PanelはAI時代向けのモダンなオープンソースVPSコントロールパネルです。Ollama配備、ローカルLLM運用、MCPサーバー管理、GPU監視を1つのダッシュボードで実現します。",
+    "ogDescription": "モダンな cPanel 代替。Ollama配備、DeepSeekやQwenのローカル運用、Docker・SSL・Webサイト管理を1つのWebダッシュボードで実現。無料かつオープンソース。"
   },
   "header": {
     "pricing": "料金",
@@ -15,7 +16,7 @@
   },
   "blog": {
     "pageTitle": "ブログ",
-    "pageDescription": "1Panel、セルフホスティング、サーバー管理に関するチュートリアルとニュース。",
+    "pageDescription": "1Panelチームによる、セルフホスティング、VPS運用、Docker、ローカルAI導入、オープンソース活用のガイドと最新情報。",
     "heading": "ブログ",
     "subheading": "1Panelチームからのガイドと最新情報。",
     "articleLanguages": "他の言語で読む",
@@ -26,7 +27,7 @@
     "title2": "VPSコントロールパネル",
     "badgePowerful": "高機能",
     "badgeOpenSource": "オープンソース",
-    "subtitle": "1Panelは、直感的でクリーンなWebインターフェースで管理を効率化するモダンなオープンソースVPSコントロールパネルです。",
+    "subtitle": "1Panelは、AI時代向けに設計されたモダンなオープンソースVPSコントロールパネルです。ローカルLLM、Docker、Webサイト運用を1つの画面で管理できます。",
     "githubStars": "GitHubスター",
     "totalDownloads": "総ダウンロード数",
     "demo": "デモ",

@@ -1,7 +1,8 @@
 {
   "meta": {
     "defaultTitle": "1Panel：開源 VPS 控制面板｜cPanel 替代方案",
-    "defaultDescription": "1Panel 是現代化的開源 VPS 控制面板，專為 Linux 伺服器管理而生。可在單一控制台部署網站、資料庫、Docker 應用與 SSL。"
+    "defaultDescription": "1Panel 是為 AI 時代打造的現代化開源 VPS 控制面板。可在單一儀表板部署 Ollama、運行本地 LLM、管理 MCP 伺服器並監控 GPU。",
+    "ogDescription": "現代化 cPanel 替代方案。可部署 Ollama、在本地運行 DeepSeek 或 Qwen，並在同一介面管理 Docker、SSL 與網站。"
   },
   "header": {
     "pricing": "定價",
@@ -15,7 +16,7 @@
   },
   "blog": {
     "pageTitle": "網誌",
-    "pageDescription": "關於 1Panel、自託管與伺服器管理的教學與最新消息。",
+    "pageDescription": "由 1Panel 團隊提供的自託管、VPS 管理、Docker、本地 AI 部署與開源工具相關指南與更新。",
     "heading": "網誌",
     "subheading": "來自 1Panel 團隊的實用指南與最新動態。",
     "articleLanguages": "其他語言版本",
@@ -26,7 +27,7 @@
     "title2": "VPS 控制面板",
     "badgePowerful": "強大",
     "badgeOpenSource": "開源",
-    "subtitle": "1Panel 是現代化開源 VPS 控制面板，透過直觀易用的 Web 介面，令 Linux 伺服器管理更簡單。",
+    "subtitle": "1Panel 是為 AI 時代設計的現代化開源 VPS 控制面板，可在同一控制台管理本地 LLM、Docker 容器與網站。",
     "githubStars": "GitHub Stars",
     "totalDownloads": "總下載量",
     "demo": "示範",
@@ -200,4 +201,3 @@
     "subtitle": "打造你自己的 24/7 AI 助理 🤖"
   }
 }
-

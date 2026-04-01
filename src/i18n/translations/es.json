@@ -1,7 +1,8 @@
 {
   "meta": {
     "defaultTitle": "1Panel: Panel de control VPS de código abierto | alternativa a cPanel",
-    "defaultDescription": "1Panel es un panel de control VPS moderno y de código abierto para la administración de servidores Linux. Despliega sitios, bases de datos, apps Docker y SSL desde un único panel."
+    "defaultDescription": "1Panel es un panel VPS moderno y de código abierto para la era de la IA. Despliega Ollama, ejecuta LLM locales, gestiona servidores MCP y monitoriza GPU desde un único panel.",
+    "ogDescription": "La alternativa moderna a cPanel. Despliega Ollama, ejecuta DeepSeek o Qwen en local y administra Docker, SSL y sitios web desde un panel web limpio."
   },
   "header": {
     "pricing": "Precios",
@@ -15,7 +16,7 @@
   },
   "blog": {
     "pageTitle": "Blog",
-    "pageDescription": "Tutoriales y noticias sobre 1Panel, self-hosting y administración de servidores.",
+    "pageDescription": "Guías y novedades del equipo de 1Panel sobre self-hosting, gestión de VPS, Docker, despliegue de IA local y herramientas de código abierto.",
     "heading": "Blog",
     "subheading": "Guías y novedades del equipo de 1Panel.",
     "articleLanguages": "Artículo en otros idiomas",
@@ -26,7 +27,7 @@
     "title2": "de control VPS de código abierto",
     "badgePowerful": "Potente",
     "badgeOpenSource": "Código abierto",
-    "subtitle": "1Panel es un panel de control VPS moderno y de código abierto que simplifica la administración mediante una interfaz web intuitiva y clara.",
+    "subtitle": "1Panel es un panel VPS moderno y de código abierto, creado para la era de la IA. Despliega LLM locales, gestiona Docker y administra sitios web desde un único panel.",
     "githubStars": "Estrellas en GitHub",
     "totalDownloads": "Descargas totales",
     "demo": "Demo",

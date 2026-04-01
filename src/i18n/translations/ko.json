@@ -1,7 +1,8 @@
 {
   "meta": {
     "defaultTitle": "1Panel: 오픈소스 VPS 제어판 | cPanel 대안",
-    "defaultDescription": "1Panel은 Linux 서버 관리를 위한 현대적인 오픈소스 VPS 제어판입니다. 웹사이트, 데이터베이스, Docker 앱, SSL을 하나의 대시보드에서 배포하고 관리하세요."
+    "defaultDescription": "1Panel은 AI 시대를 위한 현대적인 오픈소스 VPS 제어판입니다. Ollama 배포, 로컬 LLM 운영, MCP 서버 관리, GPU 모니터링을 하나의 대시보드에서 처리하세요.",
+    "ogDescription": "현대적인 cPanel 대안. Ollama 배포, DeepSeek 또는 Qwen 로컬 실행, Docker·SSL·웹사이트 관리를 깔끔한 웹 대시보드 하나로."
   },
   "header": {
     "pricing": "요금",
@@ -15,7 +16,7 @@
   },
   "blog": {
     "pageTitle": "블로그",
-    "pageDescription": "1Panel, 셀프 호스팅 및 서버 관리에 대한 튜토리얼과 뉴스.",
+    "pageDescription": "1Panel 팀이 전하는 셀프호스팅, VPS 운영, Docker, 로컬 AI 배포, 오픈소스 도구 관련 가이드와 업데이트.",
     "heading": "블로그",
     "subheading": "1Panel 팀의 가이드와 업데이트.",
     "articleLanguages": "다른 언어로 읽기",
@@ -26,7 +27,7 @@
     "title2": "VPS 제어판",
     "badgePowerful": "강력한",
     "badgeOpenSource": "오픈 소스",
-    "subtitle": "1Panel은 직관적이고 깔끔한 웹 인터페이스를 통해 관리를 간소화하는 현대적인 오픈 소스 VPS 제어 패널입니다.",
+    "subtitle": "1Panel은 AI 시대를 위해 설계된 현대적인 오픈소스 VPS 제어판입니다. 로컬 LLM, Docker 컨테이너, 웹사이트 운영을 하나의 대시보드에서 관리하세요.",
     "githubStars": "GitHub 스타",
     "totalDownloads": "총 다운로드",
     "demo": "데모",

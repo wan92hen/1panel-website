@@ -2,6 +2,7 @@
 export interface Props {
   title: string;
   description?: string;
+  ogDescription?: string;
   lang?: string;
   basePath?: string;
   /** Open Graph type — use `article` for blog posts */
@@ -28,6 +29,7 @@ const faviconHref = publicAsset('favicon.png');
 const {
   title,
   description = "1Panel is a modern open-source VPS control panel — deploy Ollama, run local LLMs, manage MCP servers, and monitor GPUs. One-click WordPress, Docker, SSL. Free forever. The cPanel alternative built for the AI era.",
+  ogDescription = "The modern cPanel alternative. Deploy Ollama, run DeepSeek or Qwen locally, manage Docker, SSL, and websites — all from a clean web dashboard. Free and open source.",
   lang = "en",
   basePath = "./",
   ogType = 'website',
@@ -67,7 +69,7 @@ const htmlLang =
   
   <!-- SEO Meta Tags -->
   <meta property="og:title" content={title} />
-  <meta property="og:description" content={description} />
+  <meta property="og:description" content={ogDescription || description} />
   <meta property="og:type" content={ogType} />
   {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
   <meta property="og:image" content={resolvedOgImage} />
