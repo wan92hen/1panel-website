@@ -26,10 +26,10 @@ const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
       <link
         rel="alternate"
         hreflang={loc}
-        href={new URL(loc === 'en' ? '/pricing.html' : `/${loc}/pricing.html`, Astro.site).href}
+        href={new URL(loc === 'en' ? '/pricing' : `/${loc}/pricing`, Astro.site).href}
       />
     ))}
-    <link rel="alternate" hreflang="x-default" href={new URL('/pricing.html', Astro.site).href} />
+    <link rel="alternate" hreflang="x-default" href={new URL('/pricing', Astro.site).href} />
   </Fragment>
   <Fragment slot="main">
     <Header lang={lang} basePath={basePath} translations={translations} />
