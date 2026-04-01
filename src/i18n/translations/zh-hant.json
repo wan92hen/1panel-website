@@ -1,11 +1,11 @@
 {
   "meta": {
     "defaultTitle": "1Panel：開源 VPS 控制面板｜cPanel 替代方案",
-    "defaultDescription": "1Panel 是現代化的開源 VPS 控制面板，專為 Linux 伺服器管理而生。可在單一儀表板部署網站、資料庫、Docker 應用與 SSL。"
+    "defaultDescription": "1Panel 是現代化的開源 VPS 控制面板，專為 Linux 伺服器管理而生。可在單一控制台部署網站、資料庫、Docker 應用與 SSL。"
   },
   "header": {
     "pricing": "定價",
-    "blog": "部落格",
+    "blog": "網誌",
     "appStore": "應用商店",
     "discussions": "討論",
     "docs": "文件",
@@ -14,10 +14,10 @@
     "freeTrial": "免費試用"
   },
   "blog": {
-    "pageTitle": "部落格",
+    "pageTitle": "網誌",
     "pageDescription": "關於 1Panel、自託管與伺服器管理的教學與最新消息。",
-    "heading": "部落格",
-    "subheading": "來自 1Panel 團隊的指南與更新。",
+    "heading": "網誌",
+    "subheading": "來自 1Panel 團隊的實用指南與最新動態。",
     "articleLanguages": "其他語言版本",
     "fallbackToEnglish": "此文章尚未提供你所選語言，已顯示英文版本。"
   },
@@ -26,12 +26,12 @@
     "title2": "VPS 控制面板",
     "badgePowerful": "強大",
     "badgeOpenSource": "開源",
-    "subtitle": "1Panel 是現代化開源 VPS 控制面板，透過直覺且清晰的 Web 介面，讓 Linux 伺服器管理更簡單。",
+    "subtitle": "1Panel 是現代化開源 VPS 控制面板，透過直觀易用的 Web 介面，令 Linux 伺服器管理更簡單。",
     "githubStars": "GitHub Stars",
     "totalDownloads": "總下載量",
     "demo": "示範",
     "installNow": "立即安裝",
-    "scrollDown": "向下捲動",
+    "scrollDown": "向下滑動",
     "typewriter": [
       "OpenClaw Agents",
       "本地 LLM",
@@ -44,7 +44,7 @@
   "features": {
     "title": "強大",
     "titleHighlight": "功能",
-    "subtitle": "完整的 VPS 管理功能，讓維運更簡單、更高效",
+    "subtitle": "完整的 VPS 管理功能，令日常維運更簡單、更高效",
     "openclaw": {
       "title": "一鍵部署 OpenClaw",
       "desc": "可快速部署 OpenClaw Agents、透過 Ollama 託管本地 LLM，並監控 GPU 使用率，全部集中在同一工作區。",
@@ -55,7 +55,7 @@
     },
     "efficient": {
       "title": "高效率管理",
-      "desc": "透過友善的 Web 圖形介面，1Panel 可輕鬆管理 Linux 伺服器，包括主機監控、檔案管理、資料庫管理、容器管理與 LLM 管理。",
+      "desc": "透過直觀的 Web 圖形介面，1Panel 可輕鬆管理 Linux 伺服器，包括主機監控、檔案管理、資料庫管理、容器管理與 LLM 管理。",
       "monitoring": "即時系統監控",
       "files": "Web 檔案管理器",
       "database": "資料庫可視化管理",
@@ -63,10 +63,10 @@
     },
     "website": {
       "title": "快速部署網站",
-      "desc": "深度整合 WordPress 等主流開源建站軟體，網域綁定與 SSL 憑證設定皆可一鍵完成。",
+      "desc": "深度整合 WordPress 等主流開源建站工具，網域綁定與 SSL 證書設定都可一鍵完成。",
       "wordpress": "一鍵部署 WordPress",
-      "ssl": "自動申請 SSL 憑證",
-      "domain": "網域管理與設定",
+      "ssl": "自動申請 SSL 證書",
+      "domain": "域名管理與設定",
       "multisite": "多站點管理"
     },
     "appStore": {
@@ -83,19 +83,19 @@
     },
     "secure": {
       "title": "安全可靠",
-      "desc": "1Panel 可有效降低漏洞暴露，提供病毒防護、防火牆與日誌稽核等能力，強化系統安全。"
+      "desc": "1Panel 可有效降低漏洞暴露風險，提供病毒防護、防火牆與日誌審核等能力，全面強化系統安全。"
     }
   },
   "appStore": {
     "title": "豐富",
     "titleHighlight": "應用商店",
-    "subtitle": "精選高品質開源應用，支援一鍵安裝部署，滿足多元業務需求",
+    "subtitle": "精選高品質開源應用，支援一鍵安裝與部署，滿足不同業務需求",
     "allApps": "全部應用",
     "appsTotal": "個應用",
     "sortedByRecommendation": "依推薦排序",
     "viewAllApps": "在示範站查看全部應用",
     "noDataTitle": "暫無應用資料",
-    "noDataDesc": "應用商店資料載入中，請稍後再試",
+    "noDataDesc": "應用商店資料載入中，請稍後再試。",
     "categories": {
       "Database": "資料庫",
       "Website": "網站",
@@ -121,27 +121,27 @@
     "copy": "複製",
     "copied": "已複製",
     "step3Title": "進入管理面板",
-    "step3Desc": "安裝完成後，使用瀏覽器開啟安裝腳本提供的位址，即可開始使用 1Panel。",
+    "step3Desc": "安裝完成後，使用瀏覽器開啟安裝腳本提供的網址，即可開始使用 1Panel。",
     "needHelp": "需要協助？",
     "viewDocs": "查看文件",
-    "communityForum": "社群論壇",
+    "communityForum": "社群討論區",
     "issueFeedback": "問題回報"
   },
   "cta": {
     "title": "立即開始使用",
-    "subtitle": "全面掌控你的 VPS",
+    "subtitle": "全面掌控你的 VPS 主機",
     "onlineDemo": "線上示範",
     "documentation": "文件"
   },
   "footer": {
     "companyName": "LXware",
-    "companyDesc": "LXware 負責 FIT2CLOUD 開源專案 1Panel 與 JumpServer 在全球市場的商業化運營。",
+    "companyDesc": "LXware 負責 FIT2CLOUD 開源項目 1Panel 與 JumpServer 在全球市場的商業營運。",
     "resources": "資源",
-    "blog": "部落格",
+    "blog": "網誌",
     "documentation": "文件",
     "compare": "對比",
     "githubRepo": "GitHub 倉庫",
-    "communityForum": "社群論壇",
+    "communityForum": "社群討論區",
     "followX": "在 X 關注我們",
     "youtube": "YouTube 頻道",
     "discord": "Discord 討論",
@@ -156,7 +156,7 @@
   "pricing": {
     "title": "簡單",
     "titleHighlight": "定價",
-    "subtitle": "選擇最適合你的方案。先免費開始，隨成長升級。",
+    "subtitle": "選擇最適合你的方案，先免費開始，再按業務成長升級。",
     "ossEdition": "OSS 版",
     "freeToUse": "免費使用",
     "openSource": "開源",
@@ -171,27 +171,27 @@
   },
   "selfHosted": {
     "metaTitle": "1Panel 自託管方案 - 用 1Panel 掌控你的 VPS",
-    "metaDescription": "1Panel 自託管方案 - 現代化開源 Linux 伺服器管理面板，讓自託管更簡單高效。",
+    "metaDescription": "1Panel 自託管方案 - 現代化開源 Linux 伺服器管理面板，令自託管更簡單高效。",
     "heroTitle": "1Panel 自託管方案",
-    "heroSubtitle": "厭倦昂貴 SaaS 訂閱與不確定的資料安全？用自託管重新掌控一切。",
+    "heroSubtitle": "厭倦高昂 SaaS 訂閱費與不確定的資料安全？以自託管重新掌控一切。",
     "whyTitle": "為什麼選擇自託管？",
-    "whySubtitle": "掌握你的數位資產，享受完整資料主權",
+    "whySubtitle": "掌握你的數位資產，建立完整資料主權",
     "dataSovereigntyTitle": "資料主權",
-    "dataSovereigntyDesc": "輕鬆符合法規：將資料保留在自有環境，滿足 GDPR、HIPAA 等資料駐留與稽核需求，避免跨境傳輸風險。",
+    "dataSovereigntyDesc": "更易符合合規要求：將資料保留在自有環境，滿足 GDPR、HIPAA 等資料駐留與審核需求，避免跨境傳輸風險。",
     "securityTitle": "安全",
-    "securityDesc": "強化防護：本地部署可讓資料留在你的掌控中，避免第三方存取敏感資訊（如客戶資料、內部文件）。",
+    "securityDesc": "強化防護：本地部署可讓資料持續留在你的掌控中，減少第三方接觸敏感資訊（如客戶資料、內部文件）。",
     "lowerCostTitle": "更低成本",
-    "lowerCostDesc": "降低成本：無需按席位付費，硬體與運維成本可預估，避免 SaaS 漲價風險。",
+    "lowerCostDesc": "降低成本：無需按席位收費，硬件與運維成本更可預估，避免 SaaS 加價風險。",
     "valueTitle": "1Panel + 開源替代方案 = 最佳自託管組合",
-    "valueSubtitle": "現代化 Linux 伺服器管理面板，讓自託管更簡單高效",
+    "valueSubtitle": "現代化 Linux 伺服器管理面板，令自託管更簡單高效",
     "fastTitle": "快速",
     "fastDesc": "一鍵部署，平滑持續升級",
     "completeTitle": "完整",
-    "completeDesc": "可信開源應用的一站式樞紐",
+    "completeDesc": "可信開源應用的一站式平台",
     "reliableTitle": "可靠",
     "reliableDesc": "內建安全能力與排程備份",
     "appsTitle": "1Panel 支援的熱門自託管應用",
-    "appsSubtitle": "滿足不同需求的開源替代方案",
+    "appsSubtitle": "滿足不同場景需求的開源替代方案",
     "alternativeBadge": "替代方案",
     "viewMoreApps": "在 1Panel 應用商店探索更多應用"
   },
@@ -200,3 +200,4 @@
     "subtitle": "打造你自己的 24/7 AI 助理 🤖"
   }
 }
+

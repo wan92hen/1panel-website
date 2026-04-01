@@ -196,7 +196,7 @@ const prefix = !lang || lang === DEFAULT_LOCALE ? '' : `/${lang}`;
     // Keep current page when switching language:
     // /foo/bar -> /ja/foo/bar, /ja/foo/bar -> /foo/bar
     const localeLinks = document.querySelectorAll('[data-locale-link]');
-    const supported = ['en', 'ja', 'pt', 'ko', 'es', 'ms', 'tr', 'ru', 'zh-tw'];
+    const supported = ['en', 'ja', 'pt', 'ko', 'es', 'ms', 'tr', 'ru', 'zh-hant'];
     const currentPath = window.location.pathname || '/';
     const segments = currentPath.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
     const hasLocalePrefix = segments.length > 0 && supported.includes(segments[0]);

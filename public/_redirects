@@ -5,6 +5,8 @@
 /en/1panel-vs-cpanel.html /1panel-vs-cpanel.html 301
 /en/1panel-vs-plesk /1panel-vs-plesk 301
 /en/1panel-vs-plesk.html /1panel-vs-plesk.html 301
+/zh-tw/* /zh-hant/:splat 301
+/zh-tw /zh-hant 301
 
 # Cloudflare Pages fallback for unknown routes
 /* /404.html 404
