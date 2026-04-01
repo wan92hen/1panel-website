@@ -1,5 +1,5 @@
 /**
- * i18n configuration: default English, plus JA, PT, KO, ES, MS, TR, RU
+ * i18n configuration: default English, plus JA, PT, KO, ES, MS, TR, RU, ZH-TW
  */
 export const DEFAULT_LOCALE = 'en' as const;
 export const SUPPORTED_LOCALES = [
@@ -11,6 +11,7 @@ export const SUPPORTED_LOCALES = [
   'ms',
   'tr',
   'ru',
+  'zh-tw',
 ] as const;
 export type Locale = (typeof SUPPORTED_LOCALES)[number];
 export const NON_DEFAULT_LOCALES = SUPPORTED_LOCALES.filter((loc) => loc !== DEFAULT_LOCALE) as Exclude<Locale, typeof DEFAULT_LOCALE>[];
@@ -24,6 +25,7 @@ export const LOCALE_LABELS: Record<Locale, string> = {
   ms: 'Bahasa Melayu',
   tr: 'Türkçe',
   ru: 'Русский',
+  'zh-tw': '繁體中文',
 };
 
 export function getLocaleLabel(locale: string): string {
@@ -60,6 +62,10 @@ export const BROWSER_LANG_TO_LOCALE: Record<string, Locale> = {
   'tr-tr': 'tr',
   ru: 'ru',
   'ru-ru': 'ru',
+  zh: 'zh-tw',
+  'zh-tw': 'zh-tw',
+  'zh-hk': 'zh-tw',
+  'zh-mo': 'zh-tw',
 };
 
 /**

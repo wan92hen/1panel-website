@@ -13,6 +13,7 @@ export const BLOG_DATE_LOCALE: Record<Locale, string> = {
   ms: 'ms-MY',
   tr: 'tr-TR',
   ru: 'ru-RU',
+  'zh-tw': 'zh-TW',
 };
 
 /** Paths match `build.format: 'file'` output (e.g. `/blog.html`, `/en/blog/post-slug.html`). */

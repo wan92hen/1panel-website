@@ -37,7 +37,18 @@ const {
 } = Astro.props;
 const defaultOgImage = `${siteOrigin}/images/overview-full.png`;
 const resolvedOgImage = ogImageUrl ?? defaultOgImage;
-const htmlLang = lang === 'en' ? 'en' : lang === 'ja' ? 'ja' : lang === 'ko' ? 'ko' : lang === 'zh' ? 'zh-CN' : lang;
+const htmlLang =
+  lang === 'en'
+    ? 'en'
+    : lang === 'ja'
+      ? 'ja'
+      : lang === 'ko'
+        ? 'ko'
+        : lang === 'zh'
+          ? 'zh-CN'
+          : lang === 'zh-tw'
+            ? 'zh-TW'
+            : lang;
 ---
 
 <!DOCTYPE html>
