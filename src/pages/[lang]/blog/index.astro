@@ -28,7 +28,8 @@ const title = `${t(translations, 'blog.pageTitle')} | 1Panel`;
 const description = t(translations, 'blog.pageDescription');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const allPosts = await getCollection('blog');
-const posts = sortPostsByDate(getPostsForLocale(allPosts, lang ?? 'en'));
+const localizedPosts = getPostsForLocale(allPosts, lang ?? 'en');
+const posts = sortPostsByDate(localizedPosts.length > 0 ? localizedPosts : getPostsForLocale(allPosts, 'en'));
 const dateLocale = BLOG_DATE_LOCALE[(lang ?? 'en') as Locale] ?? 'en-US';
 ---
 
