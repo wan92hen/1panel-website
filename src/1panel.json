@@ -40,8 +40,8 @@
       },
       "versions": [
         {
-          "name": "6.1.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/2fauth/6.1.1/2fauth-6.1.1.tar.gz",
+          "name": "6.1.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/2fauth/6.1.2/2fauth-6.1.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -184,8 +184,8 @@
       },
       "versions": [
         {
-          "name": "0.3.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/act_runner/0.3.0/act_runner-0.3.0.tar.gz",
+          "name": "0.3.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/act_runner/0.3.1/act_runner-0.3.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -1249,8 +1249,8 @@
       },
       "versions": [
         {
-          "name": "0.18.4",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/beszel/0.18.4/beszel-0.18.4.tar.gz",
+          "name": "0.18.6",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/beszel/0.18.6/beszel-0.18.6.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -1859,8 +1859,8 @@
       },
       "versions": [
         {
-          "name": "2.369.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.369.0/casdoor-2.369.0.tar.gz",
+          "name": "2.376.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.376.0/casdoor-2.376.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2035,8 +2035,8 @@
       },
       "versions": [
         {
-          "name": "0.54.6",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/changedetectionio/0.54.6/changedetectionio-0.54.6.tar.gz",
+          "name": "0.54.7",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/changedetectionio/0.54.7/changedetectionio-0.54.7.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2105,8 +2105,8 @@
       },
       "versions": [
         {
-          "name": "26.2.5-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clickhouse/26.2.5-alpine/clickhouse-26.2.5-alpine.tar.gz",
+          "name": "26.3.2-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clickhouse/26.3.2-alpine/clickhouse-26.3.2-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2495,8 +2495,8 @@
       },
       "versions": [
         {
-          "name": "1.22.5",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/consul/1.22.5/consul-1.22.5.tar.gz",
+          "name": "1.22.6",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/consul/1.22.6/consul-1.22.6.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2657,8 +2657,8 @@
       },
       "versions": [
         {
-          "name": "0.2.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/0.2.0/copaw-0.2.0.tar.gz",
+          "name": "1.0.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/1.0.0/copaw-1.0.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2728,8 +2728,8 @@
       },
       "versions": [
         {
-          "name": "3.1.13",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dashy/3.1.13/dashy-3.1.13.tar.gz",
+          "name": "3.2.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dashy/3.2.0/dashy-3.2.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2798,8 +2798,8 @@
       },
       "versions": [
         {
-          "name": "0.19.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dbhub/0.19.1/dbhub-0.19.1.tar.gz",
+          "name": "0.21.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dbhub/0.21.0/dbhub-0.21.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -4685,8 +4685,8 @@
       },
       "versions": [
         {
-          "name": "2.62.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/filebrowser/2.62.1/filebrowser-2.62.1.tar.gz",
+          "name": "2.62.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/filebrowser/2.62.2/filebrowser-2.62.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -5790,7 +5790,7 @@
     {
       "icon": "https://apps.1panel.pro/stable/1panel/ghost/logo.png",
       "name": "Ghost",
-      "readMe": "## Introduction\n\n**Ghost** is the best open source platform for creating professional blog and managing email newsletters. Perfect for independent writers, publishers, and businesses who want to build a strong digital presence with a modern writing experience and high performance.\n\n## Features\n\n- Clean and intuitive content editor (Markdown + Rich Text)\n- Built-in email newsletter support\n- Integrations with various third-party services\n- High performance and SEO-friendly\n- Built-in membership and monetization system\n",
+      "readMe": "## Introduction\n\n**Ghost** is the best open source platform for creating professional blogs and managing email newsletters. Perfect for independent writers, publishers, and businesses who want to build a strong digital presence with a modern writing experience and high performance.\n\n## Features\n\n- Clean and intuitive content editor (Markdown + Rich Text)\n- Built-in email newsletter support\n- Integrations with various third-party services\n- High performance and SEO-friendly\n- Built-in membership and monetization system\n",
       "additionalProperties": {
         "architectures": [
           "amd64",
@@ -5828,8 +5828,8 @@
       },
       "versions": [
         {
-          "name": "6.22.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ghost/6.22.1/ghost-6.22.1.tar.gz",
+          "name": "6.24.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ghost/6.24.0/ghost-6.24.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -7598,8 +7598,8 @@
       },
       "versions": [
         {
-          "name": "1.11.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/homepage/1.11.0/homepage-1.11.0.tar.gz",
+          "name": "1.12.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/homepage/1.12.1/homepage-1.12.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9207,6 +9207,72 @@
       ]
     },
     {
+      "icon": "https://apps.1panel.pro/stable/1panel/kibana/logo.png",
+      "name": "Kibana",
+      "readMe": "## Introduction\n\n**Kibana** is the data analytics and visualization platform for the Elastic Stack. It helps you browse, search, and analyze data stored in Elasticsearch through a browser-based interface, making it suitable for log analysis, observability, security investigations, and business data dashboards.\n\n## Features\n\n- **Data exploration**: Search, filter, and interactively analyze data stored in Elasticsearch.\n- **Visualization dashboards**: Combine charts, metrics, maps, and tables into dashboards for unified display and sharing.\n- **Logs and observability analysis**: Useful for log investigation, metric exploration, and troubleshooting workflows.\n- **Security analysis**: Review security events, investigate unusual behavior, and support risk analysis.\n- **Elastic Stack management**: Helps users work with data and related capabilities across the Elastic Stack.\n",
+      "additionalProperties": {
+        "batchInstallSupport": true,
+        "crossVersionUpdate": true,
+        "description": {
+          "en": "Data analytics and visualization platform for Elasticsearch",
+          "es-es": "Plataforma de análisis y visualización de datos para Elasticsearch",
+          "ja": "Elasticsearch 向けのデータ分析および可視化プラットフォーム",
+          "ko": "Elasticsearch용 데이터 분석 및 시각화 플랫폼",
+          "ms": "Platform analitik dan visualisasi data untuk Elasticsearch",
+          "pt-br": "Plataforma de análise e visualização de dados para Elasticsearch",
+          "ru": "Платформа анализа и визуализации данных для Elasticsearch",
+          "tr": "Elasticsearch icin veri analizi ve gorsellestirme platformu",
+          "zh": "面向 Elasticsearch 的数据分析与可视化平台",
+          "zh-Hant": "面向 Elasticsearch 的數據分析與可視化平台"
+        },
+        "document": "https://www.elastic.co/docs/",
+        "github": "https://github.com/elastic/kibana/",
+        "key": "kibana",
+        "limit": 0,
+        "name": "Kibana",
+        "recommend": 0,
+        "shortDescEn": "Data analytics and visualization platform for Elasticsearch",
+        "shortDescZh": "面向 Elasticsearch 的数据分析与可视化平台",
+        "tags": [
+          "Tool"
+        ],
+        "type": "website",
+        "website": "https://www.elastic.co/"
+      },
+      "versions": [
+        {
+          "name": "8.19.13",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/kibana/8.19.13/kibana-8.19.13.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": 5601,
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "WebUI port",
+                  "es-es": "Puerto de WebUI",
+                  "ja": "WebUI ポート",
+                  "ko": "WebUI 포트",
+                  "ms": "Port WebUI",
+                  "pt-br": "Porta da WebUI",
+                  "ru": "Порт WebUI",
+                  "tr": "WebUI portu",
+                  "zh": "WebUI 端口",
+                  "zh-Hant": "WebUI 連接埠"
+                },
+                "labelEn": "WebUI port",
+                "labelZh": "WebUI 端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "icon": "https://apps.1panel.pro/stable/1panel/komga/logo.png",
       "name": "Komga",
       "readMe": "## Introduction\n\n**Komga** is a free and open-source media server for comics and magazines.\n\n## Features\n\n- Browse your library, series, and books through a responsive Web UI suitable for desktops, tablets, and phones.\n- Organize your library with collections and reading lists.\n- Edit metadata for series and books.\n- Automatically import embedded metadata.\n- Web reader with multiple reading modes.\n- Manage multiple users with access control, age restrictions, and tag restrictions per library.\n- Provides a REST API, enabling many community tools and scripts to interact with Komga.\n- Download book files, entire series, or reading lists.\n- Duplicate file detection.\n- Detect and remove duplicate pages.\n- Import books directly into series folders from outside the library.\n- Import ComicRack `.cbl` reading lists.\n",
@@ -9246,8 +9312,8 @@
       },
       "versions": [
         {
-          "name": "1.24.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/komga/1.24.1/komga-1.24.1.tar.gz",
+          "name": "1.24.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/komga/1.24.3/komga-1.24.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9316,8 +9382,8 @@
       },
       "versions": [
         {
-          "name": "1.8.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/langflow/1.8.2/langflow-1.8.2.tar.gz",
+          "name": "1.8.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/langflow/1.8.3/langflow-1.8.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9848,8 +9914,8 @@
       },
       "versions": [
         {
-          "name": "0.9.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/maddy-mail/0.9.1/maddy-mail-0.9.1.tar.gz",
+          "name": "0.9.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/maddy-mail/0.9.2/maddy-mail-0.9.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -10228,8 +10294,8 @@
       },
       "versions": [
         {
-          "name": "17.5.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/manticoresearch/17.5.1/manticoresearch-17.5.1.tar.gz",
+          "name": "25.0.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/manticoresearch/25.0.0/manticoresearch-25.0.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -10529,6 +10595,307 @@
       ]
     },
     {
+      "icon": "https://apps.1panel.pro/stable/1panel/mattermost/logo.png",
+      "name": "Mattermost",
+      "readMe": "## Introduction\n\n**Mattermost** is an open-source secure team collaboration platform that connects teams, tools, and processes across the entire software development lifecycle. It supports self-hosted deployment and is well suited for organizations that need strong security, compliance, and data control.\n\n## Core Advantages\n\n- **Secure collaboration**: Provides a secure environment for team communication and coordinated work in demanding internal collaboration scenarios.\n- **Self-hosted and data controlled**: Deploy on your own infrastructure to retain control over data, access, and system configuration.\n- **Workflow integration**: Connect development, operations, and business workflows by bringing messages, tools, and actions into one platform.\n- **Rich collaboration capabilities**: Supports messaging, file sharing, calls, and screen sharing for common team collaboration needs.\n- **Extensible**: Offers plugins, integrations, and APIs so teams can customize the platform to fit their workflows.\n",
+      "additionalProperties": {
+        "crossVersionUpdate": true,
+        "description": {
+          "en": "Open-source secure team collaboration platform",
+          "es-es": "Plataforma de colaboración segura para equipos de código abierto",
+          "ja": "オープンソースのセキュアなチームコラボレーションプラットフォーム",
+          "ko": "오픈 소스 보안 팀 협업 플랫폼",
+          "ms": "Platform kolaborasi pasukan selamat sumber terbuka",
+          "pt-br": "Plataforma de colaboração segura em equipe de código aberto",
+          "ru": "Открытая платформа для безопасной совместной работы команд",
+          "tr": "Acik kaynakli guvenli ekip is birligi platformu",
+          "zh": "开源安全团队协作平台",
+          "zh-Hant": "開源安全團隊協作平台"
+        },
+        "document": "https://docs.mattermost.com",
+        "github": "https://github.com/mattermost/mattermost",
+        "key": "mattermost",
+        "limit": 0,
+        "name": "Mattermost",
+        "recommend": 0,
+        "shortDescEn": "Open-source secure team collaboration platform",
+        "shortDescZh": "开源安全团队协作平台",
+        "tags": [
+          "Tool"
+        ],
+        "type": "website",
+        "website": "https://mattermost.com"
+      },
+      "versions": [
+        {
+          "name": "11.5.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/mattermost/11.5.1/mattermost-11.5.1.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": 40271,
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "Port",
+                  "es-es": "Puerto",
+                  "ja": "ポート",
+                  "ko": "포트",
+                  "ms": "Port",
+                  "pt-br": "Porta",
+                  "ru": "Порт",
+                  "tr": "Baglanti Noktasi",
+                  "zh": "端口",
+                  "zh-Hant": "埠"
+                },
+                "labelEn": "Port",
+                "labelZh": "端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              },
+              {
+                "default": 40272,
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_CALLS",
+                "label": {
+                  "en": "RTC Port",
+                  "es-es": "Puerto RTC",
+                  "ja": "RTC ポート",
+                  "ko": "RTC 포트",
+                  "ms": "Port RTC",
+                  "pt-br": "Porta RTC",
+                  "ru": "Порт RTC",
+                  "tr": "RTC Baglanti Noktasi",
+                  "zh": "RTC 服务端口",
+                  "zh-Hant": "RTC 服務埠"
+                },
+                "labelEn": "RTC Port",
+                "labelZh": "RTC 服务端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              },
+              {
+                "default": "false",
+                "edit": true,
+                "envKey": "MATTERMOST_CONTAINER_READONLY",
+                "label": {
+                  "en": "Read Only Container",
+                  "es-es": "Contenedor de solo lectura",
+                  "ja": "読み取り専用コンテナ",
+                  "ko": "읽기 전용 컨테이너",
+                  "ms": "Bekas baca sahaja",
+                  "pt-br": "Contêiner somente leitura",
+                  "ru": "Контейнер только для чтения",
+                  "tr": "Salt okunur kapsayici",
+                  "zh": "只读容器",
+                  "zh-Hant": "唯讀容器"
+                },
+                "labelEn": "Read Only Container",
+                "labelZh": "只读容器",
+                "required": false,
+                "type": "select",
+                "values": [
+                  {
+                    "label": "True",
+                    "value": "true"
+                  },
+                  {
+                    "label": "False",
+                    "value": "false"
+                  }
+                ]
+              },
+              {
+                "default": "Asia/Shanghai",
+                "edit": true,
+                "envKey": "TZ",
+                "label": {
+                  "en": "Time Zone",
+                  "es-es": "Zona horaria",
+                  "ja": "タイムゾーン",
+                  "ko": "시간대",
+                  "ms": "Zon waktu",
+                  "pt-br": "Fuso horário",
+                  "ru": "Часовой пояс",
+                  "tr": "Saat dilimi",
+                  "zh": "时区",
+                  "zh-Hant": "時區"
+                },
+                "labelEn": "Time Zone",
+                "labelZh": "时区",
+                "required": true,
+                "type": "text"
+              },
+              {
+                "default": "postgres",
+                "disabled": true,
+                "envKey": "MM_SQLSETTINGS_DRIVERNAME",
+                "label": {
+                  "en": "SQL Driver Name",
+                  "es-es": "Nombre del controlador SQL",
+                  "ja": "SQL ドライバー名",
+                  "ko": "SQL 드라이버 이름",
+                  "ms": "Nama pemacu SQL",
+                  "pt-br": "Nome do driver SQL",
+                  "ru": "Имя драйвера SQL",
+                  "tr": "SQL surucu adi",
+                  "zh": "SQL 驱动名称",
+                  "zh-Hant": "SQL 驅動名稱"
+                },
+                "labelEn": "SQL Driver Name",
+                "labelZh": "SQL 驱动名称",
+                "required": true,
+                "type": "text"
+              },
+              {
+                "default": "/mattermost/bleve-indexes",
+                "disabled": true,
+                "envKey": "MM_BLEVESETTINGS_INDEXDIR",
+                "label": {
+                  "en": "Bleve Index Directory",
+                  "es-es": "Directorio de índices Bleve",
+                  "ja": "Bleve インデックスディレクトリ",
+                  "ko": "Bleve 인덱스 디렉터리",
+                  "ms": "Direktori indeks Bleve",
+                  "pt-br": "Diretório de índices Bleve",
+                  "ru": "Каталог индексов Bleve",
+                  "tr": "Bleve indeks dizini",
+                  "zh": "Bleve 索引目录",
+                  "zh-Hant": "Bleve 索引目錄"
+                },
+                "labelEn": "Bleve Index Directory",
+                "labelZh": "Bleve 索引目录",
+                "required": true,
+                "type": "text"
+              },
+              {
+                "default": "http://localhost:40271",
+                "edit": true,
+                "envKey": "MM_SERVICESETTINGS_SITEURL",
+                "label": {
+                  "en": "Site URL",
+                  "es-es": "URL del sitio",
+                  "ja": "サイト URL",
+                  "ko": "사이트 URL",
+                  "ms": "URL laman",
+                  "pt-br": "URL do site",
+                  "ru": "URL сайта",
+                  "tr": "Site URL'si",
+                  "zh": "站点 URL",
+                  "zh-Hant": "站點 URL"
+                },
+                "labelEn": "Site URL",
+                "labelZh": "站点 URL",
+                "required": true,
+                "rule": "paramExtUrl",
+                "type": "text"
+              },
+              {
+                "child": {
+                  "default": "",
+                  "envKey": "PANEL_DB_HOST",
+                  "required": true,
+                  "type": "service"
+                },
+                "default": "postgresql",
+                "envKey": "PANEL_DB_TYPE",
+                "label": {
+                  "en": "Database Service",
+                  "es-es": "Servicio de base de datos",
+                  "ja": "データベースサービス",
+                  "ko": "데이터베이스 서비스",
+                  "ms": "Perkhidmatan pangkalan data",
+                  "pt-br": "Serviço de banco de dados",
+                  "ru": "Служба базы данных",
+                  "tr": "Veritabani hizmeti",
+                  "zh": "数据库服务",
+                  "zh-Hant": "資料庫服務"
+                },
+                "labelEn": "Database Service",
+                "labelZh": "数据库服务",
+                "required": true,
+                "type": "apps",
+                "values": [
+                  {
+                    "label": "PostgreSQL",
+                    "value": "postgresql"
+                  }
+                ]
+              },
+              {
+                "default": "mattermost",
+                "envKey": "PANEL_DB_NAME",
+                "label": {
+                  "en": "Database",
+                  "es-es": "Base de datos",
+                  "ja": "データベース",
+                  "ko": "데이터베이스",
+                  "ms": "Pangkalan data",
+                  "pt-br": "Banco de dados",
+                  "ru": "База данных",
+                  "tr": "Veritabani",
+                  "zh": "数据库名",
+                  "zh-Hant": "資料庫名稱"
+                },
+                "labelEn": "Database",
+                "labelZh": "数据库名",
+                "random": true,
+                "required": true,
+                "rule": "paramCommon",
+                "type": "text"
+              },
+              {
+                "default": "mattermost",
+                "envKey": "PANEL_DB_USER",
+                "label": {
+                  "en": "User",
+                  "es-es": "Usuario",
+                  "ja": "ユーザー",
+                  "ko": "사용자",
+                  "ms": "Pengguna",
+                  "pt-br": "Usuário",
+                  "ru": "Пользователь",
+                  "tr": "Kullanici",
+                  "zh": "数据库用户",
+                  "zh-Hant": "資料庫使用者"
+                },
+                "labelEn": "User",
+                "labelZh": "数据库用户",
+                "random": true,
+                "required": true,
+                "rule": "paramCommon",
+                "type": "text"
+              },
+              {
+                "default": "mattermost",
+                "envKey": "PANEL_DB_USER_PASSWORD",
+                "label": {
+                  "en": "Password",
+                  "es-es": "Contraseña",
+                  "ja": "パスワード",
+                  "ko": "비밀번호",
+                  "ms": "Kata laluan",
+                  "pt-br": "Senha",
+                  "ru": "Пароль",
+                  "tr": "Parola",
+                  "zh": "数据库用户密码",
+                  "zh-Hant": "資料庫使用者密碼"
+                },
+                "labelEn": "Password",
+                "labelZh": "数据库用户密码",
+                "random": true,
+                "required": true,
+                "rule": "paramComplexity",
+                "type": "password"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "icon": "https://apps.1panel.pro/stable/1panel/maxkb/logo.png",
       "name": "MaxKB",
       "readMe": "## Default Credentials\n\n- Username: `admin`\n- Password: `MaxKB@123..`\n\n## Introduction\n\n**MaxKB** = Max Knowledge Brain, it is an open-source platform for building enterprise-grade agents. MaxKB integrates Retrieval-Augmented Generation (RAG) pipelines, supports robust workflows, and provides advanced MCP tool usage capabilities. MaxKB is widely applied in scenarios such as intelligent customer service, corporate internal knowledge bases, academic research, and education.\n\n## Advantages\n\n- **RAG Pipeline**: Supports direct document uploads and automatic crawling of online content, with features for automatic text splitting and vectorization. This effectively reduces hallucinations in large models, providing a superior smart Q\u0026A interaction experience.\n- **Agentic Workflow**: Equipped with a powerful workflow engine, function library and MCP tool usage, enabling the orchestration of AI processes to meet the needs of complex business scenarios.\n- **Seamless Integration**: Facilitates rapid, no-code integration into third-party business systems, quickly equipping existing systems with intelligent Q\u0026A capabilities to enhance user satisfaction.\n- **Model-Agnostic**: Supports various large models, including private models (such as DeepSeek, Llama, Qwen, etc.) and public models (like OpenAI, Claude, Gemini, etc.).\n- **Multimodal**: Native support for input and output text, image, audio and video.\n",
@@ -10667,8 +11034,8 @@
       },
       "versions": [
         {
-          "name": "1.40.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/meilisearch/1.40.0/meilisearch-1.40.0.tar.gz",
+          "name": "1.41.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/meilisearch/1.41.0/meilisearch-1.41.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13247,8 +13614,8 @@
       },
       "versions": [
         {
-          "name": "2.13.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/n8n/2.13.3/n8n-2.13.3.tar.gz",
+          "name": "2.14.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/n8n/2.14.2/n8n-2.14.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13434,6 +13801,210 @@
                 "required": true,
                 "rule": "paramPort",
                 "type": "number"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "icon": "https://apps.1panel.pro/stable/1panel/netdata/logo.png",
+      "name": "Netdata",
+      "readMe": "## Introduction\n\n**Netdata** is an open-source, real-time infrastructure monitoring platform. It helps you monitor, detect, and act across your entire infrastructure, with per-second metrics and visualizations for servers, containers, and applications.\n\n## Core Advantages\n\n- **Instant Insights**: Access per-second metrics and visualizations to understand infrastructure changes immediately.\n- **Zero Configuration**: Deploy quickly without complex setup or heavy initial tuning.\n- **ML-Powered**: Detect anomalies, predict issues, and automate analysis with built-in intelligence.\n- **Efficient**: Monitor with minimal resource usage while maintaining strong scalability.\n- **Secure \u0026 Distributed**: Keep data local without depending on centralized collection.\n",
+      "additionalProperties": {
+        "architectures": [
+          "amd64",
+          "arm64",
+          "arm/v7"
+        ],
+        "batchInstallSupport": true,
+        "crossVersionUpdate": true,
+        "description": {
+          "en": "Open-source real-time infrastructure monitoring platform",
+          "es-es": "Plataforma de monitoreo de infraestructura en tiempo real de código abierto",
+          "ja": "オープンソースのリアルタイムインフラ監視プラットフォーム",
+          "ko": "오픈 소스 실시간 인프라 모니터링 플랫폼",
+          "ms": "Platform pemantauan infrastruktur masa nyata sumber terbuka",
+          "pt-br": "Plataforma de monitoramento de infraestrutura em tempo real de código aberto",
+          "ru": "Открытая платформа мониторинга инфраструктуры в реальном времени",
+          "tr": "Acik kaynakli gercek zamanli altyapi izleme platformu",
+          "zh": "开源实时基础设施监控平台",
+          "zh-Hant": "開源即時基礎設施監控平台"
+        },
+        "document": "https://learn.netdata.cloud/docs/",
+        "github": "https://github.com/netdata/netdata",
+        "key": "netdata",
+        "limit": 0,
+        "name": "Netdata",
+        "recommend": 0,
+        "shortDescEn": "Open-source real-time infrastructure monitoring platform",
+        "shortDescZh": "开源实时基础设施监控平台",
+        "tags": [
+          "Tool"
+        ],
+        "type": "website",
+        "website": "https://www.netdata.cloud"
+      },
+      "versions": [
+        {
+          "name": "2.9.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/netdata/2.9.0/netdata-2.9.0.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": "40314",
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "Port",
+                  "es-es": "Puerto",
+                  "ja": "ポート",
+                  "ko": "포트",
+                  "ms": "Port",
+                  "pt-br": "Porta",
+                  "ru": "Порт",
+                  "tr": "Bağlantı Noktası",
+                  "zh": "端口",
+                  "zh-Hant": "埠"
+                },
+                "labelEn": "Port",
+                "labelZh": "端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              },
+              {
+                "default": "netdata",
+                "edit": true,
+                "envKey": "HOSTNAME",
+                "label": {
+                  "en": "Hostname",
+                  "es-es": "Nombre del host",
+                  "ja": "ホスト名",
+                  "ko": "호스트 이름",
+                  "ms": "Nama hos",
+                  "pt-br": "Nome do host",
+                  "ru": "Имя хоста",
+                  "tr": "Ana bilgisayar adı",
+                  "zh": "主机名",
+                  "zh-Hant": "主機名稱"
+                },
+                "labelEn": "Hostname",
+                "labelZh": "主机名",
+                "required": true,
+                "type": "text"
+              },
+              {
+                "default": "/var/run/docker.sock",
+                "edit": true,
+                "envKey": "DOCKER_SOCK_PATH",
+                "label": {
+                  "en": "Docker Socket Path",
+                  "es-es": "Ruta del socket de Docker",
+                  "ja": "Docker ソケットパス",
+                  "ko": "Docker 소켓 경로",
+                  "ms": "Laluan soket Docker",
+                  "pt-br": "Caminho do socket do Docker",
+                  "ru": "Путь к сокету Docker",
+                  "tr": "Docker soket yolu",
+                  "zh": "Docker 套接字路径",
+                  "zh-Hant": "Docker 套接字路徑"
+                },
+                "labelEn": "Docker Socket Path",
+                "labelZh": "Docker 套接字路径",
+                "required": true,
+                "type": "text"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "icon": "https://apps.1panel.pro/stable/1panel/new-api/logo.png",
+      "name": "New API",
+      "readMe": "## Introduction\n\n**New API** is a next-generation LLM gateway and AI asset management system. It allows you to manage all your AI models in one application, converting various large models into a unified API format. It supports OpenAI-, Claude-, and Gemini-compatible interfaces, making it suitable for both personal use and internal enterprise distribution.\n\n## Features\n\nFor detailed features, please refer to [Features Introduction](https://docs.newapi.pro/wiki/features-introduction)\n\n### Core Functions\n\n| Feature | Description |\n|------|------|\n| New UI | Modern user interface design |\n| Multi-language | Supports Chinese, English, French, Japanese |\n| Data Compatibility | Fully compatible with the original One API database |\n| Data Dashboard | Visual console and statistical analysis |\n| Permission Management | Token grouping, model restrictions, user management |\n\n### Payment and Billing\n\n- Online recharge (EPay, Stripe)\n- Pay-per-use model pricing\n- Cache billing support (OpenAI, Azure, DeepSeek, Claude, Qwen and all supported models)\n- Flexible billing policy configuration\n\n### Authorization and Security\n\n- LinuxDO authorization login\n- Telegram authorization login\n- OIDC unified authentication\n\n### Advanced Features\n\n**API Format Support:**\n- [OpenAI Responses](https://docs.newapi.pro/api/openai-responses)\n- [OpenAI Realtime API](https://docs.newapi.pro/api/openai-realtime) (including Azure)\n- [Claude Messages](https://docs.newapi.pro/api/anthropic-chat)\n- [Google Gemini](https://docs.newapi.pro/api/google-gemini-chat/)\n- [Rerank Models](https://docs.newapi.pro/api/jinaai-rerank) (Cohere, Jina)\n\n**Intelligent Routing:**\n- Channel weighted random\n- Automatic retry on failure\n- User-level model rate limiting\n\n**Format Conversion:**\n- OpenAI ⇄ Claude Messages\n- OpenAI ⇄ Gemini Chat\n- Thinking-to-content functionality\n\n**Reasoning Effort Support:**\n\n\u003cdetails\u003e\n\u003csummary\u003eView detailed configuration\u003c/summary\u003e\n\n**OpenAI series models:**\n- `o3-mini-high` - High reasoning effort\n- `o3-mini-medium` - Medium reasoning effort\n- `o3-mini-low` - Low reasoning effort\n- `gpt-5-high` - High reasoning effort\n- `gpt-5-medium` - Medium reasoning effort\n- `gpt-5-low` - Low reasoning effort\n\n**Claude thinking models:**\n- `claude-3-7-sonnet-20250219-thinking` - Enable thinking mode\n\n**Google Gemini series models:**\n- `gemini-2.5-flash-thinking` - Enable thinking mode\n- `gemini-2.5-flash-nothinking` - Disable thinking mode\n- `gemini-2.5-pro-thinking` - Enable thinking mode\n- `gemini-2.5-pro-thinking-128` - Enable thinking mode with thinking budget of 128 tokens\n\n\u003c/details\u003e\n",
+      "additionalProperties": {
+        "architectures": [
+          "amd64",
+          "arm64"
+        ],
+        "batchInstallSupport": true,
+        "crossVersionUpdate": false,
+        "description": {
+          "en": "The next-generation LLM gateway and AI asset management system",
+          "es-es": "The de próxima generación LLM gateway and AI asset sistema de gestión",
+          "ja": "次世代LLMゲートウェイとAI資産管理システム",
+          "ko": "차세대 LLM 게이트웨이 및 AI 자산 관리 시스템",
+          "ms": "Sistem pengurusan aset AI dan gerbang LLM generasi akan datang",
+          "pt-br": "O sistema de gerenciamento de ativos de IA e o gateway LLM de próxima geração",
+          "ru": "Следующее поколение шлюза LLM и системы управления активами ИИ",
+          "tr": "The next-generation LLM gateway and AI asset yönetim system",
+          "zh": "新一代大模型网关与 AI 资产管理系统",
+          "zh-Hant": "新一代大模型網關與 AI 資產管理系統"
+        },
+        "document": "https://www.newapi.ai/guide/",
+        "github": "https://github.com/QuantumNous/new-api",
+        "key": "new-api",
+        "limit": 0,
+        "name": "New API",
+        "recommend": 360,
+        "shortDescEn": "The next-generation LLM gateway and AI asset management system",
+        "shortDescZh": "新一代大模型网关与 AI 资产管理系统",
+        "tags": [
+          "AI"
+        ],
+        "type": "website",
+        "website": "https://www.newapi.ai/"
+      },
+      "versions": [
+        {
+          "name": "0.11.9",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/new-api/0.11.9/new-api-0.11.9.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": 3000,
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "Port",
+                  "es-es": "Puerto",
+                  "ja": "ポート",
+                  "ko": "포트",
+                  "ms": "Port",
+                  "pt-br": "Porta",
+                  "ru": "Порт",
+                  "tr": "Bağlantı Noktası",
+                  "zh": "端口",
+                  "zh-Hant": "埠"
+                },
+                "labelEn": "Port",
+                "labelZh": "端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              },
+              {
+                "default": "Asia/Shanghai",
+                "edit": true,
+                "envKey": "TZ",
+                "label": {
+                  "en": "Time zone",
+                  "es-es": "Zona horaria",
+                  "ja": "タイムゾーン",
+                  "ko": "시간대",
+                  "ms": "Zon masa",
+                  "pt-br": "Fuso horário",
+                  "ru": "Часовой пояс",
+                  "tr": "Saat Dilimi",
+                  "zh": "时区",
+                  "zh-Hant": "時區"
+                },
+                "labelEn": "Time Zone",
+                "labelZh": "时区",
+                "required": true,
+                "type": "text"
               }
             ]
           }
@@ -13748,8 +14319,8 @@
       },
       "versions": [
         {
-          "name": "33.0.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nextcloud/33.0.0/nextcloud-33.0.0.tar.gz",
+          "name": "33.0.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nextcloud/33.0.1/nextcloud-33.0.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14023,8 +14594,8 @@
       },
       "versions": [
         {
-          "name": "2.0.26",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.26/nocobase-2.0.26.tar.gz",
+          "name": "2.0.30",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.30/nocobase-2.0.30.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14720,8 +15291,8 @@
       },
       "versions": [
         {
-          "name": "2.19.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ntfy/2.19.2/ntfy-2.19.2.tar.gz",
+          "name": "2.21.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ntfy/2.21.0/ntfy-2.21.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -15264,8 +15835,8 @@
       },
       "versions": [
         {
-          "name": "0.18.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.18.3/ollama-0.18.3.tar.gz",
+          "name": "0.19.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.19.0/ollama-0.19.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -15334,8 +15905,8 @@
       },
       "versions": [
         {
-          "name": "0.8.11",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama-webui/0.8.11/ollama-webui-0.8.11.tar.gz",
+          "name": "0.8.12",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama-webui/0.8.12/ollama-webui-0.8.12.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -15687,8 +16258,8 @@
       },
       "versions": [
         {
-          "name": "2026.3.24",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/openclaw/2026.3.24/openclaw-2026.3.24.tar.gz",
+          "name": "2026.3.28",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/openclaw/2026.3.28/openclaw-2026.3.28.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -17085,8 +17656,8 @@
       },
       "versions": [
         {
-          "name": "2.3.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/palworld/2.3.1/palworld-2.3.1.tar.gz",
+          "name": "2.3.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/palworld/2.3.2/palworld-2.3.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -23522,8 +24093,8 @@
       },
       "versions": [
         {
-          "name": "3.6.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/redpanda-console/3.6.0/redpanda-console-3.6.0.tar.gz",
+          "name": "3.7.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/redpanda-console/3.7.0/redpanda-console-3.7.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -23817,8 +24388,8 @@
       },
       "versions": [
         {
-          "name": "1.6.14-apache",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/roundcube/1.6.14-apache/roundcube-1.6.14-apache.tar.gz",
+          "name": "1.6.15-apache",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/roundcube/1.6.15-apache/roundcube-1.6.15-apache.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -26247,8 +26818,8 @@
       },
       "versions": [
         {
-          "name": "6.5.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/trendradar/6.5.2/trendradar-6.5.2.tar.gz",
+          "name": "6.6.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/trendradar/6.6.0/trendradar-6.6.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -27287,8 +27858,8 @@
       },
       "versions": [
         {
-          "name": "0.18.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/vllm/0.18.0/vllm-0.18.0.tar.gz",
+          "name": "0.18.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/vllm/0.18.1/vllm-0.18.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -27359,8 +27930,8 @@
           }
         },
         {
-          "name": "0.18.0-cu130",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/vllm/0.18.0-cu130/vllm-0.18.0-cu130.tar.gz",
+          "name": "0.18.1-cu130",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/vllm/0.18.1-cu130/vllm-0.18.1-cu130.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -28099,7 +28670,7 @@
     {
       "icon": "https://apps.1panel.pro/stable/1panel/wordpress/logo.png",
       "name": "WordPress",
-      "readMe": "## Introduction\n\nWordPress is a widely used open-source CMS (Content Management System) for creating and managing websites and blog.\n\n## Features\n\n- **User-Friendly Interface**: WordPress provides an intuitive backend management interface, allowing users to easily create, edit, and manage website content.\n- **Themes and Templates**: WordPress offers a variety of themes and templates that can be selected and customized according to website needs.\n- **Plugin Extensibility**: WordPress has a powerful plugin system that allows users to add various features such as social media sharing, SEO (Search Engine Optimization) optimization, contact forms, etc.\n- **Multimedia Support**: WordPress supports multiple media types, including image, video, and audio file uploads and embedding.\n- **User Management**: WordPress allows multiple users to collaboratively edit and manage the website with different roles and permissions.\n- **SEO Optimization**: WordPress provides a range of tools and plugins to help improve the website's SEO.\n- **Social Media Integration**: WordPress can easily integrate social media sharing buttons and social media embeds to promote content sharing.\n- **Blogging Features**: WordPress was initially a blogging platform, so it has strong blogging features, including post categories, tags, comments, etc.\n",
+      "readMe": "## Introduction\n\nWordPress is a widely used open-source CMS (Content Management System) for creating and managing websites and blogs.\n\n## Features\n\n- **User-Friendly Interface**: WordPress provides an intuitive backend management interface, allowing users to easily create, edit, and manage website content.\n- **Themes and Templates**: WordPress offers a variety of themes and templates that can be selected and customized according to website needs.\n- **Plugin Extensibility**: WordPress has a powerful plugin system that allows users to add various features such as social media sharing, SEO (Search Engine Optimization) optimization, contact forms, etc.\n- **Multimedia Support**: WordPress supports multiple media types, including image, video, and audio file uploads and embedding.\n- **User Management**: WordPress allows multiple users to collaboratively edit and manage the website with different roles and permissions.\n- **SEO Optimization**: WordPress provides a range of tools and plugins to help improve the website's SEO.\n- **Social Media Integration**: WordPress can easily integrate social media sharing buttons and social media embeds to promote content sharing.\n- **Blogging Features**: WordPress was initially a blogging platform, so it has strong blogging features, including post categories, tags, comments, etc.\n",
       "additionalProperties": {
         "architectures": [
           "amd64",
