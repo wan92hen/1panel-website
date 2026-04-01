@@ -94,3 +94,13 @@ After installation, open the URL provided by the script to access your dashboard
 cPanel remains a known product in traditional hosting environments, but many teams now prioritize modern operations, container-native workflows, and better long-term cost control.
 
 For those teams, 1Panel is one of the most practical alternatives available in 2026.
+
+## Get Started with 1Panel
+
+Ready to switch from cPanel?
+
+- [Install 1Panel free →](https://1panel.pro/#quickstart) — takes about 2 minutes
+
+- [Compare OSS vs Pro plans](https://1panel.pro/pricing) — Pro starts at $80/year
+
+- [Full cPanel vs 1Panel comparison](https://1panel.pro/1panel-vs-cpanel)
