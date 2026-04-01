@@ -6,6 +6,7 @@ import Header from "../../components/Header.astro";
 import Footer from "../../components/Footer.astro";
 import BlogPageDecor from "../../components/blog/BlogPageDecor.astro";
 import appStoreData from "../../1panel.json";
+import appMetaData from "../../app-meta.json";
 import "../../styles/global.css";
 
 marked.setOptions({ gfm: true });
@@ -27,6 +28,11 @@ type AppItem = {
     type?: string;
   };
   versions?: { name: string }[];
+};
+
+type AppMetaItem = {
+  key: string;
+  meta_description?: string;
 };
 
 function clamp(s: string, n: number): string {
@@ -53,6 +59,10 @@ const description =
   app.additionalProperties?.description?.en ??
   app.additionalProperties?.shortDescEn ??
   "";
+const appMetaDescription =
+  ((appMetaData as any)?.apps as AppMetaItem[] | undefined)?.find(
+    (item) => item.key === slug,
+  )?.meta_description ?? "";
 
 const siteOrigin = (import.meta.env.SITE ?? "https://1panel.pro").replace(
   /\/$/,
@@ -63,11 +73,9 @@ const canonicalUrl = `${siteOrigin}/apps/${slug}.html`;
 /** ~50–60 chars for SERP; brand + intent keywords */
 const pageTitle = `${name} | 1Panel App Store`;
 
-const descBase =
-  description ||
-  `Install and run ${name} on your Linux server with 1Panel — curated Docker apps and one-click deployment.`;
 const metaDescription = clamp(
-  `${descBase} Deploy from the 1Panel App Store.`,
+  appMetaDescription ||
+    `Deploy ${name} on your Linux server with 1Panel. ${description || `${name} helps you run and manage services on Linux servers.`} One-click install from 1Panel's open-source App Store.`,
   160,
 );
 

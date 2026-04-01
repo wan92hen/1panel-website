@@ -1,0 +1,1537 @@
+{
+  "total": 170,
+  "apps": [
+    {
+      "key": "2fauth",
+      "name": "2FAuth",
+      "tags": [
+        "Security"
+      ],
+      "meta_description": "Self-host 2FAuth on your Linux server with 1Panel. A Web app to manage your Two-Factor Authentication. One-click secure deployment via 1Panel App Store.",
+      "char_count": 152
+    },
+    {
+      "key": "act_runner",
+      "name": "Act Runner",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Act Runner with 1Panel. A runner for Gitea based on Gitea fork of act. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 153
+    },
+    {
+      "key": "adguardhome",
+      "name": "AdGuardHome",
+      "tags": [
+        "Security"
+      ],
+      "meta_description": "Self-host AdGuardHome on your Linux server with 1Panel. Network-wide ads & trackers blocking DNS server. One-click secure deployment via 1Panel App Store.",
+      "char_count": 154
+    },
+    {
+      "key": "adminer",
+      "name": "Adminer",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy Adminer on your VPS with 1Panel. Database management in a single PHP file. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 141
+    },
+    {
+      "key": "affine",
+      "name": "AFFiNE",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy AFFiNE on your Linux VPS with 1Panel. A workspace with fully merged docs, whiteboards and databases. One-click install, free and open source.",
+      "char_count": 148
+    },
+    {
+      "key": "alist",
+      "name": "AList",
+      "tags": [
+        "Storage",
+        "Tool"
+      ],
+      "meta_description": "Self-host AList on your Linux VPS with 1Panel. Supporting multi-storage file listing program and private. One-click Docker deployment on any Linux server.",
+      "char_count": 154
+    },
+    {
+      "key": "answer",
+      "name": "Answer",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy Answer on your VPS with 1Panel. A Q&A platform software for teams at any scales. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 151
+    },
+    {
+      "key": "audiobookshelf",
+      "name": "Audiobookshelf",
+      "tags": [
+        "Media"
+      ],
+      "meta_description": "Self-host Audiobookshelf on your VPS with 1Panel. Self-hosted audiobook and podcast server. One-click deploy on Linux — keep full control of your media.",
+      "char_count": 152
+    },
+    {
+      "key": "beszel",
+      "name": "Beszel",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Beszel on your Linux VPS with 1Panel. Simple, lightweight server monitoring. One-click install, free and open source.",
+      "char_count": 124
+    },
+    {
+      "key": "bettafish",
+      "name": "BettaFish",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host BettaFish on your VPS with 1Panel. A multi-agent public opinion. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 150
+    },
+    {
+      "key": "bitwarden",
+      "name": "Bitwarden",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Bitwarden on your Linux VPS with 1Panel. Open source password management service. One-click install, free and open source.",
+      "char_count": 129
+    },
+    {
+      "key": "bytebase",
+      "name": "Bytebase",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Bytebase with 1Panel. Open-Source Database DevOps Solution. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 142
+    },
+    {
+      "key": "caddy",
+      "name": "Caddy",
+      "tags": [
+        "Server"
+      ],
+      "meta_description": "Deploy Caddy on your VPS with 1Panel. Fast and extensible multi-platform HTTP/1-2-3 web server. One-click install with easy configuration on Linux.",
+      "char_count": 147
+    },
+    {
+      "key": "calibre-web",
+      "name": "Calibre-Web",
+      "tags": [
+        "Media"
+      ],
+      "meta_description": "Self-host Calibre-Web on your VPS with 1Panel. Web app for browsing, reading and downloading. One-click deploy on Linux — keep full control of your media.",
+      "char_count": 154
+    },
+    {
+      "key": "casdoor",
+      "name": "Casdoor",
+      "tags": [
+        "Security"
+      ],
+      "meta_description": "Self-host Casdoor on your Linux server with 1Panel. An Identity and Access Management (IAM) /. One-click secure deployment via 1Panel App Store.",
+      "char_count": 144
+    },
+    {
+      "key": "changedetectionio",
+      "name": "Changedetection.io",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Changedetection.io on your Linux VPS with 1Panel. Free open source website change detection, website. One-click install, free and open source.",
+      "char_count": 149
+    },
+    {
+      "key": "clickhouse",
+      "name": "ClickHouse",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy ClickHouse on your Linux VPS with 1Panel. A free analytics DBMS for big data. One-click install with visual admin interface and automated backups.",
+      "char_count": 153
+    },
+    {
+      "key": "cloudbeaver",
+      "name": "CloudBeaver",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy CloudBeaver on your VPS with 1Panel. Cloud Database Manager. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 127
+    },
+    {
+      "key": "cloudflared",
+      "name": "cloudflared",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy cloudflared on your Linux VPS with 1Panel. Cloudflare Tunnel client. One-click install, free and open source.",
+      "char_count": 116
+    },
+    {
+      "key": "code-server",
+      "name": "code-server",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy code-server on your VPS with 1Panel. VS Code in the browser. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 127
+    },
+    {
+      "key": "consul",
+      "name": "Consul",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy Consul on your Linux server with 1Panel. Distributed, highly available, and data center. One-click install and lifecycle management via App Store.",
+      "char_count": 153
+    },
+    {
+      "key": "convertx",
+      "name": "ConvertX",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy ConvertX on your Linux VPS with 1Panel. Self-hosted online file converter. One-click install, free and open source.",
+      "char_count": 122
+    },
+    {
+      "key": "copaw",
+      "name": "CoPaw",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host CoPaw on your VPS with 1Panel. An open-source AI personal assistant. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 154
+    },
+    {
+      "key": "cyberchef",
+      "name": "CyberChef",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy CyberChef on your Linux VPS with 1Panel. Browser-based toolbox for encoding, decoding and data analysis. One-click install, free and open source.",
+      "char_count": 152
+    },
+    {
+      "key": "dashy",
+      "name": "Dashy",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy Dashy on your VPS with 1Panel. A self-hostable personal dashboard built for you. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 151
+    },
+    {
+      "key": "dbhub",
+      "name": "DBHub",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host DBHub on your VPS with 1Panel. Universal database MCP server. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 147
+    },
+    {
+      "key": "discourse",
+      "name": "Discourse",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy Discourse on your VPS with 1Panel. A platform for community discussion. Free. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 148
+    },
+    {
+      "key": "docker-registry",
+      "name": "Docker Registry",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Docker Registry with 1Panel. A storage and distribution system. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 146
+    },
+    {
+      "key": "dockge",
+      "name": "Dockge",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Dockge on your Linux VPS with 1Panel. Self-hosted - Docker compose.yaml - Stack-oriented Manager. One-click install, free and open source.",
+      "char_count": 145
+    },
+    {
+      "key": "docmost",
+      "name": "Docmost",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy Docmost on your VPS with 1Panel. Open-source collaborative wiki and documentation. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 153
+    },
+    {
+      "key": "dotnet",
+      "name": ".NET",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy .NET runtime on your Linux VPS with 1Panel. .NET Runtime. One-click setup with version management.",
+      "char_count": 105
+    },
+    {
+      "key": "drawio",
+      "name": "Draw.io",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Draw.io on your Linux VPS with 1Panel. JavaScript, client-side editor for general diagramming. One-click install, free and open source.",
+      "char_count": 142
+    },
+    {
+      "key": "dvwa",
+      "name": "DVWA",
+      "tags": [
+        "Security"
+      ],
+      "meta_description": "Self-host DVWA on your Linux server with 1Panel. DVWA (Damn Vulnerable Web Application). One-click secure deployment via 1Panel App Store.",
+      "char_count": 138
+    },
+    {
+      "key": "elasticsearch",
+      "name": "Elasticsearch",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Elasticsearch on your Linux VPS with 1Panel. Free and Open, Distributed. One-click install with visual admin interface and automated backups.",
+      "char_count": 148
+    },
+    {
+      "key": "emqx",
+      "name": "EMQX",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy EMQX on your Linux server with 1Panel. The most scalable open-source MQTT broker. One-click install and lifecycle management via App Store.",
+      "char_count": 146
+    },
+    {
+      "key": "excalidraw",
+      "name": "Excalidraw",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Excalidraw on your Linux VPS with 1Panel. Virtual whiteboard for sketching hand-drawn like diagrams. One-click install, free and open source.",
+      "char_count": 148
+    },
+    {
+      "key": "filebrowser",
+      "name": "File Browser",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy File Browser on your Linux VPS with 1Panel. Web File Browser. One-click install, free and open source.",
+      "char_count": 109
+    },
+    {
+      "key": "firefly-iii",
+      "name": "Firefly III",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Firefly III on your Linux VPS with 1Panel. A free and open source personal finance manager. One-click install, free and open source.",
+      "char_count": 139
+    },
+    {
+      "key": "flarum",
+      "name": "Flarum",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy Flarum on your VPS with 1Panel. Simple forum software for building great. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 144
+    },
+    {
+      "key": "focalboard",
+      "name": "Focalboard",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Focalboard with 1Panel. An open source, self-hosted alternative. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 147
+    },
+    {
+      "key": "forgejo",
+      "name": "Forgejo",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Forgejo with 1Panel. The next generation of code hosting platform. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 149
+    },
+    {
+      "key": "forgejo-runner",
+      "name": "Forgejo Actions Runner",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Forgejo Actions Runner with 1Panel. Forgejo Runner is a daemon process. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 154
+    },
+    {
+      "key": "freshrss",
+      "name": "FreshRSS",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy FreshRSS on your Linux VPS with 1Panel. A self-hosted RSS and Atom feed aggregator. One-click install, free and open source.",
+      "char_count": 131
+    },
+    {
+      "key": "gatus",
+      "name": "Gatus",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Gatus on your Linux VPS with 1Panel. Developer-oriented health dashboard. One-click install, free and open source.",
+      "char_count": 121
+    },
+    {
+      "key": "ghost",
+      "name": "Ghost",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy Ghost on your VPS with 1Panel. The best open source blog & newsletter platform. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 150
+    },
+    {
+      "key": "gitea",
+      "name": "Gitea",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Gitea with 1Panel. The next generation of code hosting platform. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 147
+    },
+    {
+      "key": "gitlab",
+      "name": "GitLab",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host GitLab with 1Panel. An open source end-to-end software development. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 150
+    },
+    {
+      "key": "glance",
+      "name": "Glance",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Glance on your Linux VPS with 1Panel. A self-hosted dashboard that puts all your feeds in one place. One-click install, free and open source.",
+      "char_count": 148
+    },
+    {
+      "key": "go",
+      "name": "Go",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy Go runtime on your Linux VPS with 1Panel. Go Runtime. One-click setup with version management.",
+      "char_count": 101
+    },
+    {
+      "key": "gotify",
+      "name": "Gotify",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy Gotify on your VPS with 1Panel. A simple server for sending and receiving messages. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 150
+    },
+    {
+      "key": "grafana",
+      "name": "Grafana",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Grafana on your Linux VPS with 1Panel. The open-source platform for monitoring and observability. One-click install, free and open source.",
+      "char_count": 145
+    },
+    {
+      "key": "harness",
+      "name": "Harness",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Harness with 1Panel. An end-to-end developer platform with Source. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 149
+    },
+    {
+      "key": "heimdall",
+      "name": "Heimdall",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Heimdall on your Linux VPS with 1Panel. An Application dashboard and launcher. One-click install, free and open source.",
+      "char_count": 126
+    },
+    {
+      "key": "home-assistant",
+      "name": "Home Assistant",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Home Assistant on your Linux VPS with 1Panel. Open source home automation that puts local control. One-click install, free and open source.",
+      "char_count": 146
+    },
+    {
+      "key": "homepage",
+      "name": "Homepage",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Homepage on your Linux VPS with 1Panel. A modern, fully static, fast, secure fully proxied, highly. One-click install, free and open source.",
+      "char_count": 147
+    },
+    {
+      "key": "huginn",
+      "name": "Huginn",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Huginn on your Linux VPS with 1Panel. A system for building agents that perform automated tasks for you. One-click install, free and open source.",
+      "char_count": 152
+    },
+    {
+      "key": "influxdb",
+      "name": "InfluxDB",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy InfluxDB on your Linux VPS with 1Panel. Scalable datastore for metrics. One-click install with visual admin interface and automated backups.",
+      "char_count": 147
+    },
+    {
+      "key": "it-tools",
+      "name": "IT-Tools",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy IT-Tools on your VPS with 1Panel. Collection of handy online tools for developers. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 149
+    },
+    {
+      "key": "jaeger",
+      "name": "Jaeger",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy Jaeger on your Linux server with 1Panel. A Distributed Tracing System. One-click install and lifecycle management via App Store.",
+      "char_count": 135
+    },
+    {
+      "key": "java",
+      "name": "Java",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy Java runtime on your Linux VPS with 1Panel. Java Runtime. One-click setup with version management.",
+      "char_count": 105
+    },
+    {
+      "key": "jellyfin",
+      "name": "Jellyfin",
+      "tags": [
+        "Media"
+      ],
+      "meta_description": "Self-host Jellyfin on your VPS with 1Panel. A multimedia application software suite. One-click deploy on Linux — keep full control of your media.",
+      "char_count": 145
+    },
+    {
+      "key": "jenkins",
+      "name": "Jenkins",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Jenkins with 1Panel. Build great things at any scale. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 136
+    },
+    {
+      "key": "jsonhero",
+      "name": "JSON Hero",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy JSON Hero on your Linux VPS with 1Panel. An open-source, beautiful JSON explorer. One-click install, free and open source.",
+      "char_count": 129
+    },
+    {
+      "key": "jumpserver",
+      "name": "JumpServer",
+      "tags": [
+        "Security"
+      ],
+      "meta_description": "Self-host JumpServer on your Linux server with 1Panel. The world's first open-source Bastion Host. One-click secure deployment via 1Panel App Store.",
+      "char_count": 148
+    },
+    {
+      "key": "jupyter-notebook",
+      "name": "Jupyter Notebook",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Jupyter Notebook on your Linux VPS with 1Panel. Multi language interactive programming environment. One-click install, free and open source.",
+      "char_count": 147
+    },
+    {
+      "key": "kafka",
+      "name": "Kafka",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy Kafka on your Linux server with 1Panel. Open-source distributed event streaming platform. One-click install and lifecycle management via App Store.",
+      "char_count": 154
+    },
+    {
+      "key": "keycloak",
+      "name": "Keycloak",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Keycloak on your Linux VPS with 1Panel. Open Source Identity and Access Management For Modern. One-click install, free and open source.",
+      "char_count": 142
+    },
+    {
+      "key": "kibana",
+      "name": "Kibana",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Kibana on your Linux VPS with 1Panel. Data analytics and visualization platform for Elasticsearch. One-click install, free and open source.",
+      "char_count": 146
+    },
+    {
+      "key": "komga",
+      "name": "Komga",
+      "tags": [
+        "Media"
+      ],
+      "meta_description": "Self-host Komga on your VPS with 1Panel. Komga is a media server for your comics, mangas. One-click deploy on Linux — keep full control of your media.",
+      "char_count": 150
+    },
+    {
+      "key": "langflow",
+      "name": "Langflow",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host Langflow on your VPS with 1Panel. A powerful tool for building. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 149
+    },
+    {
+      "key": "localai",
+      "name": "LocalAI",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host LocalAI on your VPS with 1Panel. The free, Open Source OpenAI. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 148
+    },
+    {
+      "key": "logto",
+      "name": "Logto",
+      "tags": [
+        "Security"
+      ],
+      "meta_description": "Self-host Logto on your Linux server with 1Panel. An Auth0 alternative designed for modern apps. One-click secure deployment via 1Panel App Store.",
+      "char_count": 146
+    },
+    {
+      "key": "maddy-mail",
+      "name": "Maddy Mail Server",
+      "tags": [
+        "Email"
+      ],
+      "meta_description": "Self-host Maddy Mail Server on your VPS with 1Panel. Composable all-in-one mail server. One-click email server deployment on Linux.",
+      "char_count": 131
+    },
+    {
+      "key": "mailserver",
+      "name": "Mailserver",
+      "tags": [
+        "Email"
+      ],
+      "meta_description": "Self-host Mailserver on your VPS with 1Panel. Fullstack but simple containerized mail server. One-click email server deployment on Linux.",
+      "char_count": 137
+    },
+    {
+      "key": "manticoresearch",
+      "name": "Manticore Search",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Manticore Search on your Linux VPS with 1Panel. A high-performance. One-click install with visual admin interface and automated backups.",
+      "char_count": 143
+    },
+    {
+      "key": "mariadb",
+      "name": "MariaDB",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy MariaDB on your Linux VPS with 1Panel. The open source relational database. One-click install with visual admin interface and automated backups.",
+      "char_count": 151
+    },
+    {
+      "key": "mattermost",
+      "name": "Mattermost",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Mattermost on your Linux VPS with 1Panel. Open-source secure team collaboration platform. One-click install, free and open source.",
+      "char_count": 137
+    },
+    {
+      "key": "maxkb",
+      "name": "MaxKB",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host MaxKB on your VPS with 1Panel. An open-source platform for building. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 154
+    },
+    {
+      "key": "meilisearch",
+      "name": "MeiliSearch",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy MeiliSearch on your Linux VPS with 1Panel. An open-source, lightning-fast, and hyper-relevant search. One-click install, free and open source.",
+      "char_count": 149
+    },
+    {
+      "key": "memcached",
+      "name": "Memcached",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Memcached on your Linux VPS with 1Panel. A distributed caching system. One-click install with visual admin interface and automated backups.",
+      "char_count": 146
+    },
+    {
+      "key": "memos",
+      "name": "Memos",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Memos on your Linux VPS with 1Panel. A lightweight, self-hosted memo hub. One-click install, free and open source.",
+      "char_count": 121
+    },
+    {
+      "key": "metabase",
+      "name": "Metabase",
+      "tags": [
+        "BI"
+      ],
+      "meta_description": "Self-host Metabase on your VPS with 1Panel. Open source data analysis. One-click deployment for data analysis and visualization on Linux.",
+      "char_count": 137
+    },
+    {
+      "key": "minio",
+      "name": "MinIO",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy MinIO on your Linux server with 1Panel. Open source object storage server. One-click install and lifecycle management via App Store.",
+      "char_count": 139
+    },
+    {
+      "key": "mkdocs-material",
+      "name": "Material for MkDocs",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Material for MkDocs on your Linux VPS with 1Panel. A powerful documentation framework on top of MkDocs. One-click install, free and open source.",
+      "char_count": 151
+    },
+    {
+      "key": "mongo-express",
+      "name": "mongo-express",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy mongo-express on your VPS with 1Panel. Web-based MongoDB admin interface. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 140
+    },
+    {
+      "key": "mongodb",
+      "name": "MongoDB",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy MongoDB on your Linux VPS with 1Panel. Fractional file storage database. One-click install with visual admin interface and automated backups.",
+      "char_count": 148
+    },
+    {
+      "key": "mssql",
+      "name": "Microsoft SQL Server",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Microsoft SQL Server on your Linux VPS with 1Panel. Official Microsoft. One-click install with visual admin interface and automated backups.",
+      "char_count": 147
+    },
+    {
+      "key": "mysql",
+      "name": "MySQL",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy MySQL on your Linux VPS with 1Panel. Open source relational database. One-click install with visual admin interface and automated backups.",
+      "char_count": 145
+    },
+    {
+      "key": "mysql-cluster",
+      "name": "MySQL-Cluster",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy MySQL-Cluster on your Linux VPS with 1Panel. . One-click install with visual admin interface and automated backups.",
+      "char_count": 122
+    },
+    {
+      "key": "n8n",
+      "name": "n8n",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host n8n on your VPS with 1Panel. Fair-code workflow automation platform. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 154
+    },
+    {
+      "key": "navidrome",
+      "name": "Navidrome",
+      "tags": [
+        "Media"
+      ],
+      "meta_description": "Self-host Navidrome on your VPS with 1Panel. An open source web-based music collection. One-click deploy on Linux — keep full control of your media.",
+      "char_count": 148
+    },
+    {
+      "key": "neo4j",
+      "name": "Neo4j",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Neo4j on your Linux VPS with 1Panel. The world’s leading Graph Database. One-click install with visual admin interface and automated backups.",
+      "char_count": 148
+    },
+    {
+      "key": "netdata",
+      "name": "Netdata",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Netdata on your Linux VPS with 1Panel. Open-source real-time infrastructure monitoring platform. One-click install, free and open source.",
+      "char_count": 144
+    },
+    {
+      "key": "new-api",
+      "name": "New API",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host New API on your VPS with 1Panel. The next-generation LLM gateway. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 151
+    },
+    {
+      "key": "newsnow",
+      "name": "NewsNow",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy NewsNow on your Linux VPS with 1Panel. Elegant reading of real-time and hottest news. One-click install, free and open source.",
+      "char_count": 133
+    },
+    {
+      "key": "nextcloud",
+      "name": "Nextcloud",
+      "tags": [
+        "Storage"
+      ],
+      "meta_description": "Self-host Nextcloud on your Linux VPS with 1Panel. Nextcloud server, a safe home for all your data. One-click Docker deployment on any Linux server.",
+      "char_count": 148
+    },
+    {
+      "key": "nexus",
+      "name": "Nexus Repository",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Nexus Repository with 1Panel. An open source repository for build. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 149
+    },
+    {
+      "key": "nginx-proxy-manager",
+      "name": "Nginx Proxy Manager",
+      "tags": [
+        "Server"
+      ],
+      "meta_description": "Deploy Nginx Proxy Manager on your VPS with 1Panel. Nginx visual management tool. One-click install with easy configuration on Linux.",
+      "char_count": 133
+    },
+    {
+      "key": "nocobase",
+      "name": "NocoBase",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy NocoBase on your VPS with 1Panel. A scalability-first, open-source no-code development. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 154
+    },
+    {
+      "key": "nocodb",
+      "name": "NocoDB",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy NocoDB on your Linux VPS with 1Panel. Code-free database platform. One-click install with visual admin interface and automated backups.",
+      "char_count": 142
+    },
+    {
+      "key": "node",
+      "name": "Node.js",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy Node.js runtime on your Linux VPS with 1Panel. Node.js Runtime. One-click setup with version management.",
+      "char_count": 111
+    },
+    {
+      "key": "node-exporter",
+      "name": "Node Exporter",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Node Exporter on your Linux VPS with 1Panel. Exporter for machine metrics. One-click install, free and open source.",
+      "char_count": 122
+    },
+    {
+      "key": "node-red",
+      "name": "Node-RED",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Node-RED on your Linux VPS with 1Panel. Low-code programming for event-driven applications. One-click install, free and open source.",
+      "char_count": 139
+    },
+    {
+      "key": "nodebb",
+      "name": "NodeBB",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy NodeBB on your VPS with 1Panel. Node.js based forum software built for the modern. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 153
+    },
+    {
+      "key": "ntfy",
+      "name": "ntfy",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy ntfy on your VPS with 1Panel. A simple HTTP-based pub-sub notification service. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 146
+    },
+    {
+      "key": "obsidian_livesync",
+      "name": "Obsidian LiveSync",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Obsidian LiveSync on your Linux VPS with 1Panel. Obsidian Self-hosted LiveSync. One-click install, free and open source.",
+      "char_count": 127
+    },
+    {
+      "key": "odoo",
+      "name": "Odoo",
+      "tags": [
+        "CRM"
+      ],
+      "meta_description": "Self-host Odoo on your VPS with 1Panel. Open Source Apps To Grow Your Business. One-click open-source CRM deployment on Linux.",
+      "char_count": 126
+    },
+    {
+      "key": "ollama",
+      "name": "Ollama",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host Ollama on your VPS with 1Panel. Get up and running with Kimi-K2.5. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 152
+    },
+    {
+      "key": "ollama-webui",
+      "name": "OpenWebUI",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host OpenWebUI on your VPS with 1Panel. User-friendly AI Interface. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 148
+    },
+    {
+      "key": "onedev",
+      "name": "OneDev",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host OneDev with 1Panel. Git Server with CI/CD, Kanban, and Packages. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 147
+    },
+    {
+      "key": "onlyoffice",
+      "name": "ONLYOFFICE Docs",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy ONLYOFFICE Docs on your Linux VPS with 1Panel. A free collaborative online office suite. One-click install, free and open source.",
+      "char_count": 136
+    },
+    {
+      "key": "openclaw",
+      "name": "OpenClaw",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host OpenClaw on your VPS with 1Panel. Your own personal AI assistant. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 151
+    },
+    {
+      "key": "opengist",
+      "name": "Opengist",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Opengist with 1Panel. Opengist is a self-hosted Pastebin powered by Git. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 155
+    },
+    {
+      "key": "openldap",
+      "name": "OpenLDAP",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy OpenLDAP on your Linux VPS with 1Panel. An open source implementation. One-click install with visual admin interface and automated backups.",
+      "char_count": 146
+    },
+    {
+      "key": "openlitespeed",
+      "name": "OpenLiteSpeed",
+      "tags": [
+        "Server"
+      ],
+      "meta_description": "Deploy OpenLiteSpeed on your VPS with 1Panel. A high-performance, lightweight, open source HTTP server. One-click install with easy configuration on Linux.",
+      "char_count": 155
+    },
+    {
+      "key": "openresty",
+      "name": "OpenResty",
+      "tags": [
+        "Server"
+      ],
+      "meta_description": "Deploy OpenResty on your VPS with 1Panel. High performance web platform based on Nginx and LuaJIT. One-click install with easy configuration on Linux.",
+      "char_count": 150
+    },
+    {
+      "key": "openvpn",
+      "name": "OpenVPN",
+      "tags": [
+        "Tool",
+        "Security"
+      ],
+      "meta_description": "Self-host OpenVPN on your Linux server with 1Panel. Open source VPN daemon. One-click secure deployment via 1Panel App Store.",
+      "char_count": 125
+    },
+    {
+      "key": "outline",
+      "name": "Outline",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Outline on your Linux VPS with 1Panel. The fastest knowledge base for growing teams. Beautiful, realtime. One-click install, free and open source.",
+      "char_count": 153
+    },
+    {
+      "key": "palworld",
+      "name": "Palworld Server",
+      "tags": [
+        "Game"
+      ],
+      "meta_description": "Deploy Palworld Server game server with 1Panel. Palworld Dedicated Server. One-click install on your Linux VPS.",
+      "char_count": 111
+    },
+    {
+      "key": "palworld-server-tool",
+      "name": "Palworld Server Tool",
+      "tags": [
+        "Game"
+      ],
+      "meta_description": "Deploy Palworld Server Tool game server with 1Panel. Palworld service visual management tool. One-click install on your Linux VPS.",
+      "char_count": 130
+    },
+    {
+      "key": "pgadmin4",
+      "name": "PGAdmin4",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy PGAdmin4 on your VPS with 1Panel. PostgreSQL open source management and development. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 151
+    },
+    {
+      "key": "photoprism",
+      "name": "PhotoPrism",
+      "tags": [
+        "Media"
+      ],
+      "meta_description": "Self-host PhotoPrism on your VPS with 1Panel. AI-Powered Photos App for the Decentralized Web. One-click deploy on Linux — keep full control of your media.",
+      "char_count": 155
+    },
+    {
+      "key": "php",
+      "name": "PHP",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy PHP runtime on your Linux VPS with 1Panel. PHP Runtime. One-click setup with version management.",
+      "char_count": 103
+    },
+    {
+      "key": "php5",
+      "name": "PHP 5",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy PHP 5 runtime on your Linux VPS with 1Panel. PHP5 Runtime. One-click setup with version management.",
+      "char_count": 106
+    },
+    {
+      "key": "php7",
+      "name": "PHP 7",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy PHP 7 runtime on your Linux VPS with 1Panel. PHP7 Runtime. One-click setup with version management.",
+      "char_count": 106
+    },
+    {
+      "key": "php8",
+      "name": "PHP 8",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy PHP 8 runtime on your Linux VPS with 1Panel. PHP8 Runtime. One-click setup with version management.",
+      "char_count": 106
+    },
+    {
+      "key": "phpmyadmin",
+      "name": "phpMyAdmin",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy phpMyAdmin on your VPS with 1Panel. A web interface for MySQL and MariaDB. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 141
+    },
+    {
+      "key": "planka",
+      "name": "Planka",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Planka with 1Panel. Elegant open source project tracking. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 140
+    },
+    {
+      "key": "portainer-ce",
+      "name": "Portainer-CE",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Portainer-CE on your Linux VPS with 1Panel. GUI container management tools. One-click install, free and open source.",
+      "char_count": 123
+    },
+    {
+      "key": "postgresql",
+      "name": "PostgreSQL",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy PostgreSQL on your Linux VPS with 1Panel. Open Source Relational Database. One-click install with visual admin interface and automated backups.",
+      "char_count": 150
+    },
+    {
+      "key": "postgresql-cluster",
+      "name": "PostgreSQL-Cluster",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy PostgreSQL-Cluster on your Linux VPS with 1Panel. . One-click install with visual admin interface and automated backups.",
+      "char_count": 127
+    },
+    {
+      "key": "prometheus",
+      "name": "Prometheus",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Prometheus on your Linux VPS with 1Panel. Monitoring system and time series. One-click install with visual admin interface and automated backups.",
+      "char_count": 152
+    },
+    {
+      "key": "python",
+      "name": "Python",
+      "tags": [
+        "Runtime"
+      ],
+      "meta_description": "Deploy Python runtime on your Linux VPS with 1Panel. Python Runtime. One-click setup with version management.",
+      "char_count": 109
+    },
+    {
+      "key": "qbittorrent",
+      "name": "qBittorrent",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy qBittorrent on your Linux VPS with 1Panel. Cross-platform open source BitTorrent client. One-click install, free and open source.",
+      "char_count": 136
+    },
+    {
+      "key": "rabbitmq",
+      "name": "RabbitMQ",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy RabbitMQ on your Linux server with 1Panel. A feature rich, multi-protocol messaging. One-click install and lifecycle management via App Store.",
+      "char_count": 149
+    },
+    {
+      "key": "redis",
+      "name": "Redis",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Redis on your Linux VPS with 1Panel. High-performance open-source key-value. One-click install with visual admin interface and automated backups.",
+      "char_count": 152
+    },
+    {
+      "key": "redis-cluster",
+      "name": "Redis-Cluster",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Redis-Cluster on your Linux VPS with 1Panel. . One-click install with visual admin interface and automated backups.",
+      "char_count": 122
+    },
+    {
+      "key": "redis-commander",
+      "name": "Redis-Commander",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy Redis-Commander on your VPS with 1Panel. Redis web management tool. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 134
+    },
+    {
+      "key": "redpanda-console",
+      "name": "Redpanda Console",
+      "tags": [
+        "DevTool"
+      ],
+      "meta_description": "Deploy Redpanda Console on your VPS with 1Panel. Redpanda Console – A UI for Data Streaming. One-click install on any Linux server via 1Panel App Store.",
+      "char_count": 152
+    },
+    {
+      "key": "rocketmq",
+      "name": "RocketMQ",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy RocketMQ on your Linux server with 1Panel. Cloud native messaging and streaming platform. One-click install and lifecycle management via App Store.",
+      "char_count": 154
+    },
+    {
+      "key": "roundcube",
+      "name": "Roundcube",
+      "tags": [
+        "Email"
+      ],
+      "meta_description": "Self-host Roundcube on your VPS with 1Panel. Web-based multilingual IMAP mail client. One-click email server deployment on Linux.",
+      "char_count": 129
+    },
+    {
+      "key": "rustdesk",
+      "name": "RustDesk",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy RustDesk on your Linux VPS with 1Panel. Open source remote desktop software. One-click install, free and open source.",
+      "char_count": 124
+    },
+    {
+      "key": "rustfs",
+      "name": "RustFS",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy RustFS on your Linux server with 1Panel. Distributed Storage System. One-click install and lifecycle management via App Store.",
+      "char_count": 133
+    },
+    {
+      "key": "screego",
+      "name": "screego",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy screego on your Linux VPS with 1Panel. Open source screen sharing tools. One-click install, free and open source.",
+      "char_count": 120
+    },
+    {
+      "key": "sftpgo",
+      "name": "SFTPGo",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy SFTPGo on your Linux VPS with 1Panel. Fully featured and highly configurable SFTP server. One-click install, free and open source.",
+      "char_count": 137
+    },
+    {
+      "key": "sonarqube",
+      "name": "SonarQube",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host SonarQube with 1Panel. An open-source code quality management platform. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 154
+    },
+    {
+      "key": "stalwart-mail",
+      "name": "Stalwart Mail Server",
+      "tags": [
+        "Email"
+      ],
+      "meta_description": "Self-host Stalwart Mail Server on your VPS with 1Panel. Secure & Modern All-in-One Mail Server. One-click email server deployment on Linux.",
+      "char_count": 139
+    },
+    {
+      "key": "starrocks",
+      "name": "StarRocks",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy StarRocks on your Linux VPS with 1Panel. Next-generation ultra-fast. One-click install with visual admin interface and automated backups.",
+      "char_count": 144
+    },
+    {
+      "key": "stirling-pdf",
+      "name": "Stirling-PDF",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Stirling-PDF on your Linux VPS with 1Panel. Powerful locally hosted web based PDF manipulation tool. One-click install, free and open source.",
+      "char_count": 148
+    },
+    {
+      "key": "synapse",
+      "name": "Synapse",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Synapse on your Linux VPS with 1Panel. Open-source Matrix homeserver,build your own chat server. One-click install, free and open source.",
+      "char_count": 144
+    },
+    {
+      "key": "teable",
+      "name": "Teable",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Teable on your Linux VPS with 1Panel. The Next Gen Airtable Alternative. One-click install, free and open source.",
+      "char_count": 120
+    },
+    {
+      "key": "teamspeak",
+      "name": "TeamSpeak",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy TeamSpeak on your Linux VPS with 1Panel. An out-of-this-world VoIP solution. One-click install, free and open source.",
+      "char_count": 124
+    },
+    {
+      "key": "tomcat",
+      "name": "Apache Tomcat",
+      "tags": [
+        "Middleware"
+      ],
+      "meta_description": "Deploy Apache Tomcat on your Linux server with 1Panel. An open-source web server and servlet. One-click install and lifecycle management via App Store.",
+      "char_count": 151
+    },
+    {
+      "key": "trendradar",
+      "name": "TrendRadar",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy TrendRadar on your Linux VPS with 1Panel. Multi-platform Hot Content Push. One-click install, free and open source.",
+      "char_count": 122
+    },
+    {
+      "key": "twenty",
+      "name": "Twenty",
+      "tags": [
+        "CRM"
+      ],
+      "meta_description": "Self-host Twenty on your VPS with 1Panel. Building a modern alternative to Salesforce, powered. One-click open-source CRM deployment on Linux.",
+      "char_count": 142
+    },
+    {
+      "key": "typesense",
+      "name": "Typesense",
+      "tags": [
+        "Database"
+      ],
+      "meta_description": "Deploy Typesense on your Linux VPS with 1Panel. Lightning-fast, open-source search. One-click install with visual admin interface and automated backups.",
+      "char_count": 152
+    },
+    {
+      "key": "umami",
+      "name": "Umami",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Umami on your Linux VPS with 1Panel. A simple, fast, privacy-focused alternative to Google Analytics. One-click install, free and open source.",
+      "char_count": 149
+    },
+    {
+      "key": "uptime-kuma",
+      "name": "Uptime Kuma",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Uptime Kuma on your Linux VPS with 1Panel. A fancy self-hosted monitoring tool. One-click install, free and open source.",
+      "char_count": 127
+    },
+    {
+      "key": "verdaccio",
+      "name": "Verdaccio",
+      "tags": [
+        "DevOps"
+      ],
+      "meta_description": "Self-host Verdaccio with 1Panel. Local private NPM registry. One-click deployment on your Linux VPS — no manual Docker config needed.",
+      "char_count": 133
+    },
+    {
+      "key": "vllm",
+      "name": "vLLM",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Self-host vLLM on your VPS with 1Panel. A high-throughput. One-click AI deployment on Linux — GPU, LLM, and agent management included.",
+      "char_count": 134
+    },
+    {
+      "key": "wallos",
+      "name": "Wallos",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Wallos on your Linux VPS with 1Panel. Open-Source Personal Subscription Tracker. One-click install, free and open source.",
+      "char_count": 128
+    },
+    {
+      "key": "watchtower",
+      "name": "watchtower",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy watchtower on your Linux VPS with 1Panel. Tool to automatically update Docker container base images. One-click install, free and open source.",
+      "char_count": 148
+    },
+    {
+      "key": "web-check",
+      "name": "Web-Check",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Web-Check on your Linux VPS with 1Panel. All-in-one OSINT tool for analysing any website. One-click install, free and open source.",
+      "char_count": 137
+    },
+    {
+      "key": "wikijs",
+      "name": "Wiki.js",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy Wiki.js on your VPS with 1Panel. A modern and powerful wiki app built on Node.js. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 152
+    },
+    {
+      "key": "windows",
+      "name": "Windows",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Windows on your Linux VPS with 1Panel. Windows inside a Docker container. One-click install, free and open source.",
+      "char_count": 121
+    },
+    {
+      "key": "wordpress",
+      "name": "WordPress",
+      "tags": [
+        "Website"
+      ],
+      "meta_description": "Deploy WordPress on your VPS with 1Panel. Open source blogging software and content. One-click install with automatic SSL and domain setup on Linux.",
+      "char_count": 148
+    },
+    {
+      "key": "yourls",
+      "name": "YOURLS",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy YOURLS on your Linux VPS with 1Panel. The de facto standard self hosted URL shortener in PHP. One-click install, free and open source.",
+      "char_count": 141
+    },
+    {
+      "key": "zabbix-agent",
+      "name": "Zabbix Agent",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Zabbix Agent on your Linux VPS with 1Panel. The universal, open-source observability solution for IT & OT. One-click install, free and open source.",
+      "char_count": 154
+    },
+    {
+      "key": "zabbix-server",
+      "name": "Zabbix Server",
+      "tags": [
+        "Tool"
+      ],
+      "meta_description": "Deploy Zabbix Server on your Linux VPS with 1Panel. The universal, open-source observability solution for IT & OT. One-click install, free and open source.",
+      "char_count": 155
+    },
+    {
+      "key": "zitadel",
+      "name": "ZITADEL",
+      "tags": [
+        "Security"
+      ],
+      "meta_description": "Self-host ZITADEL on your Linux server with 1Panel. An open-source Identity and Access Management (IAM). One-click secure deployment via 1Panel App Store.",
+      "char_count": 154
+    }
+  ]
+}
