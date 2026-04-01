@@ -1,7 +1,7 @@
 {
   "meta": {
-    "defaultTitle": "1Panel: VPSを完全にコントロール",
-    "defaultDescription": "1Panel: VPSを完全にコントロール"
+    "defaultTitle": "1Panel: オープンソースVPSコントロールパネル | cPanel代替",
+    "defaultDescription": "1Panelは、Linuxサーバー管理向けのモダンなオープンソースVPSコントロールパネルです。Webサイト、データベース、Dockerアプリ、SSLを1つのダッシュボードで管理できます。"
   },
   "header": {
     "pricing": "料金",
@@ -22,8 +22,8 @@
     "fallbackToEnglish": "この言語の記事はまだありません。英語版を表示しています。"
   },
   "hero": {
-    "title1": "管理が簡単",
-    "title2": "OpenClaw Agents",
+    "title1": "モダンなオープンソース",
+    "title2": "VPSコントロールパネル",
     "badgePowerful": "高機能",
     "badgeOpenSource": "オープンソース",
     "subtitle": "1Panelは、直感的でクリーンなWebインターフェースで管理を効率化するモダンなオープンソースVPSコントロールパネルです。",

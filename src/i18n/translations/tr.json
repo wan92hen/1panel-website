@@ -1,7 +1,7 @@
 {
   "meta": {
-    "defaultTitle": "1Panel: VPS'inizin tam kontrolü",
-    "defaultDescription": "1Panel: VPS'inizin tam kontrolü"
+    "defaultTitle": "1Panel: Açık kaynak VPS kontrol paneli | cPanel alternatifi",
+    "defaultDescription": "1Panel, Linux sunucu yönetimi için modern bir açık kaynak VPS kontrol panelidir. Web sitelerini, veritabanlarını, Docker uygulamalarını ve SSL'i tek bir panelden yönetin."
   },
   "header": {
     "pricing": "Fiyatlandırma",
@@ -22,8 +22,8 @@
     "fallbackToEnglish": "Bu makale seçilen dilde henüz yok. İngilizce sürüm gösteriliyor."
   },
   "hero": {
-    "title1": "Yönetmesi kolay",
-    "title2": "OpenClaw Agents",
+    "title1": "Modern açık kaynak",
+    "title2": "VPS kontrol paneli",
     "badgePowerful": "Güçlü",
     "badgeOpenSource": "Açık kaynak",
     "subtitle": "1Panel, sezgisel ve sade bir web arayüzüyle yönetimi kolaylaştıran modern, açık kaynak bir VPS kontrol panelidir.",

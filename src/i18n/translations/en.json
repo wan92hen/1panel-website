@@ -1,7 +1,7 @@
 {
   "meta": {
-    "defaultTitle": "1Panel: Take full control of your VPS",
-    "defaultDescription": "1Panel: Take full control of your VPS"
+    "defaultTitle": "1Panel: Open-Source VPS Control Panel | cPanel Alternative",
+    "defaultDescription": "1Panel is a modern open-source VPS control panel for Linux server management. Deploy websites, databases, Docker apps, and SSL from one clean dashboard."
   },
   "header": {
     "pricing": "Pricing",
@@ -22,8 +22,8 @@
     "fallbackToEnglish": "This article is not yet available in your selected language. Showing the English version."
   },
   "hero": {
-    "title1": "Easy to manage",
-    "title2": "OpenClaw Agents",
+    "title1": "The Modern Open-Source",
+    "title2": "VPS Control Panel",
     "badgePowerful": "Powerful",
     "badgeOpenSource": "Open Source",
     "subtitle": "1Panel is a modern, open-source VPS control panel that streamlines administration through an intuitive, clean web interface.",

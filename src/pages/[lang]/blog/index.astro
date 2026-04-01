@@ -5,7 +5,7 @@ import Header from '../../../components/Header.astro';
 import Footer from '../../../components/Footer.astro';
 import BlogPageDecor from '../../../components/blog/BlogPageDecor.astro';
 import { getCollection } from 'astro:content';
-import { NON_DEFAULT_LOCALES } from '../../../i18n/config';
+import { NON_DEFAULT_LOCALES, SUPPORTED_LOCALES } from '../../../i18n/config';
 import { getTranslations, t, getBasePath } from '../../../i18n/utils';
 import {
   sortPostsByDate,
@@ -40,6 +40,16 @@ const dateLocale = BLOG_DATE_LOCALE[(lang ?? 'en') as Locale] ?? 'en-US';
   canonicalUrl={canonicalUrl}
   keywords="1Panel,blog,PHP,WordPress,Linux,OpenResty,SSL,tutorial"
 >
+  <Fragment slot="head">
+    {SUPPORTED_LOCALES.map((loc) => (
+      <link
+        rel="alternate"
+        hreflang={loc}
+        href={new URL(loc === 'en' ? '/blog.html' : `/${loc}/blog.html`, Astro.site).href}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL('/blog.html', Astro.site).href} />
+  </Fragment>
   <Fragment slot="main">
     <Header lang={lang} basePath={basePath} translations={translations} />
     <main class="relative z-10 min-h-screen">

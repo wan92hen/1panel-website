@@ -12,8 +12,7 @@ interface Props {
 
 const { lang, basePath = './', translations: rawTranslations } = Astro.props;
 const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
-const typewriterTexts = (translations.hero as Record<string, unknown>)?.typewriter as string[] | undefined ?? ['OpenClaw Agents', 'Local LLMs', 'Websites', 'Databases', 'Files', 'Scheduled Tasks'];
-const prefix = lang ? `/${lang}` : '';
+const prefix = !lang || lang === 'en' ? '' : `/${lang}`;
 ---
 
 <section
@@ -60,13 +59,12 @@ const prefix = lang ? `/${lang}` : '';
         </div> -->
         <!-- Main Heading -->
         <h1
-          class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6"
+          class="fade-in-up text-2xl md:text-3xl lg:text-4xl font-bold leading-tight mb-6"
           style="animation-delay: 0.2s;"
         >
           <span class="block text-gray-800 mb-2">{t(translations, 'hero.title1')}</span>
           <span class="block text-1panel-gradient pb-2">
-            <span id="typewriter-text" class="typing-effect" data-texts={JSON.stringify(typewriterTexts)}>{t(translations, 'hero.title2')}</span
-            >
+            <span>{t(translations, 'hero.title2')}</span>
           </span>
         </h1>
 
@@ -131,7 +129,7 @@ const prefix = lang ? `/${lang}` : '';
               data-target="29767"
               id="stars-count"
             >
-              0
+              34648
             </div>
             <div
               class="text-gray-500 text-sm mt-1 flex items-center justify-center lg:justify-start"
@@ -251,71 +249,3 @@ const prefix = lang ? `/${lang}` : '';
     </div>
   </div>
 </section>
-
-<style>
-  .typing-effect::after {
-    content: "|";
-    animation: blink 1s infinite;
-  }
-
-  #typewriter-text {
-    display: inline-block;
-  }
-</style>
-
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const typewriterElement = document.getElementById("typewriter-text");
-    let texts = ["OpenClaw Agents", "Local LLMs", "Websites", "Databases", "Files", "Scheduled Tasks"];
-    try {
-      const raw = typewriterElement?.getAttribute("data-texts");
-      if (raw) { const parsed = JSON.parse(raw); if (Array.isArray(parsed)) texts = parsed; }
-    } catch (_) {}
-
-    if (!typewriterElement) return; // 如果元素不存在则退出
-
-    let currentTextIndex = 0;
-    let currentCharIndex = 0;
-    let isDeleting = false;
-    let typeSpeed = 100; // 打字速度
-    let deleteSpeed = 60; // 删除速度
-    let pauseTime = 2000; // 每个词停留时间
-
-    function typeWriter() {
-      const element = document.getElementById("typewriter-text");
-      if (!element) return;
-
-      const currentText = texts[currentTextIndex];
-
-      if (isDeleting) {
-        // 删除字符
-        element.textContent = currentText.substring(0, currentCharIndex - 1);
-        currentCharIndex--;
-
-        if (currentCharIndex === 0) {
-          isDeleting = false;
-          currentTextIndex = (currentTextIndex + 1) % texts.length;
-          setTimeout(typeWriter, 500); // 删除完后短暂停顿
-          return;
-        }
-        setTimeout(typeWriter, deleteSpeed);
-      } else {
-        // 添加字符
-        element.textContent = currentText.substring(0, currentCharIndex + 1);
-        currentCharIndex++;
-
-        if (currentCharIndex === currentText.length) {
-          setTimeout(() => {
-            isDeleting = true;
-            typeWriter();
-          }, pauseTime); // 显示完整文本后停顿
-          return;
-        }
-        setTimeout(typeWriter, typeSpeed);
-      }
-    }
-
-    // 延迟启动，等待fade-in动画完成
-    setTimeout(typeWriter, 1000);
-  });
-</script>

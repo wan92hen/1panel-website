@@ -8,6 +8,7 @@ import AppStore from '../components/AppStore.astro';
 import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import { getTranslations, t, getBasePath } from '../i18n/utils';
+import { SUPPORTED_LOCALES } from '../i18n/config';
 import '../styles/global.css';
 
 const lang = 'en';
@@ -15,9 +16,41 @@ const translations = getTranslations(lang);
 const basePath = getBasePath(undefined);
 const title = t(translations, 'meta.defaultTitle');
 const description = t(translations, 'meta.defaultDescription');
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const softwareJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: '1Panel',
+  applicationCategory: 'ServerApplication',
+  operatingSystem: 'Linux',
+  description,
+  url: canonicalUrl,
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+    description: 'Open-source edition',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'LXware',
+    url: 'https://1panel.pro',
+  },
+};
 ---
 
-<Layout title={title} description={description} lang={lang} basePath={basePath}>
+<Layout title={title} description={description} lang={lang} basePath={basePath} canonicalUrl={canonicalUrl}>
+  <Fragment slot="head">
+    {SUPPORTED_LOCALES.map((loc) => (
+      <link
+        rel="alternate"
+        hreflang={loc}
+        href={new URL(loc === 'en' ? '/' : `/${loc}.html`, Astro.site).href}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site).href} />
+    <script type="application/ld+json" set:html={JSON.stringify(softwareJsonLd)} />
+  </Fragment>
   <Fragment slot="main">
     <Header lang={lang} basePath={basePath} translations={translations} />
     <main>

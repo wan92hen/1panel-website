@@ -4,15 +4,60 @@ import Header from '../components/Header.astro';
 import PricingContent from '../components/Pricing.astro';
 import Footer from '../components/Footer.astro';
 import { getTranslations, t, getBasePath } from '../i18n/utils';
+import { SUPPORTED_LOCALES } from '../i18n/config';
 import '../styles/global.css';
 
 const lang = 'en';
 const translations = getTranslations(lang);
 const basePath = getBasePath(undefined);
-const title = `${t(translations, 'header.pricing')} - 1Panel`;
+const title = '1Panel Pricing | Open-Source VPS Control Panel Plans';
+const description =
+  'Compare 1Panel OSS and Pro pricing for VPS and Linux server management. Start free, then scale with annual or perpetual node-based licenses.';
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const pricingFaqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'Is there a free trial for 1Panel Pro?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. You can request a 30-day free trial by emailing hi@lxware.hk.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Can one license be used on multiple devices at the same time?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'No. One license can be bound to one device at a time, and can be unbound and rebound.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'How does multi-node capability work in Pro Edition?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Node Management in Pro provides a unified console for multiple servers, including node switching, monitoring, updates, and file transfer.',
+      },
+    },
+  ],
+};
 ---
 
-<Layout title={title} lang={lang} basePath={basePath}>
+<Layout title={title} description={description} lang={lang} basePath={basePath} canonicalUrl={canonicalUrl}>
+  <Fragment slot="head">
+    {SUPPORTED_LOCALES.map((loc) => (
+      <link
+        rel="alternate"
+        hreflang={loc}
+        href={new URL(loc === 'en' ? '/pricing.html' : `/${loc}/pricing.html`, Astro.site).href}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL('/pricing.html', Astro.site).href} />
+    <script type="application/ld+json" set:html={JSON.stringify(pricingFaqJsonLd)} />
+  </Fragment>
   <Fragment slot="main">
     <Header lang={lang} basePath={basePath} translations={translations} />
     <main>

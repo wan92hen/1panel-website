@@ -1,7 +1,7 @@
 {
   "meta": {
-    "defaultTitle": "1Panel: VPS를 완전히 제어하세요",
-    "defaultDescription": "1Panel: VPS를 완전히 제어하세요"
+    "defaultTitle": "1Panel: 오픈소스 VPS 제어판 | cPanel 대안",
+    "defaultDescription": "1Panel은 Linux 서버 관리를 위한 현대적인 오픈소스 VPS 제어판입니다. 웹사이트, 데이터베이스, Docker 앱, SSL을 하나의 대시보드에서 배포하고 관리하세요."
   },
   "header": {
     "pricing": "요금",
@@ -22,8 +22,8 @@
     "fallbackToEnglish": "선택한 언어로 된 글이 아직 없습니다. 영어 버전을 표시합니다."
   },
   "hero": {
-    "title1": "쉽게 관리",
-    "title2": "OpenClaw Agents",
+    "title1": "현대적인 오픈소스",
+    "title2": "VPS 제어판",
     "badgePowerful": "강력한",
     "badgeOpenSource": "오픈 소스",
     "subtitle": "1Panel은 직관적이고 깔끔한 웹 인터페이스를 통해 관리를 간소화하는 현대적인 오픈 소스 VPS 제어 패널입니다.",

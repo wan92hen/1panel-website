@@ -12,7 +12,7 @@ import {
   getPostsForLocale,
   articleSlugFromEntry,
 } from '../../lib/blog';
-import { DEFAULT_LOCALE } from '../../i18n/config';
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from '../../i18n/config';
 import '../../styles/global.css';
 
 const translations = getTranslations('en');
@@ -32,6 +32,16 @@ const posts = sortPostsByDate(getPostsForLocale(allPosts, DEFAULT_LOCALE));
   canonicalUrl={canonicalUrl}
   keywords="1Panel,blog,PHP,WordPress,Linux,OpenResty,SSL,tutorial"
 >
+  <Fragment slot="head">
+    {SUPPORTED_LOCALES.map((loc) => (
+      <link
+        rel="alternate"
+        hreflang={loc}
+        href={new URL(loc === 'en' ? '/blog.html' : `/${loc}/blog.html`, Astro.site).href}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL('/blog.html', Astro.site).href} />
+  </Fragment>
   <Fragment slot="main">
     <Header lang="en" basePath={basePath} translations={translations} />
     <main class="relative z-10 min-h-screen">

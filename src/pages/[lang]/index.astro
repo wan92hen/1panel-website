@@ -7,7 +7,7 @@ import QuickStart from '../../components/QuickStart.astro';
 import AppStore from '../../components/AppStore.astro';
 import CTA from '../../components/CTA.astro';
 import Footer from '../../components/Footer.astro';
-import { NON_DEFAULT_LOCALES } from '../../i18n/config';
+import { NON_DEFAULT_LOCALES, SUPPORTED_LOCALES } from '../../i18n/config';
 import { getTranslations, t, getBasePath } from '../../i18n/utils';
 import '../../styles/global.css';
 
@@ -20,9 +20,20 @@ const translations = getTranslations(lang ?? 'en');
 const basePath = getBasePath(lang);
 const title = t(translations, 'meta.defaultTitle');
 const description = t(translations, 'meta.defaultDescription');
+const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 
-<Layout title={title} description={description} lang={lang} basePath={basePath}>
+<Layout title={title} description={description} lang={lang} basePath={basePath} canonicalUrl={canonicalUrl}>
+  <Fragment slot="head">
+    {SUPPORTED_LOCALES.map((loc) => (
+      <link
+        rel="alternate"
+        hreflang={loc}
+        href={new URL(loc === 'en' ? '/' : `/${loc}.html`, Astro.site).href}
+      />
+    ))}
+    <link rel="alternate" hreflang="x-default" href={new URL('/', Astro.site).href} />
+  </Fragment>
   <Fragment slot="main">
     <Header lang={lang} basePath={basePath} translations={translations} />
     <main>

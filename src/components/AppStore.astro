@@ -14,7 +14,7 @@ interface Props {
 
 const { lang, basePath = './', translations: rawTranslations } = Astro.props;
 const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
-const prefix = lang ? `/${lang}` : '';
+const prefix = !lang || lang === 'en' ? '' : `/${lang}`;
 
 interface App {
   icon: string;

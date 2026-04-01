@@ -1,7 +1,7 @@
 {
   "meta": {
-    "defaultTitle": "1Panel: Kawal sepenuhnya VPS anda",
-    "defaultDescription": "1Panel: Kawal sepenuhnya VPS anda"
+    "defaultTitle": "1Panel: Panel kawalan VPS sumber terbuka | alternatif cPanel",
+    "defaultDescription": "1Panel ialah panel kawalan VPS sumber terbuka moden untuk pengurusan pelayan Linux. Guna satu papan pemuka untuk mengurus laman web, pangkalan data, aplikasi Docker dan SSL."
   },
   "header": {
     "pricing": "Harga",
@@ -22,8 +22,8 @@
     "fallbackToEnglish": "Artikel belum tersedia dalam bahasa yang dipilih. Memaparkan versi bahasa Inggeris."
   },
   "hero": {
-    "title1": "Mudah diurus",
-    "title2": "OpenClaw Agents",
+    "title1": "Panel kawalan VPS",
+    "title2": "sumber terbuka moden",
     "badgePowerful": "Berkuasa",
     "badgeOpenSource": "Sumber terbuka",
     "subtitle": "1Panel ialah panel kawalan VPS sumber terbuka moden yang memudahkan pentadbiran melalui antara muka web yang intuitif dan bersih.",
