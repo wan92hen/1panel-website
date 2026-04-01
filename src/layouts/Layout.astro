@@ -243,7 +243,7 @@ const htmlLang =
     }
 
     // Typing effect for code blocks
-    function typeText(element: HTMLElement, text: string, speed = 50) {
+    function typeText(element, text, speed = 50) {
       let i = 0;
       element.innerHTML = '';
       const timer = setInterval(() => {
@@ -262,7 +262,7 @@ const htmlLang =
       const observer = new IntersectionObserver((entries) => {
               entries.forEach(entry => {
         if (entry.isIntersecting) {
-          const element = entry.target as HTMLElement;
+          const element = entry.target;
           const text = element.getAttribute('data-text');
           if (text) {
             typeText(element, text);
