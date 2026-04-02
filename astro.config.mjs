@@ -6,6 +6,7 @@ import icon from 'astro-icon';
 
 export default defineConfig({
   integrations: [tailwind(), react(), icon()],
+  site: 'https://1panel.cn',
   output: 'static',
   build: {
     assets: 'assets',
@@ -22,4 +23,3 @@ export default defineConfig({
     ]
   }
 });
-

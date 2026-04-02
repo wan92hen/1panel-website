@@ -4,12 +4,33 @@ import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import Statistics from "../components/Statistics.astro";
 import { Icon } from 'astro-icon/components'
+import {
+  SITE_URL,
+  createBreadcrumbSchema,
+} from "../lib/seo";
 import "../styles/global.css";
 ---
 
 <Layout
   title="OpenClaw一体机 | 飞致云与超聚变联合打造"
-  description="专为团队/部门级部署而生的OpenClaw一体机，数据不出域，隐私与性能兼得。"
+  description="OpenClaw 一体机由飞致云与超聚变联合打造，面向团队和部门级 AI 部署场景，结合 1Panel 运维面板与本地模型能力，实现数据不出域、隐私与性能兼得。"
+  canonical="/openclaw.html"
+  image="/images/fusionxpark.png"
+  imageAlt="OpenClaw 一体机产品示意图"
+  keywords={[
+    "OpenClaw 一体机",
+    "OpenClaw",
+    "1Panel",
+    "AI 一体机",
+    "本地部署 AI",
+    "团队级 AI 部署",
+  ]}
+  structuredData={[
+    createBreadcrumbSchema([
+      { name: "1Panel 官网", url: `${SITE_URL}/` },
+      { name: "OpenClaw 一体机", url: `${SITE_URL}/openclaw.html` },
+    ]),
+  ]}
 >
   <Statistics slot="head" />
   <Fragment slot="main">
@@ -363,4 +384,3 @@ import "../styles/global.css";
     background-image: url('https://www.xfusion.com/wp-content/uploads/2025/09/xpark-1-1.png');
   }
 </style>
-

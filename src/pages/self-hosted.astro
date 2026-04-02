@@ -4,10 +4,32 @@ import Statistics from "../components/Statistics.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LanguageModal from "../components/LanguageModal.astro";
+import {
+  SITE_URL,
+  createBreadcrumbSchema,
+} from "../lib/seo";
 import "../styles/global.css";
 ---
 
-<Layout title="1Panel 自托管解决方案" description="1Panel 自托管解决方案 - 现代化、开源的Linux服务器运维管理面板">
+<Layout
+  title="1Panel 自托管解决方案"
+  description="1Panel 自托管解决方案帮助团队在自有环境中部署开源软件，兼顾数据主权、成本可控与安全合规，适用于网站、知识库、密码管理、远程协作等多种场景。"
+  canonical="/self-hosted.html"
+  keywords={[
+    "1Panel 自托管",
+    "自托管解决方案",
+    "开源软件自托管",
+    "Linux 面板",
+    "数据主权",
+    "私有化部署",
+  ]}
+  structuredData={[
+    createBreadcrumbSchema([
+      { name: "1Panel 官网", url: `${SITE_URL}/` },
+      { name: "1Panel 自托管解决方案", url: `${SITE_URL}/self-hosted.html` },
+    ]),
+  ]}
+>
   <Statistics slot="head" />
   <Fragment slot="main">
     <Header />
