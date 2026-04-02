@@ -113,8 +113,8 @@ const prefix = !lang || lang === 'en' ? '' : `/${lang}`;
         <div class="fade-in-up mb-8" style="animation-delay: 0.45s;">
           <div class="inline-flex items-center gap-2 rounded-lg border border-blue-200 bg-blue-50 px-4 py-2 text-sm text-blue-900">
             <Icon name="carbon:currency-dollar" class="w-4 h-4" />
-            <span>Free OSS forever. Pro plans from $80/year.</span>
-            <a href={`${prefix}/pricing`} class="font-semibold underline underline-offset-2 hover:text-blue-700">See pricing</a>
+            <span>{t(translations, 'hero.pricingBannerText')}</span>
+            <a href={`${prefix}/pricing`} class="font-semibold underline underline-offset-2 hover:text-blue-700">{t(translations, 'hero.pricingBannerLink')}</a>
           </div>
         </div>
 
@@ -196,6 +196,13 @@ const prefix = !lang || lang === 'en' ? '' : `/${lang}`;
       </div>
       <!-- Right Content - Dashboard Preview -->
       <div id="hero-right" class="transition-all duration-1000">
+        <div class="mb-10">
+          <a class="flex gap-2 items-center justify-center cursor-pointer hover:scale-105 px-2 py-2 pt-4 rounded-lg bg-gradient-to-r from-blue-100 via-blue-50 to-blue-100 border border-blue-200 shadow-sm animate-fade-in-up" href="https://github.com/1Panel-dev/1Panel">
+            <span class="text-blue-800 text-lg font-medium animate-bounce">
+              {t(translations, 'hero.githubStarCta')}
+            </span>
+          </a>
+        </div>        
         <div
           class="fade-in-right relative hero-dashboard-preview"
           style="animation-delay: 0.5s;"
@@ -213,11 +220,11 @@ const prefix = !lang || lang === 'en' ? '' : `/${lang}`;
                 rel="noopener noreferrer"
                 class="relative w-full"
                 style="outline: none;"
-                aria-label="Play Video"
+                aria-label={t(translations, 'hero.playVideo')}
               >
                   <img
                     src={`${basePath}images/overview-full.png`}
-                    alt="1Panel Modern Interface"
+                    alt={t(translations, 'hero.dashboardAlt')}
                     class="w-full h-auto rounded-lg shadow-2xl border border-gray-200"
                   />
                   <span
