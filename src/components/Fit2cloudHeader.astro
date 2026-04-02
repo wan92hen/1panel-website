@@ -1,17 +1,90 @@
 ---
 // Fit2cloudHeader component for 1Panel website
+
+const openSourceProducts = [
+  {
+    name: "1Panel",
+    description: "现代化、开源的 Linux 面板",
+    href: "https://1panel.cn",
+  },
+  {
+    name: "Cordys",
+    description: "新一代的开源 AI CRM 系统",
+    href: "https://cordys.cn",
+  },
+  {
+    name: "JumpServer",
+    description: "广受欢迎的开源堡垒机",
+    href: "https://www.jumpserver.org",
+  },
+  {
+    name: "MaxKB",
+    description: "强大易用的企业级智能体平台",
+    href: "https://maxkb.cn",
+  },
+  {
+    name: "DataEase",
+    description: "人人可用的开源 BI 工具",
+    href: "https://dataease.cn",
+  },
+  {
+    name: "SQLBot",
+    description: "基于大模型的智能问数系统",
+    href: "https://sqlbot.org",
+  },
+  {
+    name: "MeterSphere",
+    description: "新一代的开源持续测试工具",
+    href: "https://metersphere.io",
+  },
+  {
+    name: "Halo",
+    description: "强大易用的开源建站工具",
+    href: "https://halo.run",
+  },
+];
 ---
 
 <div class="bg-black text-white text-sm py-2 px-4 relative z-[9999]">
   <script>
     document.addEventListener("DOMContentLoaded", () => {
+      const dropdownContainer = document.getElementById("f2c-dropdown-container");
+      const dropdownTrigger = document.getElementById("f2c-dropdown-trigger");
       const dropdownBtn = document.getElementById("f2c-dropdown-btn");
-      if (dropdownBtn) {
-        dropdownBtn.addEventListener("click", () => {
-          dropdownBtn.classList.toggle("rotate-180");
-          const dropdown = document.getElementById("f2c-dropdown");
-          if (dropdown) {
-            dropdown.classList.toggle("hidden");
+      const dropdown = document.getElementById("f2c-dropdown");
+
+      if (dropdownContainer && dropdownTrigger && dropdownBtn && dropdown) {
+        const setDropdownOpen = (isOpen) => {
+          dropdown.classList.toggle("hidden", !isOpen);
+          dropdownBtn.classList.toggle("rotate-180", isOpen);
+          dropdownTrigger.setAttribute("aria-expanded", String(isOpen));
+        };
+
+        dropdownTrigger.addEventListener("click", () => {
+          setDropdownOpen(dropdown.classList.contains("hidden"));
+        });
+
+        document.addEventListener("click", (event) => {
+          const target = event.target;
+          if (
+            target instanceof Node &&
+            !dropdownContainer.contains(target) &&
+            !dropdown.classList.contains("hidden")
+          ) {
+            setDropdownOpen(false);
+          }
+        });
+
+        document.addEventListener("keydown", (event) => {
+          if (event.key === "Escape" && !dropdown.classList.contains("hidden")) {
+            setDropdownOpen(false);
+          }
+        });
+
+        dropdown.addEventListener("click", (event) => {
+          const target = event.target;
+          if (target instanceof Element && target.closest("a")) {
+            setDropdownOpen(false);
           }
         });
       }
@@ -28,9 +101,12 @@
           class="h-5 w-auto"
         /></a
       >
-    </div><div class="relative">
+    </div><div class="relative" id="f2c-dropdown-container">
       <button
+        id="f2c-dropdown-trigger"
         class="flex items-center text-white hover:text-gray-200 transition-colors duration-200 px-3 py-1 rounded"
+        aria-expanded="false"
+        aria-controls="f2c-dropdown"
         ><span>了解飞致云旗下开源产品</span><svg
           id="f2c-dropdown-btn"
           class="ml-2 w-4 h-4 transition-transform duration-200"
@@ -48,75 +124,25 @@
         class="absolute right-0 top-full mt-1 w-80 bg-white border border-gray-200 rounded-lg shadow-xl py-2 z-[9999] hidden"
         id="f2c-dropdown"
       >
-        <a
-          href="https://maxkb.cn"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-4 py-3 text-gray-800 hover:bg-gray-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-          ><div class="flex flex-col">
-            <span class="font-semibold text-blue-600 mb-1">MaxKB</span><span
-              class="text-sm text-gray-600">强大易用的企业级智能体平台</span
+        {
+          openSourceProducts.map((product) => (
+            <a
+              href={product.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              class="block px-4 py-3 text-gray-800 hover:bg-gray-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
             >
-          </div></a
-        ><a
-          href="https://jumpserver.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-4 py-3 text-gray-800 hover:bg-gray-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-          ><div class="flex flex-col">
-            <span class="font-semibold text-blue-600 mb-1">JumpServer</span
-            ><span class="text-sm text-gray-600">广受欢迎的开源堡垒机</span>
-          </div></a
-        ><a
-          href="https://dataease.cn"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-4 py-3 text-gray-800 hover:bg-gray-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-          ><div class="flex flex-col">
-            <span class="font-semibold text-blue-600 mb-1">DataEase</span><span
-              class="text-sm text-gray-600">人人可用的开源 BI 工具</span
-            >
-          </div></a
-        ><a
-          href="https://1panel.cn/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-4 py-3 text-gray-800 hover:bg-gray-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-          ><div class="flex flex-col">
-            <span class="font-semibold text-blue-600 mb-1">1Panel</span><span
-              class="text-sm text-gray-600">现代化、开源的 Linux 面板</span
-            >
-          </div></a
-        ><a
-          href="https://www.fit2cloud.com/metersphere/index.html"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-4 py-3 text-gray-800 hover:bg-gray-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-          ><div class="flex flex-col">
-            <span class="font-semibold text-blue-600 mb-1">MeterSphere</span
-            ><span class="text-sm text-gray-600">新一代的开源持续测试工具</span>
-          </div></a
-        ><a
-          href="https://halo.run/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-4 py-3 text-gray-800 hover:bg-gray-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-          ><div class="flex flex-col">
-            <span class="font-semibold text-blue-600 mb-1">Halo</span><span
-              class="text-sm text-gray-600">强大易用的开源建站工具</span
-            >
-          </div></a
-        ><a
-          href="https://cordys.cn/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="block px-4 py-3 text-gray-800 hover:bg-gray-300 transition-colors duration-200 border-b border-gray-100 last:border-b-0"
-          ><div class="flex flex-col">
-            <span class="font-semibold text-blue-600 mb-1">Cordys</span><span
-              class="text-sm text-gray-600">新一代的开源 AI CRM 系统</span
-            >
-          </div></a
-        >
+              <div class="flex flex-col">
+                <span class="font-semibold text-blue-600 mb-1">
+                  {product.name}
+                </span>
+                <span class="text-sm text-gray-600">
+                  {product.description}
+                </span>
+              </div>
+            </a>
+          ))
+        }
       </div>
     </div>
   </div>
