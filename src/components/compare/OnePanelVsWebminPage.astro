@@ -151,6 +151,116 @@ const faqJsonLd = {
               </div>
             </section>
 
+            <section id="ai-capabilities" class="card p-6 sm:p-8 scroll-mt-24">
+              <h2 class="text-2xl font-bold text-slate-900 mb-6">AI Capabilities: A Key Differentiator</h2>
+              <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-3">1Panel AI Features</h3>
+                  <p class="text-slate-700 leading-relaxed mb-4">
+                    1Panel ships with first-class AI infrastructure tooling that Webmin does not offer:
+                  </p>
+                  <ul class="space-y-3 text-slate-700 leading-relaxed list-disc pl-5">
+                    <li>
+                      <strong>Ollama integration</strong> — deploy and manage local LLMs (DeepSeek, Qwen, Llama 3) directly from the App Store
+                    </li>
+                    <li>
+                      <strong>OpenClaw agents</strong> — run personal AI assistants with multi-channel support (Telegram, Slack, WhatsApp, Discord)
+                    </li>
+                    <li>
+                      <strong>MCP Servers</strong> — connect AI agents to your server operations via Model Context Protocol
+                    </li>
+                    <li>
+                      <strong>AI Terminal</strong> — convert natural language into executable shell commands (v2.1.6+)
+                    </li>
+                    <li>
+                      <strong>GPU Monitoring</strong> — real-time GPU utilization dashboards for AI workloads
+                    </li>
+                    <li>
+                      <strong>vLLM support</strong> — production-grade LLM inference server management
+                    </li>
+                  </ul>
+                </div>
+                <div>
+                  <h3 class="text-lg font-semibold text-slate-900 mb-3">Webmin AI Features</h3>
+                  <p class="text-slate-700 leading-relaxed">
+                    Webmin does not include native AI tooling. Running LLMs or AI agents on a Webmin-managed server requires entirely separate setup and management outside the panel.
+                  </p>
+                </div>
+              </div>
+              <p class="mt-6 text-slate-800 leading-relaxed">
+                <strong>Verdict:</strong> If AI infrastructure is on your roadmap, 1Panel has a clear, built-in advantage.
+              </p>
+            </section>
+
+            <section id="pricing-comparison" class="card p-6 sm:p-8 scroll-mt-24">
+              <h2 class="text-2xl font-bold text-slate-900 mb-6">Pricing Comparison</h2>
+              <div class="overflow-x-auto -mx-2 px-2">
+                <table class="compare-pricing-table w-full min-w-[520px] text-sm text-left border-collapse">
+                  <thead>
+                    <tr class="border-b border-slate-200 bg-slate-50">
+                      <th class="py-3 px-3 font-semibold text-slate-900"></th>
+                      <th class="py-3 px-3 font-semibold text-slate-900">Webmin</th>
+                      <th class="py-3 px-3 font-semibold text-slate-900">1Panel OSS</th>
+                      <th class="py-3 px-3 font-semibold text-slate-900">1Panel Pro</th>
+                    </tr>
+                  </thead>
+                  <tbody class="text-slate-700">
+                    <tr class="border-b border-slate-100">
+                      <td class="py-3 px-3 font-medium text-slate-900">License</td>
+                      <td class="py-3 px-3">Free (GPL)</td>
+                      <td class="py-3 px-3">Free (GPL)</td>
+                      <td class="py-3 px-3">$80/year or $200 perpetual</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 bg-slate-50/50">
+                      <td class="py-3 px-3 font-medium text-slate-900">Core features</td>
+                      <td class="py-3 px-3">✓</td>
+                      <td class="py-3 px-3">✓</td>
+                      <td class="py-3 px-3">✓</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                      <td class="py-3 px-3 font-medium text-slate-900">AI / LLM management</td>
+                      <td class="py-3 px-3">✗</td>
+                      <td class="py-3 px-3">Partial</td>
+                      <td class="py-3 px-3">✓ Unlimited</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 bg-slate-50/50">
+                      <td class="py-3 px-3 font-medium text-slate-900">Multi-node management</td>
+                      <td class="py-3 px-3">✗</td>
+                      <td class="py-3 px-3">✗</td>
+                      <td class="py-3 px-3">✓</td>
+                    </tr>
+                    <tr class="border-b border-slate-100">
+                      <td class="py-3 px-3 font-medium text-slate-900">WAF Firewall</td>
+                      <td class="py-3 px-3">✗</td>
+                      <td class="py-3 px-3">Basic</td>
+                      <td class="py-3 px-3">✓ Full</td>
+                    </tr>
+                    <tr class="border-b border-slate-100 bg-slate-50/50">
+                      <td class="py-3 px-3 font-medium text-slate-900">Mobile app (iOS/Android)</td>
+                      <td class="py-3 px-3">✗</td>
+                      <td class="py-3 px-3">✗</td>
+                      <td class="py-3 px-3">✓</td>
+                    </tr>
+                    <tr class="border-b border-slate-200">
+                      <td class="py-3 px-3 font-medium text-slate-900">Priority support</td>
+                      <td class="py-3 px-3">✗</td>
+                      <td class="py-3 px-3">✗</td>
+                      <td class="py-3 px-3">✓</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="mt-5 text-slate-700 leading-relaxed">
+                For most self-hosted use cases, 1Panel OSS is completely free with no feature limits on core operations. Pro is for teams who need advanced AI quotas, security, and multi-server management.
+              </p>
+              <a
+                href={`${basePath}pricing`}
+                class="inline-flex items-center mt-4 font-semibold text-indigo-600 hover:text-indigo-700 transition"
+              >
+                Compare all plans →
+              </a>
+            </section>
+
             <section id="matrix" class="scroll-mt-24">
               <div class="text-center mb-8">
                 <h2 class="text-3xl font-bold text-slate-900 mb-3">Detailed Comparison Matrix</h2>
