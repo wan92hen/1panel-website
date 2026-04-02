@@ -4,10 +4,34 @@ import Statistics from "../components/Statistics.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import LanguageModal from "../components/LanguageModal.astro";
+import {
+  SITE_URL,
+  createBreadcrumbSchema,
+} from "../lib/seo";
 import "../styles/global.css";
 ---
 
-<Layout title="1Panel - 现代化、开源的Linux服务器运维管理面板">
+<Layout
+  title="1Panel - 现代化、开源的Linux服务器运维管理面板"
+  socialTitle="关于 1Panel - 开源 Linux 面板简介与产品信息"
+  schemaName="关于 1Panel"
+  description="了解 1Panel 的产品背景、定位与核心能力。1Panel 是现代化、开源的 Linux 服务器运维管理面板，由杭州飞致云信息科技有限公司推出，支持网站、数据库、容器、备份与安全管理。"
+  canonical="/about.html"
+  keywords={[
+    "1Panel 简介",
+    "关于 1Panel",
+    "1Panel 官网",
+    "开源 Linux 面板",
+    "Linux 服务器管理",
+    "服务器运维管理面板",
+  ]}
+  structuredData={[
+    createBreadcrumbSchema([
+      { name: "1Panel 官网", url: `${SITE_URL}/` },
+      { name: "关于 1Panel", url: `${SITE_URL}/about.html` },
+    ]),
+  ]}
+>
   <Statistics slot="head" />
   <Fragment slot="main">
     <Header />

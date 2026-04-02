@@ -1,10 +1,63 @@
 ---
+import {
+  DEFAULT_DESCRIPTION,
+  DEFAULT_KEYWORDS,
+  DEFAULT_OG_IMAGE,
+  SITE_NAME,
+  SITE_URL,
+  createOrganizationSchema,
+  createWebPageSchema,
+  createWebsiteSchema,
+  toAbsoluteUrl,
+} from "../lib/seo";
+
 export interface Props {
   title: string;
   description?: string;
+  keywords?: string[] | string;
+  canonical?: string;
+  socialTitle?: string;
+  schemaName?: string;
+  image?: string;
+  imageAlt?: string;
+  noindex?: boolean;
+  structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
 
-const { title, description = "1Panel - 现代化、开源的Linux服务器运维管理面板" } = Astro.props;
+const {
+  title,
+  description = DEFAULT_DESCRIPTION,
+  keywords = DEFAULT_KEYWORDS,
+  canonical,
+  socialTitle = title,
+  schemaName = socialTitle,
+  image = DEFAULT_OG_IMAGE,
+  imageAlt = socialTitle,
+  noindex = false,
+  structuredData = [],
+} = Astro.props;
+
+const siteUrl = Astro.site ?? new URL(SITE_URL);
+const canonicalUrl = new URL(canonical ?? Astro.url.pathname, siteUrl).toString();
+const socialImageUrl = toAbsoluteUrl(image, siteUrl.toString());
+const keywordsContent = Array.isArray(keywords) ? keywords.join(",") : keywords;
+const robotsContent = noindex
+  ? "noindex, nofollow"
+  : "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1";
+const isHomePage = canonicalUrl === new URL("/", siteUrl).toString();
+const extraStructuredData = Array.isArray(structuredData)
+  ? structuredData
+  : [structuredData];
+const structuredDataItems = [
+  createOrganizationSchema(),
+  createWebPageSchema({
+    title: schemaName,
+    description,
+    url: canonicalUrl,
+  }),
+  ...(isHomePage ? [createWebsiteSchema()] : []),
+  ...extraStructuredData.filter(Boolean),
+];
 ---
 
 <!DOCTYPE html>
@@ -13,20 +66,28 @@ const { title, description = "1Panel - 现代化、开源的Linux服务器运维
   <meta charset="UTF-8" />
   <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="icon" type="image/svg+xml" href="./favicon.png" />
+  <link rel="canonical" href={canonicalUrl} />
+  <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="generator" content={Astro.generator} />
+  <meta name="robots" content={robotsContent} />
   
   <!-- SEO Meta Tags -->
-  <meta property="og:title" content={title} />
+  <meta property="og:title" content={socialTitle} />
   <meta property="og:description" content={description} />
   <meta property="og:type" content="website" />
-  <meta property="og:image" content="./images/overview-full.png" />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:site_name" content={SITE_NAME} />
+  <meta property="og:locale" content="zh_CN" />
+  <meta property="og:image" content={socialImageUrl} />
+  <meta property="og:image:alt" content={imageAlt} />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content={title} />
+  <meta name="twitter:title" content={socialTitle} />
   <meta name="twitter:description" content={description} />
+  <meta name="twitter:image" content={socialImageUrl} />
+  <meta name="twitter:image:alt" content={imageAlt} />
   
   <!-- Keywords -->
-  <meta name="keywords" content="1Panel,Linux,服务器管理,开源,运维,面板,Docker,容器管理,网站建设,数据库管理" />
+  <meta name="keywords" content={keywordsContent} />
   
   <title>{title}</title>
   
@@ -36,6 +97,11 @@ const { title, description = "1Panel - 现代化、开源的Linux服务器运维
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" is:inline href="./lib/asciinema-player.css">
   <script is:inline src="./lib/asciinema-player.min.js"></script>
+  {
+    structuredDataItems.map((item) => (
+      <script type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))
+  }
   <slot name="head" />
 </head>
 <body class="bg-dark-900 text-gray-100 antialiased">
