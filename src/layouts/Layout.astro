@@ -37,9 +37,9 @@ const {
   structuredData = [],
 } = Astro.props;
 
-const siteUrl = Astro.site ?? new URL(SITE_URL);
+const siteUrl = (Astro.site ?? new URL(SITE_URL)).toString();
 const canonicalUrl = new URL(canonical ?? Astro.url.pathname, siteUrl).toString();
-const socialImageUrl = toAbsoluteUrl(image, siteUrl.toString());
+const socialImageUrl = toAbsoluteUrl(image, siteUrl);
 const keywordsContent = Array.isArray(keywords) ? keywords.join(",") : keywords;
 const robotsContent = noindex
   ? "noindex, nofollow"
@@ -49,13 +49,14 @@ const extraStructuredData = Array.isArray(structuredData)
   ? structuredData
   : [structuredData];
 const structuredDataItems = [
-  createOrganizationSchema(),
+  createOrganizationSchema(siteUrl),
   createWebPageSchema({
     title: schemaName,
     description,
     url: canonicalUrl,
+    siteUrl,
   }),
-  ...(isHomePage ? [createWebsiteSchema()] : []),
+  ...(isHomePage ? [createWebsiteSchema(siteUrl)] : []),
   ...extraStructuredData.filter(Boolean),
 ];
 ---

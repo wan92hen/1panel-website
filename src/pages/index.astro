@@ -12,9 +12,12 @@ import CTA from '../components/CTA.astro';
 import Footer from '../components/Footer.astro';
 import LanguageModal from '../components/LanguageModal.astro';
 import {
+  SITE_URL,
   createSoftwareApplicationSchema,
 } from '../lib/seo';
 import '../styles/global.css';
+
+const siteUrl = Astro.site?.toString() ?? SITE_URL;
 ---
 
 <Layout
@@ -35,7 +38,7 @@ import '../styles/global.css';
     "数据库管理",
     "AI 模型管理",
   ]}
-  structuredData={[createSoftwareApplicationSchema()]}
+  structuredData={[createSoftwareApplicationSchema(siteUrl)]}
 >
   <Statistics slot="head" />
   <Fragment slot="main">

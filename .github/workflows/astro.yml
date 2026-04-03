@@ -26,6 +26,7 @@ concurrency:
 
 env:
   BUILD_PATH: "." # default value when not using subfolders
+  PRODUCTION_SITE_URL: "https://1panel.cn"
   # BUILD_PATH: subfolder
 
 jobs:
@@ -77,6 +78,18 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ${{ env.BUILD_PATH }}/dist
+      - name: Build production artifact for 1panel.cn
+        run: |
+          rm -rf dist
+          ${{ steps.detect-package-manager.outputs.runner }} astro build \
+            --site "${{ env.PRODUCTION_SITE_URL }}" \
+            --base "./"
+        working-directory: ${{ env.BUILD_PATH }}
+      - name: Upload production artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: production-site-dist
+          path: ${{ env.BUILD_PATH }}/dist
 
   deploy:
     environment:
@@ -105,17 +118,14 @@ jobs:
       - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: github-pages
+          name: production-site-dist
           path: dist
 
       - name: Copy build output to website-2026/1panel
         run: |
           rm -rf website-2026/1panel
           mkdir -p website-2026/1panel
-          cd dist
-          tar -xvf artifact.tar
-          rm -rf artifact.tar
-          cp -r ./* ../website-2026/1panel/
+          cp -r dist/. website-2026/1panel/
 
       - name: Configure Git
         run: |

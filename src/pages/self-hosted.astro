@@ -7,8 +7,11 @@ import LanguageModal from "../components/LanguageModal.astro";
 import {
   SITE_URL,
   createBreadcrumbSchema,
+  toAbsoluteUrl,
 } from "../lib/seo";
 import "../styles/global.css";
+
+const siteUrl = Astro.site?.toString() ?? SITE_URL;
 ---
 
 <Layout
@@ -25,8 +28,8 @@ import "../styles/global.css";
   ]}
   structuredData={[
     createBreadcrumbSchema([
-      { name: "1Panel 官网", url: `${SITE_URL}/` },
-      { name: "1Panel 自托管解决方案", url: `${SITE_URL}/self-hosted.html` },
+      { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
+      { name: "1Panel 自托管解决方案", url: toAbsoluteUrl("/self-hosted.html", siteUrl) },
     ]),
   ]}
 >
