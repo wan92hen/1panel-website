@@ -24,35 +24,43 @@ export const DEFAULT_KEYWORDS = [
 ];
 export const DEFAULT_OG_IMAGE = "/images/overview-full.png";
 
-export function toAbsoluteUrl(path: string, base: string = SITE_URL) {
-  return new URL(path, base).toString();
+function normalizeSiteUrl(siteUrl: string = SITE_URL) {
+  return new URL("/", siteUrl).toString().replace(/\/$/, "");
 }
 
-export function createOrganizationSchema(): StructuredData {
+export function toAbsoluteUrl(path: string, base: string = SITE_URL) {
+  return new URL(path, normalizeSiteUrl(base)).toString();
+}
+
+export function createOrganizationSchema(siteUrl: string = SITE_URL): StructuredData {
+  const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
+
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": `${SITE_URL}/#organization`,
+    "@id": `${resolvedSiteUrl}/#organization`,
     name: ORGANIZATION_NAME,
     alternateName: ORGANIZATION_ALTERNATE_NAME,
     url: ORGANIZATION_URL,
-    logo: toAbsoluteUrl("/images/logo-light-FIT2CLOUD.svg"),
+    logo: toAbsoluteUrl("/images/logo-light-FIT2CLOUD.svg", resolvedSiteUrl),
     sameAs: [ORGANIZATION_URL],
   };
 }
 
-export function createWebsiteSchema(): StructuredData {
+export function createWebsiteSchema(siteUrl: string = SITE_URL): StructuredData {
+  const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
+
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": `${SITE_URL}/#website`,
+    "@id": `${resolvedSiteUrl}/#website`,
     name: `${SITE_NAME} 官网`,
     alternateName: SITE_NAME,
-    url: `${SITE_URL}/`,
+    url: `${resolvedSiteUrl}/`,
     inLanguage: "zh-CN",
     description: DEFAULT_DESCRIPTION,
     publisher: {
-      "@id": `${SITE_URL}/#organization`,
+      "@id": `${resolvedSiteUrl}/#organization`,
     },
   };
 }
@@ -61,11 +69,15 @@ export function createWebPageSchema({
   title,
   description,
   url,
+  siteUrl = SITE_URL,
 }: {
   title: string;
   description: string;
   url: string;
+  siteUrl?: string;
 }): StructuredData {
+  const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
+
   return {
     "@context": "https://schema.org",
     "@type": "WebPage",
@@ -75,32 +87,34 @@ export function createWebPageSchema({
     description,
     inLanguage: "zh-CN",
     isPartOf: {
-      "@id": `${SITE_URL}/#website`,
+      "@id": `${resolvedSiteUrl}/#website`,
     },
     about: {
       "@type": "Thing",
       name: SITE_NAME,
     },
     publisher: {
-      "@id": `${SITE_URL}/#organization`,
+      "@id": `${resolvedSiteUrl}/#organization`,
     },
   };
 }
 
-export function createSoftwareApplicationSchema(): StructuredData {
+export function createSoftwareApplicationSchema(siteUrl: string = SITE_URL): StructuredData {
+  const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
+
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "@id": `${SITE_URL}/#software`,
+    "@id": `${resolvedSiteUrl}/#software`,
     name: SITE_NAME,
-    url: `${SITE_URL}/`,
+    url: `${resolvedSiteUrl}/`,
     description: DEFAULT_DESCRIPTION,
     applicationCategory: "DeveloperApplication",
     operatingSystem: "Linux",
-    image: toAbsoluteUrl(DEFAULT_OG_IMAGE),
-    screenshot: toAbsoluteUrl("/images/dashboard-preview.png"),
+    image: toAbsoluteUrl(DEFAULT_OG_IMAGE, resolvedSiteUrl),
+    screenshot: toAbsoluteUrl("/images/dashboard-preview.png", resolvedSiteUrl),
     downloadUrl: GITHUB_URL,
-    softwareHelp: toAbsoluteUrl("/docs"),
+    softwareHelp: toAbsoluteUrl("/docs", resolvedSiteUrl),
     isAccessibleForFree: true,
     offers: {
       "@type": "Offer",
@@ -108,7 +122,7 @@ export function createSoftwareApplicationSchema(): StructuredData {
       priceCurrency: "CNY",
     },
     publisher: {
-      "@id": `${SITE_URL}/#organization`,
+      "@id": `${resolvedSiteUrl}/#organization`,
     },
     sameAs: [GITHUB_URL],
     featureList: [
