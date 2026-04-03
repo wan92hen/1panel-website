@@ -18,12 +18,38 @@ const translations = rawTranslations && Object.keys(rawTranslations).length > 0 
 const currentLocale = lang ?? DEFAULT_LOCALE;
 const prefix = !lang || lang === DEFAULT_LOCALE ? '' : `/${lang}`;
 const supportedLocaleCodes = SUPPORTED_LOCALES;
+const zhHansSite = {
+  code: 'zh-cn',
+  label: '简体中文',
+  href: 'https://1panel.cn/',
+};
+const desktopLocaleMenuItems = [
+  ...SUPPORTED_LOCALES.reduce<Array<{ code: string; label: string; href: string; internal: boolean; active: boolean }>>((items, locale) => {
+  items.push({
+    code: locale,
+    label: getLocaleLabel(locale),
+    href: locale === DEFAULT_LOCALE ? '/' : `/${locale}/`,
+    internal: true,
+    active: locale === currentLocale,
+  });
+
+  return items;
+}, []),
+  {
+    code: zhHansSite.code,
+    label: zhHansSite.label,
+    href: zhHansSite.href,
+    internal: false,
+    active: false,
+  },
+];
+const mobileLocaleMenuItems = desktopLocaleMenuItems.filter((item) => !item.active);
 ---
 
-<header class="sticky top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
+<header class="sticky top-0 left-0 right-0 z-[110] bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
   <nav class="container-custom">
     <div 
-      class="grid grid-cols-3 items-center h-16 lg:h-20 w-full"
+      class="grid h-16 w-full grid-cols-[auto_1fr] items-center gap-4 lg:h-20 lg:grid-cols-[auto_1fr_auto] lg:gap-6"
     >
       <!-- Left: Logo -->
       <div class="flex items-center space-x-3 shrink-0 min-w-0">
@@ -38,43 +64,51 @@ const supportedLocaleCodes = SUPPORTED_LOCALES;
         </a>
       </div>
       <!-- Center: 主菜单 -->
-      <div id="header-center-nav" class="hidden lg:flex items-center justify-center space-x-8 min-w-0 flex-1">
-        <a href={`${prefix}/pricing`} target="_blank" class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group">
-          {t(translations, 'header.pricing')}
+      <div id="header-center-nav" class="hidden min-w-0 flex-1 items-center justify-center gap-1 lg:flex">
+        <a href={`${prefix}/pricing`} target="_blank" class="group relative inline-flex h-10 items-center rounded-full px-4 text-[15px] font-medium text-gray-600 transition-colors duration-200 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30">
+          <span>{t(translations, 'header.pricing')}</span>
+          <span class="pointer-events-none absolute inset-x-4 bottom-1 h-px origin-left scale-x-0 bg-gray-900 transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
         </a>
-        <a href={prefix ? `${prefix}/blog.html` : '/blog.html'} class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
-          {t(translations, 'header.blog')}
+        <a href={prefix ? `${prefix}/blog.html` : '/blog.html'} class="group relative inline-flex h-10 items-center rounded-full px-4 text-[15px] font-medium text-gray-600 transition-colors duration-200 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30">
+          <span>{t(translations, 'header.blog')}</span>
+          <span class="pointer-events-none absolute inset-x-4 bottom-1 h-px origin-left scale-x-0 bg-gray-900 transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
         </a>
-        <a href="https://1panel.pro/docs/" target="_blank" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300">
-          {t(translations, 'header.docs')}
+        <a href="https://1panel.pro/docs/" target="_blank" class="group relative inline-flex h-10 items-center rounded-full px-4 text-[15px] font-medium text-gray-600 transition-colors duration-200 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/30">
+          <span>{t(translations, 'header.docs')}</span>
+          <span class="pointer-events-none absolute inset-x-4 bottom-1 h-px origin-left scale-x-0 bg-gray-900 transition-transform duration-200 group-hover:scale-x-100 group-focus-visible:scale-x-100"></span>
         </a>
       </div>
       <!-- Right: 语言切换及按钮 -->
-      <div id="header-right-actions" class="hidden lg:flex items-center space-x-4 shrink-0 justify-end">
+      <div id="header-right-actions" class="hidden shrink-0 items-center justify-end gap-3 lg:flex">
         {(
-          <div class="relative group" id="lang-switcher-desktop">
-            <button type="button" class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 inline-flex items-center" aria-haspopup="true" aria-expanded="false">
-              <Icon name="carbon:earth" class="w-5 h-5 mr-1" />
+          <div class="relative" id="lang-switcher-desktop">
+            <button type="button" data-lang-trigger class="inline-flex h-10 items-center gap-1 rounded-full px-4 text-[15px] font-medium text-gray-600 transition-colors duration-200 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-blue-500/25" aria-haspopup="true" aria-expanded="false">
               <span>{getLocaleLabel(currentLocale)}</span>
+              <Icon name="tabler:chevron-down" data-lang-chevron class="h-4 w-4 shrink-0 text-gray-400 transition-transform duration-200" />
             </button>
-            <div class="absolute top-full right-0 py-1 w-40 bg-white rounded-lg shadow-lg border border-gray-200 hidden group-hover:block z-[90]" role="menu">
-              {SUPPORTED_LOCALES.filter((l) => l !== currentLocale).map((locale) => (
-                <a href={locale === DEFAULT_LOCALE ? '/' : `/${locale}/`} data-locale-link data-locale={locale} class="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100" role="menuitem">{getLocaleLabel(locale)}</a>
-              ))}
+            <div data-lang-menu class="pointer-events-none invisible fixed z-[9999] opacity-0 transition-opacity duration-150" style="top: 0; left: 0;">
+              <div class="w-48 overflow-hidden rounded-2xl border border-gray-200/90 bg-white/98 p-1.5 shadow-[0_22px_56px_-28px_rgba(15,23,42,0.3)] backdrop-blur-xl" role="menu">
+                {desktopLocaleMenuItems.map((item) => (
+                  <a href={item.href} {...(item.internal ? { 'data-locale-link': true, 'data-locale': item.code } : { target: '_blank', rel: 'noopener noreferrer' })} class="flex items-center justify-between rounded-xl px-3 py-2.5 text-[15px] font-medium text-gray-700 transition-colors duration-150 hover:bg-gray-50 hover:text-gray-900 focus-visible:bg-gray-50 focus-visible:text-gray-900 focus-visible:outline-none" role="menuitem">
+                    <span>{item.label}</span>
+                    {item.active && <Icon name="tabler:check" class="h-4 w-4 shrink-0 text-gray-700" />}
+                  </a>
+                ))}
+              </div>
             </div>
           </div>
         )}
-        <a href="https://demo.1panel.pro/" target="_blank" class="try-demo-button btn-secondary text-sm inline-flex items-center">
-          <Icon name="carbon:demo" class="w-5 h-5 mr-2" />
+        <a href="https://demo.1panel.pro/" target="_blank" class="try-demo-button btn-secondary inline-flex h-11 min-w-[116px] items-center justify-center gap-2 whitespace-nowrap rounded-full !px-4 !py-2.5 text-sm !font-medium !shadow-none transition-all duration-200 hover:!scale-100 hover:!bg-white hover:!shadow-[0_16px_40px_-32px_rgba(15,23,42,0.7)]">
+          <Icon name="carbon:demo" class="h-5 w-5" />
           {t(translations, 'header.demo')}
         </a>
-        <a href="mailto:hi@lxware.hk?subject=1Panel Pro: 30-Day Free Trial Request" target="_blank" class="free-trial-button btn-primary text-sm inline-flex items-center">
-          <Icon name="carbon:email" class="w-5 h-5 mr-2" />
+        <a href="mailto:hi@lxware.hk?subject=1Panel Pro: 30-Day Free Trial Request" target="_blank" class="free-trial-button btn-primary inline-flex h-11 min-w-[132px] items-center justify-center gap-2 whitespace-nowrap rounded-full !px-4 !py-2.5 text-sm !font-medium shadow-[0_18px_44px_-28px_rgba(0,94,235,0.65)] transition-all duration-200 hover:!scale-100 hover:shadow-[0_24px_48px_-28px_rgba(0,94,235,0.45)]">
+          <Icon name="carbon:email" class="h-5 w-5" />
           {t(translations, 'header.freeTrial')}
         </a>
       </div>
       <!-- Mobile menu button -->
-      <button id="mobile-menu-btn" class="lg:hidden p-2 text-gray-700 hover:text-gray-900 shrink-0" aria-label="Open menu">
+      <button id="mobile-menu-btn" class="justify-self-end rounded-full p-2 text-gray-700 transition-colors hover:text-gray-900 lg:hidden" aria-label="Open menu">
         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
         </svg>
@@ -136,15 +170,14 @@ const supportedLocaleCodes = SUPPORTED_LOCALES;
               {getLocaleLabel(currentLocale)}
             </div>
             <div class="flex flex-wrap gap-2">
-              {SUPPORTED_LOCALES.filter((l) => l !== currentLocale).map((locale) => (
+              {mobileLocaleMenuItems.map((item) => (
                 <a
-                  href={locale === DEFAULT_LOCALE ? '/' : `/${locale}/`}
-                  data-locale-link
-                  data-locale={locale}
+                  href={item.href}
+                  {...(item.internal ? { 'data-locale-link': true, 'data-locale': item.code } : { target: '_blank', rel: 'noopener noreferrer' })}
                   class="py-1 px-3 text-[15px] text-blue-600 font-medium bg-blue-50 rounded hover:bg-blue-100 transition"
                   style="min-width:72px;text-align:center;"
                 >
-                  {getLocaleLabel(locale)}
+                  {item.label}
                 </a>
               ))}
             </div>
@@ -179,6 +212,10 @@ const supportedLocaleCodes = SUPPORTED_LOCALES;
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
+    const desktopLangSwitcher = document.getElementById('lang-switcher-desktop');
+    const desktopLangTrigger = desktopLangSwitcher?.querySelector('[data-lang-trigger]');
+    const desktopLangMenu = desktopLangSwitcher?.querySelector('[data-lang-menu]');
+    const desktopLangChevron = desktopLangSwitcher?.querySelector('[data-lang-chevron]');
 
     if (mobileMenuBtn && mobileMenu) {
       mobileMenuBtn.addEventListener('click', () => {
@@ -192,6 +229,128 @@ const supportedLocaleCodes = SUPPORTED_LOCALES;
           mobileMenu.classList.add('hidden');
         });
       });
+    }
+
+    if (desktopLangSwitcher && desktopLangTrigger) {
+      if (desktopLangMenu instanceof HTMLElement && desktopLangMenu.parentElement !== document.body) {
+        document.body.appendChild(desktopLangMenu);
+      }
+
+      let closeTimer = null;
+
+      const updateLangMenuPosition = () => {
+        if (!(desktopLangTrigger instanceof HTMLElement) || !(desktopLangMenu instanceof HTMLElement)) return;
+
+        const rect = desktopLangTrigger.getBoundingClientRect();
+        const menuWidth = desktopLangMenu.offsetWidth || 224;
+        const viewportPadding = 16;
+        const left = Math.min(
+          Math.max(viewportPadding, rect.right - menuWidth),
+          window.innerWidth - menuWidth - viewportPadding
+        );
+        const top = rect.bottom + 8;
+
+        desktopLangMenu.style.left = `${left}px`;
+        desktopLangMenu.style.top = `${top}px`;
+      };
+
+      const setExpanded = (expanded) => {
+        desktopLangTrigger.setAttribute('aria-expanded', expanded ? 'true' : 'false');
+        if (!(desktopLangMenu instanceof HTMLElement)) return;
+
+        desktopLangMenu.classList.toggle('pointer-events-none', !expanded);
+        desktopLangMenu.classList.toggle('invisible', !expanded);
+        desktopLangMenu.classList.toggle('opacity-0', !expanded);
+        desktopLangMenu.classList.toggle('pointer-events-auto', expanded);
+        desktopLangMenu.classList.toggle('visible', expanded);
+        desktopLangMenu.classList.toggle('opacity-100', expanded);
+
+        if (desktopLangChevron instanceof HTMLElement) {
+          desktopLangChevron.classList.toggle('rotate-180', expanded);
+        }
+      };
+
+      const clearCloseTimer = () => {
+        if (closeTimer) {
+          window.clearTimeout(closeTimer);
+          closeTimer = null;
+        }
+      };
+
+      const openMenu = () => {
+        clearCloseTimer();
+        updateLangMenuPosition();
+        setExpanded(true);
+      };
+
+      const closeMenu = () => {
+        clearCloseTimer();
+        setExpanded(false);
+      };
+
+      const scheduleClose = () => {
+        clearCloseTimer();
+        closeTimer = window.setTimeout(() => {
+          closeMenu();
+        }, 80);
+      };
+
+      desktopLangSwitcher.addEventListener('mouseenter', openMenu);
+      desktopLangSwitcher.addEventListener('mouseleave', scheduleClose);
+      desktopLangSwitcher.addEventListener('focusin', openMenu);
+      desktopLangSwitcher.addEventListener('focusout', (event) => {
+        const nextTarget = event.relatedTarget;
+        if (nextTarget instanceof Node && (desktopLangSwitcher.contains(nextTarget) || (desktopLangMenu instanceof HTMLElement && desktopLangMenu.contains(nextTarget)))) return;
+        scheduleClose();
+      });
+      desktopLangSwitcher.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') {
+          closeMenu();
+          const activeElement = document.activeElement;
+          if (activeElement instanceof HTMLElement && desktopLangSwitcher.contains(activeElement)) {
+            activeElement.blur();
+          }
+        }
+      });
+      desktopLangTrigger.addEventListener('click', (event) => {
+        event.preventDefault();
+        const isExpanded = desktopLangTrigger.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          closeMenu();
+        } else {
+          openMenu();
+        }
+      });
+      if (desktopLangMenu instanceof HTMLElement) {
+        desktopLangMenu.addEventListener('mouseenter', openMenu);
+        desktopLangMenu.addEventListener('mouseleave', scheduleClose);
+        desktopLangMenu.addEventListener('focusout', (event) => {
+          const nextTarget = event.relatedTarget;
+          if (nextTarget instanceof Node && (desktopLangMenu.contains(nextTarget) || desktopLangSwitcher.contains(nextTarget))) return;
+          scheduleClose();
+        });
+        desktopLangMenu.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeMenu();
+            if (desktopLangTrigger instanceof HTMLElement) {
+              desktopLangTrigger.focus();
+            }
+          }
+        });
+      }
+      document.addEventListener('pointerdown', (event) => {
+        const target = event.target;
+        if (!(target instanceof Node)) return;
+        if (desktopLangSwitcher.contains(target)) return;
+        if (desktopLangMenu instanceof HTMLElement && desktopLangMenu.contains(target)) return;
+        closeMenu();
+      });
+      window.addEventListener('resize', updateLangMenuPosition);
+      window.addEventListener('scroll', () => {
+        if (desktopLangTrigger.getAttribute('aria-expanded') === 'true') {
+          updateLangMenuPosition();
+        }
+      }, true);
     }
 
     // Keep current page when switching language:
