@@ -15,14 +15,19 @@ const { lang: langProp } = Astro.props;
 const lang = langProp ?? 'en';
 const translations = getTranslations(lang);
 const basePath = getBasePath(lang);
-const title = '1Panel vs cPanel: A Practical 2026 Comparison';
-const description =
-  'A practical and objective comparison of 1Panel and cPanel across architecture, AI readiness, operations, and long-term cost behavior.';
+const isDe = lang === 'de';
+const title = isDe
+  ? '1Panel vs cPanel: Praktischer Vergleich 2026'
+  : '1Panel vs cPanel: A Practical 2026 Comparison';
+const description = isDe
+  ? 'Objektiver Vergleich von 1Panel und cPanel: Architektur, KI-Readiness, Betrieb und langfristige Kosten.'
+  : 'A practical and objective comparison of 1Panel and cPanel across architecture, AI readiness, operations, and long-term cost behavior.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
-const keywords =
-  '1Panel vs cPanel,cPanel alternative,open source control panel,VPS control panel,multi-node server management,self-hosted panel';
+const keywords = isDe
+  ? '1Panel vs cPanel,cPanel Alternative,Open Source Kontrollpanel,VPS Panel,Multi-Server,Self-Hosting'
+  : '1Panel vs cPanel,cPanel alternative,open source control panel,VPS control panel,multi-node server management,self-hosted panel';
 
-const faq = [
+const faqEn = [
   {
     q: 'What is the core positioning difference between 1Panel and cPanel?',
     a: '1Panel is optimized for modern self-hosted and cloud-native operations, while cPanel is optimized for traditional shared-hosting and WHM account workflows.',
@@ -40,6 +45,27 @@ const faq = [
     a: 'For most self-hosted product teams, 1Panel’s open-source start plus Pro-on-demand model is often easier to control over time; cPanel remains suitable for account-centric hosting operations.',
   },
 ];
+
+const faqDe = [
+  {
+    q: 'Worin unterscheidet sich die Kernpositionierung von 1Panel und cPanel?',
+    a: '1Panel ist auf moderne Self-Hosting- und Cloud-Native-Operationen ausgelegt, cPanel auf klassisches Shared-Hosting und WHM-Konten-Workflows.',
+  },
+  {
+    q: 'Welches Produkt passt besser, wenn KI auf der Roadmap steht?',
+    a: 'In den meisten Fällen 1Panel: Die Produktlinie ist stärker auf KI-Ära-Betrieb mit Agenten und Modellen ausgerichtet.',
+  },
+  {
+    q: 'Wie verwaltet 1Panel Knoten und Multi-Node?',
+    a: '1Panel Pro bietet Knotenverwaltung für zentrales Umschalten und Operationen über mehrere Server — für Wachstum von einer Maschine zu mehreren.',
+  },
+  {
+    q: 'Welches Preismodell ist langfristig oft günstiger?',
+    a: 'Für viele Self-Hosting-Teams ist der Einstieg mit Open Source und Pro bei Bedarf besser kontrollierbar; cPanel bleibt stark für Hosting-Accounts.',
+  },
+];
+
+const faq = isDe ? faqDe : faqEn;
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -76,19 +102,44 @@ const faqJsonLd = {
         <section class="section-padding relative z-10">
           <div class="container-custom max-w-5xl space-y-12">
             <header class="text-center">
-              <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-                1Panel vs cPanel:
-                <span class="block text-indigo-600">Which Control Panel Fits Your 2026 Roadmap?</span>
-              </h1>
-              <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                This page combines strategic and practical comparison points so you can make a clear decision across architecture, AI readiness,
-                operational model, and long-term budget behavior.
-              </p>
-              <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#recommendation" class="compare-btn-primary">See Recommendation</a>
-                <a href="#matrix" class="compare-btn-secondary">View Detailed Matrix</a>
-              </div>
+              {isDe ? (
+                <>
+                  <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    1Panel vs cPanel:
+                    <span class="block text-indigo-600">Welches Panel passt zu Ihrer Roadmap 2026?</span>
+                  </h1>
+                  <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    Strategische und praktische Kriterien zu Architektur, KI-Readiness, Betriebsmodell und langfristigen Kosten — der ausführliche
+                    Haupttext folgt unten auf Englisch.
+                  </p>
+                  <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#recommendation" class="compare-btn-primary">Empfehlung</a>
+                    <a href="#matrix" class="compare-btn-secondary">Detailmatrix</a>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    1Panel vs cPanel:
+                    <span class="block text-indigo-600">Which Control Panel Fits Your 2026 Roadmap?</span>
+                  </h1>
+                  <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    This page combines strategic and practical comparison points so you can make a clear decision across architecture, AI readiness,
+                    operational model, and long-term budget behavior.
+                  </p>
+                  <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#recommendation" class="compare-btn-primary">See Recommendation</a>
+                    <a href="#matrix" class="compare-btn-secondary">View Detailed Matrix</a>
+                  </div>
+                </>
+              )}
             </header>
+
+            {isDe && (
+              <p class="rounded-lg border border-amber-200 bg-amber-50/90 px-4 py-3 text-sm text-slate-700 text-center max-w-3xl mx-auto">
+                Hinweis: Der ausführliche Vergleichstext (Abschnitte, Tabellen, Diagramme) ist derzeit auf Englisch. Kopf- und Fußzeile sind auf Deutsch.
+              </p>
+            )}
 
             <section id="overview" class="scroll-mt-24">
               <div class="card p-6 sm:p-8">

@@ -1,0 +1,201 @@
+{
+  "meta": {
+    "defaultTitle": "1Panel: Open-Source-VPS-Kontrollpanel | cPanel-Alternative",
+    "defaultDescription": "1Panel ist ein modernes Open-Source-VPS-Kontrollpanel — Ollama bereitstellen, lokale LLMs betreiben, MCP-Server verwalten und GPUs überwachen. WordPress, Docker und SSL mit einem Klick. Für immer kostenlos. Die cPanel-Alternative für die KI-Ära.",
+    "ogDescription": "Die moderne cPanel-Alternative. Ollama bereitstellen, DeepSeek oder Qwen lokal betreiben, Docker, SSL und Websites verwalten — alles in einem übersichtlichen Web-Dashboard. Kostenlos und Open Source."
+  },
+  "header": {
+    "pricing": "Preise",
+    "blog": "Blog",
+    "appStore": "App-Store",
+    "discussions": "Diskussionen",
+    "docs": "Dokumentation",
+    "demo": "Demo",
+    "github": "GitHub",
+    "freeTrial": "Kostenlose Testversion"
+  },
+  "blog": {
+    "pageTitle": "Blog",
+    "pageDescription": "Anleitungen und Neuigkeiten zu Self-Hosting, VPS-Verwaltung, Docker, lokaler KI-Bereitstellung und Open-Source-Tools — vom 1Panel-Team.",
+    "heading": "Blog",
+    "subheading": "Anleitungen und Neuigkeiten vom 1Panel-Team.",
+    "articleLanguages": "Artikel in anderen Sprachen",
+    "fallbackToEnglish": "Dieser Artikel ist in Ihrer gewählten Sprache noch nicht verfügbar. Es wird die englische Version angezeigt."
+  },
+  "hero": {
+    "title1": "Das moderne Open-Source",
+    "title2": "VPS-Kontrollpanel",
+    "badgePowerful": "Leistungsstark",
+    "badgeOpenSource": "Open Source",
+    "subtitle": "1Panel ist ein modernes Open-Source-VPS-Kontrollpanel — die cPanel-Alternative für die KI-Ära. Lokale LLMs bereitstellen, Docker-Container verwalten und Websites aus einem übersichtlichen Dashboard heraus hosten.",
+    "pricingBannerText": "OSS für immer kostenlos. Pro-Pläne ab 80 $/Jahr.",
+    "pricingBannerLink": "Preise ansehen",
+    "githubStars": "GitHub-Sterne",
+    "totalDownloads": "Downloads gesamt",
+    "demo": "Demo",
+    "installNow": "Jetzt installieren",
+    "githubStarCta": "Gefällt Ihnen 1Panel? Geben Sie uns einen Stern auf GitHub ⭐️",
+    "playVideo": "Video abspielen",
+    "dashboardAlt": "Moderne 1Panel-Oberfläche",
+    "scrollDown": "Nach unten scrollen",
+    "typewriter": ["OpenClaw Agents", "Lokale LLMs", "Websites", "Datenbanken", "Dateien", "Geplante Aufgaben"]
+  },
+  "features": {
+    "title": "Leistungsstarke",
+    "titleHighlight": "Funktionen",
+    "subtitle": "Umfassende VPS-Verwaltung — einfach und effizient",
+    "openclaw": {
+      "title": "OpenClaw mit einem Klick bereitstellen",
+      "desc": "OpenClaw-Agents nahtlos bereitstellen, lokale LLMs über Ollama hosten und GPU-Auslastung überwachen — alles in einer einheitlichen Umgebung.",
+      "openclawAgents": "OpenClaw-Agents-Verwaltung",
+      "localLLMs": "Lokale LLMs-Verwaltung",
+      "mcpServers": "MCP-Server-Verwaltung",
+      "gpuMonitoring": "GPU-Überwachung"
+    },
+    "efficient": {
+      "title": "Effiziente Verwaltung",
+      "desc": "Über eine benutzerfreundliche Web-Oberfläche verwaltet 1Panel Linux-Server mühelos: Host-Überwachung, Dateien, Datenbanken, Container und LLMs.",
+      "monitoring": "Echtzeit-Systemüberwachung",
+      "files": "Web-Dateimanager",
+      "database": "Visuelle Datenbankverwaltung",
+      "containers": "Docker-Verwaltung"
+    },
+    "website": {
+      "title": "Schnelle Website-Bereitstellung",
+      "desc": "Durch tiefe Integration von WordPress vereinfacht 1Panel Domain-Bindung und SSL-Zertifikate — alles mit einem Klick.",
+      "wordpress": "WordPress mit einem Klick",
+      "ssl": "Automatische SSL-Zertifikatsanforderung",
+      "domain": "Domain-Verwaltung und -Konfiguration",
+      "multisite": "Multi-Site-Verwaltung"
+    },
+    "appStore": {
+      "title": "App-Store",
+      "desc": "1Panel kuratiert hochwertige Open-Source-Tools und Anwendungen mit einfacher Installation und Updates.",
+      "curated": "Kuratierte Open-Source-Apps",
+      "install": "Installation und Bereitstellung mit einem Klick",
+      "updates": "Automatisches Update-Management",
+      "management": "Datensicherung und Wiederherstellung"
+    },
+    "backup": {
+      "title": "Geplante Sicherung",
+      "desc": "Daten regelmäßig in verschiedene Cloud-Speicher sichern und bei Bedarf wiederherstellen — damit nichts verloren geht."
+    },
+    "secure": {
+      "title": "Sicher und zuverlässig",
+      "desc": "1Panel reduziert die Angriffsfläche, bietet Virenschutz, Firewall und Protokollprüfung für mehr Systemsicherheit."
+    }
+  },
+  "appStore": {
+    "title": "Reichhaltiger",
+    "titleHighlight": "App-Store",
+    "subtitle": "Kuratierte Open-Source-Apps mit Ein-Klick-Installation für vielfältige Anforderungen",
+    "allApps": "Alle Apps",
+    "appsTotal": "Apps insgesamt",
+    "sortedByRecommendation": "Nach Empfehlung sortiert",
+    "viewAllApps": "Alle Apps in der Demo ansehen",
+    "noDataTitle": "Keine App-Daten",
+    "noDataDesc": "App-Store-Daten werden geladen — bitte später erneut versuchen",
+    "categories": {
+      "Database": "Datenbank",
+      "Website": "Website",
+      "DevOps": "DevOps",
+      "Security": "Sicherheit",
+      "Media": "Medien",
+      "Tool": "Tools",
+      "Development": "Entwicklung",
+      "Monitoring": "Überwachung",
+      "Storage": "Speicher",
+      "Network": "Netzwerk"
+    }
+  },
+  "quickstart": {
+    "title": "Schnell",
+    "titleHighlight": "Start",
+    "subtitle": "1Panel mit einem Klick auf Ihrem Linux-Server installieren",
+    "step1Title": "Linux-Server vorbereiten",
+    "step1Desc1": "Sie benötigen einen Linux-Server mit CentOS, Ubuntu, Debian oder anderen gängigen Distributionen.",
+    "step1Desc2": "Unterstützte Architekturen: x86_64, aarch64, armv7l, ppc64le, s390x.",
+    "step2Title": "Installationsskript ausführen",
+    "step2Desc": "Führen Sie das Ein-Klick-Installationsskript als root aus, um 1Panel automatisch herunterzuladen und zu installieren.",
+    "copy": "Kopieren",
+    "copied": "Kopiert",
+    "step3Title": "Verwaltungsoberfläche öffnen",
+    "step3Desc": "Nach der Installation rufen Sie die im Skript angegebene Adresse im Browser auf, um 1Panel zu nutzen.",
+    "needHelp": "Hilfe benötigt?",
+    "viewDocs": "Dokumentation",
+    "communityForum": "Community-Forum",
+    "issueFeedback": "Feedback zu Problemen"
+  },
+  "cta": {
+    "title": "Jetzt starten",
+    "subtitle": "Volle Kontrolle über Ihren VPS",
+    "onlineDemo": "Online-Demo",
+    "documentation": "Dokumentation"
+  },
+  "footer": {
+    "companyName": "LXware",
+    "companyDesc": "LXware ist für den kommerziellen Betrieb der FIT2CLOUD-Open-Source-Projekte 1Panel und JumpServer auf dem Weltmarkt verantwortlich.",
+    "resources": "Ressourcen",
+    "blog": "Blog",
+    "documentation": "Dokumentation",
+    "compare": "Vergleich",
+    "githubRepo": "GitHub-Repository",
+    "communityForum": "Community-Forum",
+    "followX": "Folgen Sie uns auf X",
+    "youtube": "YouTube-Kanal",
+    "discord": "Discord-Chat",
+    "links": "Links",
+    "jumpserver": "JumpServer",
+    "aboutLxware": "Über LXware",
+    "contactUs": "Kontakt",
+    "copyright": "Alle Rechte vorbehalten.",
+    "termsOfService": "Nutzungsbedingungen",
+    "privacyPolicy": "Datenschutz"
+  },
+  "pricing": {
+    "title": "Einfache",
+    "titleHighlight": "Preise",
+    "subtitle": "Wählen Sie den passenden Plan. Starten Sie kostenlos und erweitern Sie bei Bedarf.",
+    "ossEdition": "OSS-Edition",
+    "freeToUse": "Kostenlos nutzbar",
+    "openSource": "Open Source",
+    "noCost": "Keine Kosten",
+    "validated": "Millionen Installationen bestätigen die Qualität",
+    "communitySupport": "Community-Support",
+    "quickStart": "Schnellstart",
+    "proEdition": "Pro-Edition",
+    "perpetualLicense": "Dauerlizenz (V2)",
+    "subscriptionLicense": "Abonnement",
+    "mostPopular": "Am beliebtesten"
+  },
+  "selfHosted": {
+    "metaTitle": "1Panel Self-Hosting — Volle Kontrolle über Ihren VPS",
+    "metaDescription": "1Panel Self-Hosting — Ein modernes Open-Source-Linux-Serverpanel für einfaches und effizientes Self-Hosting.",
+    "heroTitle": "1Panel Self-Hosting-Lösung",
+    "heroSubtitle": "Teure SaaS-Abos und unsichere Daten? Übernehmen Sie mit Self-Hosting die Kontrolle.",
+    "whyTitle": "Warum Self-Hosting?",
+    "whySubtitle": "Behalten Sie die Hoheit über Ihre Daten",
+    "dataSovereigntyTitle": "Datenhoheit",
+    "dataSovereigntyDesc": "Erfüllen Sie Anforderungen wie DSGVO oder HIPAA: Daten bleiben in Ihrer Umgebung — ohne grenzüberschreitende Risiken.",
+    "securityTitle": "Sicherheit",
+    "securityDesc": "Stärken Sie Ihre Abwehr: On-Premise hält sensible Daten unter Ihrer Kontrolle.",
+    "lowerCostTitle": "Niedrigere Kosten",
+    "lowerCostDesc": "Keine pro Nutzer laufenden Abos, planbare Hardware- und Betriebskosten, keine überraschenden Preiserhöhungen.",
+    "valueTitle": "1Panel + Open-Source-Alternativen = starke Self-Hosting-Lösung",
+    "valueSubtitle": "Ein modernes Linux-Serverpanel für einfaches und effizientes Self-Hosting",
+    "fastTitle": "Schnell",
+    "fastDesc": "Ein-Klick-Bereitstellung mit reibungslosen Updates",
+    "completeTitle": "Umfassend",
+    "completeDesc": "Ein Hub für vertrauenswürdige Open-Source-Anwendungen",
+    "reliableTitle": "Zuverlässig",
+    "reliableDesc": "Integrierte Sicherheit und geplante Backups",
+    "appsTitle": "Beliebte Self-Hosting-Apps mit 1Panel",
+    "appsSubtitle": "Open-Source-Alternativen für vielfältige Anforderungen",
+    "alternativeBadge": "Alternative",
+    "viewMoreApps": "Weitere Apps im 1Panel App-Store entdecken"
+  },
+  "floatingNews": {
+    "title": "🚀 OpenClaw mit einem Klick bereitstellen",
+    "subtitle": "Ihr eigener KI-Assistent rund um die Uhr 🤖"
+  }
+}

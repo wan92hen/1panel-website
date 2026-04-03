@@ -1,9 +1,10 @@
 /**
- * i18n configuration: default English, plus JA, PT, KO, ES, MS, TR, RU, ZH-HANT
+ * i18n configuration: default English, plus DE, JA, PT, KO, ES, MS, TR, RU, ZH-HANT
  */
 export const DEFAULT_LOCALE = 'en' as const;
 export const SUPPORTED_LOCALES = [
   'en',
+  'de',
   'ja',
   'pt',
   'ko',
@@ -18,6 +19,7 @@ export const NON_DEFAULT_LOCALES = SUPPORTED_LOCALES.filter((loc) => loc !== DEF
 
 export const LOCALE_LABELS: Record<Locale, string> = {
   en: 'English',
+  de: 'Deutsch',
   ja: '日本語',
   pt: 'Português',
   ko: '한국어',
@@ -45,6 +47,12 @@ export const BROWSER_LANG_TO_LOCALE: Record<string, Locale> = {
   'en-us': 'en',
   'en-gb': 'en',
   'en-au': 'en',
+  de: 'de',
+  'de-de': 'de',
+  'de-at': 'de',
+  'de-ch': 'de',
+  'de-li': 'de',
+  'de-lu': 'de',
   ja: 'ja',
   'ja-jp': 'ja',
   pt: 'pt',

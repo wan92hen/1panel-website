@@ -15,14 +15,19 @@ const { lang: langProp } = Astro.props;
 const lang = langProp ?? 'en';
 const translations = getTranslations(lang);
 const basePath = getBasePath(lang);
-const title = '1Panel vs Plesk: Cloud-Native Open Source vs Commercial Hosting Stack (2026)';
-const description =
-  'Compare 1Panel and Plesk across Docker-native architecture, resource footprint, licensing model, AI automation (MCP), DNS integrations, and team fit for modern VPS workloads.';
+const isDe = lang === 'de';
+const title = isDe
+  ? '1Panel vs Plesk: Cloud-Native Open Source vs kommerzieller Hosting-Stack (2026)'
+  : '1Panel vs Plesk: Cloud-Native Open Source vs Commercial Hosting Stack (2026)';
+const description = isDe
+  ? 'Vergleich von 1Panel und Plesk: Docker-Architektur, Ressourcen, Lizenzmodell, KI-Automatisierung, DNS und Eignung für moderne VPS-Workloads.'
+  : 'Compare 1Panel and Plesk across Docker-native architecture, resource footprint, licensing model, AI automation (MCP), DNS integrations, and team fit for modern VPS workloads.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
-const keywords =
-  '1Panel vs Plesk,Plesk alternative,open source control panel,Docker server panel,VPS management,WebPros Plesk,cloud native hosting panel,self-hosted panel';
+const keywords = isDe
+  ? '1Panel vs Plesk,Plesk Alternative,Docker Panel,VPS,WebPros,Self-Hosting'
+  : '1Panel vs Plesk,Plesk alternative,open source control panel,Docker server panel,VPS management,WebPros Plesk,cloud native hosting panel,self-hosted panel';
 
-const faq = [
+const faqEn = [
   {
     q: 'What is the fundamental architecture difference between 1Panel and Plesk?',
     a: '1Panel is built around Docker-native isolation: apps and runtimes ship as containers with clear boundaries. Plesk historically centers on deep OS integration and a broad commercial extension ecosystem, with heavier coupling to the host stack even when optional container features exist.',
@@ -44,6 +49,31 @@ const faq = [
     a: 'Teams standardized on Plesk across agencies and Windows/Linux mixed estates, or those relying on specific Plesk extensions and reseller workflows, may prefer continuity until a migration plan is justified by cost or architecture goals.',
   },
 ];
+
+const faqDe = [
+  {
+    q: 'Wie unterscheidet sich die Architektur von 1Panel und Plesk?',
+    a: '1Panel nutzt Docker-native Isolation mit klaren Containergrenzen. Plesk ist historisch tief ins OS und ein großes kommerzielles Erweiterungsökosystem integriert.',
+  },
+  {
+    q: 'Welches Panel ist auf kleinen VPS sparsamer mit RAM?',
+    a: 'Typisch lässt der Go-Kern von 1Panel auf 1–2-GB-Instanzen mehr Luft. Plesk mit Diensten und Modulen oft höheren Ruheverbrauch — immer an Ihre Edition anpassen.',
+  },
+  {
+    q: 'Wie unterscheiden sich die Lizenzmodelle?',
+    a: '1Panel: GPLv3-Basis kostenlos, Pro pro Knoten. Plesk: gestufte kommerzielle Lizenzen und kostenpflichtige Erweisungen — aktuelle WebPros-Preise prüfen.',
+  },
+  {
+    q: 'Was ist 2026 stärker für KI-unterstützten Betrieb?',
+    a: '1Panel legt Wert auf KI-Ära-Workflows (z. B. MCP, lokale LLMs). Plesks KI-Funktionen sind oft Add-ons statt Infrastruktur-First.',
+  },
+  {
+    q: 'Wann kann Plesk trotzdem sinnvoll sein?',
+    a: 'Wenn Teams auf Plesk, Agenturen oder Reseller-Workflows standardisiert sind, kann Kontinuität bis zur geplanten Migration sinnvoll sein.',
+  },
+];
+
+const faq = isDe ? faqDe : faqEn;
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -80,19 +110,44 @@ const faqJsonLd = {
         <section class="section-padding relative z-10">
           <div class="container-custom max-w-5xl space-y-12">
             <header class="text-center">
-              <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-                1Panel vs Plesk:
-                <span class="block text-indigo-600">Docker-Native Ops vs Traditional Commercial Suite</span>
-              </h1>
-              <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                In 2026, hosting control planes split between cloud-native, container-first stacks and long-running commercial suites with deep
-                extension marketplaces. This page translates that shift into practical decision criteria for VPS, agency, and product teams.
-              </p>
-              <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#recommendation" class="compare-btn-primary">See Recommendation</a>
-                <a href="#matrix" class="compare-btn-secondary">View Detailed Matrix</a>
-              </div>
+              {isDe ? (
+                <>
+                  <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    1Panel vs Plesk:
+                    <span class="block text-indigo-600">Docker-Native Ops vs klassische kommerzielle Suite</span>
+                  </h1>
+                  <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    Hosting-Control-Planes teilen sich 2026 in container-first und etablierte Suites mit Marktplatz — unten der ausführliche Vergleich
+                    auf Englisch.
+                  </p>
+                  <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#recommendation" class="compare-btn-primary">Empfehlung</a>
+                    <a href="#matrix" class="compare-btn-secondary">Detailmatrix</a>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    1Panel vs Plesk:
+                    <span class="block text-indigo-600">Docker-Native Ops vs Traditional Commercial Suite</span>
+                  </h1>
+                  <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    In 2026, hosting control planes split between cloud-native, container-first stacks and long-running commercial suites with deep
+                    extension marketplaces. This page translates that shift into practical decision criteria for VPS, agency, and product teams.
+                  </p>
+                  <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#recommendation" class="compare-btn-primary">See Recommendation</a>
+                    <a href="#matrix" class="compare-btn-secondary">View Detailed Matrix</a>
+                  </div>
+                </>
+              )}
             </header>
+
+            {isDe && (
+              <p class="rounded-lg border border-amber-200 bg-amber-50/90 px-4 py-3 text-sm text-slate-700 text-center max-w-3xl mx-auto">
+                Hinweis: Der ausführliche Vergleichstext auf dieser Seite ist derzeit auf Englisch. Kopf- und Fußzeile sind auf Deutsch.
+              </p>
+            )}
 
             <section id="overview" class="scroll-mt-24">
               <div class="card p-6 sm:p-8">

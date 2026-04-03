@@ -17,6 +17,7 @@ const logoSrc = publicAsset('images/logo-blue.png');
 const translations = rawTranslations && Object.keys(rawTranslations).length > 0 ? rawTranslations : getTranslations('en');
 const currentLocale = lang ?? DEFAULT_LOCALE;
 const prefix = !lang || lang === DEFAULT_LOCALE ? '' : `/${lang}`;
+const supportedLocaleCodes = SUPPORTED_LOCALES;
 ---
 
 <header class="sticky top-0 left-0 right-0 z-50 bg-dark-200/80 backdrop-blur-md border-b border-gray-200">
@@ -173,7 +174,7 @@ const prefix = !lang || lang === DEFAULT_LOCALE ? '' : `/${lang}`;
   </nav>
 </header>
 
-<script>
+<script define:vars={{ supportedLocaleCodes }}>
   // Mobile menu toggle
   document.addEventListener('DOMContentLoaded', () => {
     const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -196,7 +197,7 @@ const prefix = !lang || lang === DEFAULT_LOCALE ? '' : `/${lang}`;
     // Keep current page when switching language:
     // /foo/bar -> /ja/foo/bar, /ja/foo/bar -> /foo/bar
     const localeLinks = document.querySelectorAll('[data-locale-link]');
-    const supported = ['en', 'ja', 'pt', 'ko', 'es', 'ms', 'tr', 'ru', 'zh-hant'];
+    const supported = supportedLocaleCodes;
     const currentPath = window.location.pathname || '/';
     const segments = currentPath.replace(/^\/+|\/+$/g, '').split('/').filter(Boolean);
     const hasLocalePrefix = segments.length > 0 && supported.includes(segments[0]);

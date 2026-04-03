@@ -15,14 +15,19 @@ const { lang: langProp } = Astro.props;
 const lang = langProp ?? 'en';
 const translations = getTranslations(lang);
 const basePath = getBasePath(lang);
-const title = '1Panel vs Webmin: Open-Source Control Panel Comparison (2026)';
-const description =
-  'A practical comparison of 1Panel and Webmin across architecture, deployment workflow, security model, operations efficiency, and team fit.';
+const isDe = lang === 'de';
+const title = isDe
+  ? '1Panel vs Webmin: Open-Source-Kontrollpanel-Vergleich (2026)'
+  : '1Panel vs Webmin: Open-Source Control Panel Comparison (2026)';
+const description = isDe
+  ? 'Praktischer Vergleich von 1Panel und Webmin: Architektur, Deployment, Sicherheit, Effizienz und Team-Passung.'
+  : 'A practical comparison of 1Panel and Webmin across architecture, deployment workflow, security model, operations efficiency, and team fit.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
-const keywords =
-  '1Panel vs Webmin,Webmin alternative,open source server control panel,containerized server management,linux admin panel';
+const keywords = isDe
+  ? '1Panel vs Webmin,Webmin Alternative,Linux Panel,Container,Self-Hosting'
+  : '1Panel vs Webmin,Webmin alternative,open source server control panel,containerized server management,linux admin panel';
 
-const faq = [
+const faqEn = [
   {
     q: 'What is the biggest difference between 1Panel and Webmin?',
     a: '1Panel is app-centric and container-oriented, while Webmin is system-centric and focused on deep OS/service administration.',
@@ -40,6 +45,27 @@ const faq = [
     a: 'Yes. Some teams use 1Panel for application lifecycle and web delivery, while using Webmin for specialized host-level administration tasks.',
   },
 ];
+
+const faqDe = [
+  {
+    q: 'Was ist der größte Unterschied zwischen 1Panel und Webmin?',
+    a: '1Panel ist app- und containerorientiert, Webmin systemorientiert mit Fokus auf tiefe OS-/Dienstadministration.',
+  },
+  {
+    q: 'Was ist besser für moderne Self-Hosted-App-Lieferung?',
+    a: '1Panel passt meist besser zu Container-Workflows und schnelleren Ein-Klick-Abläufen.',
+  },
+  {
+    q: 'Was ist besser für tiefe Linux-Administration?',
+    a: 'Webmin ist stärker bei Low-Level-Kontrolle, Dienst-für-Dienst-Tuning und direkten Host-Operationen.',
+  },
+  {
+    q: 'Können Teams beide parallel nutzen?',
+    a: 'Ja: 1Panel für Anwendungslebenszyklus und Web, Webmin für spezialisierte Host-Administration.',
+  },
+];
+
+const faq = isDe ? faqDe : faqEn;
 
 const faqJsonLd = {
   '@context': 'https://schema.org',
@@ -76,19 +102,43 @@ const faqJsonLd = {
         <section class="section-padding relative z-10">
           <div class="container-custom max-w-5xl space-y-12">
             <header class="text-center">
-              <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
-                1Panel vs Webmin:
-                <span class="block text-indigo-600">App-Centric Ops vs System-Centric Administration</span>
-              </h1>
-              <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
-                Both are powerful open-source tools, but they solve different problems. This page helps you choose the right control plane
-                for your next 12-24 months of infrastructure growth.
-              </p>
-              <div class="flex flex-col sm:flex-row justify-center gap-4">
-                <a href="#recommendation" class="compare-btn-primary">See Recommendation</a>
-                <a href="#matrix" class="compare-btn-secondary">View Detailed Matrix</a>
-              </div>
+              {isDe ? (
+                <>
+                  <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    1Panel vs Webmin:
+                    <span class="block text-indigo-600">App-zentriert vs systemzentrierte Administration</span>
+                  </h1>
+                  <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    Beide sind leistungsstarke Open-Source-Tools mit unterschiedlichem Fokus — der ausführliche Vergleich folgt unten auf Englisch.
+                  </p>
+                  <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#recommendation" class="compare-btn-primary">Empfehlung</a>
+                    <a href="#matrix" class="compare-btn-secondary">Detailmatrix</a>
+                  </div>
+                </>
+              ) : (
+                <>
+                  <h1 class="text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight mb-6">
+                    1Panel vs Webmin:
+                    <span class="block text-indigo-600">App-Centric Ops vs System-Centric Administration</span>
+                  </h1>
+                  <p class="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed mb-8">
+                    Both are powerful open-source tools, but they solve different problems. This page helps you choose the right control plane
+                    for your next 12-24 months of infrastructure growth.
+                  </p>
+                  <div class="flex flex-col sm:flex-row justify-center gap-4">
+                    <a href="#recommendation" class="compare-btn-primary">See Recommendation</a>
+                    <a href="#matrix" class="compare-btn-secondary">View Detailed Matrix</a>
+                  </div>
+                </>
+              )}
             </header>
+
+            {isDe && (
+              <p class="rounded-lg border border-amber-200 bg-amber-50/90 px-4 py-3 text-sm text-slate-700 text-center max-w-3xl mx-auto">
+                Hinweis: Der ausführliche Vergleichstext auf dieser Seite ist derzeit auf Englisch. Kopf- und Fußzeile sind auf Deutsch.
+              </p>
+            )}
 
             <section id="overview" class="scroll-mt-24">
               <div class="card p-6 sm:p-8">

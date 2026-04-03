@@ -6,6 +6,7 @@ export type BlogPost = CollectionEntry<'blog'>;
 /** BCP-47 locale strings for `toLocaleDateString` */
 export const BLOG_DATE_LOCALE: Record<Locale, string> = {
   en: 'en-US',
+  de: 'de-DE',
   ja: 'ja-JP',
   pt: 'pt-BR',
   ko: 'ko-KR',
