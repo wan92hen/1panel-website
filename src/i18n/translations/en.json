@@ -1,7 +1,7 @@
 {
   "meta": {
     "defaultTitle": "1Panel: Open-Source VPS Control Panel | cPanel Alternative",
-    "defaultDescription": "1Panel is a modern open-source VPS control panel — deploy Ollama, run local LLMs, manage MCP servers, and monitor GPUs. One-click WordPress, Docker, SSL. Free forever. The cPanel alternative built for the AI era.",
+    "defaultDescription": "1Panel is an open-source VPS control panel. Deploy Ollama, manage Docker, one-click WordPress & OpenClaw. The modern cPanel alternative built for the AI era.",
     "ogDescription": "The modern cPanel alternative. Deploy Ollama, run DeepSeek or Qwen locally, manage Docker, SSL, and websites — all from a clean web dashboard. Free and open source."
   },
   "header": {
