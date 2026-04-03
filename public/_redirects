@@ -1,4 +1,5 @@
 # Legacy English compare URLs (canonical is now root without /en/)
+/en / 301
 /en/* /:splat 301
 /zh-tw/* /zh-hant/:splat 301
 /zh-tw /zh-hant 301
