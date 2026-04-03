@@ -1,0 +1,75 @@
+# 1Panel
+
+> 1Panel is an open-source VPS control panel and cPanel alternative for modern self-hosted infrastructure. It helps users deploy local LLMs with Ollama, manage Docker containers, websites, databases, files, SSL, backups, and AI agents from one web dashboard.
+
+This file describes the international `1panel.pro` website. For installation, configuration, troubleshooting, and version-specific behavior, prefer the official documentation and GitHub repository over marketing copy.
+
+## Primary Pages
+
+- [Homepage](https://1panel.pro/) - product overview, feature summary, app store preview, and quick-start entry points.
+- [Features](https://1panel.pro/#features) - AI management, websites, databases, files, Docker, backups, and security highlights.
+- [App Store Preview](https://1panel.pro/#appstore) - curated open-source apps available through 1Panel.
+- [Quick Start](https://1panel.pro/#quickstart) - the 3-step install flow shown on the homepage.
+- [Pricing](https://1panel.pro/pricing.html) - OSS vs Pro plans, feature matrix, licensing FAQ, and trial details.
+- [Documentation](https://1panel.pro/docs/) - canonical product documentation.
+- [Online Installation Guide](https://1panel.pro/docs/v2/installation/online_installation/) - the main install guide for new servers.
+- [Demo](https://demo.1panel.pro/) - live product demo.
+
+## Product and Comparison Pages
+
+- [Blog Index](https://1panel.pro/blog.html) - tutorials, release notes, self-hosting guides, and product updates.
+- [1Panel vs cPanel](https://1panel.pro/1panel-vs-cpanel.html) - comparison across architecture, AI readiness, operations, and long-term cost.
+- [1Panel vs Webmin](https://1panel.pro/1panel-vs-webmin.html) - comparison focused on usability, AI operations, security, and maintenance.
+- [1Panel vs Plesk](https://1panel.pro/1panel-vs-plesk.html) - comparison focused on modern self-hosting workflows, scalability, and price-performance.
+
+## App Detail Pages
+
+- Pattern: `https://1panel.pro/apps/{app}.html`
+- Each app page contains a short deployment summary, category tags, app metadata, and README-derived details.
+Example pages:
+- [OpenResty](https://1panel.pro/apps/openresty.html) - high-performance web platform based on Nginx and LuaJIT.
+- [MySQL](https://1panel.pro/apps/mysql.html) - open-source relational database.
+- [Redis](https://1panel.pro/apps/redis.html) - in-memory key-value database.
+- [OpenClaw](https://1panel.pro/apps/openclaw.html) - personal AI assistant deployment.
+- [WordPress](https://1panel.pro/apps/wordpress.html) - one-click website deployment.
+- [MaxKB](https://1panel.pro/apps/maxkb.html) - open-source platform for enterprise-grade agents.
+
+## Selected Guides
+
+- [How to Run Ollama on a VPS with 1Panel](https://1panel.pro/blog/run-ollama-on-vps-with-1panel.html) - private AI lab setup guide.
+- [Deploy WordPress with the 1Panel PHP Runtime](https://1panel.pro/blog/deploy-wordpress-php-runtime.html) - WordPress deployment guide.
+- [Host Multiple OpenClaw Instances with 1Panel](https://1panel.pro/blog/host-multiple-openclaw-instances-with-1panel.html) - multi-instance AI operations guide.
+- [1Panel Self-Hosted Solution](https://1panel.pro/blog/self-hosted-solution-with-1panel.html) - data control, security, and cost positioning.
+- [1Panel v2.1.6 Released](https://1panel.pro/blog/1panel-v2-1-6-release.html) - release summary and new capabilities.
+
+## Operational Facts
+
+- Open-source edition is free to use.
+- Pro starts at $80/year and adds commercial features such as unlimited AI agents, multi-node management, advanced WAF/security features, and priority support.
+- Quick install command shown on the site: `bash -c "$(curl -sSL https://resource.1panel.pro/v2/quick_start.sh)"`
+
+## Community and Source
+
+- [GitHub Repository](https://github.com/1Panel-dev/1Panel) - source code, releases, and issue tracking.
+- [GitHub Discussions](https://github.com/1Panel-dev/1Panel/discussions) - community support and product discussion.
+- [GitHub Issues](https://github.com/1Panel-dev/1Panel/issues) - bug reports and feature requests.
+- Pro trial and sales email: `hi@lxware.hk`
+
+## Languages and URL Patterns
+
+- Default language: English.
+- Localized site variants exist for `de`, `ja`, `pt`, `ko`, `es`, `ms`, `tr`, `ru`, and `zh-hant`.
+- Simplified Chinese official site: [1panel.cn](https://1panel.cn/)
+- Main English routes: `/`, `/pricing.html`, `/blog.html`, `/1panel-vs-cpanel.html`, `/1panel-vs-webmin.html`, `/1panel-vs-plesk.html`
+- Localized home pages: `/{lang}.html`
+- Localized subpages: `/{lang}/pricing.html`, `/{lang}/blog.html`, `/{lang}/1panel-vs-cpanel.html`, `/{lang}/1panel-vs-webmin.html`, `/{lang}/1panel-vs-plesk.html`
+- Blog posts: `/blog/{slug}.html`
+- App detail pages: `/apps/{app}.html`
+
+## Notes for LLMs
+
+- Prefer documentation for setup, configuration, administration, and troubleshooting.
+- Prefer pricing for plan limits, Pro-only capabilities, trials, and licensing questions.
+- Prefer app detail pages for app-specific deployment or integration questions.
+- Prefer the blog for tutorials, release notes, and example workflows.
+- Prefer comparison pages when the user is evaluating 1Panel against cPanel, Webmin, or Plesk.
