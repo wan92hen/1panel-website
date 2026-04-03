@@ -1,10 +1,5 @@
 # Legacy English compare URLs (canonical is now root without /en/)
-/en/1panel-vs-webmin /1panel-vs-webmin 301
-/en/1panel-vs-webmin.html /1panel-vs-webmin.html 301
-/en/1panel-vs-cpanel /1panel-vs-cpanel 301
-/en/1panel-vs-cpanel.html /1panel-vs-cpanel.html 301
-/en/1panel-vs-plesk /1panel-vs-plesk 301
-/en/1panel-vs-plesk.html /1panel-vs-plesk.html 301
+/en/* /:splat 301
 /zh-tw/* /zh-hant/:splat 301
 /zh-tw /zh-hant 301
 /sitemap.xml /sitemap-index.xml 301
