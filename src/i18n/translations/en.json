@@ -194,6 +194,27 @@
     "alternativeBadge": "Alternative",
     "viewMoreApps": "Discover more apps in the 1Panel App Store"
   },
+  "appDetail": {
+    "pageTitleSuffix": "1Panel App Store",
+    "breadcrumbHome": "Home",
+    "appsShort": "Apps",
+    "breadcrumbAria": "Breadcrumb",
+    "jsonLdHome": "Home",
+    "officialWebsite": "Official Website",
+    "github": "GitHub",
+    "documentation": "Documentation",
+    "detailsTitle": "App details",
+    "slug": "Slug",
+    "category": "Category",
+    "architectures": "Architectures",
+    "latestPrefix": "Latest:",
+    "showMore": "Show more",
+    "showLess": "Show less",
+    "deployHeading": "Deploy {name} with 1Panel",
+    "ogImageAltJoiner": "—",
+    "seoMetaTemplate": "Deploy {name} on your Linux server with 1Panel. {summary} One-click install from 1Panel's open-source App Store.",
+    "seoSummaryFallback": "{name} helps you run and manage services on Linux servers."
+  },
   "floatingNews": {
     "title": "🚀 One-Click OpenClaw Deployment",
     "subtitle": "Deploy your own 24/7 AI assistant 🤖"

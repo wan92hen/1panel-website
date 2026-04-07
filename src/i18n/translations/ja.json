@@ -201,6 +201,27 @@
     "alternativeBadge": "代替",
     "viewMoreApps": "1Panelアプリストアでもっと見る"
   },
+  "appDetail": {
+    "pageTitleSuffix": "1Panel アプリストア",
+    "breadcrumbHome": "ホーム",
+    "appsShort": "アプリ",
+    "breadcrumbAria": "パンくずリスト",
+    "jsonLdHome": "ホーム",
+    "officialWebsite": "公式サイト",
+    "github": "GitHub",
+    "documentation": "ドキュメント",
+    "detailsTitle": "アプリの詳細",
+    "slug": "スラッグ",
+    "category": "カテゴリ",
+    "architectures": "アーキテクチャ",
+    "latestPrefix": "最新:",
+    "showMore": "もっと見る",
+    "showLess": "閉じる",
+    "deployHeading": "1Panel で {name} をデプロイ",
+    "ogImageAltJoiner": "—",
+    "seoMetaTemplate": "1Panel で Linux サーバーに {name} をデプロイ。{summary} 1Panel アプリストアからワンクリックでインストール。",
+    "seoSummaryFallback": "{name} は Linux サーバー上のサービス運用と管理に役立ちます。"
+  },
   "floatingNews": {
     "title": "🚀 ワンクリックOpenClawデプロイ",
     "subtitle": "自分だけのAIアシスタントをカスタマイズ 🤖"

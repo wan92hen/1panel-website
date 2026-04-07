@@ -201,6 +201,27 @@
     "alternativeBadge": "Alternatif",
     "viewMoreApps": "1Panel App Store'da daha fazla uygulama keşfedin"
   },
+  "appDetail": {
+    "pageTitleSuffix": "1Panel Uygulama Mağazası",
+    "breadcrumbHome": "Ana sayfa",
+    "appsShort": "Uygulamalar",
+    "breadcrumbAria": "İçerik yolu",
+    "jsonLdHome": "Ana sayfa",
+    "officialWebsite": "Resmi site",
+    "github": "GitHub",
+    "documentation": "Belgeler",
+    "detailsTitle": "Uygulama ayrıntıları",
+    "slug": "Slug",
+    "category": "Kategori",
+    "architectures": "Mimari",
+    "latestPrefix": "Son:",
+    "showMore": "Daha fazla",
+    "showLess": "Daha az",
+    "deployHeading": "1Panel ile {name} dağıtın",
+    "ogImageAltJoiner": "—",
+    "seoMetaTemplate": "1Panel ile Linux sunucunuzda {name} dağıtın. {summary} 1Panel Uygulama Mağazası'ndan tek tıkla kurulum.",
+    "seoSummaryFallback": "{name}, Linux sunucularında hizmetleri çalıştırmanıza ve yönetmenize yardımcı olur."
+  },
   "floatingNews": {
     "title": "🚀 Tek tıkla OpenClaw dağıtımı",
     "subtitle": "Kendi yapay zeka asistanınızı özelleştirin 🤖"

@@ -201,6 +201,27 @@
     "alternativeBadge": "Alternatif",
     "viewMoreApps": "Temui lebih banyak aplikasi di 1Panel App Store"
   },
+  "appDetail": {
+    "pageTitleSuffix": "Kedai Apl 1Panel",
+    "breadcrumbHome": "Laman utama",
+    "appsShort": "Apl",
+    "breadcrumbAria": "Breadcrumb",
+    "jsonLdHome": "Laman utama",
+    "officialWebsite": "Laman web rasmi",
+    "github": "GitHub",
+    "documentation": "Dokumentasi",
+    "detailsTitle": "Butiran apl",
+    "slug": "Slug",
+    "category": "Kategori",
+    "architectures": "Senibina",
+    "latestPrefix": "Terkini:",
+    "showMore": "Tunjuk lagi",
+    "showLess": "Tunjuk kurang",
+    "deployHeading": "Deploy {name} dengan 1Panel",
+    "ogImageAltJoiner": "—",
+    "seoMetaTemplate": "Deploy {name} pada pelayan Linux anda dengan 1Panel. {summary} Pasang sekali klik dari Kedai Apl 1Panel.",
+    "seoSummaryFallback": "{name} membantu anda menjalankan dan mengurus perkhidmatan pada pelayan Linux."
+  },
   "floatingNews": {
     "title": "🚀 Penempatan OpenClaw satu klik",
     "subtitle": "Sesuaikan pembantu AI anda sendiri 🤖"

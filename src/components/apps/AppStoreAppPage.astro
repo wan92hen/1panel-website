@@ -1,0 +1,595 @@
+---
+import { marked } from "marked";
+import { Icon } from "astro-icon/components";
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+import BlogPageDecor from "../../components/blog/BlogPageDecor.astro";
+import appMetaData from "../../app-meta.json";
+import { DEFAULT_LOCALE } from "../../i18n/config";
+import { t, getBasePath, type TranslationDict } from "../../i18n/utils";
+import {
+  appSummaryText,
+  ogLocaleForLang,
+  type AppStoreAppItem,
+} from "../../lib/app-store-detail";
+import { publicAsset } from "../../lib/asset";
+import "../../styles/global.css";
+
+marked.setOptions({ gfm: true });
+
+interface Props {
+  app: AppStoreAppItem;
+  lang: string;
+  translations: TranslationDict;
+}
+
+const { app, lang, translations } = Astro.props;
+
+const slug = String(app.additionalProperties?.key ?? "");
+const name = app.name ?? app.additionalProperties?.name ?? slug;
+const tags = app.additionalProperties?.tags ?? [];
+const description = appSummaryText(app, lang);
+
+type AppMetaItem = {
+  key: string;
+  meta_description?: string;
+};
+
+function clamp(s: string, n: number): string {
+  if (s.length <= n) return s;
+  return s.slice(0, n - 1).trimEnd() + "…";
+}
+
+const appMetaDescription =
+  ((appMetaData as { apps?: AppMetaItem[] }).apps ?? []).find(
+    (item) => item.key === slug,
+  )?.meta_description ?? "";
+
+const siteOrigin = (import.meta.env.SITE ?? "https://1panel.pro").replace(
+  /\/$/,
+  "",
+);
+const prefix = !lang || lang === DEFAULT_LOCALE ? "" : `/${lang}`;
+const canonicalUrl = `${siteOrigin}${prefix}/apps/${slug}.html`;
+
+const pageTitleSuffix = t(translations, "appDetail.pageTitleSuffix");
+const pageTitle =
+  pageTitleSuffix && pageTitleSuffix !== "appDetail.pageTitleSuffix"
+    ? `${name} | ${pageTitleSuffix}`
+    : `${name} | 1Panel App Store`;
+
+/** English-only curated blurbs in app-meta.json; localized routes use 1panel.json copy + i18n template. */
+const seoTemplateRaw = t(translations, "appDetail.seoMetaTemplate");
+const seoTemplate =
+  seoTemplateRaw !== "appDetail.seoMetaTemplate"
+    ? seoTemplateRaw
+    : "Deploy {name} on your Linux server with 1Panel. {summary} One-click install from 1Panel's open-source App Store.";
+const seoFallbackSummaryRaw = t(translations, "appDetail.seoSummaryFallback");
+const seoFallbackSummaryPattern =
+  seoFallbackSummaryRaw !== "appDetail.seoSummaryFallback"
+    ? seoFallbackSummaryRaw
+    : "{name} helps you run and manage services on Linux servers.";
+const summaryForSeo =
+  description.trim() ||
+  seoFallbackSummaryPattern.replace(/\{name\}/g, name);
+const metaDescription =
+  lang === DEFAULT_LOCALE && appMetaDescription
+    ? clamp(appMetaDescription, 160)
+    : clamp(
+        seoTemplate
+          .replace(/\{name\}/g, name)
+          .replace(/\{summary\}/g, summaryForSeo),
+        160,
+      );
+
+const keywords = [
+  "1Panel",
+  "1Panel App Store",
+  name,
+  slug,
+  "self-hosted",
+  "Docker",
+  "Linux",
+  "VPS",
+  ...tags,
+]
+  .filter(Boolean)
+  .join(", ");
+
+const iconSrc = app.icon?.trim();
+const ogImageUrl =
+  iconSrc && /^https?:\/\//i.test(iconSrc)
+    ? iconSrc
+    : iconSrc
+      ? new URL(iconSrc.replace(/^\//, ""), siteOrigin).href
+      : undefined;
+
+const readmeHtml = app.readMe?.trim()
+  ? (marked.parse(app.readMe, { async: false }) as string)
+  : "";
+const hasReadmeIntro = readmeHtml.length > 0;
+const primaryCategory = tags?.[0] ?? "ServerApplication";
+const categoryTranslated = t(
+  translations,
+  `appStore.categories.${primaryCategory}`,
+);
+const primaryCategoryLabel =
+  categoryTranslated !== `appStore.categories.${primaryCategory}`
+    ? categoryTranslated
+    : primaryCategory;
+const versionLatest = app.versions?.[0]?.name;
+
+const sameAs = [
+  app.additionalProperties?.website,
+  app.additionalProperties?.github,
+  app.additionalProperties?.document,
+].filter((u): u is string => typeof u === "string" && u.length > 0);
+
+const homeUrl = prefix ? `${siteOrigin}${prefix}/` : `${siteOrigin}/`;
+const appStoreListUrl = prefix
+  ? `${siteOrigin}${prefix}/#appstore`
+  : `${siteOrigin}/#appstore`;
+
+const jsonLdHomeRaw = t(translations, "appDetail.jsonLdHome");
+const jsonLdHomeLabel =
+  jsonLdHomeRaw !== "appDetail.jsonLdHome"
+    ? jsonLdHomeRaw
+    : t(translations, "appDetail.breadcrumbHome");
+
+const jsonLdGraph = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "@id": `${canonicalUrl}#webpage`,
+      url: canonicalUrl,
+      name: pageTitle,
+      description: metaDescription,
+      isPartOf: {
+        "@type": "WebSite",
+        "@id": `${siteOrigin}/#website`,
+        name: "1Panel",
+        url: siteOrigin,
+      },
+      about: { "@id": `${canonicalUrl}#software` },
+      ...(ogImageUrl
+        ? {
+            primaryImageOfPage: {
+              "@type": "ImageObject",
+              url: ogImageUrl,
+            },
+          }
+        : {}),
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": `${canonicalUrl}#breadcrumb`,
+      itemListElement: [
+        {
+          "@type": "ListItem",
+          position: 1,
+          name: jsonLdHomeLabel,
+          item: homeUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 2,
+          name: t(translations, "header.appStore"),
+          item: appStoreListUrl,
+        },
+        {
+          "@type": "ListItem",
+          position: 3,
+          name,
+          item: canonicalUrl,
+        },
+      ],
+    },
+    {
+      "@type": "SoftwareApplication",
+      "@id": `${canonicalUrl}#software`,
+      name,
+      description: metaDescription,
+      url: canonicalUrl,
+      applicationCategory: primaryCategory,
+      operatingSystem: "Linux",
+      ...(versionLatest ? { softwareVersion: versionLatest } : {}),
+      ...(ogImageUrl ? { image: ogImageUrl } : {}),
+      ...(sameAs.length ? { sameAs } : {}),
+      publisher: {
+        "@type": "Organization",
+        name: "1Panel",
+        url: siteOrigin,
+      },
+    },
+  ],
+};
+
+const basePath = getBasePath(lang);
+const defaultIcon = publicAsset("images/default-app-icon.png");
+
+const deployHeadingRaw = t(translations, "appDetail.deployHeading");
+const deployHeading =
+  deployHeadingRaw !== "appDetail.deployHeading"
+    ? deployHeadingRaw.replace(/\{name\}/g, name)
+    : `Deploy ${name} with 1Panel`;
+
+const showMore = t(translations, "appDetail.showMore");
+const showLess = t(translations, "appDetail.showLess");
+const ogAltJoiner = t(translations, "appDetail.ogImageAltJoiner");
+const ogAltSuffix = t(translations, "appDetail.pageTitleSuffix");
+const ogImageAlt =
+  ogAltSuffix && ogAltSuffix !== "appDetail.pageTitleSuffix"
+    ? `${name} ${ogAltJoiner !== "appDetail.ogImageAltJoiner" ? ogAltJoiner : "—"} ${ogAltSuffix}`
+    : `${name} — 1Panel App Store`;
+
+const breadcrumbAria = t(translations, "appDetail.breadcrumbAria");
+---
+
+<Layout
+  title={pageTitle}
+  description={metaDescription}
+  lang={lang}
+  canonicalUrl={canonicalUrl}
+  keywords={keywords}
+  ogType="website"
+  ogImageUrl={ogImageUrl}
+>
+  <Fragment slot="main">
+    <Header lang={lang} basePath={basePath} translations={translations} />
+    <main class="relative z-10 min-h-screen">
+      <div
+        class="relative overflow-hidden bg-gradient-to-br from-gray-50 to-white text-gray-900"
+      >
+        <BlogPageDecor />
+        <section
+          class="relative z-10 pt-6 pb-16 sm:pt-8 sm:pb-20 lg:pt-10 lg:pb-24"
+        >
+          <div class="container-custom max-w-6xl text-gray-900">
+            <nav
+              class="inline-flex flex-wrap items-center gap-x-2 gap-y-1 text-sm text-gray-600 mb-5 px-4 py-2.5 rounded-full bg-white/90 border border-gray-200/90 shadow-sm backdrop-blur-sm"
+              aria-label={breadcrumbAria !== "appDetail.breadcrumbAria"
+                ? breadcrumbAria
+                : "Breadcrumb"}
+            >
+              <a
+                href={prefix ? `${prefix}/` : "/"}
+                class="inline-flex items-center gap-1.5 hover:text-1panel transition-colors font-medium"
+              >
+                <Icon name="carbon:arrow-left" class="w-4 h-4" />
+                {t(translations, "appDetail.breadcrumbHome")}
+              </a>
+              <span class="text-gray-300 select-none" aria-hidden="true">/</span
+              >
+              <a
+                href={prefix ? `${prefix}/#appstore` : "/#appstore"}
+                class="inline-flex items-center gap-1.5 hover:text-1panel transition-colors font-medium"
+                >{t(translations, "appDetail.appsShort")}</a
+              >
+              <span class="text-gray-300 select-none" aria-hidden="true">/</span
+              >
+              <span class="text-gray-800 font-medium line-clamp-2">{name}</span>
+            </nav>
+
+            <div class="card p-6 sm:p-8 lg:p-10 shadow-lg border-gray-200/90">
+              <div
+                class="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 lg:items-start mb-6 pb-4 border-b border-gray-100"
+              >
+                <div class="lg:col-span-8 space-y-5">
+                  <div class="flex gap-4 sm:gap-6 items-stretch">
+                    <div
+                      class="w-[4.5rem] sm:w-24 shrink-0 self-stretch flex overflow-hidden shadow-sm min-h-[4.5rem] sm:min-h-[6rem]"
+                    >
+                      <img
+                        src={app.icon || defaultIcon}
+                        alt={`${name} logo`}
+                        class="h-full w-full min-h-0 object-contain"
+                        loading="eager"
+                        decoding="async"
+                        data-fallback-icon={defaultIcon}
+                        onerror="this.src=this.dataset.fallbackIcon || '/images/default-app-icon.png'"
+                      />
+                    </div>
+
+                    <div
+                      class="min-w-0 flex-1 flex flex-col gap-2 justify-center py-0.5"
+                    >
+                      <h1
+                        class="text-2xl sm:text-3xl lg:text-4xl font-bold leading-tight text-gray-900"
+                      >
+                        {name}
+                      </h1>
+                      {
+                        description && (
+                          <p class="text-base sm:text-lg text-gray-700 leading-relaxed">
+                            {description}
+                          </p>
+                        )
+                      }
+                      <div class="flex flex-wrap gap-2">
+                        {
+                          tags.map((tag) => (
+                            <span class="inline-flex items-center px-3 py-1 text-sm rounded-full bg-blue-50 text-blue-800 border border-blue-100">
+                              {tag}
+                            </span>
+                          ))
+                        }
+                        {
+                          versionLatest && (
+                            <span class="inline-flex items-center px-3 py-1 text-sm rounded-full bg-gray-100 text-gray-700 border border-gray-200">
+                              {t(translations, "appDetail.latestPrefix")}{" "}
+                              {versionLatest}
+                            </span>
+                          )
+                        }
+                      </div>
+                    </div>
+                  </div>
+
+                  <div
+                    class="flex flex-wrap gap-3 pt-2 border-t border-gray-100 lg:pt-0 lg:border-t-0"
+                  >
+                    {
+                      app.additionalProperties?.website && (
+                        <a
+                          href={app.additionalProperties.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="btn-secondary inline-flex items-center gap-2"
+                        >
+                          <Icon name="carbon:earth" class="w-4 h-4" />
+                          {t(translations, "appDetail.officialWebsite")}
+                        </a>
+                      )
+                    }
+                    {
+                      app.additionalProperties?.github && (
+                        <a
+                          href={app.additionalProperties.github}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="btn-secondary inline-flex items-center gap-2"
+                        >
+                          <Icon name="carbon:logo-github" class="w-4 h-4" />
+                          {t(translations, "appDetail.github")}
+                        </a>
+                      )
+                    }
+                    {
+                      app.additionalProperties?.document && (
+                        <a
+                          href={app.additionalProperties.document}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          class="btn-secondary inline-flex items-center gap-2"
+                        >
+                          <Icon name="carbon:document-blank" class="w-4 h-4" />
+                          {t(translations, "appDetail.documentation")}
+                        </a>
+                      )
+                    }
+                  </div>
+                </div>
+
+                <aside class="lg:col-span-4">
+                  <div
+                    class="rounded-2xl border border-gray-200 bg-gradient-to-br from-white to-gray-50/80 p-5 sm:p-6 shadow-sm lg:sticky lg:top-24"
+                  >
+                    <h3
+                      class="text-base font-semibold text-gray-900 mb-4 flex items-center gap-2"
+                    >
+                      <Icon
+                        name="carbon:settings"
+                        class="w-5 h-5 text-1panel"
+                      />
+                      {t(translations, "appDetail.detailsTitle")}
+                    </h3>
+                    <dl class="space-y-3 text-gray-700 text-sm">
+                      <div>
+                        <dt
+                          class="text-xs font-medium uppercase tracking-wide text-gray-500"
+                        >
+                          {t(translations, "appDetail.slug")}
+                        </dt>
+                        <dd class="font-mono text-sm mt-0.5 break-all">
+                          {slug}
+                        </dd>
+                      </div>
+                      <div>
+                        <dt
+                          class="text-xs font-medium uppercase tracking-wide text-gray-500"
+                        >
+                          {t(translations, "appDetail.category")}
+                        </dt>
+                        <dd class="mt-0.5">{primaryCategoryLabel}</dd>
+                      </div>
+                      {
+                        app.additionalProperties?.architectures?.length ? (
+                          <div>
+                            <dt class="text-xs font-medium uppercase tracking-wide text-gray-500">
+                              {t(translations, "appDetail.architectures")}
+                            </dt>
+                            <dd class="mt-0.5">
+                              {app.additionalProperties.architectures.join(
+                                ", ",
+                              )}
+                            </dd>
+                          </div>
+                        ) : null
+                      }
+                    </dl>
+                  </div>
+                </aside>
+              </div>
+
+              {
+                hasReadmeIntro && (
+                  <section
+                    class="mb-8 rounded-xl border border-gray-200/90 bg-gray-50/80 p-5 sm:p-6"
+                    aria-labelledby="app-intro-heading"
+                  >
+                    <div
+                      id="app-readme-text"
+                      class="blog-content app-readme-clamped rounded-lg"
+                      set:html={readmeHtml}
+                    />
+                    <button
+                      type="button"
+                      id="app-readme-toggle"
+                      class="mt-3 text-sm font-semibold text-1panel hover:text-blue-700 underline underline-offset-2 hidden"
+                      data-show-more={showMore}
+                      data-show-less={showLess}
+                    >
+                      {showMore}
+                    </button>
+                  </section>
+                )
+              }
+
+              <section
+                class="rounded-xl border border-gray-200 bg-white p-5 sm:p-6 shadow-sm"
+                aria-labelledby="deploy-heading"
+              >
+                <h2
+                  id="deploy-heading"
+                  class="text-lg font-semibold text-gray-900 mb-4 flex items-center gap-2"
+                >
+                  <Icon name="carbon:tool-box" class="w-5 h-5 text-1panel" />
+                  {deployHeading}
+                </h2>
+                <ol class="space-y-3 text-gray-700 list-decimal pl-5">
+                  <li>
+                    <p>Install 1Panel on your VPS (Linux server).</p>
+                    <pre
+                      class="overflow-auto rounded-md bg-gray-800 text-gray-100 text-sm p-3 my-2 select-all"><code># Copy and paste the following command into your terminal and press Enter
+bash -c "$(curl -sSL https://resource.1panel.pro/v2/quick_start.sh)"</code></pre>
+                  </li>
+                  <li>
+                    <p>
+                      Open the 1Panel dashboard, go to <strong>App Store</strong>.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Search for <strong>{name}</strong> and click <strong
+                        >Install</strong
+                      >.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Fill in the required parameters (ports, admin credentials,
+                      storage path), then confirm.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      After deployment, create a website/reverse proxy in 1Panel
+                      if you want a custom domain.
+                    </p>
+                  </li>
+                  <li>
+                    <p>
+                      Enable HTTPS (recommended) and keep the app updated from the
+                      App Store.
+                    </p>
+                  </li>
+                </ol>
+              </section>
+            </div>
+          </div>
+        </section>
+      </div>
+    </main>
+    <Footer lang={lang} basePath={basePath} translations={translations} />
+  </Fragment>
+
+  <Fragment slot="head">
+    <meta property="og:site_name" content="1Panel" />
+    <meta property="og:locale" content={ogLocaleForLang(lang)} />
+    {
+      ogImageUrl && (
+        <meta property="og:image:alt" content={ogImageAlt} />
+      )
+    }
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLdGraph)} />
+  </Fragment>
+</Layout>
+
+<style>
+  #app-readme-text.blog-content > :first-child {
+    margin-top: 0 !important;
+  }
+  #app-readme-text.blog-content h2:first-of-type,
+  #app-readme-text.blog-content h3:first-of-type {
+    margin-top: 0;
+  }
+
+  .app-readme-clamped {
+    overflow: hidden;
+    max-height: calc(1.75em * 10);
+    position: relative;
+  }
+  .app-readme-clamped::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 3rem;
+    pointer-events: none;
+    background: linear-gradient(
+      to bottom,
+      rgba(249, 250, 251, 0),
+      rgb(249 250 251)
+    );
+  }
+  .app-readme-expanded {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+  .app-readme-expanded::after {
+    display: none;
+  }
+</style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const textEl = document.getElementById("app-readme-text");
+    const toggleBtn = document.getElementById("app-readme-toggle");
+    if (!textEl || !toggleBtn) return;
+
+    const showMore =
+      toggleBtn.getAttribute("data-show-more") || "Show more";
+    const showLess =
+      toggleBtn.getAttribute("data-show-less") || "Show less";
+
+    const measure = () => {
+      textEl.classList.remove("app-readme-clamped");
+      textEl.classList.add("app-readme-expanded");
+      const fullH = textEl.scrollHeight;
+      textEl.classList.remove("app-readme-expanded");
+      textEl.classList.add("app-readme-clamped");
+      const clampedH = textEl.clientHeight;
+      if (fullH > clampedH + 4) {
+        toggleBtn.classList.remove("hidden");
+      }
+    };
+
+    measure();
+
+    toggleBtn.addEventListener("click", () => {
+      const expanded = textEl.classList.contains("app-readme-expanded");
+      if (expanded) {
+        textEl.classList.remove("app-readme-expanded");
+        textEl.classList.add("app-readme-clamped");
+        toggleBtn.textContent = showMore;
+      } else {
+        textEl.classList.add("app-readme-expanded");
+        textEl.classList.remove("app-readme-clamped");
+        toggleBtn.textContent = showLess;
+      }
+    });
+  });
+</script>

@@ -1,0 +1,32 @@
+---
+import AppStoreAppPage from "../../../components/apps/AppStoreAppPage.astro";
+import type { Locale } from "../../../i18n/config";
+import { NON_DEFAULT_LOCALES } from "../../../i18n/config";
+import { getTranslations } from "../../../i18n/utils";
+import { getAppStoreApps, type AppStoreAppItem } from "../../../lib/app-store-detail";
+
+export function getStaticPaths() {
+  const apps = getAppStoreApps();
+  const paths: {
+    params: { lang: string; app: string };
+    props: { app: AppStoreAppItem };
+  }[] = [];
+  for (const lang of NON_DEFAULT_LOCALES) {
+    for (const app of apps) {
+      const key = app?.additionalProperties?.key;
+      if (!key) continue;
+      paths.push({
+        params: { lang, app: String(key) },
+        props: { app },
+      });
+    }
+  }
+  return paths;
+}
+
+const lang = Astro.params.lang as Locale;
+const { app } = Astro.props as { app: AppStoreAppItem };
+const translations = getTranslations(lang);
+---
+
+<AppStoreAppPage app={app} lang={lang} translations={translations} />

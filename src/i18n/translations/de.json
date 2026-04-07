@@ -194,6 +194,27 @@
     "alternativeBadge": "Alternative",
     "viewMoreApps": "Weitere Apps im 1Panel App-Store entdecken"
   },
+  "appDetail": {
+    "pageTitleSuffix": "1Panel App Store",
+    "breadcrumbHome": "Start",
+    "appsShort": "Apps",
+    "breadcrumbAria": "Brotkrümel-Navigation",
+    "jsonLdHome": "Start",
+    "officialWebsite": "Offizielle Website",
+    "github": "GitHub",
+    "documentation": "Dokumentation",
+    "detailsTitle": "App-Details",
+    "slug": "Slug",
+    "category": "Kategorie",
+    "architectures": "Architekturen",
+    "latestPrefix": "Aktuell:",
+    "showMore": "Mehr anzeigen",
+    "showLess": "Weniger anzeigen",
+    "deployHeading": "{name} mit 1Panel bereitstellen",
+    "ogImageAltJoiner": "—",
+    "seoMetaTemplate": "{name} auf Ihrem Linux-Server mit 1Panel bereitstellen. {summary} Ein-Klick-Installation aus dem 1Panel App Store.",
+    "seoSummaryFallback": "{name} hilft Ihnen, Dienste auf Linux-Servern auszuführen und zu verwalten."
+  },
   "floatingNews": {
     "title": "🚀 OpenClaw mit einem Klick bereitstellen",
     "subtitle": "Ihr eigener KI-Assistent rund um die Uhr 🤖"

@@ -201,6 +201,27 @@
     "alternativeBadge": "대안",
     "viewMoreApps": "1Panel 앱 스토어에서 더 많은 앱 발견하기"
   },
+  "appDetail": {
+    "pageTitleSuffix": "1Panel 앱 스토어",
+    "breadcrumbHome": "홈",
+    "appsShort": "앱",
+    "breadcrumbAria": "breadcrumb",
+    "jsonLdHome": "홈",
+    "officialWebsite": "공식 웹사이트",
+    "github": "GitHub",
+    "documentation": "문서",
+    "detailsTitle": "앱 정보",
+    "slug": "슬러그",
+    "category": "카테고리",
+    "architectures": "아키텍처",
+    "latestPrefix": "최신:",
+    "showMore": "더 보기",
+    "showLess": "접기",
+    "deployHeading": "1Panel로 {name} 배포",
+    "ogImageAltJoiner": "—",
+    "seoMetaTemplate": "1Panel로 Linux 서버에 {name}을(를) 배포하세요. {summary} 1Panel 앱 스토어에서 원클릭 설치.",
+    "seoSummaryFallback": "{name}은(는) Linux 서버에서 서비스를 실행하고 관리하는 데 도움이 됩니다."
+  },
   "floatingNews": {
     "title": "🚀 원클릭 OpenClaw 배포",
     "subtitle": "나만의 AI 어시스턴트 맞춤 설정 🤖"

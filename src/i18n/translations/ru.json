@@ -201,6 +201,27 @@
     "alternativeBadge": "Альтернатива",
     "viewMoreApps": "Больше приложений в 1Panel App Store"
   },
+  "appDetail": {
+    "pageTitleSuffix": "Магазин приложений 1Panel",
+    "breadcrumbHome": "Главная",
+    "appsShort": "Приложения",
+    "breadcrumbAria": "Навигационная цепочка",
+    "jsonLdHome": "Главная",
+    "officialWebsite": "Официальный сайт",
+    "github": "GitHub",
+    "documentation": "Документация",
+    "detailsTitle": "Сведения о приложении",
+    "slug": "Идентификатор",
+    "category": "Категория",
+    "architectures": "Архитектуры",
+    "latestPrefix": "Версия:",
+    "showMore": "Показать ещё",
+    "showLess": "Свернуть",
+    "deployHeading": "Развёртывание {name} в 1Panel",
+    "ogImageAltJoiner": "—",
+    "seoMetaTemplate": "Разверните {name} на Linux-сервере с 1Panel. {summary} Установка в один клик из магазина приложений 1Panel.",
+    "seoSummaryFallback": "{name} помогает запускать и управлять сервисами на Linux-серверах."
+  },
   "floatingNews": {
     "title": "🚀 Развёртывание OpenClaw в один клик",
     "subtitle": "Настройте своего ИИ-помощника 🤖"

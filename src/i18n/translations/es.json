@@ -201,6 +201,27 @@
     "alternativeBadge": "Alternativa",
     "viewMoreApps": "Descubre más aplicaciones en la 1Panel App Store"
   },
+  "appDetail": {
+    "pageTitleSuffix": "Tienda de apps 1Panel",
+    "breadcrumbHome": "Inicio",
+    "appsShort": "Apps",
+    "breadcrumbAria": "Migas de pan",
+    "jsonLdHome": "Inicio",
+    "officialWebsite": "Sitio web oficial",
+    "github": "GitHub",
+    "documentation": "Documentación",
+    "detailsTitle": "Detalles de la app",
+    "slug": "Slug",
+    "category": "Categoría",
+    "architectures": "Arquitecturas",
+    "latestPrefix": "Última:",
+    "showMore": "Ver más",
+    "showLess": "Ver menos",
+    "deployHeading": "Desplegar {name} con 1Panel",
+    "ogImageAltJoiner": "—",
+    "seoMetaTemplate": "Despliega {name} en tu servidor Linux con 1Panel. {summary} Instalación en un clic desde la tienda de aplicaciones de 1Panel.",
+    "seoSummaryFallback": "{name} te ayuda a ejecutar y gestionar servicios en servidores Linux."
+  },
   "floatingNews": {
     "title": "🚀 Despliegue OpenClaw en un clic",
     "subtitle": "Personaliza tu propio asistente de IA 🤖"
