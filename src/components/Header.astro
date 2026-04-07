@@ -22,41 +22,45 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
         <a
           href="/openclaw.html"
           target="_blank"
-          class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group"
+          class="relative inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group"
         >
-          OpenClaw一体机
-          <span class="relative -left-1 bottom-2"> 🔥 </span>
+          <span class="nav-link-label" data-text="OpenClaw一体机 🔥">
+            <span class="nav-link-content">
+              <span>OpenClaw一体机</span>
+              <span aria-hidden="true" class="nav-link-flame">🔥</span>
+            </span>
+          </span>
         </a>
         <a
           href="https://www.lxware.cn/1panel?code=bunus"
           target="_blank"
-          class="relative text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group"
+          class="relative inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group"
         >
-          版本对比
+          <span class="nav-link-label" data-text="版本对比">版本对比</span>
         </a>
         <a
           href="https://apps.fit2cloud.com/1panel"
           target="_blank"
-          class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          >应用商店</a
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+          ><span class="nav-link-label" data-text="应用商店">应用商店</span></a
         >
         <a
           href="https://bbs.fit2cloud.com/c/1p/"
           target="_blank"
-          class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          >论坛求助</a
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+          ><span class="nav-link-label" data-text="论坛求助">论坛求助</span></a
         >
         <a
           href="https://1panel.cn/docs"
           target="_blank"
-          class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          >使用手册</a
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+          ><span class="nav-link-label" data-text="使用手册">使用手册</span></a
         >
         <a
           href="https://1panel.pro/"
           target="_blank"
-          class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          >English</a
+          class="inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+          ><span class="nav-link-label" data-text="English">English</span></a
         >
         <div class="flex items-center space-x-4">
           <a
@@ -105,8 +109,12 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
           href="/openclaw.html"
           target="_blank"
           class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          >OpenClaw一体机
-          <span class="relative -left-1 bottom-2"> 🔥 </span>
+          ><span class="nav-link-label" data-text="OpenClaw一体机 🔥">
+            <span class="nav-link-content">
+              <span>OpenClaw一体机</span>
+              <span aria-hidden="true" class="nav-link-flame">🔥</span>
+            </span>
+          </span>
         </a>
         <a
           href="https://www.lxware.cn/1panel?code=bunus"
@@ -161,6 +169,41 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
     </div>
   </nav>
 </header>
+
+<style>
+  .nav-link-label {
+    display: inline-grid;
+    align-items: center;
+  }
+
+  .nav-link-content,
+  .nav-link-label::after {
+    grid-area: 1 / 1;
+  }
+
+  .nav-link-content {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+  }
+
+  .nav-link-label::after {
+    content: attr(data-text);
+    font-weight: 700;
+    white-space: pre;
+    visibility: hidden;
+    height: 0;
+    overflow: hidden;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .nav-link-flame {
+    display: inline-flex;
+    align-items: center;
+    line-height: 1;
+  }
+</style>
 
 <script>
   // Mobile menu toggle
