@@ -173,7 +173,9 @@
     "proEdition": "Редакция Pro",
     "perpetualLicense": "Бессрочная лицензия (V2)",
     "subscriptionLicense": "Подписка",
-    "mostPopular": "Популярный выбор"
+    "mostPopular": "Популярный выбор",
+    "metaTitle": "Цены 1Panel — бесплатный уровень · Pro от $80/год",
+    "metaDescription": "1Panel OSS навсегда бесплатен: полноценная open-source панель для VPS. Pro добавляет управление несколькими узлами, агентов OpenClaw, расширенный WAF и приоритетную поддержку от $80 в год за узел. Сравните OSS и Pro и разверните на Linux."
   },
   "selfHosted": {
     "metaTitle": "1Panel Self-Hosted решение — полный контроль над VPS",

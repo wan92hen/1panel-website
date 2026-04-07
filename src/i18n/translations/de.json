@@ -166,7 +166,9 @@
     "proEdition": "Pro-Edition",
     "perpetualLicense": "Dauerlizenz (V2)",
     "subscriptionLicense": "Abonnement",
-    "mostPopular": "Am beliebtesten"
+    "mostPopular": "Am beliebtesten",
+    "metaTitle": "1Panel Preise — Kostenlose Stufe · Pro ab 80 $/Jahr",
+    "metaDescription": "1Panel OSS bleibt für immer kostenlos: vollständiges Open-Source-VPS-Panel. Pro ergänzt Multi-Node-Verwaltung, OpenClaw-Agents, erweiterte WAF und Prioritätssupport ab 80 $ pro Jahr und Node. OSS und Pro vergleichen und auf Linux bereitstellen."
   },
   "selfHosted": {
     "metaTitle": "1Panel Self-Hosting — Volle Kontrolle über Ihren VPS",

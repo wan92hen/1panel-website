@@ -173,7 +173,9 @@
     "proEdition": "Proエディション",
     "perpetualLicense": "永続ライセンス (V2)",
     "subscriptionLicense": "サブスクリプション",
-    "mostPopular": "最も人気"
+    "mostPopular": "最も人気",
+    "metaTitle": "1Panel 料金 — 無料プランあり · Pro は年額 $80〜",
+    "metaDescription": "1Panel OSS は永久無料のオープンソース VPS パネル。Pro はマルチノード管理、OpenClaw エージェント、高度な WAF、優先サポートをノードあたり年額 $80〜で提供。OSS と Pro を比較し、Linux サーバーで始められます。"
   },
   "selfHosted": {
     "metaTitle": "1Panel セルフホストソリューション - 1PanelでVPSをコントロール",

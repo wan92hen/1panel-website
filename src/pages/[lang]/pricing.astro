@@ -14,9 +14,8 @@ export function getStaticPaths() {
 const { lang } = Astro.params;
 const translations = getTranslations(lang ?? 'en');
 const basePath = getBasePath(lang);
-const title = `${t(translations, 'header.pricing')} - 1Panel`;
-const description =
-  'Compare 1Panel OSS and Pro pricing for VPS and Linux server management. Start free, then scale with annual or perpetual node-based licenses.';
+const title = t(translations, 'pricing.metaTitle');
+const description = t(translations, 'pricing.metaDescription');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 ---
 

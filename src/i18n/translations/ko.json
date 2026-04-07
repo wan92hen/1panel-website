@@ -173,7 +173,9 @@
     "proEdition": "Pro 에디션",
     "perpetualLicense": "영구 라이선스 (V2)",
     "subscriptionLicense": "구독 라이선스",
-    "mostPopular": "가장 인기"
+    "mostPopular": "가장 인기",
+    "metaTitle": "1Panel 요금 — 무료 플랜 · Pro 연 $80부터",
+    "metaDescription": "1Panel OSS는 영구 무료 오픈소스 VPS 패널입니다. Pro는 멀티 노드 관리, OpenClaw 에이전트, 고급 WAF, 우선 지원을 노드당 연 $80부터 제공합니다. OSS와 Pro를 비교해 Linux 서버에 배포하세요."
   },
   "selfHosted": {
     "metaTitle": "1Panel 셀프 호스팅 솔루션 - 1Panel로 VPS 제어",

@@ -173,7 +173,9 @@
     "proEdition": "Pro sürümü",
     "perpetualLicense": "Süresiz lisans (V2)",
     "subscriptionLicense": "Abonelik lisansı",
-    "mostPopular": "En popüler"
+    "mostPopular": "En popüler",
+    "metaTitle": "1Panel Fiyatlandırma — Ücretsiz sürüm · Pro yıllık 80 $'dan",
+    "metaDescription": "1Panel OSS sonsuza kadar ücretsiz: tam açık kaynak VPS paneli. Pro, çoklu düğüm yönetimi, OpenClaw ajanları, gelişmiş WAF ve öncelikli desteği düğüm başına yıllık 80 $'dan sunar. OSS ile Pro'yu karşılaştırın ve Linux sunucunuza kurun."
   },
   "selfHosted": {
     "metaTitle": "1Panel Self-Hosted Çözüm - VPS'inizi 1Panel ile yönetin",

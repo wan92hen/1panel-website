@@ -173,7 +173,9 @@
     "proEdition": "Edición Pro",
     "perpetualLicense": "Licencia perpetua (V2)",
     "subscriptionLicense": "Suscripción",
-    "mostPopular": "Más popular"
+    "mostPopular": "Más popular",
+    "metaTitle": "Precios 1Panel — Nivel gratuito · Pro desde 80 $/año",
+    "metaDescription": "1Panel OSS es gratis para siempre: panel VPS open source completo. Pro añade gestión multi-nodo, agentes OpenClaw, WAF avanzado y soporte prioritario desde 80 $/año por nodo. Compare OSS y Pro e impleméntelo en su Linux."
   },
   "selfHosted": {
     "metaTitle": "1Panel Solución Self-Hosted - Controla tu VPS con 1Panel",

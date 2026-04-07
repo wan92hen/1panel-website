@@ -10,9 +10,8 @@ import '../styles/global.css';
 const lang = 'en';
 const translations = getTranslations(lang);
 const basePath = getBasePath(undefined);
-const title = '1Panel Pricing | Open-Source VPS Control Panel Plans';
-const description =
-  '1Panel is free forever as open source. Pro starts at $80/year — unlock unlimited AI agents, multi-node management, advanced WAF, and priority support. Trusted by 1.5M+ installs.';
+const title = t(translations, 'pricing.metaTitle');
+const description = t(translations, 'pricing.metaDescription');
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
 const pricingFaqJsonLd = {
   '@context': 'https://schema.org',

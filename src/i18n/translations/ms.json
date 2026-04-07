@@ -173,7 +173,9 @@
     "proEdition": "Edisi Pro",
     "perpetualLicense": "Lesen kekal (V2)",
     "subscriptionLicense": "Langganan",
-    "mostPopular": "Paling popular"
+    "mostPopular": "Paling popular",
+    "metaTitle": "Harga 1Panel — Percuma tersedia · Pro dari $80/tahun",
+    "metaDescription": "1Panel OSS percuma selama-lamanya: panel VPS sumber terbuka penuh. Pro menambah pengurusan multi-nod, ejen OpenClaw, WAF lanjutan dan sokongan keutamaan dari $80/tahun setiap nod. Bandingkan OSS vs Pro dan laksana pada pelayan Linux anda."
   },
   "selfHosted": {
     "metaTitle": "1Panel Penyelesaian Self-Hosted - Kawal VPS anda dengan 1Panel",

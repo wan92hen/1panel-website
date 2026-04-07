@@ -173,7 +173,9 @@
     "proEdition": "Pro 版",
     "perpetualLicense": "永久授權（V2）",
     "subscriptionLicense": "訂閱授權",
-    "mostPopular": "最受歡迎"
+    "mostPopular": "最受歡迎",
+    "metaTitle": "1Panel 定價 — 免費方案 · Pro 每年 $80 起",
+    "metaDescription": "1Panel OSS 永久免費：完整開源 VPS 控制面板。Pro 提供多節點管理、OpenClaw 代理、進階 WAF 與優先支援，每節點每年 $80 起。比較 OSS 與 Pro，並在 Linux 伺服器上部署。"
   },
   "selfHosted": {
     "metaTitle": "1Panel 自託管方案 - 用 1Panel 掌控你的 VPS",
