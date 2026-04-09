@@ -19,26 +19,50 @@ const pricingFaqJsonLd = {
   mainEntity: [
     {
       '@type': 'Question',
-      name: 'Is there a free trial for 1Panel Pro?',
+      name: t(translations, 'pricing.faq.trialQ'),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Yes. You can request a 30-day free trial by emailing hi@lxware.hk.',
+        text: t(translations, 'pricing.faq.trialA'),
       },
     },
     {
       '@type': 'Question',
-      name: 'Can one license be used on multiple devices at the same time?',
+      name: t(translations, 'pricing.faq.subVsPerpQ'),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'No. One license can be bound to one device at a time, and can be unbound and rebound.',
+        text: t(translations, 'pricing.faq.subVsPerpA'),
       },
     },
     {
       '@type': 'Question',
-      name: 'How does multi-node capability work in Pro Edition?',
+      name: t(translations, 'pricing.faq.v3Q'),
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'Node Management in Pro provides a unified console for multiple servers, including node switching, monitoring, updates, and file transfer.',
+        text: t(translations, 'pricing.faq.v3A'),
+      },
+    },
+    {
+      '@type': 'Question',
+      name: t(translations, 'pricing.faq.devicesQ'),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: t(translations, 'pricing.faq.devicesA'),
+      },
+    },
+    {
+      '@type': 'Question',
+      name: t(translations, 'pricing.faq.multiNodeQ'),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: t(translations, 'pricing.faq.multiNodeA').replace('NODE_DOCS_LINK', 'Node Management documentation'),
+      },
+    },
+    {
+      '@type': 'Question',
+      name: t(translations, 'pricing.faq.lxwareQ'),
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: t(translations, 'pricing.faq.lxwareA').replace(/\{\{lxware\}\}/g, 'Lxware'),
       },
     },
   ],

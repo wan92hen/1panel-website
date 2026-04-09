@@ -1,8 +1,8 @@
 ---
-// Pricing section for 1Panel website
 import { Icon } from 'astro-icon/components';
 import { t, getTranslations } from '../i18n/utils';
 import type { TranslationDict } from '../i18n/utils';
+import { DEFAULT_LOCALE } from '../i18n/config';
 
 interface Props {
   lang?: string;
@@ -10,14 +10,38 @@ interface Props {
   translations?: TranslationDict;
 }
 
-const { translations: rawTranslations } = Astro.props;
-const translations = rawTranslations && Object.keys(rawTranslations || {}).length > 0 ? rawTranslations! : getTranslations('en');
+const { lang: rawLang, translations: rawTranslations } = Astro.props;
+const lang = rawLang ?? DEFAULT_LOCALE;
+const translations =
+  rawTranslations && Object.keys(rawTranslations || {}).length > 0
+    ? rawTranslations!
+    : getTranslations('en');
+const enT = getTranslations('en');
+
+/** New pricing copy lives in en.json; other locales fall back to English until translated. */
+function tr(path: string): string {
+  const localized = t(translations, path);
+  if (localized !== path) return localized;
+  return t(enT, path);
+}
+
+/** 30-day Pro trial — email Lxware (forms e.g. Tally can replace this later). */
+const trialMailto = `mailto:hi@lxware.hk?subject=${encodeURIComponent('1Panel Pro: 30-Day Free Trial Request')}`;
+const docsBase = 'https://1panel.pro/docs';
+const nodeDocsUrl = `${docsBase}/v2/user_manual/xpack/node/`;
+const installUrl = `${docsBase}/v2/installation/online_installation/`;
+const subBuyUrl =
+  'https://www.lxware.hk/products/1panel-pro-edition-subscription-license';
+const perpBuyUrl = 'https://www.lxware.hk/products/1panel-professional-edition';
+const lxwareUrl = 'https://lxware.hk';
+const enterpriseMail =
+  'mailto:hi@lxware.hk?subject=' +
+  encodeURIComponent('1Panel Enterprise / Volume Pricing');
 ---
 
 <section id="pricing" class="section-padding bg-gradient-to-br from-gray-50 to-white">
   <div class="container-custom">
-    <!-- Section Header -->
-    <div class="text-center mb-20">
+    <div class="text-center mb-12 lg:mb-16">
       <h2 class="fade-in-up text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
         {t(translations, 'pricing.title')}
         <span class="text-1panel-gradient">{t(translations, 'pricing.titleHighlight')}</span>
@@ -27,586 +51,407 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
       </p>
     </div>
 
-    <!-- Pricing Cards -->
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto relative">
-      
-      <!-- OSS Edition -->
-      <div class="fade-in-up card group hover:scale-105 transition-transform duration-300" style="animation-delay: 0.3s;">
-        <div class="text-center p-4">
-          <!-- Plan Header -->
-          <div class="mb-6">
-            <div class="flex items-center justify-center space-x-2 font-medium text-gray-500 mb-2">
-              <Icon name="carbon:logo-github" class="w-5 h-5 flex-shrink-0" />
+    <!-- Social proof bar -->
+    <div
+      class="max-w-5xl mx-auto mb-10 rounded-xl border border-white/[0.07] bg-slate-950 px-4 py-4 sm:px-8 sm:py-5 shadow-lg"
+      style="background-image: linear-gradient(rgba(255,255,255,0.03), rgba(255,255,255,0.03));"
+    >
+      <div class="flex flex-wrap items-center justify-center gap-x-6 gap-y-3 text-sm sm:text-[13.5px] text-slate-400">
+        <div class="flex items-center gap-2">
+          <span class="font-mono font-semibold text-white tabular-nums">{tr('pricing.proof.installNum')}</span>
+          <span class="text-slate-400">{tr('pricing.proof.installLabel')}</span>
+        </div>
+        <span class="hidden sm:inline text-slate-600" aria-hidden="true">·</span>
+        <div class="flex items-center gap-2">
+          <span class="font-mono font-semibold text-white tabular-nums">{tr('pricing.proof.teamsNum')}</span>
+          <span class="text-slate-400">{tr('pricing.proof.teamsLabel')}</span>
+        </div>
+        <span class="hidden sm:inline text-slate-600" aria-hidden="true">·</span>
+        <div class="flex items-center gap-2">
+          <span class="font-mono font-semibold text-white tabular-nums">{tr('pricing.proof.ratingNum')}</span>
+          <span class="text-slate-400">{tr('pricing.proof.ratingLabel')}</span>
+        </div>
+        <span class="hidden sm:inline text-slate-600" aria-hidden="true">·</span>
+        <div class="flex items-center gap-2">
+          <span class="font-mono font-semibold text-white tabular-nums">{tr('pricing.proof.trialNum')}</span>
+          <span class="text-slate-400">{tr('pricing.proof.trialLabel')}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trial banner -->
+    <div
+      class="max-w-5xl mx-auto mb-10 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 rounded-xl border border-gray-200 bg-gray-100/80 px-4 py-4 sm:px-6"
+    >
+      <p class="text-sm sm:text-[15px] text-gray-800 text-left leading-relaxed flex-1">
+        {tr('pricing.trialBanner.text')}
+      </p>
+      <a
+        href={trialMailto}
+        class="shrink-0 inline-flex justify-center items-center px-5 py-2.5 rounded-lg bg-1panel text-white font-semibold text-sm hover:opacity-90 transition-opacity"
+      >
+        {tr('pricing.trialBanner.cta')}
+      </a>
+    </div>
+
+    <!-- Plan cards: OSS | Subscription (featured) | Perpetual -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-7xl mx-auto relative items-stretch">
+      <!-- OSS -->
+      <div
+        class="fade-in-up card group hover:shadow-xl transition-shadow duration-300 flex flex-col h-full"
+        style="animation-delay: 0.3s;"
+      >
+        <div class="p-6 flex flex-col flex-1">
+          <div class="text-center mb-4">
+            <div class="flex items-center justify-center gap-2 text-gray-500 text-sm font-medium mb-2">
+              <Icon name="carbon:logo-github" class="w-5 h-5 shrink-0" />
               <span>{t(translations, 'pricing.ossEdition')}</span>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">{t(translations, 'pricing.freeToUse')}</h3>
-            <p class="text-gray-600">{t(translations, 'pricing.openSource')}</p>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">{t(translations, 'pricing.freeToUse')}</h3>
+            <div class="text-4xl font-bold text-gray-900 my-3">$0</div>
+            <p class="text-sm text-gray-600 min-h-[2.5rem]">{tr('pricing.ossCardDesc')}</p>
           </div>
-
-          <!-- Features -->
-          <ul class="space-y-4 mb-8 text-left">
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">{t(translations, 'pricing.noCost')}</span>
-            </li>
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">{t(translations, 'pricing.validated')}</span>
-            </li>
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">{t(translations, 'pricing.communitySupport')}</span>
-            </li>
+          <hr class="border-gray-200 my-4" />
+          <ul class="space-y-3 mb-6 text-left flex-1 text-sm text-gray-800">
+            {['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7'].map((k) => (
+              <li class="flex gap-2">
+                <Icon name="mdi:check" class="w-5 h-5 text-gray-500 shrink-0 mt-0.5" />
+                <span>{tr(`pricing.ossBullets.${k}`)}</span>
+              </li>
+            ))}
           </ul>
-
-          <!-- CTA Button -->
-          <a 
-            href="https://1panel.pro/docs/v2/installation/online_installation/" 
+          <a
+            href={installUrl}
             target="_blank"
-            class="w-full inline-flex justify-center items-center px-6 py-3 bg-gray-100 border border-gray-300 text-gray-700 rounded-lg font-medium transition-all duration-300 hover:bg-gray-200 hover:border-gray-400"
+            rel="noopener noreferrer"
+            class="w-full inline-flex justify-center items-center px-6 py-3 rounded-lg border border-gray-200 text-gray-700 font-medium hover:bg-gray-50 transition-colors"
           >
             {t(translations, 'pricing.quickStart')}
           </a>
         </div>
       </div>
 
-      <!-- Pro Edition - Perpetual -->
-      <div class="fade-in-up card group hover:scale-105 transition-transform duration-300 relative transform scale-105" style="animation-delay: 0.4s;">
-        <!-- Popular Badge -->
-        <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
-          <span class="bg-1panel-gradient text-white px-4 py-2 rounded-full text-sm font-medium shadow-lg">
+      <!-- Subscription — Most Popular -->
+      <div
+        class="fade-in-up relative rounded-xl border-2 border-1panel/35 bg-white shadow-xl shadow-gray-900/5 flex flex-col h-full lg:scale-[1.02] z-[1]"
+        style="animation-delay: 0.4s;"
+      >
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+          <span class="bg-1panel text-white px-4 py-1.5 rounded-full text-xs font-bold uppercase tracking-wide shadow-md whitespace-nowrap">
             {t(translations, 'pricing.mostPopular')}
           </span>
         </div>
-        
-        <div class="text-center p-4">
-          <!-- Plan Header -->
-          <div class="mb-6">
-            <div class="flex items-center justify-center space-x-2 font-medium text-gray-500 mb-2">
-              <Icon name="mdi:diamond-stone" class="w-5 h-5 text-yellow-500 flex-shrink-0" />
+        <div class="p-6 pt-8 flex flex-col flex-1">
+          <div class="text-center mb-4">
+            <div class="flex items-center justify-center gap-2 text-gray-500 text-sm font-medium mb-2">
+              <Icon name="mdi:diamond-stone" class="w-5 h-5 text-gray-400 shrink-0" />
               <span>{t(translations, 'pricing.proEdition')}</span>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">{t(translations, 'pricing.perpetualLicense')}</h3>
-            <div class="mb-6">
-              <div class="flex items-baseline justify-center">
-                <span class="text-5xl font-bold text-1panel">$200</span>
-                <span class="text-gray-600 text-sm ml-2">/ per license</span>
-              </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">{t(translations, 'pricing.subscriptionLicense')}</h3>
+            <div class="flex items-baseline justify-center gap-1 my-3">
+              <span class="text-5xl font-bold text-gray-900">$80</span>
+              <span class="text-gray-500 text-sm">/ year</span>
             </div>
+            <p class="text-sm text-gray-600 min-h-[2.5rem]">{tr('pricing.subscriptionCardDesc')}</p>
           </div>
-
-          <!-- Features -->
-          <ul class="space-y-4 mb-8 text-left">
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">All features of OSS Edition</span>
-            </li>
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">Enhanced features</span>
-            </li>
-            <li class="flex items-center">
-                            <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-
-              <span class="text-gray-700">Never expires</span>
-            </li>
-            <li class="flex items-center">
-                            <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-
-              <span class="text-gray-700">Costs less over time</span>
-            </li>
-            <li class="flex items-center">
-                            <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-
-              <span class="text-gray-700">Volume discount</span>
-            </li>
+          <hr class="border-gray-200 my-4" />
+          <ul class="space-y-3 mb-4 text-left flex-1 text-sm text-gray-800">
+            {['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9'].map((k, idx) => (
+              <li class="flex gap-2">
+                {idx === 0 || idx >= 7 ? (
+                  <Icon name="mdi:check" class="w-5 h-5 text-gray-500 shrink-0 mt-0.5" />
+                ) : (
+                  <span class="text-gray-400 shrink-0 mt-0.5" aria-hidden="true">★</span>
+                )}
+                <span set:html={tr(`pricing.subBullets.${k}`)} />
+              </li>
+            ))}
           </ul>
-
-          <!-- CTA Button -->
-          <a 
-            href="https://www.lxware.hk/products/1panel-professional-edition" 
+          <a
+            href={subBuyUrl}
             target="_blank"
-            class="buy-perpetual-license-button w-full inline-flex justify-center items-center px-6 py-3 bg-1panel-gradient text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
+            rel="noopener noreferrer"
+            class="buy-subscription-license-button w-full inline-flex justify-center items-center px-6 py-3 bg-1panel text-white rounded-lg font-semibold hover:opacity-90 transition-opacity"
           >
-            Buy now
+            {tr('pricing.buySubscriptionCta')}
           </a>
+          <a
+            href={trialMailto}
+            class="w-full mt-2 inline-flex justify-center items-center px-6 py-3 rounded-lg border border-gray-200 text-gray-600 font-medium hover:bg-gray-50 transition-colors text-sm"
+          >
+            {tr('pricing.tryFreeCta')}
+          </a>
+          <p
+            class="text-[11px] text-center text-gray-500 mt-3 leading-snug"
+            set:html={tr('pricing.trustLxwareLine').replace(
+              '{{lxware}}',
+              `<a href="${lxwareUrl}" class="text-1panel hover:underline" target="_blank" rel="noopener noreferrer">Lxware</a>`,
+            )}
+          />
         </div>
       </div>
 
-      <!-- Pro Edition - Subscription -->
-      <div class="fade-in-up card group hover:scale-105 transition-transform duration-300 relative transform scale-105" style="animation-delay: 0.5s;">
-        <div class="text-center p-4">
-          <!-- Plan Header -->
-          <div class="mb-6">
-            <div class="flex items-center justify-center space-x-2 font-medium text-gray-500 mb-2">
-              <Icon name="mdi:diamond-stone" class="w-5 h-5 text-yellow-500 flex-shrink-0" />
+      <!-- Perpetual — Best value -->
+      <div
+        class="fade-in-up card group hover:shadow-xl transition-shadow duration-300 flex flex-col h-full relative"
+        style="animation-delay: 0.5s;"
+      >
+        <div class="absolute -top-3 left-1/2 -translate-x-1/2 z-10">
+          <span class="bg-gray-100 text-gray-700 border border-gray-200 px-4 py-1.5 rounded-full text-[10px] font-bold uppercase tracking-wide whitespace-nowrap">
+            {tr('pricing.bestValueLongTerm')}
+          </span>
+        </div>
+        <div class="p-6 pt-8 flex flex-col flex-1">
+          <div class="text-center mb-4">
+            <div class="flex items-center justify-center gap-2 text-gray-500 text-sm font-medium mb-2">
+              <Icon name="mdi:diamond-stone" class="w-5 h-5 text-gray-400 shrink-0" />
               <span>{t(translations, 'pricing.proEdition')}</span>
             </div>
-            <h3 class="text-2xl font-bold text-gray-800 mb-4">{t(translations, 'pricing.subscriptionLicense')}</h3>
-            <div class="mb-6">
-              <div class="flex items-baseline justify-center">
-                <span class="text-5xl font-bold text-1panel">$80</span>
-                <span class="text-gray-600 text-sm ml-2">/ per year</span>
-              </div>
+            <h3 class="text-2xl font-bold text-gray-800 mb-1">{t(translations, 'pricing.perpetualLicense')}</h3>
+            <div class="flex items-baseline justify-center gap-1 my-3">
+              <span class="text-5xl font-bold text-gray-900">$200</span>
+              <span class="text-gray-500 text-sm">/ license</span>
             </div>
+            <p class="text-sm text-gray-600 min-h-[2.5rem]">{tr('pricing.perpetualCardDesc')}</p>
           </div>
 
-          <!-- Features -->
-          <ul class="space-y-4 mb-8 text-left">
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">All features of OSS Edition</span>
-            </li>
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">Enhanced features</span>
-            </li>
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">Start at a low cost</span>
-            </li>
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">Flexibility on payment</span>
-            </li>
-            <li class="flex items-center">
-              <Icon name="mdi:check" class="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-              <span class="text-gray-700">Enjoy the latest updates</span>
-            </li>
-          </ul>
-
-          <!-- CTA Button -->
-          <a 
-            id="subscription-button"
-            href="https://www.lxware.hk/products/1panel-pro-edition-subscription-license" 
-            target="_blank"
-            class="buy-subscription-license-button w-full inline-flex justify-center items-center px-6 py-3 bg-1panel-gradient text-white rounded-lg font-medium transition-all duration-300 hover:shadow-lg hover:scale-105"
+          <div
+            class="text-[11px] text-gray-700 bg-gray-100 border border-gray-200 rounded-lg px-3 py-2 mb-4 leading-relaxed"
+            role="note"
           >
-            Buy now
+            📌 {tr('pricing.perpetualVersionNote')}
+          </div>
+
+          <ul class="space-y-3 mb-4 text-left flex-1 text-sm text-gray-800">
+            {['b1', 'b2', 'b3', 'b4', 'b5', 'b6', 'b7', 'b8', 'b9'].map((k, idx) => (
+              <li class="flex gap-2">
+                {idx === 0 || idx >= 7 ? (
+                  <Icon name="mdi:check" class="w-5 h-5 text-gray-500 shrink-0 mt-0.5" />
+                ) : (
+                  <span class="text-gray-400 shrink-0 mt-0.5" aria-hidden="true">◆</span>
+                )}
+                <span set:html={tr(`pricing.perpBullets.${k}`)} />
+              </li>
+            ))}
+          </ul>
+          <a
+            href={perpBuyUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            class="buy-perpetual-license-button w-full inline-flex justify-center items-center px-6 py-3 bg-gray-900 text-white rounded-lg font-semibold hover:bg-gray-800 transition-colors"
+          >
+            {tr('pricing.buyPerpetualCta')}
           </a>
+          <a
+            href={trialMailto}
+            class="w-full mt-2 inline-flex justify-center items-center px-6 py-3 rounded-lg border border-gray-200 text-gray-600 font-medium hover:bg-gray-50 transition-colors text-sm"
+          >
+            {tr('pricing.tryFreeCta')}
+          </a>
+          <p
+            class="text-[11px] text-center text-gray-500 mt-3 leading-snug"
+            set:html={tr('pricing.trustLxwareLine').replace(
+              '{{lxware}}',
+              `<a href="${lxwareUrl}" class="text-1panel hover:underline" target="_blank" rel="noopener noreferrer">Lxware</a>`,
+            )}
+          />
         </div>
       </div>
     </div>
 
-    <!-- Feature Comparison Table -->
-    <div class="mt-20">
-      <div class="text-center mb-12">
-        <h3 class="fade-in-up text-3xl font-bold text-gray-800 mb-4">OSS Edition VS. Pro Edition</h3>
-        <p class="fade-in-up text-lg text-gray-600">Compare features to find the perfect plan for your needs</p>
+    <!-- Enterprise -->
+    <div
+      class="max-w-5xl mx-auto mt-10 mb-16 rounded-xl border border-dashed border-gray-300 bg-gray-50/80 px-5 py-5 text-center"
+    >
+      <p class="text-sm text-gray-700 mb-2" set:html={tr('pricing.enterprisePrompt').replace('10+', '<strong>10+</strong>')} />
+      <a
+        href={enterpriseMail}
+        class="text-1panel font-semibold text-sm hover:underline inline-flex items-center gap-1"
+      >
+        {tr('pricing.enterpriseCta')}
+      </a>
+    </div>
+
+    <!-- Pro value highlights -->
+    <div
+      class="max-w-6xl mx-auto mb-14 rounded-2xl border border-gray-200 bg-gray-50 px-5 py-8 sm:px-8"
+    >
+      <h3 class="text-lg font-semibold text-gray-900 mb-6 flex items-center gap-2">
+        <span aria-hidden="true">⚡</span>
+        {tr('pricing.proValueTitle')}
+      </h3>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+        <div class="flex gap-3 rounded-xl bg-white/60 border border-gray-100 p-4">
+          <span class="text-xl shrink-0" aria-hidden="true">🤖</span>
+          <div>
+            <strong class="block text-gray-900 text-sm">{tr('pricing.proValueAiTitle')}</strong>
+            <span class="text-xs text-gray-600 leading-relaxed">{tr('pricing.proValueAiDesc')}</span>
+          </div>
+        </div>
+        <div class="flex gap-3 rounded-xl bg-white/60 border border-gray-100 p-4">
+          <span class="text-xl shrink-0" aria-hidden="true">🖥</span>
+          <div>
+            <strong class="block text-gray-900 text-sm">{tr('pricing.proValueNodeTitle')}</strong>
+            <span class="text-xs text-gray-600 leading-relaxed">{tr('pricing.proValueNodeDesc')}</span>
+          </div>
+        </div>
+        <div class="flex gap-3 rounded-xl bg-white/60 border border-gray-100 p-4">
+          <span class="text-xl shrink-0" aria-hidden="true">🔒</span>
+          <div>
+            <strong class="block text-gray-900 text-sm">{tr('pricing.proValueSecTitle')}</strong>
+            <span class="text-xs text-gray-600 leading-relaxed">{tr('pricing.proValueSecDesc')}</span>
+          </div>
+        </div>
+        <div class="flex gap-3 rounded-xl bg-white/60 border border-gray-100 p-4">
+          <span class="text-xl shrink-0" aria-hidden="true">📱</span>
+          <div>
+            <strong class="block text-gray-900 text-sm">{tr('pricing.proValueMobileTitle')}</strong>
+            <span class="text-xs text-gray-600 leading-relaxed">{tr('pricing.proValueMobileDesc')}</span>
+          </div>
+        </div>
+        <div class="flex gap-3 rounded-xl bg-white/60 border border-gray-100 p-4 sm:col-span-2 lg:col-span-1">
+          <span class="text-xl shrink-0" aria-hidden="true">🎨</span>
+          <div>
+            <strong class="block text-gray-900 text-sm">{tr('pricing.proValueWhiteLabelTitle')}</strong>
+            <span class="text-xs text-gray-600 leading-relaxed">{tr('pricing.proValueWhiteLabelDesc')}</span>
+          </div>
+        </div>
       </div>
-      
-      <div class="fade-in-up overflow-x-auto" style="animation-delay: 0.6s;">
-        <table class="w-full max-w-4xl mx-auto bg-white rounded-xl shadow-lg border-2 border-gray-200 overflow-hidden feature-table mb-1">
+    </div>
+
+    <!-- Comparison table (differences only) -->
+    <div class="mt-4 mb-16">
+      <div class="text-center mb-8 max-w-3xl mx-auto">
+        <h3 class="text-2xl sm:text-3xl font-bold text-gray-800 mb-3">{tr('pricing.compareTitle')}</h3>
+        <p class="text-sm sm:text-base text-gray-600 leading-relaxed">{tr('pricing.compareIntro')}</p>
+      </div>
+
+      <div class="overflow-x-auto fade-in-up">
+        <table class="w-full max-w-5xl mx-auto bg-white rounded-xl shadow-lg border border-gray-200 overflow-hidden feature-table text-sm mb-4">
           <thead>
-            <tr class="border-b border-gray-200 bg-gradient-to-r from-gray-50 to-gray-100">
-              <th class="comparison-th comparison-th-feature">Features</th>
-              <th class="comparison-th comparison-th-plan">
-                <span class="inline-flex items-center">
-                  <Icon name="carbon:logo-github" class="w-5 h-5 mr-2 flex-shrink-0" />OSS Edition
-                </span>
-              </th>
-              <th class="comparison-th comparison-th-plan comparison-th-pro">
-                <span class="inline-flex items-center">
-                  <Icon name="mdi:diamond-stone" class="w-5 h-5 text-yellow-500  mr-2 flex-shrink-0" />Pro Edition
-                </span>
-              </th>
+            <tr class="bg-gray-100 border-b border-gray-200">
+              <th class="px-4 py-3 text-left font-semibold text-gray-700 w-[50%]">Features</th>
+              <th class="px-4 py-3 text-center font-semibold text-gray-700 w-[25%]">OSS</th>
+              <th class="px-4 py-3 text-center font-semibold text-gray-900 w-[25%]">Pro</th>
             </tr>
           </thead>
           <tbody>
-            <!-- AI Features -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center gap-2">
-                  <Icon name="mdi:robot-outline" class="w-5 h-5 flex-shrink-0" />
-                  AI Management
-                </span>
+            <tr class="bg-gray-100">
+              <td colspan="3" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-600">
+                {tr('pricing.compare.catAi')}
               </td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">OpenClaw Agents Management</td>
-              <!-- OSS Edition -->
-              <td class="comparison-cell comparison-cell-status">
-                <div class="flex justify-center">
-                  <span class="flex items-start gap-2 text-gray-700">
-                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Up to 5
-                  </span>
-                </div>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.openclaw')}</td>
+              <td class="px-4 py-2.5 text-center">
+                <span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-gray-100 text-gray-700">{tr('pricing.compare.pillUpTo5')}</span>
               </td>
-              <!-- Pro Edition -->
-              <td class="comparison-cell comparison-cell-status">
-                <div class="flex justify-center">
-                  <span class="flex items-start gap-2 text-gray-700">
-                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Unlimited
-                  </span>
-                </div>
+              <td class="px-4 py-2.5 text-center">
+                <span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-gray-200 text-gray-800">{tr('pricing.compare.pillUnlimited')}</span>
               </td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-blue-50 transition duration-200">
-              <td class="comparison-cell comparison-cell-feature">AI Model Management</td>
-              <!-- OSS Edition -->
-              <td class="comparison-cell comparison-cell-status">
-                <div class="flex justify-center">
-                  <div class="flex flex-col gap-2 items-start">
-                    <span class="flex items-start gap-2 text-gray-700">
-                      <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      Ollama
-                    </span>
-                    <span class="flex items-center gap-2 text-gray-700">
-                      <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                      </svg>
-                      TensorRT-LLM
-                    </span>
-                    <span class="flex items-center gap-2 text-gray-700">
-                      <svg class="w-5 h-5 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                      </svg>
-                      vLLM
-                    </span>
-                  </div>
-                </div>
-              </td>
-              <!-- Pro Edition -->
-              <td class="comparison-cell comparison-cell-status">
-                <div class="flex justify-center">
-                <div class="flex flex-col gap-2 items-start">
-                  <span class="flex items-center gap-2 text-gray-700">
-                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    Ollama
-                  </span>
-                  <span class="flex items-center gap-2 text-gray-700">
-                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    TensorRT-LLM
-                  </span>
-                  <span class="flex items-center gap-2 text-gray-700">
-                    <svg class="w-5 h-5 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                    </svg>
-                    vLLM
-                  </div>
-                </div>
-              </td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.mcp')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">MCP Servers Management</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">GPU Monitoring</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.gpu')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
 
-            <!-- Website Management -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="mdi:web" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Website Management
-                </span>
-              </td>
+            <tr class="bg-gray-100">
+              <td colspan="3" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-600">{tr('pricing.compare.catWebsite')}</td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Website Management (Unlimited)</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.webBackup')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Website Backup</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Certificate Management</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Website Monitoring Reports</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.webMonitor')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
 
-            <!-- Multi-node Management -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="mdi:server-network" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Multi-node Management
-                </span>
-              </td>
+            <tr class="bg-gray-100">
+              <td colspan="3" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-600">{tr('pricing.compare.catMulti')}</td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Multi-node Switch</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.multiConsole')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Cross-node File Transfer</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.crossFile')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
 
-            <!-- Daily Ops -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="carbon:tool-box" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Daily Ops
-                </span>
+            <tr class="bg-gray-100">
+              <td colspan="3" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-600">{tr('pricing.compare.catSecurity')}</td>
+            </tr>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.waf')}</td>
+              <td class="px-4 py-2.5 text-center">
+                <span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-gray-100 text-gray-700">{tr('pricing.compare.pillBasic')}</span>
+              </td>
+              <td class="px-4 py-2.5 text-center">
+                <span class="inline-block text-xs font-semibold px-2 py-0.5 rounded-full bg-gray-200 text-gray-800">{tr('pricing.compare.pillAdvanced')}</span>
               </td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">FTP / Container Management</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.antiTamper')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">File Management</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Server Monitoring</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Server Terminal</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Scheduled Tasks</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.virus')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
 
-            <!-- Database Management -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="mdi:database" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Database Management
-                </span>
-              </td>
+            <tr class="bg-gray-100">
+              <td colspan="3" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-600">{tr('pricing.compare.catMobile')}</td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">MySQL</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.mobileApps')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">PostgreSQL</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Redis</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.alerts')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
 
-            <!-- Security -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="mdi:shield-check-outline" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Security
-                </span>
-              </td>
+            <tr class="bg-gray-100">
+              <td colspan="3" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-600">{tr('pricing.compare.catCustom')}</td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Firewalld Firewall</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.customStore')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">UFW Firewall</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">SSH Management</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Log Audit</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">WAF Firewall (amd64/arm64)</td>
-              <td class="comparison-cell comparison-cell-status"><span class="text-xs font-semibold text-amber-600 bg-amber-100 px-2 py-1 rounded">Basic</span></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Website Anti-tampering</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Scheduled Virus Scanning</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.customTheme')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
 
-            <!-- App -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="mdi:cellphone" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  App
-                </span>
-              </td>
+            <tr class="bg-gray-100">
+              <td colspan="3" class="px-4 py-2 text-xs font-bold uppercase tracking-wider text-gray-600">{tr('pricing.compare.catSupport')}</td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">iOS</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.emailSup')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Android</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-
-            <!-- Alerts -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="mdi:bell-outline" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Alerts
-                </span>
-              </td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Email Alerts</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">IM Alerts</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-
-            <!-- Extensibility -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="mdi:puzzle-outline" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Extensibility
-                </span>
-              </td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">App Store</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Custom App Store URL</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Process Guard</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Fail2ban</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Intranet Proxy Mode</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-
-            <!-- Advanced Customization -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <span class="inline-flex items-center">
-                  <Icon name="carbon:color-palette" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Advanced Customization
-                </span>
-              </td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Custom Logo</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Custom Theme Colors</td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg></td>
-              <td class="comparison-cell comparison-cell-status"><svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg></td>
-            </tr>
-            
-            <!-- Support -->
-            <tr class="bg-gradient-to-r from-blue-50 to-blue-100 border-b border-blue-200 category-row">
-              <td class="comparison-cell comparison-cell-category" colspan="3">
-                <div class="flex items-center">
-                  <Icon name="carbon:help" class="w-5 h-5 mr-2 flex-shrink-0" />
-                  Support
-                </div>
-              </td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Community</td>
-              <td class="comparison-cell comparison-cell-status">
-                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </td>
-              <td class="comparison-cell comparison-cell-status">
-                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Email</td>
-              <td class="comparison-cell comparison-cell-status">
-                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </td>
-              <td class="comparison-cell comparison-cell-status">
-                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </td>
-            </tr>
-            <tr class="border-b border-gray-100 hover:bg-gray-50 transition-colors duration-200 cursor-pointer">
-              <td class="comparison-cell comparison-cell-feature">Priority Service</td>
-              <td class="comparison-cell comparison-cell-status">
-                <svg class="w-5 h-5 text-red-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
-                </svg>
-              </td>
-              <td class="comparison-cell comparison-cell-status">
-                <svg class="w-5 h-5 text-green-500 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path>
-                </svg>
-              </td>
+            <tr class="border-b border-gray-100">
+              <td class="px-4 py-2.5 text-gray-800 font-medium">{tr('pricing.compare.priority')}</td>
+              <td class="px-4 py-2.5 text-center text-gray-400">—</td>
+              <td class="px-4 py-2.5 text-center"><Icon name="mdi:check" class="w-5 h-5 text-gray-600 inline" /></td>
             </tr>
           </tbody>
         </table>
@@ -614,56 +459,135 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
     </div>
 
     <!-- FAQ -->
-    <div class="mt-20">
-      <div class="text-center mb-12">
-        <h3 class="fade-in-up text-3xl font-bold text-gray-800 mb-4">FAQ</h3>
-        <p class="fade-in-up text-lg text-gray-600">Quick answers about trial access, multi-node usage, licensing, and support.</p>
+    <div class="mt-8">
+      <div class="text-center mb-10">
+        <h3 class="text-3xl font-bold text-gray-800 mb-2">{tr('pricing.faqSectionTitle')}</h3>
+        <p class="text-lg text-gray-600">{tr('pricing.faqSectionSubtitle')}</p>
       </div>
 
-      <div class="max-w-4xl mx-auto space-y-4">
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">Can I request an invoice?</summary>
-          <p class="mt-3 text-gray-600">Yes. Invoice applications are supported, and electronic invoices are sent by email after processing.</p>
+      <div class="max-w-4xl mx-auto space-y-3">
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.trialQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <div class="mt-3 text-gray-600 space-y-3">
+            <p>{tr('pricing.faq.trialA')}</p>
+            <p>
+              <a href={trialMailto} class="text-1panel font-medium hover:underline">
+                {tr('pricing.faq.trialMailCta')}
+              </a>
+            </p>
+          </div>
         </details>
 
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">Is there a free trial for 1Panel Pro?</summary>
-          <p class="mt-3 text-gray-600">Yes. You can apply for a 30-day free trial by sending an email request to <a class="text-1panel hover:underline" href="mailto:hi@lxware.hk?subject=1Panel Pro: 30-Day Free Trial Request">hi@lxware.hk</a>.</p>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.subVsPerpQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-600 whitespace-pre-line">{tr('pricing.faq.subVsPerpA')}</p>
         </details>
 
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">Can one license be used on multiple devices at the same time?</summary>
-          <p class="mt-3 text-gray-600">No. One license can be bound to one device at a time, but it can be unbound and rebound to another device.</p>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.v3Q')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-600">{tr('pricing.faq.v3A')}</p>
         </details>
 
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">How does multi-node capability work in Pro Edition?</summary>
-          <p class="mt-3 text-gray-600">Node Management is a Pro feature: you get a unified console for multiple servers—node switching, monitoring, batch updates, and file transfer between nodes. See the <a class="text-1panel hover:underline" href="https://1panel.pro/docs/v2/user_manual/xpack/node/" target="_blank" rel="noopener noreferrer">Node Management</a> documentation for setup and operations.</p>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.devicesQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-600">{tr('pricing.faq.devicesA')}</p>
         </details>
 
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">What does the license node limit control?</summary>
-          <p class="mt-3 text-gray-600">The node limit on your Pro license defines how many <strong>Community edition</strong> nodes you can add under Node Management in 1Panel. Adding a community node consumes one slot from that quota; you choose which Pro license supplies the quota when you configure the node.</p>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.multiNodeQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p
+            class="mt-3 text-gray-600"
+            set:html={tr('pricing.faq.multiNodeA').replace(
+              'NODE_DOCS_LINK',
+              `<a href="${nodeDocsUrl}" class="text-1panel hover:underline" target="_blank" rel="noopener noreferrer">Node Management documentation</a>`,
+            )}
+          />
         </details>
 
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">Can I use multiple Pro licenses for different nodes?</summary>
-          <p class="mt-3 text-gray-600">Yes. In <strong>License Management</strong> you can import and keep multiple Pro licenses. When you add a node as Pro edition, you assign an <strong>unbound</strong> Pro license to that node, so different nodes can each use their own license. Community nodes, by contrast, draw from your licenses’ community-node quota as described above.</p>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.invoiceQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p
+            class="mt-3 text-gray-600"
+            set:html={tr('pricing.faq.invoiceA').replace(
+              'support@lxware.hk',
+              `<a class="text-1panel hover:underline" href="mailto:support@lxware.hk">support@lxware.hk</a>`,
+            )}
+          />
         </details>
 
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">Can I deactivate and reactivate a license?</summary>
-          <p class="mt-3 text-gray-600">Yes. You can deactivate it in the current app and reactivate it on another device during the license validity period.</p>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.lxwareQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p
+            class="mt-3 text-gray-600"
+            set:html={tr('pricing.faq.lxwareA').replace(
+              '{{lxware}}',
+              `<a href="${lxwareUrl}" class="text-1panel hover:underline" target="_blank" rel="noopener noreferrer">Lxware</a>`,
+            )}
+          />
         </details>
 
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">Can I activate in an offline environment?</summary>
-          <p class="mt-3 text-gray-600">Activation requires access to the license verification service. If direct access is unavailable, configure a network proxy.</p>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.nodeLimitQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-600">{tr('pricing.faq.nodeLimitA')}</p>
         </details>
 
-        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5">
-          <summary class="cursor-pointer text-gray-800 font-semibold">How do I contact after-sales support?</summary>
-          <p class="mt-3 text-gray-600">For after-sales support, please email our support team at <a class="text-1panel hover:underline" href="mailto:support@lxware.hk?subject=1Panel Pro: After-Sales Support Request">support@lxware.hk</a>.</p>
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.multiLicQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-600">{tr('pricing.faq.multiLicA')}</p>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.reactivateQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-600">{tr('pricing.faq.reactivateA')}</p>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.offlineQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-600">{tr('pricing.faq.offlineA')}</p>
+        </details>
+
+        <details class="bg-white rounded-xl border border-gray-200 shadow-sm p-5 group">
+          <summary class="cursor-pointer text-gray-800 font-semibold list-none flex justify-between items-center gap-2">
+            {tr('pricing.faq.afterSalesQ')}
+            <span class="text-gray-400 group-open:rotate-45 transition-transform">+</span>
+          </summary>
+          <p class="mt-3 text-gray-600">
+            {tr('pricing.faq.afterSalesA')}
+            <a class="text-1panel hover:underline" href="mailto:support@lxware.hk">support@lxware.hk</a>.
+          </p>
         </details>
       </div>
     </div>
@@ -674,65 +598,13 @@ const translations = rawTranslations && Object.keys(rawTranslations || {}).lengt
   .card {
     @apply bg-white rounded-xl shadow-lg border border-gray-200;
   }
-  
   .card:hover {
-    @apply shadow-xl border-1panel;
+    @apply shadow-xl border-gray-300;
   }
-  
-  /* Popular card styling */
-  .card.transform.scale-105 {
-    @apply shadow-xl border-1panel;
+  details summary::-webkit-details-marker {
+    display: none;
   }
-   
-  /* Price animation */
-  @keyframes pricePulse {
-    0%, 100% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.05);
-    }
+  .feature-table tbody tr:hover {
+    @apply bg-gray-50;
   }
-  
-  .price-animation {
-    animation: pricePulse 0.3s ease-in-out;
-  }
-  
-  .feature-table tr:hover {
-    @apply bg-gray-200;
-  }
-
-  .comparison-th {
-    @apply px-6 py-4 font-semibold;
-  }
-
-  .comparison-th-feature {
-    @apply text-left text-gray-800;
-  }
-
-  .comparison-th-plan {
-    @apply text-center text-gray-800;
-  }
-
-  .comparison-th-pro {
-    @apply text-1panel;
-  }
-
-  .comparison-cell {
-    @apply px-6 py-2 text-sm;
-  }
-
-  .comparison-cell-feature {
-    @apply text-gray-700 font-medium;
-  }
-
-  .comparison-cell-status {
-    @apply text-center;
-  }
-
-  .comparison-cell-category {
-    @apply font-semibold text-blue-800;
-  }
-
 </style>
-
