@@ -40,8 +40,8 @@
       },
       "versions": [
         {
-          "name": "6.1.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/2fauth/6.1.2/2fauth-6.1.2.tar.gz",
+          "name": "6.1.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/2fauth/6.1.3/2fauth-6.1.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -662,8 +662,8 @@
       },
       "versions": [
         {
-          "name": "0.26.4",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/affine/0.26.4/affine-0.26.4.tar.gz",
+          "name": "0.26.6",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/affine/0.26.6/affine-0.26.6.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -1249,8 +1249,8 @@
       },
       "versions": [
         {
-          "name": "0.18.6",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/beszel/0.18.6/beszel-0.18.6.tar.gz",
+          "name": "0.18.7",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/beszel/0.18.7/beszel-0.18.7.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -1652,8 +1652,8 @@
       },
       "versions": [
         {
-          "name": "3.16.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/bytebase/3.16.1/bytebase-3.16.1.tar.gz",
+          "name": "3.17.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/bytebase/3.17.0/bytebase-3.17.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -1859,8 +1859,8 @@
       },
       "versions": [
         {
-          "name": "2.377.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.377.0/casdoor-2.377.0.tar.gz",
+          "name": "2.400.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/casdoor/2.400.0/casdoor-2.400.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2035,12 +2035,82 @@
       },
       "versions": [
         {
-          "name": "0.54.7",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/changedetectionio/0.54.7/changedetectionio-0.54.7.tar.gz",
+          "name": "0.54.8",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/changedetectionio/0.54.8/changedetectionio-0.54.8.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
                 "default": 40097,
+                "edit": true,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "Port",
+                  "es-es": "Puerto",
+                  "ja": "ポート",
+                  "ko": "포트",
+                  "ms": "Port",
+                  "pt-br": "Porta",
+                  "ru": "Порт",
+                  "tr": "Bağlantı Noktası",
+                  "zh": "端口",
+                  "zh-Hant": "埠"
+                },
+                "labelEn": "Port",
+                "labelZh": "端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "icon": "https://apps.1panel.pro/stable/1panel/clawswarm/logo.png",
+      "name": "ClawSwarm",
+      "readMe": "## Introduction\n\n**ClawSwarm** is an open-source orchestration system for OpenClaw that brings swarm intelligence into multi-agent collaboration. Instead of a traditional one-to-one AI interaction, it allows multiple specialized agents to join the same group conversation and work together on brainstorming, task decomposition, and automated execution.\n\n## Highlights\n\n- **Multi-agent collaboration**: developers, designers, testers, and researchers can collaborate in the same conversation.\n- **Unified web console**: manage OpenClaw instances, groups, conversations, messages, and scheduled tasks in one place.\n- **OpenClaw integration**: connect ClawSwarm with OpenClaw to build collaborative agent workflows.\n- **Container-ready deployment**: deploy quickly with the official Docker image and persist data on disk.\n\n## Default Access\n\n- URL: `http://\u003cserver-ip\u003e:port`\n- Username: `admin`\n- Password: `admin123456`\n\n## After Installation\n\n- Sign in to the ClawSwarm web UI with the default admin account after the container is ready.\n- If you want to integrate it with OpenClaw, continue with the official plugin guides:\n  - Human installation guide: `https://github.com/1Panel-dev/ClawSwarm/blob/main/channel/docs/human-install.en.md`\n  - Agent installation guide: `https://github.com/1Panel-dev/ClawSwarm/blob/main/channel/docs/agent-install.en.md`\n",
+      "additionalProperties": {
+        "architectures": [
+          "amd64",
+          "arm64"
+        ],
+        "batchInstallSupport": true,
+        "crossVersionUpdate": false,
+        "description": {
+          "en": "An open-source swarm orchestration system for OpenClaw agents",
+          "es-es": "Un sistema open-source de orquestacion de enjambre para agentes OpenClaw",
+          "ja": "OpenClawエージェント向けのオープンソース群知能オーケストレーションシステム",
+          "ko": "OpenClaw 에이전트를 위한 오픈 소스 스웜 오케스트레이션 시스템",
+          "ms": "Sistem orkestrasi swarm sumber terbuka untuk ejen OpenClaw",
+          "pt-br": "Um sistema de orquestracao em swarm de codigo aberto para agentes OpenClaw",
+          "ru": "Открытая система оркестрации роевого взаимодействия для агентов OpenClaw",
+          "tr": "OpenClaw ajanlari icin acik kaynakli swarm orkestrasyon sistemi",
+          "zh": "面向 OpenClaw 的开源群体智能协作编排系统",
+          "zh-Hant": "面向 OpenClaw 的開源群體智能協作編排系統"
+        },
+        "document": "https://github.com/1Panel-dev/ClawSwarm",
+        "github": "https://github.com/1Panel-dev/ClawSwarm",
+        "key": "clawswarm",
+        "limit": 0,
+        "name": "ClawSwarm",
+        "recommend": 15,
+        "shortDescEn": "An open-source swarm orchestration system for OpenClaw agents",
+        "shortDescZh": "面向 OpenClaw 的开源群体智能协作编排系统",
+        "tags": [
+          "AI"
+        ],
+        "type": "website",
+        "website": "https://github.com/1Panel-dev/ClawSwarm"
+      },
+      "versions": [
+        {
+          "name": "1.0.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clawswarm/1.0.2/clawswarm-1.0.2.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": 18080,
                 "edit": true,
                 "envKey": "PANEL_APP_PORT_HTTP",
                 "label": {
@@ -2105,8 +2175,8 @@
       },
       "versions": [
         {
-          "name": "26.3.2-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clickhouse/26.3.2-alpine/clickhouse-26.3.2-alpine.tar.gz",
+          "name": "26.3.4-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clickhouse/26.3.4-alpine/clickhouse-26.3.4-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2237,8 +2307,8 @@
       },
       "versions": [
         {
-          "name": "26.0.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cloudbeaver/26.0.1/cloudbeaver-26.0.1.tar.gz",
+          "name": "26.0.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cloudbeaver/26.0.2/cloudbeaver-26.0.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2378,8 +2448,8 @@
       },
       "versions": [
         {
-          "name": "4.112.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/code-server/4.112.0/code-server-4.112.0.tar.gz",
+          "name": "4.115.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/code-server/4.115.0/code-server-4.115.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2657,8 +2727,8 @@
       },
       "versions": [
         {
-          "name": "1.0.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/1.0.0/copaw-1.0.0.tar.gz",
+          "name": "1.0.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/1.0.1/copaw-1.0.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2722,8 +2792,8 @@
       },
       "versions": [
         {
-          "name": "10.22.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cyberchef/10.22.1/cyberchef-10.22.1.tar.gz",
+          "name": "10.23.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/cyberchef/10.23.0/cyberchef-10.23.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2793,8 +2863,8 @@
       },
       "versions": [
         {
-          "name": "3.2.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dashy/3.2.1/dashy-3.2.1.tar.gz",
+          "name": "3.2.10",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dashy/3.2.10/dashy-3.2.10.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2863,8 +2933,8 @@
       },
       "versions": [
         {
-          "name": "0.21.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dbhub/0.21.0/dbhub-0.21.0.tar.gz",
+          "name": "0.21.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/dbhub/0.21.1/dbhub-0.21.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -3368,8 +3438,8 @@
       },
       "versions": [
         {
-          "name": "3.0.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/docker-registry/3.0.0/docker-registry-3.0.0.tar.gz",
+          "name": "3.1.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/docker-registry/3.1.0/docker-registry-3.1.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -3528,8 +3598,8 @@
       },
       "versions": [
         {
-          "name": "0.71.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/docmost/0.71.0/docmost-0.71.0.tar.gz",
+          "name": "0.71.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/docmost/0.71.1/docmost-0.71.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -3802,8 +3872,8 @@
       },
       "versions": [
         {
-          "name": "29.6.7",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/drawio/29.6.7/drawio-29.6.7.tar.gz",
+          "name": "29.6.10",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/drawio/29.6.10/drawio-29.6.10.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -4280,8 +4350,8 @@
           }
         },
         {
-          "name": "8.19.13",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/elasticsearch/8.19.13/elasticsearch-8.19.13.tar.gz",
+          "name": "8.19.14",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/elasticsearch/8.19.14/elasticsearch-8.19.14.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -4384,8 +4454,8 @@
           }
         },
         {
-          "name": "9.3.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/elasticsearch/9.3.2/elasticsearch-9.3.2.tar.gz",
+          "name": "9.3.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/elasticsearch/9.3.3/elasticsearch-9.3.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -4854,8 +4924,8 @@
       },
       "versions": [
         {
-          "name": "2.62.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/filebrowser/2.62.2/filebrowser-2.62.2.tar.gz",
+          "name": "2.63.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/filebrowser/2.63.1/filebrowser-2.63.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -5662,8 +5732,8 @@
       },
       "versions": [
         {
-          "name": "12.7.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/forgejo-runner/12.7.3/forgejo-runner-12.7.3.tar.gz",
+          "name": "12.8.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/forgejo-runner/12.8.2/forgejo-runner-12.8.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -5997,8 +6067,8 @@
       },
       "versions": [
         {
-          "name": "6.24.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ghost/6.24.0/ghost-6.24.0.tar.gz",
+          "name": "6.27.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ghost/6.27.0/ghost-6.27.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -6364,8 +6434,8 @@
       },
       "versions": [
         {
-          "name": "18.10.1-ce.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/gitlab/18.10.1-ce.0/gitlab-18.10.1-ce.0.tar.gz",
+          "name": "18.10.3-ce.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/gitlab/18.10.3-ce.0/gitlab-18.10.3-ce.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -7674,8 +7744,8 @@
       },
       "versions": [
         {
-          "name": "2026.3.4",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/home-assistant/2026.3.4/home-assistant-2026.3.4.tar.gz",
+          "name": "2026.4.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/home-assistant/2026.4.1/home-assistant-2026.4.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -7767,8 +7837,8 @@
       },
       "versions": [
         {
-          "name": "1.12.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/homepage/1.12.2/homepage-1.12.2.tar.gz",
+          "name": "1.12.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/homepage/1.12.3/homepage-1.12.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -8315,8 +8385,8 @@
       },
       "versions": [
         {
-          "name": "10.11.7",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/jellyfin/10.11.7/jellyfin-10.11.7.tar.gz",
+          "name": "10.11.8",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/jellyfin/10.11.8/jellyfin-10.11.8.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9154,8 +9224,8 @@
       },
       "versions": [
         {
-          "name": "26.5.6",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/keycloak/26.5.6/keycloak-26.5.6.tar.gz",
+          "name": "26.6.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/keycloak/26.6.0/keycloak-26.6.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9410,8 +9480,8 @@
       },
       "versions": [
         {
-          "name": "8.19.13",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/kibana/8.19.13/kibana-8.19.13.tar.gz",
+          "name": "8.19.14",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/kibana/8.19.14/kibana-8.19.14.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9440,8 +9510,8 @@
           }
         },
         {
-          "name": "9.3.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/kibana/9.3.2/kibana-9.3.2.tar.gz",
+          "name": "9.3.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/kibana/9.3.3/kibana-9.3.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -9581,8 +9651,8 @@
       },
       "versions": [
         {
-          "name": "1.8.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/langflow/1.8.3/langflow-1.8.3.tar.gz",
+          "name": "1.8.4",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/langflow/1.8.4/langflow-1.8.4.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -10827,8 +10897,8 @@
       },
       "versions": [
         {
-          "name": "11.5.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/mattermost/11.5.1/mattermost-11.5.1.tar.gz",
+          "name": "11.6.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/mattermost/11.6.0/mattermost-11.6.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -11517,8 +11587,8 @@
       },
       "versions": [
         {
-          "name": "0.59.5",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/metabase/0.59.5/metabase-0.59.5.tar.gz",
+          "name": "0.59.6",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/metabase/0.59.6/metabase-0.59.6.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13813,8 +13883,8 @@
       },
       "versions": [
         {
-          "name": "2.14.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/n8n/2.14.2/n8n-2.14.2.tar.gz",
+          "name": "2.15.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/n8n/2.15.0/n8n-2.15.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -13884,8 +13954,8 @@
       },
       "versions": [
         {
-          "name": "0.61.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/navidrome/0.61.0/navidrome-0.61.0.tar.gz",
+          "name": "0.61.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/navidrome/0.61.1/navidrome-0.61.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14158,8 +14228,8 @@
       },
       "versions": [
         {
-          "name": "0.11.9",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/new-api/0.11.9/new-api-0.11.9.tar.gz",
+          "name": "0.12.5",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/new-api/0.12.5/new-api-0.12.5.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14518,8 +14588,8 @@
       },
       "versions": [
         {
-          "name": "33.0.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nextcloud/33.0.1/nextcloud-33.0.1.tar.gz",
+          "name": "33.0.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nextcloud/33.0.2/nextcloud-33.0.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14609,8 +14679,8 @@
       },
       "versions": [
         {
-          "name": "3.90.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nexus/3.90.2/nexus-3.90.2.tar.gz",
+          "name": "3.91.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nexus/3.91.0/nexus-3.91.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14793,8 +14863,8 @@
       },
       "versions": [
         {
-          "name": "2.0.30",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.30/nocobase-2.0.30.tar.gz",
+          "name": "2.0.32",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.32/nocobase-2.0.32.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -15276,8 +15346,8 @@
       },
       "versions": [
         {
-          "name": "1.10.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/node-exporter/1.10.2/node-exporter-1.10.2.tar.gz",
+          "name": "1.11.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/node-exporter/1.11.1/node-exporter-1.11.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -15419,8 +15489,8 @@
       },
       "versions": [
         {
-          "name": "4.10.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nodebb/4.10.1/nodebb-4.10.1.tar.gz",
+          "name": "4.10.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nodebb/4.10.2/nodebb-4.10.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -16034,8 +16104,8 @@
       },
       "versions": [
         {
-          "name": "0.19.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.19.0/ollama-0.19.0.tar.gz",
+          "name": "0.20.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.20.3/ollama-0.20.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -19018,8 +19088,8 @@
       },
       "versions": [
         {
-          "name": "9.13",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/pgadmin4/9.13/pgadmin4-9.13.tar.gz",
+          "name": "9.14",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/pgadmin4/9.14/pgadmin4-9.14.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -20745,7 +20815,7 @@
     {
       "icon": "https://apps.1panel.pro/stable/1panel/planka/logo.png",
       "name": "Planka",
-      "readMe": "## Introduction\n\n**Planka** is an open-source, self-hosted project management tool similar to Trello, built on **Node.js, React, and PostgreSQL**.\n\n## Features\n\n- **Visual Boards**: Intuitive drag-and-drop operations for more efficient task management.\n- **Team Collaboration**: Supports multiple users with flexible permission management.\n- **Real-Time Synchronization**: WebSockets ensure real-time data updates across multiple devices.\n- **Lightweight and Efficient**: Smooth operation with minimal resource usage.\n",
+      "readMe": "## Introduction\n\n**Planka** is an open-source, self-hosted project management tool similar to Trello, built on **Node.js, React, and PostgreSQL**.\n\n## Features\n\n- **Visual Boards**: Intuitive drag-and-drop operations for more efficient task management.\n- **Team Collaboration**: Supports multiple users with flexible permission management.\n- **Real-Time Synchronization**: WebSockets ensure real-time data updates across multiple devices.\n- **Lightweight and Efficient**: Smooth operation with minimal resource usage.\n\n## Persistence\n\n- This app version follows the official Planka V2 persistence layout and mounts `./data` to `/app/data` inside the container.\n- If you use a bind mount instead of a Docker volume, run `chown -R 1000:1000 ./data` before the first start so the default `node` user can write to the data directory.\n\n## Upgrade Notes\n\n- Older Planka setups usually stored files in separate directories such as `user-avatars`, `project-background-images`, and `attachments`.\n- Before upgrading to this version, back up both the database and the old data directories, then migrate those files into the new `/app/data` layout by following the official Planka V2 upgrade guide. Otherwise, uploaded avatars, backgrounds, or attachments may not be carried over correctly.\n- Official upgrade guide: https://docs.planka.cloud/docs/upgrade-to-v2/docker\n",
       "additionalProperties": {
         "architectures": [
           "amd64",
@@ -22969,8 +23039,8 @@
       },
       "versions": [
         {
-          "name": "3.10.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/prometheus/3.10.0/prometheus-3.10.0.tar.gz",
+          "name": "3.11.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/prometheus/3.11.1/prometheus-3.11.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -24292,8 +24362,8 @@
       },
       "versions": [
         {
-          "name": "3.7.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/redpanda-console/3.7.0/redpanda-console-3.7.0.tar.gz",
+          "name": "3.7.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/redpanda-console/3.7.1/redpanda-console-3.7.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -26221,8 +26291,8 @@
       },
       "versions": [
         {
-          "name": "2.8.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/stirling-pdf/2.8.0/stirling-pdf-2.8.0.tar.gz",
+          "name": "2.9.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/stirling-pdf/2.9.2/stirling-pdf-2.9.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -26292,8 +26362,8 @@
       },
       "versions": [
         {
-          "name": "1.150.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/synapse/1.150.0/synapse-1.150.0.tar.gz",
+          "name": "1.151.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/synapse/1.151.0/synapse-1.151.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -27214,8 +27284,8 @@
       },
       "versions": [
         {
-          "name": "1.20.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/twenty/1.20.0/twenty-1.20.0.tar.gz",
+          "name": "1.20.6",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/twenty/1.20.6/twenty-1.20.6.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -27947,6 +28017,246 @@
       ]
     },
     {
+      "icon": "https://apps.1panel.pro/stable/1panel/valkey/logo.png",
+      "name": "Valkey",
+      "readMe": "## Introduction\n\n**Valkey** is a high-performance open-source data structure server designed primarily for key/value workloads. It supports a wide range of native data structures and an extensible plugin system.\n\n## Features\n\n- **Key-value and data structure workloads**: Suitable for caching, session storage, queues, and other high-frequency read/write scenarios.\n- **High performance**: Built for high throughput and low-latency data access.\n- **Extensible architecture**: Supports rich native data structures and an extensible plugin system for new access patterns.\n- **Ecosystem friendly**: Provides familiar components such as `valkey-server` and `valkey-cli` for testing and integration.\n",
+      "additionalProperties": {
+        "batchInstallSupport": true,
+        "crossVersionUpdate": false,
+        "description": {
+          "en": "High-performance open-source data structure server",
+          "es-es": "Servidor de estructuras de datos de codigo abierto y alto rendimiento",
+          "ja": "高性能なオープンソースのデータ構造サーバー",
+          "ko": "고성능 오픈 소스 데이터 구조 서버",
+          "ms": "Pelayan struktur data sumber terbuka berprestasi tinggi",
+          "pt-br": "Servidor de estruturas de dados de codigo aberto e alto desempenho",
+          "ru": "Высокопроизводительный сервер структур данных с открытым исходным кодом",
+          "tr": "Yuksek performansli acik kaynak veri yapisi sunucusu",
+          "zh": "高性能开源数据结构服务器",
+          "zh-hant": "高效能開源資料結構伺服器"
+        },
+        "document": "https://valkey.io/docs/",
+        "github": "https://github.com/valkey-io/valkey",
+        "key": "valkey",
+        "limit": 0,
+        "name": "Valkey",
+        "recommend": 0,
+        "shortDescEn": "High-performance open-source data structure server",
+        "shortDescZh": "高性能开源数据结构服务器",
+        "tags": [
+          "Database"
+        ],
+        "type": "runtime",
+        "website": "https://valkey.io/"
+      },
+      "versions": [
+        {
+          "name": "7.2.12",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/valkey/7.2.12/valkey-7.2.12.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": "valkey",
+                "envKey": "PANEL_VALKEY_ROOT_PASSWORD",
+                "label": {
+                  "en": "Database Password",
+                  "es-es": "Contrasena de la base de datos",
+                  "ja": "データベースパスワード",
+                  "ko": "데이터베이스 비밀번호",
+                  "ms": "Kata Laluan Pangkalan Data",
+                  "pt-br": "Senha do Banco de Dados",
+                  "ru": "Пароль базы данных",
+                  "tr": "Veritabani Parolasi",
+                  "zh": "数据库密码",
+                  "zh-Hant": "資料庫密碼"
+                },
+                "labelEn": "Database Password",
+                "labelZh": "数据库密码",
+                "random": true,
+                "required": true,
+                "rule": "paramComplexity",
+                "type": "password"
+              },
+              {
+                "default": 6379,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "Port",
+                  "es-es": "Puerto",
+                  "ja": "ポート",
+                  "ko": "포트",
+                  "ms": "Port",
+                  "pt-br": "Porta",
+                  "ru": "Порт",
+                  "tr": "Baglanti Noktasi",
+                  "zh": "端口",
+                  "zh-Hant": "埠"
+                },
+                "labelEn": "Port",
+                "labelZh": "端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              }
+            ]
+          }
+        },
+        {
+          "name": "8.0.7",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/valkey/8.0.7/valkey-8.0.7.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": "valkey",
+                "envKey": "PANEL_VALKEY_ROOT_PASSWORD",
+                "label": {
+                  "en": "Database Password",
+                  "es-es": "Contrasena de la base de datos",
+                  "ja": "データベースパスワード",
+                  "ko": "데이터베이스 비밀번호",
+                  "ms": "Kata Laluan Pangkalan Data",
+                  "pt-br": "Senha do Banco de Dados",
+                  "ru": "Пароль базы данных",
+                  "tr": "Veritabani Parolasi",
+                  "zh": "数据库密码",
+                  "zh-Hant": "資料庫密碼"
+                },
+                "labelEn": "Database Password",
+                "labelZh": "数据库密码",
+                "random": true,
+                "required": true,
+                "rule": "paramComplexity",
+                "type": "password"
+              },
+              {
+                "default": 6379,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "Port",
+                  "es-es": "Puerto",
+                  "ja": "ポート",
+                  "ko": "포트",
+                  "ms": "Port",
+                  "pt-br": "Porta",
+                  "ru": "Порт",
+                  "tr": "Baglanti Noktasi",
+                  "zh": "端口",
+                  "zh-Hant": "埠"
+                },
+                "labelEn": "Port",
+                "labelZh": "端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              }
+            ]
+          }
+        },
+        {
+          "name": "8.1.6",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/valkey/8.1.6/valkey-8.1.6.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": "valkey",
+                "envKey": "PANEL_VALKEY_ROOT_PASSWORD",
+                "label": {
+                  "en": "Database Password",
+                  "es-es": "Contrasena de la base de datos",
+                  "ja": "データベースパスワード",
+                  "ko": "데이터베이스 비밀번호",
+                  "ms": "Kata Laluan Pangkalan Data",
+                  "pt-br": "Senha do Banco de Dados",
+                  "ru": "Пароль базы данных",
+                  "tr": "Veritabani Parolasi",
+                  "zh": "数据库密码",
+                  "zh-Hant": "資料庫密碼"
+                },
+                "labelEn": "Database Password",
+                "labelZh": "数据库密码",
+                "random": true,
+                "required": true,
+                "rule": "paramComplexity",
+                "type": "password"
+              },
+              {
+                "default": 6379,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "Port",
+                  "es-es": "Puerto",
+                  "ja": "ポート",
+                  "ko": "포트",
+                  "ms": "Port",
+                  "pt-br": "Porta",
+                  "ru": "Порт",
+                  "tr": "Baglanti Noktasi",
+                  "zh": "端口",
+                  "zh-Hant": "埠"
+                },
+                "labelEn": "Port",
+                "labelZh": "端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              }
+            ]
+          }
+        },
+        {
+          "name": "9.0.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/valkey/9.0.3/valkey-9.0.3.tar.gz",
+          "additionalProperties": {
+            "formFields": [
+              {
+                "default": "valkey",
+                "envKey": "PANEL_VALKEY_ROOT_PASSWORD",
+                "label": {
+                  "en": "Database Password",
+                  "es-es": "Contrasena de la base de datos",
+                  "ja": "データベースパスワード",
+                  "ko": "데이터베이스 비밀번호",
+                  "ms": "Kata Laluan Pangkalan Data",
+                  "pt-br": "Senha do Banco de Dados",
+                  "ru": "Пароль базы данных",
+                  "tr": "Veritabani Parolasi",
+                  "zh": "数据库密码",
+                  "zh-Hant": "資料庫密碼"
+                },
+                "labelEn": "Database Password",
+                "labelZh": "数据库密码",
+                "random": true,
+                "required": true,
+                "rule": "paramComplexity",
+                "type": "password"
+              },
+              {
+                "default": 6379,
+                "envKey": "PANEL_APP_PORT_HTTP",
+                "label": {
+                  "en": "Port",
+                  "es-es": "Puerto",
+                  "ja": "ポート",
+                  "ko": "포트",
+                  "ms": "Port",
+                  "pt-br": "Porta",
+                  "ru": "Порт",
+                  "tr": "Baglanti Noktasi",
+                  "zh": "端口",
+                  "zh-Hant": "埠"
+                },
+                "labelEn": "Port",
+                "labelZh": "端口",
+                "required": true,
+                "rule": "paramPort",
+                "type": "number"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
       "icon": "https://apps.1panel.pro/stable/1panel/verdaccio/logo.png",
       "name": "Verdaccio",
       "readMe": "## Introduction\n\n**Verdaccio** is a simple, **zero-configuration local private npm registry**. You can start using it without needing a full database! Verdaccio works out of the box with **its own lightweight database** and can proxy other registries (e.g., npmjs.org), caching downloaded modules along the way. For users who want to extend storage capabilities, Verdaccio **supports various community-made plugins to integrate with services like Amazon S3, Google Cloud Storage, etc., or you can create your own plugins**.\n",
@@ -27985,8 +28295,8 @@
       },
       "versions": [
         {
-          "name": "6.3.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/verdaccio/6.3.2/verdaccio-6.3.2.tar.gz",
+          "name": "6.4.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/verdaccio/6.4.0/verdaccio-6.4.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -28057,8 +28367,8 @@
       },
       "versions": [
         {
-          "name": "0.18.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/vllm/0.18.1/vllm-0.18.1.tar.gz",
+          "name": "0.19.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/vllm/0.19.0/vllm-0.19.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -28129,8 +28439,8 @@
           }
         },
         {
-          "name": "0.18.1-cu130",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/vllm/0.18.1-cu130/vllm-0.18.1-cu130.tar.gz",
+          "name": "0.19.0-cu130",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/vllm/0.19.0-cu130/vllm-0.19.0-cu130.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
