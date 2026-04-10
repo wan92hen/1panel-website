@@ -2105,8 +2105,8 @@
       },
       "versions": [
         {
-          "name": "1.0.2",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clawswarm/1.0.2/clawswarm-1.0.2.tar.gz",
+          "name": "1.0.3",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clawswarm/1.0.3/clawswarm-1.0.3.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2175,8 +2175,8 @@
       },
       "versions": [
         {
-          "name": "26.3.4-alpine",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clickhouse/26.3.4-alpine/clickhouse-26.3.4-alpine.tar.gz",
+          "name": "26.3.5-alpine",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/clickhouse/26.3.5-alpine/clickhouse-26.3.5-alpine.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -2727,8 +2727,8 @@
       },
       "versions": [
         {
-          "name": "1.0.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/1.0.1/copaw-1.0.1.tar.gz",
+          "name": "1.0.2",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/copaw/1.0.2/copaw-1.0.2.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -11233,8 +11233,8 @@
           }
         },
         {
-          "name": "2.7.1",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/maxkb/2.7.1/maxkb-2.7.1.tar.gz",
+          "name": "2.8.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/maxkb/2.8.0/maxkb-2.8.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14116,8 +14116,8 @@
       },
       "versions": [
         {
-          "name": "2.9.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/netdata/2.9.0/netdata-2.9.0.tar.gz",
+          "name": "2.10.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/netdata/2.10.0/netdata-2.10.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14228,8 +14228,8 @@
       },
       "versions": [
         {
-          "name": "0.12.5",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/new-api/0.12.5/new-api-0.12.5.tar.gz",
+          "name": "0.12.6",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/new-api/0.12.6/new-api-0.12.6.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -14863,8 +14863,8 @@
       },
       "versions": [
         {
-          "name": "2.0.32",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.32/nocobase-2.0.32.tar.gz",
+          "name": "2.0.35",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/nocobase/2.0.35/nocobase-2.0.35.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -16104,8 +16104,8 @@
       },
       "versions": [
         {
-          "name": "0.20.3",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.20.3/ollama-0.20.3.tar.gz",
+          "name": "0.20.5",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/ollama/0.20.5/ollama-0.20.5.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -16527,8 +16527,8 @@
       },
       "versions": [
         {
-          "name": "2026.3.28",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/openclaw/2026.3.28/openclaw-2026.3.28.tar.gz",
+          "name": "2026.4.9",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/openclaw/2026.4.9/openclaw-2026.4.9.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -27087,8 +27087,8 @@
       },
       "versions": [
         {
-          "name": "6.6.0",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/trendradar/6.6.0/trendradar-6.6.0.tar.gz",
+          "name": "6.6.1",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/trendradar/6.6.1/trendradar-6.6.1.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
@@ -27284,8 +27284,8 @@
       },
       "versions": [
         {
-          "name": "1.20.6",
-          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/twenty/1.20.6/twenty-1.20.6.tar.gz",
+          "name": "1.21.0",
+          "downloadUrl": "https:/apps.1panel.pro/stable/1panel/twenty/1.21.0/twenty-1.21.0.tar.gz",
           "additionalProperties": {
             "formFields": [
               {
