@@ -1,5 +1,5 @@
 {
-  "total": 170,
+  "total": 171,
   "apps": [
     {
       "key": "2fauth",
@@ -172,6 +172,15 @@
       ],
       "meta_description": "Deploy cloudflared on your Linux VPS with 1Panel. Cloudflare Tunnel client. One-click install, free and open source.",
       "char_count": 116
+    },
+    {
+      "key": "clawswarm",
+      "name": "ClawSwarm",
+      "tags": [
+        "AI"
+      ],
+      "meta_description": "Deploy ClawSwarm on your Linux server with 1Panel. Open-source swarm orchestration for OpenClaw agents. One-click install from 1Panel App Store.",
+      "char_count": 146
     },
     {
       "key": "code-server",
