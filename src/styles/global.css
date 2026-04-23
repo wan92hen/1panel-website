@@ -126,6 +126,22 @@
   .blog-content pre code {
     @apply bg-transparent text-gray-900 p-0 rounded-none text-sm font-mono;
   }
+  .blog-content table {
+    @apply w-full my-8 border border-gray-200 text-sm;
+    border-collapse: collapse;
+    display: block;
+    overflow-x: auto;
+  }
+  .blog-content th,
+  .blog-content td {
+    @apply border border-gray-200 px-4 py-2 text-left align-top;
+  }
+  .blog-content th {
+    @apply bg-gray-50 text-gray-900 font-semibold;
+  }
+  .blog-content tbody tr:nth-child(even) {
+    @apply bg-gray-50/70;
+  }
 }
 
 @layer utilities {
