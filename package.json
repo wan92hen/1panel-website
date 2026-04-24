@@ -6,7 +6,9 @@
     "dev": "astro dev",
     "start": "astro dev",
     "check:i18n": "node scripts/check-i18n-keys.cjs",
-    "build": "node scripts/fetch-1panel-json.cjs && astro build && node scripts/merge-sitemap-index.mjs && node scripts/indexnow-write-key-file.mjs && node scripts/indexnow-push.mjs",
+    "build": "node scripts/fetch-1panel-json.cjs && astro build && node scripts/merge-sitemap-index.mjs && node scripts/indexnow-write-key-file.mjs",
+    "indexnow-push": "node scripts/indexnow-push.mjs",
+    "indexnow-write-key-file": "node scripts/indexnow-write-key-file.mjs",
     "preview": "astro preview",
     "astro": "astro"
   },
