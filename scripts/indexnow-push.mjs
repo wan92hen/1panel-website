@@ -6,6 +6,8 @@ const INDEXNOW_ENDPOINT =
 const INDEXNOW_KEY = process.env.INDEXNOW_KEY?.trim();
 const SITE_HOST = process.env.INDEXNOW_HOST?.trim() || 'https://1panel.pro';
 const KEY_LOCATION = process.env.INDEXNOW_KEY_LOCATION?.trim();
+const RETRY_MS = Number(process.env.INDEXNOW_RETRY_MS || 15000);
+const FAIL_ON_ERROR = process.env.INDEXNOW_FAIL_ON_ERROR !== 'false';
 
 const distDir = join(process.cwd(), 'dist');
 const sitemapIndexPath = join(distDir, 'sitemap-index.xml');
@@ -83,10 +85,32 @@ async function pushIndexNow(urlList) {
     body: JSON.stringify(payload),
   });
 
-  if (!res.ok) {
-    const body = await res.text();
-    throw new Error(`HTTP ${res.status}: ${body}`);
+  const bodyText = await res.text();
+  let bodyJson;
+  try {
+    bodyJson = bodyText ? JSON.parse(bodyText) : null;
+  } catch {
+    bodyJson = null;
   }
+
+  if (res.ok && bodyJson?.errorCode) {
+    const err = new Error(bodyJson.message || bodyJson.errorCode);
+    err.code = bodyJson.errorCode;
+    err.details = bodyJson.details;
+    throw err;
+  }
+
+  if (!res.ok) {
+    const err = new Error(`HTTP ${res.status}: ${bodyText}`);
+    err.status = res.status;
+    err.code = bodyJson?.errorCode;
+    err.details = bodyJson?.details;
+    throw err;
+  }
+}
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
 }
 
 async function main() {
@@ -115,10 +139,37 @@ async function main() {
   }
 
   for (let i = 0; i < batches.length; i += 1) {
-    await pushIndexNow(batches[i]);
-    console.log(
-      `[indexnow] pushed batch ${i + 1}/${batches.length} (${batches[i].length} urls) for ${host}`,
-    );
+    try {
+      await pushIndexNow(batches[i]);
+      console.log(
+        `[indexnow] pushed batch ${i + 1}/${batches.length} (${batches[i].length} urls) for ${host}`,
+      );
+    } catch (err) {
+      if (err.code === 'SiteVerificationNotCompleted') {
+        console.warn(
+          `[indexnow] verification not completed; retrying in ${RETRY_MS}ms (batch ${i + 1}/${batches.length})`,
+        );
+        await sleep(RETRY_MS);
+        try {
+          await pushIndexNow(batches[i]);
+          console.log(
+            `[indexnow] pushed batch ${i + 1}/${batches.length} (${batches[i].length} urls) for ${host} after retry`,
+          );
+          continue;
+        } catch (retryErr) {
+          console.warn(
+            `[indexnow] still not verified, skip blocking deploy. host=${host}, keyLocation=${KEY_LOCATION || `${host}/${INDEXNOW_KEY}.txt`}`,
+          );
+          console.warn(`[indexnow] response: ${retryErr.message}`);
+          continue;
+        }
+      }
+
+      if (FAIL_ON_ERROR) {
+        throw err;
+      }
+      console.warn(`[indexnow] non-fatal error: ${err.message}`);
+    }
   }
 }
 
