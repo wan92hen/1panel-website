@@ -12,11 +12,28 @@ import {
 import "../styles/global.css";
 
 const siteUrl = Astro.site?.toString() ?? SITE_URL;
+const openClawPageUrl = toAbsoluteUrl("/openclaw.html", siteUrl);
+const openClawProductSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": `${openClawPageUrl}#product`,
+  name: "OpenClaw 一体机",
+  description:
+    "OpenClaw 一体机面向团队和部门级 AI 部署场景，结合 1Panel 运维面板、本地模型能力与 FusionXpark 硬件，支持数据不出域的本地 AI 部署。",
+  image: toAbsoluteUrl("/images/fusionxpark.png", siteUrl),
+  brand: {
+    "@type": "Brand",
+    name: "FIT2CLOUD 飞致云",
+  },
+  url: openClawPageUrl,
+};
 ---
 
 <Layout
-  title="OpenClaw一体机 | 飞致云与超聚变联合打造"
-  description="OpenClaw 一体机由飞致云与超聚变联合打造，面向团队和部门级 AI 部署场景，结合 1Panel 运维面板与本地模型能力，实现数据不出域、隐私与性能兼得。"
+  title="OpenClaw 一体机 - 团队级本地 AI 部署方案"
+  socialTitle="OpenClaw 一体机 - 1Panel 团队级本地 AI 部署方案"
+  schemaName="OpenClaw 一体机"
+  description="OpenClaw 一体机面向团队和部门级 AI 部署场景，结合 1Panel 运维面板、本地模型能力与 FusionXpark 硬件，实现数据不出域、隐私与性能兼得。"
   canonical="/openclaw.html"
   image="/images/fusionxpark.png"
   imageAlt="OpenClaw 一体机产品示意图"
@@ -26,13 +43,18 @@ const siteUrl = Astro.site?.toString() ?? SITE_URL;
     "1Panel",
     "AI 一体机",
     "本地部署 AI",
+    "本地 AI 部署",
+    "私有化 AI 部署",
     "团队级 AI 部署",
+    "FusionXpark",
+    "1Panel AI",
   ]}
   structuredData={[
     createBreadcrumbSchema([
       { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
-      { name: "OpenClaw 一体机", url: toAbsoluteUrl("/openclaw.html", siteUrl) },
+      { name: "OpenClaw 一体机", url: openClawPageUrl },
     ]),
+    openClawProductSchema,
   ]}
 >
   <Statistics slot="head" />

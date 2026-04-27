@@ -12,11 +12,31 @@ import {
 import "../styles/global.css";
 
 const siteUrl = Astro.site?.toString() ?? SITE_URL;
+const selfHostedPageUrl = toAbsoluteUrl("/self-hosted.html", siteUrl);
+const selfHostedItemListSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${selfHostedPageUrl}#scenarios`,
+  name: "1Panel 自托管解决方案场景",
+  itemListElement: [
+    "数据主权",
+    "安全合规",
+    "低成本自托管",
+    "开源软件一键部署",
+    "私有化部署",
+  ].map((name, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    name,
+  })),
+};
 ---
 
 <Layout
-  title="1Panel 自托管解决方案"
-  description="1Panel 自托管解决方案帮助团队在自有环境中部署开源软件，兼顾数据主权、成本可控与安全合规，适用于网站、知识库、密码管理、远程协作等多种场景。"
+  title="1Panel 自托管解决方案 - 开源软件私有化部署"
+  socialTitle="1Panel 自托管解决方案 - 开源软件私有化部署"
+  schemaName="1Panel 自托管解决方案"
+  description="1Panel 自托管解决方案帮助团队在自有环境中部署开源软件，兼顾数据主权、成本可控与安全合规，适用于网站、知识库、密码管理和远程协作等场景。"
   canonical="/self-hosted.html"
   keywords={[
     "1Panel 自托管",
@@ -25,12 +45,16 @@ const siteUrl = Astro.site?.toString() ?? SITE_URL;
     "Linux 面板",
     "数据主权",
     "私有化部署",
+    "开源软件私有化部署",
+    "自建 SaaS 替代",
+    "1Panel 应用商店",
   ]}
   structuredData={[
     createBreadcrumbSchema([
       { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
-      { name: "1Panel 自托管解决方案", url: toAbsoluteUrl("/self-hosted.html", siteUrl) },
+      { name: "1Panel 自托管解决方案", url: selfHostedPageUrl },
     ]),
+    selfHostedItemListSchema,
   ]}
 >
   <Statistics slot="head" />

@@ -7,13 +7,15 @@ export const ORGANIZATION_ALTERNATE_NAME = "FIT2CLOUD 飞致云";
 export const ORGANIZATION_URL = "https://www.fit2cloud.com/";
 export const GITHUB_URL = "https://github.com/1Panel-dev/1Panel";
 export const DEFAULT_DESCRIPTION =
-  "1Panel 是现代化、开源的 Linux 服务器运维管理面板，提供网站、数据库、容器、文件、备份与安全管理，支持应用商店一键部署及本地 AI 模型与智能体管理。";
+  "1Panel 是现代化、开源的 Linux 服务器运维管理面板，提供网站、数据库、容器、文件、备份、安全与 AI 管理能力，支持应用商店一键部署。";
 export const DEFAULT_KEYWORDS = [
   "1Panel",
   "1Panel 官网",
   "Linux 面板",
   "Linux 服务器管理",
+  "Linux 服务器运维管理面板",
   "开源面板",
+  "开源 Linux 面板",
   "服务器运维",
   "Docker 管理",
   "容器管理",
@@ -43,7 +45,7 @@ export function createOrganizationSchema(siteUrl: string = SITE_URL): Structured
     alternateName: ORGANIZATION_ALTERNATE_NAME,
     url: ORGANIZATION_URL,
     logo: toAbsoluteUrl("/images/logo-light-FIT2CLOUD.svg", resolvedSiteUrl),
-    sameAs: [ORGANIZATION_URL],
+    sameAs: [ORGANIZATION_URL, GITHUB_URL],
   };
 }
 
@@ -134,6 +136,8 @@ export function createSoftwareApplicationSchema(siteUrl: string = SITE_URL): Str
       "备份与恢复",
       "安全防护",
       "本地 AI 模型与智能体管理",
+      "OpenClaw 智能体管理",
+      "GPU 监控",
     ],
   };
 }

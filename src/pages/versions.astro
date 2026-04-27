@@ -1,0 +1,271 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Statistics from "../components/Statistics.astro";
+import { Icon } from "astro-icon/components";
+import {
+  SITE_URL,
+  createBreadcrumbSchema,
+  toAbsoluteUrl,
+} from "../lib/seo";
+import "../styles/global.css";
+
+const siteUrl = Astro.site?.toString() ?? SITE_URL;
+
+const plans = [
+  {
+    name: "1Panel 社区版",
+    price: "¥ 0",
+    priceNote: "",
+    subtitle: "开源免费",
+    description: "覆盖日常运维与基础 AI 能力，适合轻量使用和快速上手。",
+    action: "免费使用",
+    href: "https://1panel.cn/docs/v2/installation/online_installation/",
+    color: "green",
+    features: [
+      "OpenClaw 智能体管理",
+      "AI 模型管理",
+      "GPU 监控",
+      "应用商店",
+      "网站管理",
+      "数据库管理",
+      "容器管理",
+      "文件管理",
+      "服务器监控",
+      "防火墙",
+      "进程管理",
+      "SSH 管理",
+      "计划任务",
+      "日志审计",
+    ],
+  },
+  {
+    name: "1Panel 专业版",
+    price: "¥ 1500",
+    priceNote: "/ 版本买断",
+    subtitle: "性价比高",
+    description: "在社区版基础上扩展多机、移动端、网站安全和告警能力。",
+    action: "立即购买",
+    href: "https://www.lxware.cn/1panel?code=bunus",
+    color: "blue",
+    features: [
+      "社区版全部功能",
+      "多机管理",
+      "数据库主从复制",
+      "移动端 App",
+      "AI 建站",
+      "WAF 防火墙",
+      "网站监控报表",
+      "网站防篡改",
+      "自定义 LOGO",
+      "水印设置",
+      "自定义主题配色",
+      "内网代理模式",
+      "定时病毒扫描",
+      "企业微信、钉钉、飞书告警",
+      "短信告警",
+      "短信额度 500 条",
+    ],
+  },
+  {
+    name: "1Panel 企业版",
+    price: "即将发布",
+    priceNote: "",
+    subtitle: "面向企业级部署与管理",
+    description: "面向更复杂的企业部署和管理需求，提供协作、离线和 AI 网关能力。",
+    action: "扫码咨询",
+    href: "#contact",
+    color: "indigo",
+    features: [
+      "专业版全部功能",
+      "适配纯离线环境",
+      "多用户管理",
+      "AI 网关功能",
+      "企业级支持",
+    ],
+  },
+];
+
+const colorClassMap = {
+  green: {
+    title: "text-emerald-500",
+    icon: "bg-emerald-500",
+    button: "bg-emerald-500 hover:bg-emerald-600",
+    border: "border-emerald-100",
+    panel: "bg-emerald-50/30",
+  },
+  blue: {
+    title: "text-1panel",
+    icon: "bg-1panel",
+    button: "bg-1panel hover:bg-blue-700",
+    border: "border-blue-100",
+    panel: "bg-blue-50/40",
+  },
+  indigo: {
+    title: "text-indigo-600",
+    icon: "bg-indigo-600",
+    button: "bg-indigo-600 hover:bg-indigo-700",
+    border: "border-indigo-200",
+    panel: "bg-indigo-50/50",
+  },
+};
+
+const pageTitle = "1Panel 版本对比 - 社区版、专业版、企业版功能与价格";
+const pageDescription =
+  "查看 1Panel 社区版、专业版、企业版的功能差异、价格信息与适用场景，了解多机管理、移动端 App、纯离线环境适配、多用户管理和 AI 网关能力。";
+const versionsPageUrl = toAbsoluteUrl("/versions.html", siteUrl);
+const versionComparisonSchema = {
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "@id": `${versionsPageUrl}#versions`,
+  name: "1Panel 版本对比",
+  description: pageDescription,
+  itemListElement: plans.map((plan, index) => ({
+    "@type": "ListItem",
+    position: index + 1,
+    item: {
+      "@type": "SoftwareApplication",
+      name: plan.name,
+      applicationCategory: "DeveloperApplication",
+      operatingSystem: "Linux",
+      description: plan.description,
+      url: versionsPageUrl,
+      featureList: plan.features,
+      offers:
+        plan.price === "即将发布"
+          ? undefined
+          : {
+              "@type": "Offer",
+              price: plan.price === "¥ 0" ? "0" : "1500",
+              priceCurrency: "CNY",
+              availability: "https://schema.org/InStock",
+            },
+    },
+  })),
+};
+---
+
+<Layout
+  title={pageTitle}
+  socialTitle="1Panel 社区版、专业版、企业版对比"
+  schemaName="1Panel 版本对比"
+  description={pageDescription}
+  canonical="/versions.html"
+  image="/images/overview-full.png"
+  imageAlt="1Panel 版本对比"
+  keywords={[
+    "1Panel 版本对比",
+    "1Panel 社区版",
+    "1Panel 专业版",
+    "1Panel 企业版",
+    "1Panel 价格",
+    "1Panel 功能对比",
+    "1Panel 纯离线环境",
+    "1Panel 多用户管理",
+    "1Panel AI 网关",
+  ]}
+  structuredData={[
+    createBreadcrumbSchema([
+      { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
+      { name: "版本对比", url: versionsPageUrl },
+    ]),
+    versionComparisonSchema,
+  ]}
+>
+  <Statistics slot="head" />
+  <Fragment slot="main">
+    <Header />
+    <main class="relative z-10 bg-white">
+      <section class="bg-gradient-to-b from-blue-50/70 via-white to-white pt-20 pb-12 lg:pt-28 lg:pb-16">
+        <div class="container-custom">
+          <div class="mx-auto max-w-3xl text-center">
+            <h1 class="fade-in-up text-4xl font-bold leading-tight text-gray-900 sm:text-5xl lg:text-6xl" style="animation-delay: 0.1s;">
+              版本对比
+            </h1>
+            <p class="fade-in-up mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-gray-600 sm:text-xl" style="animation-delay: 0.2s;">
+              按场景匹配合适版本
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <section class="pb-16 lg:pb-24">
+        <div class="container-custom">
+          <div class="grid grid-cols-1 gap-6 lg:grid-cols-3">
+            {plans.map((plan, index) => {
+              const colors = colorClassMap[plan.color];
+              return (
+                <article
+                  class={`fade-in-up flex h-full flex-col rounded-lg border ${colors.border} ${colors.panel} p-4 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:shadow-xl`}
+                  style={`animation-delay: ${index * 0.1}s;`}
+                >
+                  <div class="mb-5 text-center">
+                    <h2 class={`text-xl font-bold ${colors.title}`}>{plan.name}</h2>
+                    <p class="mx-auto mt-3 min-h-[44px] max-w-[260px] text-sm leading-relaxed text-gray-500">
+                      {plan.description}
+                    </p>
+                  </div>
+
+                  <div class="rounded-lg bg-white p-6 text-center shadow-sm">
+                    <div class="flex min-h-[54px] items-end justify-center gap-1">
+                      <span class="text-4xl font-bold tracking-normal text-gray-800">{plan.price}</span>
+                      {plan.priceNote && (
+                        <span class="pb-2 text-sm text-gray-500">{plan.priceNote}</span>
+                      )}
+                    </div>
+                    <p class="mt-4 text-sm text-gray-500">{plan.subtitle}</p>
+                    <a
+                      href={plan.href}
+                      target={plan.href.startsWith("http") ? "_blank" : undefined}
+                      class={`mt-8 inline-flex w-full items-center justify-center rounded-md px-5 py-3 text-base font-semibold text-white transition-colors duration-300 ${colors.button}`}
+                    >
+                      {plan.action}
+                    </a>
+                  </div>
+
+                  <ul class="mt-6 flex-1 space-y-3 px-2 pb-4">
+                    {plan.features.map((feature) => (
+                      <li class="flex items-start gap-2 text-[15px] leading-relaxed text-gray-700">
+                        <span class={`mt-1 inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full ${colors.icon} text-white`}>
+                          <Icon name="carbon:checkmark" class="h-3 w-3" />
+                        </span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="bg-white py-16 lg:py-24">
+        <div class="container-custom">
+          <div class="grid grid-cols-1 items-center gap-8 rounded-lg border border-blue-100 bg-blue-50/50 p-6 shadow-sm sm:p-8 lg:grid-cols-[1fr_auto] lg:p-10">
+            <div>
+              <p class="mb-3 text-sm font-semibold text-1panel">企业版咨询</p>
+              <h2 class="text-2xl font-bold text-gray-900 lg:text-3xl">
+                需要多用户、纯离线环境或 AI 网关能力？
+              </h2>
+              <p class="mt-4 max-w-2xl text-base leading-relaxed text-gray-600">
+                微信扫码联系飞致云团队，了解 1Panel 企业版的部署方案、授权方式和服务支持。
+              </p>
+            </div>
+            <div class="flex flex-col items-center justify-center rounded-lg bg-white p-5 shadow-sm">
+              <img
+                src="/images/wecom-qrcode.png"
+                alt="微信扫码咨询 1Panel 企业版"
+                class="h-36 w-36 rounded-md border border-gray-200 bg-white p-2"
+                loading="lazy"
+              />
+              <div class="mt-3 text-center text-sm font-semibold text-gray-800">微信扫码咨询</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </Fragment>
+</Layout>
