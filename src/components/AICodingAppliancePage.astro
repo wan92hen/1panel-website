@@ -134,9 +134,9 @@ const benchmarkRows = [
 ];
 ---
 
-<main class="relative z-10 bg-white">
-  <section class="relative overflow-hidden bg-gray-50 min-h-[78vh] flex items-center">
-    <div class="container-custom py-20 lg:py-24">
+<main class="relative z-10">
+  <section class="relative overflow-hidden bg-gray-50 min-h-[80vh] flex items-center">
+    <div class="relative z-10 container-custom py-20">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
         <div class="text-center lg:text-left">
           <div class="fade-in-up inline-flex items-center px-4 py-2 mb-6 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">
@@ -160,11 +160,11 @@ const benchmarkRows = [
         </div>
 
         <div class="fade-in-up flex justify-center lg:justify-end" style="animation-delay: 0.3s;">
-          <div class="w-full max-w-lg rounded-2xl border border-gray-100 bg-white p-8 shadow-sm shadow-gray-200/60">
+          <div class="w-full max-w-lg">
             <img
               src={productImage}
               alt={productImageAlt}
-              class="mx-auto w-full max-w-sm h-auto object-contain"
+              class="w-full h-auto"
               loading="eager"
             />
           </div>
@@ -173,9 +173,9 @@ const benchmarkRows = [
     </div>
   </section>
 
-  <section class="section-padding bg-gradient-to-b from-gray-50 to-white">
+  <section class="section-padding bg-white border-t border-gray-100">
     <div class="container-custom">
-      <div class="text-center mb-14">
+      <div class="text-center mb-12">
         <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">
           内网环境下的<span class="text-1panel-gradient">编程效率革命者</span>
         </h2>
@@ -184,15 +184,15 @@ const benchmarkRows = [
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 lg:gap-8">
         {
           strengths.map((item) => (
-            <div class="rounded-2xl bg-white border border-gray-100 p-6 shadow-sm shadow-gray-200/60 transition-all duration-200 hover:border-indigo-100 hover:shadow-md">
-              <div class="w-12 h-12 rounded-xl bg-indigo-50 flex items-center justify-center text-indigo-600 mb-5">
-                <Icon name={item.icon} class="w-6 h-6" />
+            <div class="rounded-2xl bg-gray-100/80 border border-gray-100 p-6 lg:p-8 transition-all duration-200 hover:border-indigo-100 hover:shadow-md flex flex-col">
+              <div class="flex items-center gap-3 mb-4">
+                <span aria-hidden="true" class="flex-shrink-0 w-8 h-8 rounded-full bg-green-100 flex items-center justify-center text-green-600 font-bold text-sm">✓</span>
+                <h3 class="text-lg font-bold text-gray-900">{item.title}</h3>
               </div>
-              <h3 class="text-xl font-bold text-gray-900 mb-3">{item.title}</h3>
-              <p class="text-gray-600 leading-relaxed">{item.description}</p>
+              <p class="text-gray-600 leading-relaxed flex-1">{item.description}</p>
             </div>
           ))
         }
@@ -200,7 +200,7 @@ const benchmarkRows = [
     </div>
   </section>
 
-  <section class="section-padding bg-white border-t border-gray-100">
+  <section class="section-padding bg-gradient-to-b from-gray-50 to-white">
     <div class="container-custom">
       <div class="rounded-3xl bg-white border border-gray-100 shadow-sm shadow-gray-200/60 overflow-hidden">
         <div class="px-6 sm:px-10 pt-10 pb-8 text-center border-b border-gray-100">
@@ -229,32 +229,35 @@ const benchmarkRows = [
     </div>
   </section>
 
-  <section id="contact" class="section-padding bg-gray-50 border-t border-gray-100">
+  <section id="contact" class="section-padding bg-white">
     <div class="container-custom">
-      <div class="grid grid-cols-1 lg:grid-cols-[1fr_320px] gap-8 lg:gap-12 items-center rounded-3xl bg-white border border-gray-100 p-8 lg:p-10 shadow-sm shadow-gray-200/60">
-        <div>
+      <div class="rounded-2xl border border-gray-100 bg-indigo-50/40 p-8 shadow-lg flex flex-col md:flex-row gap-6 md:gap-0 md:items-center md:justify-center">
+        <div class="flex flex-col items-center md:items-end md:pr-12 flex-1 md:max-w-[420px]">
           <div class="mb-5 flex items-center gap-3">
             <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
               <Icon name="carbon:purchase" class="h-6 w-6" />
             </div>
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">价格</h2>
           </div>
-          <div class="flex flex-wrap items-end gap-3 mb-5">
+          <div class="flex flex-wrap items-end justify-center md:justify-end gap-3 mb-5">
             <span class="text-5xl font-bold text-gray-900">{price}</span>
             <span class="pb-2 text-lg text-gray-500">含一年软硬件维保</span>
           </div>
-          <p class="text-lg text-gray-600 leading-relaxed">
+          <p class="text-lg text-gray-600 leading-relaxed text-center md:text-right">
             通过微信扫码咨询，获取 {title} 的详细性能参数与采购信息。
           </p>
         </div>
-        <div class="flex flex-col items-center rounded-2xl bg-gray-50 border border-gray-100 p-6">
+
+        <div class="hidden md:block h-36 w-px bg-gray-200 mx-12"></div>
+
+        <div class="flex flex-col items-center flex-1 md:max-w-[320px]">
           <img
             src="/images/wecom-qrcode.png"
             alt="微信扫码咨询"
-            class="w-44 h-44 rounded-lg bg-white p-2"
+            class="w-32 h-32 rounded-lg border border-gray-200 shadow-sm bg-white p-2 mb-2"
             loading="lazy"
           />
-          <p class="mt-4 text-base font-semibold text-gray-900">微信扫码咨询</p>
+          <p class="text-base font-semibold text-gray-800 text-center">微信扫码咨询</p>
         </div>
       </div>
     </div>
