@@ -21,6 +21,7 @@ const {
 
 const title = `AI Coding 一体机（${variant}版）`;
 const price = variant === "B70" ? "￥11.9万" : "￥9.9万";
+const hardwareLabel = variant === "B70" ? "卡" : "硬";
 const strengths = [
   {
     title: "安全",
@@ -41,7 +42,7 @@ const strengths = [
 
 const stackItems = [
   {
-    label: "硬",
+    label: hardwareLabel,
     title: hardware,
     description: hardwareDetail,
   },
