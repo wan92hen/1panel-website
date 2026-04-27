@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Statistics from "../components/Statistics.astro";
+import AICodingAppliancePage from "../components/AICodingAppliancePage.astro";
+import {
+  SITE_URL,
+  createBreadcrumbSchema,
+  toAbsoluteUrl,
+} from "../lib/seo";
+import "../styles/global.css";
+
+const siteUrl = Astro.site?.toString() ?? SITE_URL;
+const pageUrl = toAbsoluteUrl("/aicoding_b70.html", siteUrl);
+const pageTitle = "1Panel AI Coding 一体机 | 飞致云与英特尔联合打造";
+const pageDescription =
+  "1Panel AI Coding 一体机（B70版）由飞致云与英特尔联合打造，适合政府/军工内网开发、金融级安全研发、能源/制造涉密项目、企业核心代码开发等需纯内网隔离的场景。";
+const productSchema = {
+  "@context": "https://schema.org",
+  "@type": "Product",
+  "@id": `${pageUrl}#product`,
+  name: "1Panel AI Coding 一体机（B70版）",
+  description: pageDescription,
+  image: toAbsoluteUrl("/images/aicoding-b70.png", siteUrl),
+  brand: {
+    "@type": "Brand",
+    name: "FIT2CLOUD 飞致云",
+  },
+  url: pageUrl,
+};
+---
+
+<Layout
+  title={pageTitle}
+  socialTitle={pageTitle}
+  schemaName="1Panel AI Coding 一体机（B70版）"
+  description={pageDescription}
+  canonical="/aicoding_b70.html"
+  image="/images/aicoding-b70.png"
+  imageAlt="1Panel AI Coding 一体机 B70 版产品示意图"
+  keywords={["AI Coding一体机", "内网AI编程", "1Panel AI Coding 一体机", "B70", "Intel Arc Pro B70"]}
+  structuredData={[
+    createBreadcrumbSchema([
+      { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
+      { name: "1Panel AI Coding 一体机（B70版）", url: pageUrl },
+    ]),
+    productSchema,
+  ]}
+>
+  <Statistics slot="head" />
+  <Fragment slot="main">
+    <Header />
+    <AICodingAppliancePage
+      variant="B70"
+      partner="英特尔"
+      productImage="/images/aicoding-b70.png"
+      productImageAlt="Intel Arc Pro B70"
+      hardware="4 x Intel Arc Pro B70"
+      hardwareDetail="提供 128G 显存、1468 TOPS 峰值 AI 算力（Int8）"
+    />
+    <Footer />
+  </Fragment>
+</Layout>
