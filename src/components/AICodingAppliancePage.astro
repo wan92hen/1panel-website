@@ -20,6 +20,7 @@ const {
 } = Astro.props;
 
 const title = `AI Coding 一体机（${variant}版）`;
+const price = variant === "B70" ? "￥11.9万" : "￥9.9万";
 const strengths = [
   {
     title: "安全",
@@ -239,7 +240,7 @@ const benchmarkRows = [
             <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">价格</h2>
           </div>
           <div class="flex flex-wrap items-end gap-3 mb-5">
-            <span class="text-5xl font-bold text-gray-900">￥9.9万</span>
+            <span class="text-5xl font-bold text-gray-900">{price}</span>
             <span class="pb-2 text-lg text-gray-500">含一年软硬件维保</span>
           </div>
           <p class="text-lg text-gray-600 leading-relaxed">
