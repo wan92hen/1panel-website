@@ -30,7 +30,7 @@ const strengths = [
   },
   {
     title: "高效",
-    description: "支持 10-20 人团队的编程开发需求，实现 Token 自由",
+    description: "专为 10-20 人技术团队打造，以 Token 自主权驱动开发效能，释放创新潜力",
     icon: "carbon:flash",
   },
   {
@@ -230,46 +230,12 @@ const benchmarkRows = [
     </div>
   </section>
 
-  <section id="contact" class="section-padding bg-white">
-    <div class="container-custom">
-      <div class="rounded-2xl border border-gray-100 bg-indigo-50/40 p-8 shadow-lg flex flex-col md:flex-row gap-6 md:gap-0 md:items-center md:justify-center">
-        <div class="flex flex-col items-center md:items-end md:pr-12 flex-1 md:max-w-[420px]">
-          <div class="mb-5 flex items-center gap-3">
-            <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
-              <Icon name="carbon:purchase" class="h-6 w-6" />
-            </div>
-            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">限时特惠价格</h2>
-          </div>
-          <div class="flex flex-wrap items-end justify-center md:justify-end gap-3 mb-5">
-            <span class="text-5xl font-bold text-gray-900">{price}</span>
-            <span class="pb-2 text-lg text-gray-500">含一年软硬件维保</span>
-          </div>
-          <p class="text-lg text-gray-600 leading-relaxed text-center md:text-right">
-            通过微信扫码咨询，获取 {title} 的详细性能参数与采购信息。
-          </p>
-        </div>
-
-        <div class="hidden md:block h-36 w-px bg-gray-200 mx-12"></div>
-
-        <div class="flex flex-col items-center flex-1 md:max-w-[320px]">
-          <img
-            src="/images/wecom-qrcode.png"
-            alt="微信扫码咨询"
-            class="w-32 h-32 rounded-lg border border-gray-200 shadow-sm bg-white p-2 mb-2"
-            loading="lazy"
-          />
-          <p class="text-base font-semibold text-gray-800 text-center">微信扫码咨询</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <section id="capability" class="section-padding bg-white border-t border-gray-100">
     <div class="container-custom">
       <div class="text-center mb-12">
-        <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">编程能力</h2>
+        <h2 class="section-title text-4xl lg:text-5xl font-bold text-gray-800 mb-6">AI 编程能力</h2>
         <p class="section-subtitle text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-          Qwen3.6-27B 在多方面领先 Qwen3.5-397B-A17B，接近 Claude 4.5 的水平。
+          Qwen3.6-27B 在多方面领先 Qwen3.5-397B-A17B，接近 Claude 4.5 Opus 的水平。
         </p>
       </div>
 
@@ -307,6 +273,40 @@ const benchmarkRows = [
             }
           </tbody>
         </table>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="section-padding bg-white">
+    <div class="container-custom">
+      <div class="rounded-2xl border border-gray-100 bg-indigo-50/40 p-8 shadow-lg flex flex-col md:flex-row gap-6 md:gap-0 md:items-center md:justify-center">
+        <div class="flex flex-col items-center md:items-end md:pr-12 flex-1 md:max-w-[420px]">
+          <div class="mb-5 flex items-center gap-3">
+            <div class="flex h-11 w-11 items-center justify-center rounded-lg bg-indigo-50 text-indigo-600">
+              <Icon name="carbon:purchase" class="h-6 w-6" />
+            </div>
+            <h2 class="text-3xl lg:text-4xl font-bold text-gray-900">限时特惠价格</h2>
+          </div>
+          <div class="flex flex-wrap items-end justify-center md:justify-end gap-3 mb-5">
+            <span class="text-5xl font-bold text-gray-900">{price}</span>
+            <span class="pb-2 text-lg text-gray-500">含一年软硬件维保</span>
+          </div>
+          <p class="text-lg text-gray-600 leading-relaxed text-center md:text-right">
+            通过微信扫码咨询，获取 {title} 的详细性能参数与采购信息。
+          </p>
+        </div>
+
+        <div class="hidden md:block h-36 w-px bg-gray-200 mx-12"></div>
+
+        <div class="flex flex-col items-center flex-1 md:max-w-[320px]">
+          <img
+            src="/images/wecom-qrcode.png"
+            alt="微信扫码咨询"
+            class="w-32 h-32 rounded-lg border border-gray-200 shadow-sm bg-white p-2 mb-2"
+            loading="lazy"
+          />
+          <p class="text-base font-semibold text-gray-800 text-center">微信扫码咨询</p>
+        </div>
       </div>
     </div>
   </section>
