@@ -63,15 +63,7 @@ const openClawProductSchema = {
     <main class="relative z-10">
     <!-- Hero：左右布局，与首页一致，右侧展示 FusionXpark 图片 -->
     <section id="heroSection" class="relative min-h-[80vh] flex items-center overflow-hidden bg-gray-50">
-      <!-- 浮动装饰（与 Hero.astro 一致） -->
-      <div class="absolute inset-0 overflow-hidden">
-        <div class="absolute top-20 left-10 w-20 h-20 rounded-full blur-2xl animate-float bg-1panel opacity-20"></div>
-        <div class="absolute top-40 right-20 w-32 h-32 rounded-full blur-2xl animate-float bg-1panel opacity-30" style="animation-delay: -2s;"></div>
-        <div class="absolute bottom-20 left-20 w-24 h-24 rounded-full blur-2xl animate-float bg-1panel opacity-40" style="animation-delay: -4s;"></div>
-        <div class="absolute bottom-40 right-10 w-16 h-16 rounded-full blur-2xl animate-float bg-1panel opacity-60" style="animation-delay: -6s;"></div>
-      </div>
-
-      <div class="relative z-10 container-custom py-20">
+      <div class="relative z-10 container-custom pt-28 pb-20 lg:pt-32 lg:pb-24">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
           <!-- 左侧：文案 -->
           <div class="text-center lg:text-left">
@@ -79,13 +71,13 @@ const openClawProductSchema = {
               给员工一只虾 🦞，给虾一个家 🏡
             </div>
             <h1 class="fade-in-up text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-8" style="animation-delay: 0.2s;">
-              <span class="block text-gray-800 mb-4" style="font-size:42px">OpenClaw 一体机</span>
+              <span class="block text-gray-800 mb-4">OpenClaw 一体机</span>
               <span class="block text-1panel-gradient mb-2 leading-light">为团队部署而生</span>
             </h1>
             <p class="fade-in-up text-xl sm:text-2xl text-gray-500 mb-10 leading-relaxed" style="animation-delay: 0.4s;">
               轻松支持 10–20 个 AI 助理（OpenClaw、Hermes 和 QwenPaw）并行工作，彻底告别 Token 焦虑。
             </p>
-            <div class="fade-in-up flex gap-4 justify-center lg:justify-start" style="animation-delay: 0.5s;">
+            <div class="fade-in-up flex flex-col sm:flex-row gap-4 justify-center lg:justify-start" style="animation-delay: 0.5s;">
               <a href="https://jsj.top/f/UFPJsq" target="_blank" class="btn-primary text-lg px-8 py-4 inline-flex items-center justify-center">
                 预约演示
               </a>
@@ -96,11 +88,11 @@ const openClawProductSchema = {
           </div>
           <!-- 右侧：FusionXpark 产品图 -->
           <div class="fade-in-up flex justify-center lg:justify-end" style="animation-delay: 0.3s;">
-            <div class="w-full max-w-lg">
+            <div class="w-full max-w-md lg:max-w-lg">
               <img
                 src="/images/fusionxpark.png"
                 alt="FusionXpark OpenClaw 一体机"
-                class="w-full h-auto"
+                class="mx-auto max-h-[460px] w-auto max-w-full object-contain"
                 loading="eager"
               />
             </div>
