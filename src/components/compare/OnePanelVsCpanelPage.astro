@@ -4,6 +4,7 @@ import Header from '../../components/Header.astro';
 import Footer from '../../components/Footer.astro';
 import BlogPageDecor from '../../components/blog/BlogPageDecor.astro';
 import { getTranslations, getBasePath } from '../../i18n/utils';
+import { DEFAULT_LOCALE, SUPPORTED_LOCALES } from '../../i18n/config';
 import '../../styles/global.css';
 
 interface Props {
@@ -23,6 +24,12 @@ const description = isDe
   ? 'Objektiver Vergleich von 1Panel und cPanel: Architektur, KI-Readiness, Betrieb und langfristige Kosten.'
   : 'A practical and objective comparison of 1Panel and cPanel across architecture, AI readiness, operations, and long-term cost behavior.';
 const canonicalUrl = new URL(Astro.url.pathname, Astro.site).href;
+const pagePath = '/1panel-vs-cpanel';
+const hreflangLinks = SUPPORTED_LOCALES.map((locale) => ({
+  hreflang: locale === 'zh-hant' ? 'zh-Hant' : locale,
+  href: new URL(locale === DEFAULT_LOCALE ? pagePath : `/${locale}${pagePath}`, Astro.site).href,
+}));
+const xDefaultHref = new URL(pagePath, Astro.site).href;
 const keywords = isDe
   ? '1Panel vs cPanel,cPanel Alternative,Open Source Kontrollpanel,VPS Panel,Multi-Server,Self-Hosting'
   : '1Panel vs cPanel,cPanel alternative,open source control panel,VPS control panel,multi-node server management,self-hosted panel';
@@ -79,6 +86,18 @@ const faqJsonLd = {
     },
   })),
 };
+const h1Headline = isDe
+  ? '1Panel vs cPanel: Welches Panel passt zu Ihrer Roadmap 2026?'
+  : '1Panel vs cPanel: Which Control Panel Fits Your 2026 Roadmap?';
+const webPageJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'WebPage',
+  name: title,
+  headline: h1Headline,
+  description,
+  inLanguage: lang,
+  url: canonicalUrl,
+};
 ---
 
 <Layout
@@ -91,6 +110,9 @@ const faqJsonLd = {
 >
   <Fragment slot="head">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    {hreflangLinks.map((item) => <link rel="alternate" hreflang={item.hreflang} href={item.href} />)}
+    <link rel="alternate" hreflang="x-default" href={xDefaultHref} />
+    <script type="application/ld+json" set:html={JSON.stringify(webPageJsonLd)} />
     <script type="application/ld+json" set:html={JSON.stringify(faqJsonLd)} />
   </Fragment>
 
@@ -134,6 +156,50 @@ const faqJsonLd = {
                 </>
               )}
             </header>
+
+            <section class="card p-6 sm:p-8">
+              <div class="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-5 mb-5">
+                <div>
+                  <h2 class="text-2xl font-bold text-slate-900">
+                    {isDe ? 'Schnellvergleich: 1Panel vs cPanel' : 'Quick Feature Comparison: 1Panel vs cPanel'}
+                  </h2>
+                  <p class="text-slate-600 mt-2">
+                    {isDe
+                      ? 'In 30 Sekunden sehen, welches Panel besser zu moderner Migration passt.'
+                      : 'Get a 30-second decision view before diving into the full analysis.'}
+                  </p>
+                </div>
+                <a href="./pricing" class="compare-btn-primary whitespace-nowrap">Start Migration</a>
+              </div>
+              <div class="overflow-x-auto rounded-xl border border-slate-200">
+                <table class="w-full min-w-[520px] text-left text-sm text-slate-700">
+                  <thead class="bg-slate-50 text-slate-900 font-semibold">
+                    <tr>
+                      <th class="px-4 py-3">Key Dimension</th>
+                      <th class="px-4 py-3">1Panel</th>
+                      <th class="px-4 py-3">cPanel</th>
+                    </tr>
+                  </thead>
+                  <tbody class="divide-y divide-slate-200">
+                    <tr>
+                      <td class="px-4 py-3 font-medium">Architecture Fit</td>
+                      <td class="px-4 py-3">Container-friendly, modern app lifecycle</td>
+                      <td class="px-4 py-3">Legacy shared-hosting oriented</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-3 font-medium">AI Readiness</td>
+                      <td class="px-4 py-3">Built for AI-era operation workflows</td>
+                      <td class="px-4 py-3">Usually needs extra tooling</td>
+                    </tr>
+                    <tr>
+                      <td class="px-4 py-3 font-medium">Long-term Cost Shape</td>
+                      <td class="px-4 py-3">Open-source first, Pro on demand</td>
+                      <td class="px-4 py-3">License tiers can increase with growth</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
 
             {isDe && (
               <p class="rounded-lg border border-amber-200 bg-amber-50/90 px-4 py-3 text-sm text-slate-700 text-center max-w-3xl mx-auto">
