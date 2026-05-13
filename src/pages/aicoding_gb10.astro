@@ -14,14 +14,14 @@ import "../styles/global.css";
 const siteUrl = Astro.site?.toString() ?? SITE_URL;
 const pageUrl = toAbsoluteUrl("/aicoding_gb10.html", siteUrl);
 const pageTitle =
-  "1Panel AI Coding 一体机 | 飞致云与戴尔科技集团联合打造";
+  "1Panel AI 编程一体机 | 飞致云匠心出品";
 const pageDescription =
-  "1Panel AI Coding 一体机（GB10版）由飞致云与戴尔科技集团联合打造，适合政府/军工内网开发、金融级安全研发、能源/制造涉密项目、企业核心代码开发等需纯内网隔离的场景。";
+  "1Panel AI Coding 一体机（GB10版）由飞致云匠心合打造，适合政府/军工内网开发、金融级安全研发、能源/制造涉密项目、企业核心代码开发等需纯内网隔离的场景。";
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "@id": `${pageUrl}#product`,
-  name: "1Panel AI Coding 一体机（GB10版）",
+  name: "1Panel AI 编程一体机（GB10版）",
   description: pageDescription,
   image: toAbsoluteUrl("/images/aicoding-gb10.png", siteUrl),
   brand: {
@@ -35,16 +35,16 @@ const productSchema = {
 <Layout
   title={pageTitle}
   socialTitle={pageTitle}
-  schemaName="1Panel AI Coding 一体机（GB10版）"
+  schemaName="1Panel AI 编程一体机（GB10版）"
   description={pageDescription}
   canonical="/aicoding_gb10.html"
   image="/images/aicoding-gb10.png"
-  imageAlt="1Panel AI Coding 一体机 GB10 版产品示意图"
-  keywords={["AI Coding一体机", "内网AI编程", "1Panel AI Coding 一体机", "GB10", "Dell Pro Max with GB10"]}
+  imageAlt="1Panel AI 编程一体机 GB10 版产品示意图"
+  keywords={["AI Coding一体机", "AI 编程一体机", "1Panel AI Coding 一体机", "GB10", "内网 AI Coding"]}
   structuredData={[
     createBreadcrumbSchema([
       { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
-      { name: "1Panel AI Coding 一体机（GB10版）", url: pageUrl },
+      { name: "1Panel AI 编程一体机（GB10版）", url: pageUrl },
     ]),
     productSchema,
   ]}
@@ -54,11 +54,11 @@ const productSchema = {
     <Header />
     <AICodingAppliancePage
       variant="GB10"
-      partner="戴尔科技集团"
+      partner="英伟达"
       productImage="/images/aicoding-gb10.png"
-      productImageAlt="Dell Pro Max with GB10 双机互联"
-      hardware="2 台 Dell Pro Max with GB10"
-      hardwareDetail="提供高达 2 PFLOPS 算力（FP4）"
+      productImageAlt="GB10 双机互联"
+      hardware="2 台 GB10"
+      hardwareDetail="提供高达 2 PFLOPS 算力（FP4），可选品牌包括超聚变、戴尔和联想"
     />
     <Footer />
   </Fragment>
