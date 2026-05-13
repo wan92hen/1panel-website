@@ -13,14 +13,14 @@ import "../styles/global.css";
 
 const siteUrl = Astro.site?.toString() ?? SITE_URL;
 const pageUrl = toAbsoluteUrl("/aicoding_b70.html", siteUrl);
-const pageTitle = "1Panel AI Coding 一体机 | 飞致云与英特尔联合打造";
+const pageTitle = "1Panel AI 编程一体机 | 飞致云与英特尔联合打造";
 const pageDescription =
-  "1Panel AI Coding 一体机（B70版）由飞致云与英特尔联合打造，适合政府/军工内网开发、金融级安全研发、能源/制造涉密项目、企业核心代码开发等需纯内网隔离的场景。";
+  "1Panel AI 编程一体机（B70版）由飞致云与英特尔联合打造，适合政府/军工内网开发、金融级安全研发、能源/制造涉密项目、企业核心代码开发等需纯内网隔离的场景。";
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "@id": `${pageUrl}#product`,
-  name: "1Panel AI Coding 一体机（B70版）",
+  name: "1Panel AI 编程一体机（B70版）",
   description: pageDescription,
   image: toAbsoluteUrl("/images/aicoding-b70.png", siteUrl),
   brand: {
@@ -34,16 +34,16 @@ const productSchema = {
 <Layout
   title={pageTitle}
   socialTitle={pageTitle}
-  schemaName="1Panel AI Coding 一体机（B70版）"
+  schemaName="1Panel AI 编程一体机（B70版）"
   description={pageDescription}
   canonical="/aicoding_b70.html"
   image="/images/aicoding-b70.png"
-  imageAlt="1Panel AI Coding 一体机 B70 版产品示意图"
+  imageAlt="1Panel AI 编程一体机 B70 版产品示意图"
   keywords={["AI Coding一体机", "AI编程一体机", "Intel Arc Pro B70"]}
   structuredData={[
     createBreadcrumbSchema([
       { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
-      { name: "1Panel AI Coding 一体机（B70版）", url: pageUrl },
+      { name: "1Panel AI 编程一体机（B70版）", url: pageUrl },
     ]),
     productSchema,
   ]}
