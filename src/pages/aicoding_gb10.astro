@@ -14,16 +14,18 @@ import "../styles/global.css";
 const siteUrl = Astro.site?.toString() ?? SITE_URL;
 const pageUrl = toAbsoluteUrl("/aicoding_gb10.html", siteUrl);
 const pageTitle =
-  "1Panel AI 编程一体机 | 飞致云匠心出品";
+  "1Panel AI 编程一体机（GB10版） | 飞致云匠心出品";
 const pageDescription =
-  "1Panel AI 编程一体机（GB10版）由飞致云匠心合打造，适合政府/军工内网开发、金融级安全研发、能源/制造涉密项目、企业核心代码开发等需纯内网隔离的场景。";
+  "1Panel AI 编程一体机（GB10版）由飞致云匠心打造，适合政府/军工内网开发、金融级安全研发、能源/制造涉密项目、企业核心代码开发等需纯内网隔离的场景。";
 const productSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "@id": `${pageUrl}#product`,
   name: "1Panel AI 编程一体机（GB10版）",
+  alternateName: ["AI Coding 一体机（GB10版）", "1Panel AI Coding 一体机 GB10"],
   description: pageDescription,
-  image: toAbsoluteUrl("/images/aicoding_gb10.png", siteUrl),
+  category: "AI coding appliance",
+  image: toAbsoluteUrl("/images/aicoding-gb10.png", siteUrl),
   brand: {
     "@type": "Brand",
     name: "FIT2CLOUD 飞致云",
@@ -40,7 +42,7 @@ const productSchema = {
   canonical="/aicoding_gb10.html"
   image="/images/aicoding-gb10.png"
   imageAlt="1Panel AI 编程一体机 GB10 版产品示意图"
-  keywords={["AI Coding一体机", "AI 编程一体机", "1Panel AI Coding 一体机", "GB10", "内网 AI Coding"]}
+  keywords={["AI Coding一体机", "AI 编程一体机", "AI 编程一体机（GB10版）", "1Panel AI Coding 一体机", "1Panel AI 编程一体机（GB10版）", "GB10", "内网 AI Coding"]}
   structuredData={[
     createBreadcrumbSchema([
       { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },

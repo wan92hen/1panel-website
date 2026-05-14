@@ -17,9 +17,11 @@ const openClawProductSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
   "@id": `${openClawPageUrl}#product`,
-  name: "1Panel AI助理一体机",
+  name: "1Panel AI 助理一体机（GB10版）",
+  alternateName: ["1Panel AI 助理一体机", "OpenClaw 一体机"],
   description:
     "1Panel AI 助理一体机面向团队和部门级 AI 部署场景，结合 1Panel 企业版、本地模型能力与 FusionXpark 硬件，支持数据不出域的本地 AI 助理部署。",
+  category: "AI appliance",
   image: toAbsoluteUrl("/images/fusionxpark.png", siteUrl),
   brand: {
     "@type": "Brand",
@@ -30,9 +32,9 @@ const openClawProductSchema = {
 ---
 
 <Layout
-  title="1Panel AI 助理一体机 - 团队级本地 AI 部署方案"
-  socialTitle="1Panel AI 助理一体机 - 团队级本地 AI 助理部署方案"
-  schemaName="1Panel AI 助理一体机"
+  title="1Panel AI 助理一体机（GB10版） - 团队级本地 AI 部署方案"
+  socialTitle="1Panel AI 助理一体机（GB10版） - 团队级本地 AI 助理部署方案"
+  schemaName="1Panel AI 助理一体机（GB10版）"
   description="1Panel AI 助理一体机面向团队级 AI 助理部署场景，结合 1Panel 企业版、本地模型能力与 FusionXpark 硬件，实现数据不出域、隐私与性能兼得。"
   canonical="/openclaw.html"
   image="/images/fusionxpark.png"
@@ -40,7 +42,9 @@ const openClawProductSchema = {
   keywords={[
     "OpenClaw 一体机",
     "AI 助理一体机",
+    "AI 助理一体机（GB10版）",
     "1Panel AI 助理一体机",
+    "1Panel AI 助理一体机（GB10版）",
     "AI 一体机",
     "本地部署 AI",
     "本地 AI 部署",
@@ -52,7 +56,7 @@ const openClawProductSchema = {
   structuredData={[
     createBreadcrumbSchema([
       { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
-      { name: "1Panel AI 助理一体机", url: openClawPageUrl },
+      { name: "1Panel AI 助理一体机（GB10版）", url: openClawPageUrl },
     ]),
     openClawProductSchema,
   ]}
