@@ -82,10 +82,10 @@ const plans = [
     color: "blue",
     features: [
       "专业版全部功能（不含短信）",
-      "AI 网关",
-      "私有 Skills Hub",
-      "多用户管理",
-      "安全运维报表",
+      { label: "AI 网关", href: "/ai-gateway.html" },
+      { label: "私有 Skills Hub", href: "/skills-hub.html" },
+      { label: "多用户管理", href: "/user-management.html" },
+      { label: "安全运维报表", href: "/security-ops-report.html" },
       "支持纳管 20 个节点",
       "适配纯离线环境",
       "企业级支持服务（5x8 线上）",
@@ -137,7 +137,9 @@ const versionComparisonSchema = {
       operatingSystem: "Linux",
       description: plan.description,
       url: versionsPageUrl,
-      featureList: plan.features,
+      featureList: plan.features.map((feature) =>
+        typeof feature === "string" ? feature : feature.label
+      ),
       offers:
         plan.price === "即将发布"
           ? undefined
@@ -231,14 +233,35 @@ const versionComparisonSchema = {
                   </div>
 
                   <ul class={`mt-6 space-y-3 px-2 pb-4 ${plan.name === "1Panel 企业版" ? "" : "flex-1"}`}>
-                    {plan.features.map((feature) => (
-                      <li class="flex items-start gap-2 text-[15px] leading-relaxed text-gray-700">
-                        <span class={`mt-1 inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full ${colors.icon} text-white`}>
-                          <Icon name="carbon:checkmark" class="h-3 w-3" />
-                        </span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
+                    {plan.features.map((feature) => {
+                      const featureLabel =
+                        typeof feature === "string" ? feature : feature.label;
+                      const featureHref =
+                        typeof feature === "string" ? undefined : feature.href;
+                      const content = (
+                        <>
+                          <span class={`mt-1 inline-flex h-4 w-4 flex-shrink-0 items-center justify-center rounded-full ${colors.icon} text-white`}>
+                            <Icon name="carbon:checkmark" class="h-3 w-3" />
+                          </span>
+                          <span>{featureLabel}</span>
+                        </>
+                      );
+
+                      return (
+                        <li class="text-[15px] leading-relaxed text-gray-700">
+                          {featureHref ? (
+                            <a
+                              href={featureHref}
+                              class="flex items-start gap-2 transition-colors duration-200 hover:text-1panel"
+                            >
+                              {content}
+                            </a>
+                          ) : (
+                            <div class="flex items-start gap-2">{content}</div>
+                          )}
+                        </li>
+                      );
+                    })}
                   </ul>
 
                   {plan.name === "1Panel 企业版" && (
