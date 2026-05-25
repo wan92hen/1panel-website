@@ -1,0 +1,265 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Statistics from "../components/Statistics.astro";
+import { Icon } from "astro-icon/components";
+import {
+  SITE_URL,
+  createBreadcrumbSchema,
+  toAbsoluteUrl,
+} from "../lib/seo";
+import "../styles/global.css";
+
+const siteUrl = Astro.site?.toString() ?? SITE_URL;
+const pageUrl = toAbsoluteUrl("/security-ops-report.html", siteUrl);
+const trialUrl = "https://jsj.top/f/umuYtv";
+
+const reportKeywords = [
+  "风险概览",
+  "运维状态",
+  "报表沉淀",
+  "安全巡检",
+  "待关注项",
+];
+
+const capabilityCards = [
+  {
+    icon: "carbon:report",
+    title: "风险概览",
+    advantage:
+      "汇总系统、安全、网站和运维侧的关键状态，集中呈现需要关注的风险项。",
+    benefit:
+      "帮助管理员快速了解整体安全与运维情况，优先处理高风险问题。",
+  },
+  {
+    icon: "carbon:application",
+    title: "主机运行状态",
+    advantage:
+      "对主机运行情况进行报表化展示，便于查看服务器基础运行状态。",
+    benefit:
+      "降低日常巡检成本，帮助管理员及时发现主机异常。",
+  },
+  {
+    icon: "carbon:security",
+    title: "登录与安全配置",
+    advantage:
+      "汇总登录相关状态和安全配置情况，辅助管理员检查安全策略是否合理。",
+    benefit:
+      "提升账号访问和系统登录安全性，减少因配置不当带来的安全风险。",
+  },
+  {
+    icon: "carbon:gateway",
+    title: "网站防护",
+    advantage:
+      "展示网站防护相关状态，帮助管理员关注网站侧安全情况。",
+    benefit:
+      "便于及时发现网站安全待处理项，提升网站运行安全性。",
+  },
+  {
+    icon: "carbon:chart-line-data",
+    title: "运行资源",
+    advantage:
+      "汇总资源运行情况，沉淀为可查看、可追踪的报表信息。",
+    benefit:
+      "帮助管理员掌握资源使用状态，为后续优化和排查提供依据。",
+  },
+  {
+    icon: "carbon:settings",
+    title: "计划任务",
+    advantage:
+      "展示计划任务相关执行状态，帮助管理员关注自动化任务运行情况。",
+    benefit:
+      "减少任务异常被忽略的情况，提升运维工作的稳定性。",
+  },
+  {
+    icon: "carbon:network-4",
+    title: "告警通知",
+    advantage:
+      "汇总告警通知相关配置和状态，便于统一查看告警能力是否正常。",
+    benefit:
+      "帮助管理员及时发现告警链路问题，保障异常情况能够被及时感知。",
+  },
+  {
+    icon: "carbon:cloud-offline",
+    title: "导出历史",
+    advantage:
+      "支持查看报表导出历史，便于追溯和沉淀安全运维记录。",
+    benefit:
+      "方便企业留存运维报表，满足内部复盘、审计和管理需要。",
+  },
+  {
+    icon: "carbon:settings",
+    title: "报表设置",
+    advantage:
+      "支持对安全运维报表相关能力进行配置管理。",
+    benefit:
+      "提升报表使用灵活性，便于根据企业实际场景进行调整。",
+  },
+];
+
+const pageTitle = "安全运维报表 - 1Panel 安全巡检与运维报表";
+const pageDescription =
+  "安全运维报表将系统、模型、智能体、网站、安全和运维侧的关键状态沉淀成报表，帮助管理员发现待关注项。";
+const securityOpsReportSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": `${pageUrl}#product`,
+  name: "1Panel 安全运维报表",
+  applicationCategory: "DeveloperApplication",
+  applicationSubCategory: "Security operations report",
+  operatingSystem: "Linux",
+  description: pageDescription,
+  url: pageUrl,
+  featureList: [
+    "风险概览",
+    "主机运行",
+    "登录与安全配置",
+    "网站防护",
+    "运行资源",
+    "计划任务",
+    "告警通知",
+    "导出历史",
+    "设置",
+  ],
+  publisher: {
+    "@type": "Organization",
+    name: "杭州飞致云信息科技有限公司",
+  },
+};
+---
+
+<Layout
+  title={pageTitle}
+  socialTitle="1Panel 安全运维报表"
+  schemaName="1Panel 安全运维报表"
+  description={pageDescription}
+  canonical="/security-ops-report.html"
+  image="/images/enterprise-security-ops-report.png"
+  imageWidth={3430}
+  imageHeight={2168}
+  imageAlt="1Panel 安全运维报表"
+  keywords={[
+    "1Panel 安全运维报表",
+    "安全运维报表",
+    "风险概览",
+    "运维状态",
+    "报表沉淀",
+    "安全巡检",
+    "待关注项",
+    "主机运行",
+    "网站防护",
+    "告警通知",
+  ]}
+  structuredData={[
+    createBreadcrumbSchema([
+      { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
+      { name: "1Panel 安全运维报表", url: pageUrl },
+    ]),
+    securityOpsReportSchema,
+  ]}
+>
+  <Statistics slot="head" />
+  <Fragment slot="main">
+    <Header />
+    <main class="relative z-10 bg-white text-gray-800">
+      <section class="relative overflow-hidden bg-gradient-to-b from-blue-50/80 via-white to-white pt-20 pb-16 lg:pt-28 lg:pb-24">
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
+        <div class="container-custom">
+          <div class="mx-auto max-w-4xl text-center">
+            <a href="/enterprise.html" class="fade-in-up mb-6 inline-flex items-center justify-center rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-1panel shadow-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50" style="animation-delay: 0.05s;">
+              <Icon name="carbon:arrow-left" class="mr-2 h-4 w-4" />
+              返回企业版
+            </a>
+            <h1 class="fade-in-up text-4xl font-bold leading-tight tracking-normal text-gray-950 sm:text-5xl lg:text-6xl" style="animation-delay: 0.1s;">
+              安全运维报表
+            </h1>
+            <p class="fade-in-up mt-6 text-lg leading-relaxed text-gray-600 sm:text-xl" style="animation-delay: 0.2s;">
+              将系统、模型、智能体、网站、安全和运维侧的关键状态沉淀成报表，帮助管理员发现待关注项。
+            </p>
+            <div class="fade-in-up mt-8 flex flex-wrap justify-center gap-3" style="animation-delay: 0.3s;">
+              {reportKeywords.map((keyword) => (
+                <span class="rounded-md border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-1panel shadow-sm">
+                  {keyword}
+                </span>
+              ))}
+            </div>
+            <a href={trialUrl} target="_blank" rel="noopener noreferrer" class="btn-primary fade-in-up mt-7 inline-flex items-center justify-center px-9 py-4 text-base" style="animation-delay: 0.32s;">
+              申请试用
+              <Icon name="carbon:arrow-right" class="ml-2 h-5 w-5" />
+            </a>
+          </div>
+
+          <div class="fade-in-up mt-8" style="animation-delay: 0.35s;">
+            <div class="relative overflow-hidden rounded-lg border border-blue-100 bg-white p-3 shadow-2xl shadow-blue-100/70 sm:p-4">
+              <div class="absolute inset-x-10 -top-16 h-32 rounded-full bg-blue-200/30 blur-3xl"></div>
+              <div class="relative overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
+                <img
+                  src="/images/enterprise-security-ops-report.png"
+                  alt="1Panel 安全运维报表功能介绍"
+                  class="h-auto w-full object-cover"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 lg:py-24">
+        <div class="container-custom">
+          <div class="mx-auto mb-12 max-w-3xl text-center">
+            <h2 class="text-3xl font-bold leading-tight text-gray-900 lg:text-5xl">
+              风险概览，运维状态
+            </h2>
+            <p class="mt-5 text-lg leading-relaxed text-gray-600">
+              围绕概览、主机运行、登录与安全配置、网站防护、运行资源、计划任务、告警通知、导出历史和设置，沉淀安全运维报表。
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {capabilityCards.map((capability, index) => (
+              <article
+                class="fade-in-up rounded-lg border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl"
+                style={`animation-delay: ${index * 0.05}s;`}
+              >
+                <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 text-1panel">
+                  <Icon name={capability.icon} class="h-6 w-6" />
+                </span>
+                <h3 class="text-xl font-bold text-gray-900">{capability.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-gray-600">
+                  <span class="font-semibold text-gray-800">优势：</span>{capability.advantage}
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-gray-600">
+                  <span class="font-semibold text-gray-800">价值：</span>{capability.benefit}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-16 lg:py-24">
+        <div class="container-custom">
+          <div class="overflow-hidden rounded-lg border border-blue-100 bg-gradient-to-r from-blue-50 to-white p-6 shadow-sm sm:p-8 lg:p-10">
+            <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto]">
+              <div>
+                <h2 class="text-2xl font-bold text-gray-900 lg:text-3xl">
+                  面向管理员的安全巡检与报表沉淀
+                </h2>
+                <p class="mt-4 max-w-3xl text-base leading-relaxed text-gray-600">
+                  安全运维报表用于将 1Panel 中系统、模型、智能体、网站、安全和运维侧的关键状态统一沉淀成报表。通过风险概览、主机运行、登录与安全配置、网站防护、运行资源、计划任务、告警通知、导出历史和设置等能力，帮助管理员快速发现待关注项，提升日常安全巡检和运维管理效率。
+                </p>
+              </div>
+              <a href="/enterprise.html" class="btn-primary inline-flex items-center justify-center px-8 py-4 text-base">
+                了解企业版
+                <Icon name="carbon:arrow-right" class="ml-2 h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </Fragment>
+</Layout>

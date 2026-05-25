@@ -1,0 +1,238 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Statistics from "../components/Statistics.astro";
+import { Icon } from "astro-icon/components";
+import {
+  SITE_URL,
+  createBreadcrumbSchema,
+  toAbsoluteUrl,
+} from "../lib/seo";
+import "../styles/global.css";
+
+const siteUrl = Astro.site?.toString() ?? SITE_URL;
+const pageUrl = toAbsoluteUrl("/ai-gateway.html", siteUrl);
+const trialUrl = "https://jsj.top/f/umuYtv";
+
+const gatewayKeywords = [
+  "统一代理",
+  "模型接入",
+  "AI 代理调度",
+  "席位权限管理",
+  "用量统计",
+  "内容合规管控",
+];
+
+const capabilityCards = [
+  {
+    icon: "carbon:gateway",
+    title: "统一 AI 网关入口",
+    advantage:
+      "为内部 AI 应用和模型调用提供统一接入入口，集中代理不同业务系统的 AI 请求。",
+    benefit:
+      "降低 AI 应用接入复杂度，避免各业务系统重复对接模型服务。",
+  },
+  {
+    icon: "carbon:network-4",
+    title: "模型统一接入",
+    advantage:
+      "通过 AI 网关集中管理模型访问，支持内部应用统一调用模型能力。",
+    benefit:
+      "提升模型接入和后续维护效率，便于企业统一管理模型资源。",
+  },
+  {
+    icon: "carbon:flow",
+    title: "AI 代理调度",
+    advantage:
+      "内置高性能 AI 网关能力，统一处理 AI 请求代理、转发和调用链路。",
+    benefit:
+      "提升 AI 调用链路的可管理性，便于问题排查和服务治理。",
+  },
+  {
+    icon: "carbon:user-role",
+    title: "席位权限管理",
+    advantage:
+      "支持对用户、团队或应用的 AI 使用权限进行集中管理。",
+    benefit:
+      "帮助企业控制 AI 使用范围，减少越权调用和资源滥用风险。",
+  },
+  {
+    icon: "carbon:chart-line-data",
+    title: "用量统计",
+    advantage:
+      "对 AI 调用次数、使用情况和资源消耗进行统一统计。",
+    benefit:
+      "帮助企业清晰了解 AI 使用情况，为成本分析和资源规划提供依据。",
+  },
+  {
+    icon: "carbon:content-delivery-network",
+    title: "内容合规管控",
+    advantage:
+      "对 AI 调用内容进行统一治理和合规管控。",
+    benefit:
+      "降低敏感内容、违规内容和不合规使用带来的风险，提升企业 AI 使用安全性。",
+  },
+];
+
+const pageTitle = "1Panel AI 网关 - AI 统一接入与集中管理入口";
+const pageDescription =
+  "1Panel AI 网关为内部 AI 应用和模型调用提供统一接入入口，便于集中管理模型访问、使用统计和调用链路。";
+const aiGatewaySchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": `${pageUrl}#product`,
+  name: "1Panel AI 网关",
+  applicationCategory: "DeveloperApplication",
+  applicationSubCategory: "AI gateway",
+  operatingSystem: "Linux",
+  description: pageDescription,
+  url: pageUrl,
+  featureList: [
+    "统一 AI 网关入口",
+    "模型统一接入",
+    "用量统计",
+    "AI 代理调度",
+    "席位权限管理",
+    "内容合规管控",
+  ],
+  publisher: {
+    "@type": "Organization",
+    name: "杭州飞致云信息科技有限公司",
+  },
+};
+---
+
+<Layout
+  title={pageTitle}
+  socialTitle="1Panel AI 网关"
+  schemaName="1Panel AI 网关"
+  description={pageDescription}
+  canonical="/ai-gateway.html"
+  image="/images/enterprise-ai-gateway.png"
+  imageWidth={3418}
+  imageHeight={1822}
+  imageAlt="1Panel AI 网关"
+  keywords={[
+    "1Panel AI 网关",
+    "AI 网关",
+    "统一接入",
+    "统一代理",
+    "模型接入",
+    "用量统计",
+    "内容合规管控",
+    "AI 代理调度",
+    "席位权限管理",
+  ]}
+  structuredData={[
+    createBreadcrumbSchema([
+      { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
+      { name: "1Panel AI 网关", url: pageUrl },
+    ]),
+    aiGatewaySchema,
+  ]}
+>
+  <Statistics slot="head" />
+  <Fragment slot="main">
+    <Header />
+    <main class="relative z-10 bg-white text-gray-800">
+      <section class="relative overflow-hidden bg-gradient-to-b from-blue-50/80 via-white to-white pt-20 pb-16 lg:pt-28 lg:pb-24">
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
+        <div class="container-custom">
+          <div class="mx-auto max-w-4xl text-center">
+            <a href="/enterprise.html" class="fade-in-up mb-6 inline-flex items-center justify-center rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-1panel shadow-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50" style="animation-delay: 0.05s;">
+              <Icon name="carbon:arrow-left" class="mr-2 h-4 w-4" />
+              返回企业版
+            </a>
+            <h1 class="fade-in-up text-4xl font-bold leading-tight tracking-normal text-gray-950 sm:text-5xl lg:text-6xl" style="animation-delay: 0.1s;">
+              1Panel AI 网关
+            </h1>
+            <p class="fade-in-up mt-6 text-lg leading-relaxed text-gray-600 sm:text-xl" style="animation-delay: 0.2s;">
+              为内部 AI 应用和模型调用提供统一接入入口，便于集中管理模型访问、使用统计和调用链路。
+            </p>
+            <div class="fade-in-up mt-8 flex flex-wrap justify-center gap-3" style="animation-delay: 0.3s;">
+              {gatewayKeywords.map((keyword) => (
+                <span class="rounded-md border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-1panel shadow-sm">
+                  {keyword}
+                </span>
+              ))}
+            </div>
+            <a href={trialUrl} target="_blank" rel="noopener noreferrer" class="btn-primary fade-in-up mt-7 inline-flex items-center justify-center px-9 py-4 text-base" style="animation-delay: 0.32s;">
+              申请试用
+              <Icon name="carbon:arrow-right" class="ml-2 h-5 w-5" />
+            </a>
+          </div>
+
+          <div class="fade-in-up mt-8" style="animation-delay: 0.35s;">
+            <div class="relative overflow-hidden rounded-lg border border-blue-100 bg-white p-3 shadow-2xl shadow-blue-100/70 sm:p-4">
+              <div class="absolute inset-x-10 -top-16 h-32 rounded-full bg-blue-200/30 blur-3xl"></div>
+              <div class="relative overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
+                <img
+                  src="/images/enterprise-ai-gateway.png"
+                  alt="1Panel AI 网关功能介绍"
+                  class="h-auto w-full object-cover"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 lg:py-24">
+        <div class="container-custom">
+          <div class="mx-auto mb-12 max-w-3xl text-center">
+            <h2 class="text-3xl font-bold leading-tight text-gray-900 lg:text-5xl">
+              统一接入，集中管理
+            </h2>
+            <p class="mt-5 text-lg leading-relaxed text-gray-600">
+              围绕模型访问、使用统计和调用链路，为内部 AI 应用提供清晰的网关入口。
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {capabilityCards.map((capability, index) => (
+              <article
+                class="fade-in-up rounded-lg border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl"
+                style={`animation-delay: ${index * 0.05}s;`}
+              >
+                <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 text-1panel">
+                  <Icon name={capability.icon} class="h-6 w-6" />
+                </span>
+                <h3 class="text-xl font-bold text-gray-900">{capability.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-gray-600">
+                  <span class="font-semibold text-gray-800">优势：</span>{capability.advantage}
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-gray-600">
+                  <span class="font-semibold text-gray-800">价值：</span>{capability.benefit}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-16 lg:py-24">
+        <div class="container-custom">
+          <div class="overflow-hidden rounded-lg border border-blue-100 bg-gradient-to-r from-blue-50 to-white p-6 shadow-sm sm:p-8 lg:p-10">
+            <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto]">
+              <div>
+                <h2 class="text-2xl font-bold text-gray-900 lg:text-3xl">
+                  面向内部 AI 应用和模型调用的统一入口
+                </h2>
+                <p class="mt-4 max-w-3xl text-base leading-relaxed text-gray-600">
+                  1Panel AI 网关通过统一代理、模型接入、AI 代理调度、席位权限管理、用量统计和内容合规管控，帮助企业集中管理模型访问、调用链路和使用成本，提升 AI 应用的治理能力与安全可控性。
+                </p>
+              </div>
+              <a href="/enterprise.html" class="btn-primary inline-flex items-center justify-center px-8 py-4 text-base">
+                了解企业版
+                <Icon name="carbon:arrow-right" class="ml-2 h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </Fragment>
+</Layout>

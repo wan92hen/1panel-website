@@ -20,6 +20,8 @@ export interface Props {
   schemaName?: string;
   image?: string;
   imageAlt?: string;
+  imageWidth?: number;
+  imageHeight?: number;
   noindex?: boolean;
   structuredData?: Record<string, unknown> | Array<Record<string, unknown>>;
 }
@@ -33,6 +35,8 @@ const {
   schemaName = socialTitle,
   image = DEFAULT_OG_IMAGE,
   imageAlt = socialTitle,
+  imageWidth,
+  imageHeight,
   noindex = false,
   structuredData = [],
 } = Astro.props;
@@ -40,6 +44,14 @@ const {
 const siteUrl = (Astro.site ?? new URL(SITE_URL)).toString();
 const canonicalUrl = new URL(canonical ?? Astro.url.pathname, siteUrl).toString();
 const socialImageUrl = toAbsoluteUrl(image, siteUrl);
+const imageExtension = image.split("?")[0].split(".").pop()?.toLowerCase();
+const imageMimeType = imageExtension === "jpg" || imageExtension === "jpeg"
+  ? "image/jpeg"
+  : imageExtension === "webp"
+    ? "image/webp"
+    : imageExtension === "svg"
+      ? "image/svg+xml"
+      : "image/png";
 const keywordsContent = Array.isArray(keywords) ? keywords.join(",") : keywords;
 const robotsContent = noindex
   ? "noindex, nofollow"
@@ -54,6 +66,8 @@ const structuredDataItems = [
     title: schemaName,
     description,
     url: canonicalUrl,
+    image,
+    imageAlt,
     siteUrl,
   }),
   ...(isHomePage ? [createWebsiteSchema(siteUrl)] : []),
@@ -68,9 +82,16 @@ const structuredDataItems = [
   <meta name="description" content={description} />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="canonical" href={canonicalUrl} />
+  <link rel="alternate" hreflang="zh-CN" href={canonicalUrl} />
+  <link rel="sitemap" type="application/xml" href={toAbsoluteUrl("/sitemap.xml", siteUrl)} />
   <link rel="icon" type="image/png" href="/favicon.png" />
   <meta name="generator" content={Astro.generator} />
   <meta name="robots" content={robotsContent} />
+  <meta name="author" content="杭州飞致云信息科技有限公司" />
+  <meta name="application-name" content={SITE_NAME} />
+  <meta name="apple-mobile-web-app-title" content={SITE_NAME} />
+  <meta name="theme-color" content="#005eeb" />
+  <meta name="format-detection" content="telephone=no" />
   
   <!-- SEO Meta Tags -->
   <meta property="og:title" content={socialTitle} />
@@ -80,8 +101,13 @@ const structuredDataItems = [
   <meta property="og:site_name" content={SITE_NAME} />
   <meta property="og:locale" content="zh_CN" />
   <meta property="og:image" content={socialImageUrl} />
+  <meta property="og:image:secure_url" content={socialImageUrl} />
+  <meta property="og:image:type" content={imageMimeType} />
+  {imageWidth && <meta property="og:image:width" content={String(imageWidth)} />}
+  {imageHeight && <meta property="og:image:height" content={String(imageHeight)} />}
   <meta property="og:image:alt" content={imageAlt} />
   <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:url" content={canonicalUrl} />
   <meta name="twitter:title" content={socialTitle} />
   <meta name="twitter:description" content={description} />
   <meta name="twitter:image" content={socialImageUrl} />
