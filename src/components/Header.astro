@@ -25,6 +25,63 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
         >
           <span class="nav-link-label" data-text="版本对比">版本对比</span>
         </a>
+        <div id="enterprise-dropdown-container" class="relative">
+          <button
+            id="enterprise-dropdown-trigger"
+            type="button"
+            class="relative inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group"
+            aria-expanded="false"
+            aria-controls="enterprise-dropdown"
+          >
+            <span class="nav-link-label" data-text="企业版">
+              <span class="nav-link-content">
+                <span>企业版</span>
+                <Icon
+                  id="enterprise-dropdown-icon"
+                  name="carbon:chevron-down"
+                  class="w-4 h-4 transition-transform duration-200"
+                />
+              </span>
+            </span>
+          </button>
+          <div
+            id="enterprise-dropdown"
+            class="absolute left-1/2 top-full z-[9999] hidden w-48 -translate-x-1/2 pt-5"
+          >
+            <div class="rounded-lg border border-gray-100 bg-white py-2 shadow-xl shadow-gray-900/10">
+              <a
+                href="/enterprise.html"
+                class="block px-4 py-3 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-1panel"
+              >
+                概览
+              </a>
+              <a
+                href="/ai-gateway.html"
+                class="block px-4 py-3 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-1panel"
+              >
+                AI 网关
+              </a>
+              <a
+                href="/skills-hub.html"
+                class="block px-4 py-3 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-1panel"
+              >
+                Skill 商店
+              </a>
+              <a
+                href="/user-management.html"
+                class="block px-4 py-3 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-1panel"
+              >
+                用户管理
+              </a>
+              <a
+                href="/security-ops-report.html"
+                class="block px-4 py-3 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-1panel"
+              >
+                安全运维报表
+              </a>
+            </div>
+          </div>
+        </div>
         <div id="ai-appliance-dropdown-container" class="relative">
           <button
             id="ai-appliance-dropdown-trigger"
@@ -144,6 +201,41 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
           版本对比
         </a>
         <div class="space-y-3">
+          <div class="text-sm font-semibold text-gray-900">企业版</div>
+          <div class="flex flex-col space-y-3 pl-3 border-l border-gray-200">
+            <a
+              href="/enterprise.html"
+              class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+            >
+              概览
+            </a>
+            <a
+              href="/ai-gateway.html"
+              class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+            >
+              AI 网关
+            </a>
+            <a
+              href="/skills-hub.html"
+              class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+            >
+              Skill 商店
+            </a>
+            <a
+              href="/user-management.html"
+              class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+            >
+              用户管理
+            </a>
+            <a
+              href="/security-ops-report.html"
+              class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+            >
+              安全运维报表
+            </a>
+          </div>
+        </div>
+        <div class="space-y-3">
           <div class="text-sm font-semibold text-gray-900">AI 一体机</div>
           <div class="flex flex-col space-y-3 pl-3 border-l border-gray-200">
             <a
@@ -253,6 +345,16 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
   document.addEventListener("DOMContentLoaded", () => {
     const mobileMenuBtn = document.getElementById("mobile-menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
+    const enterpriseDropdownContainer = document.getElementById(
+      "enterprise-dropdown-container"
+    );
+    const enterpriseDropdownTrigger = document.getElementById(
+      "enterprise-dropdown-trigger"
+    );
+    const enterpriseDropdown = document.getElementById("enterprise-dropdown");
+    const enterpriseDropdownIcon = document.getElementById(
+      "enterprise-dropdown-icon"
+    );
     const aiDropdownContainer = document.getElementById(
       "ai-appliance-dropdown-container"
     );
@@ -278,40 +380,57 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
       });
     }
 
-    if (aiDropdownContainer && aiDropdownTrigger && aiDropdown) {
-      const setAIDropdownOpen = (isOpen) => {
-        aiDropdown.classList.toggle("hidden", !isOpen);
-        aiDropdownTrigger.setAttribute("aria-expanded", String(isOpen));
-        aiDropdownIcon?.classList.toggle("rotate-180", isOpen);
+    const setupDropdown = (container, trigger, dropdown, icon) => {
+      if (!container || !trigger || !dropdown) {
+        return;
+      }
+
+      const setDropdownOpen = (isOpen) => {
+        dropdown.classList.toggle("hidden", !isOpen);
+        trigger.setAttribute("aria-expanded", String(isOpen));
+        icon?.classList.toggle("rotate-180", isOpen);
       };
 
-      aiDropdownTrigger.addEventListener("click", (event) => {
+      trigger.addEventListener("click", (event) => {
         event.stopPropagation();
-        setAIDropdownOpen(aiDropdown.classList.contains("hidden"));
+        setDropdownOpen(dropdown.classList.contains("hidden"));
       });
 
-      aiDropdownContainer.addEventListener("mouseenter", () => {
-        setAIDropdownOpen(true);
+      container.addEventListener("mouseenter", () => {
+        setDropdownOpen(true);
       });
 
-      aiDropdownContainer.addEventListener("mouseleave", () => {
-        setAIDropdownOpen(false);
+      container.addEventListener("mouseleave", () => {
+        setDropdownOpen(false);
       });
 
       document.addEventListener("click", (event) => {
         if (
           event.target instanceof Node &&
-          !aiDropdownContainer.contains(event.target)
+          !container.contains(event.target)
         ) {
-          setAIDropdownOpen(false);
+          setDropdownOpen(false);
         }
       });
 
       document.addEventListener("keydown", (event) => {
         if (event.key === "Escape") {
-          setAIDropdownOpen(false);
+          setDropdownOpen(false);
         }
       });
-    }
+    };
+
+    setupDropdown(
+      enterpriseDropdownContainer,
+      enterpriseDropdownTrigger,
+      enterpriseDropdown,
+      enterpriseDropdownIcon
+    );
+    setupDropdown(
+      aiDropdownContainer,
+      aiDropdownTrigger,
+      aiDropdown,
+      aiDropdownIcon
+    );
   });
 </script>

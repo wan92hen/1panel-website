@@ -71,14 +71,19 @@ export function createWebPageSchema({
   title,
   description,
   url,
+  image,
+  imageAlt,
   siteUrl = SITE_URL,
 }: {
   title: string;
   description: string;
   url: string;
+  image?: string;
+  imageAlt?: string;
   siteUrl?: string;
 }): StructuredData {
   const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
+  const imageUrl = image ? toAbsoluteUrl(image, resolvedSiteUrl) : undefined;
 
   return {
     "@context": "https://schema.org",
@@ -88,6 +93,15 @@ export function createWebPageSchema({
     name: title,
     description,
     inLanguage: "zh-CN",
+    ...(imageUrl
+      ? {
+          primaryImageOfPage: {
+            "@type": "ImageObject",
+            url: imageUrl,
+            caption: imageAlt ?? title,
+          },
+        }
+      : {}),
     isPartOf: {
       "@id": `${resolvedSiteUrl}/#website`,
     },

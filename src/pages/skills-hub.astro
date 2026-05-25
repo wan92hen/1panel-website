@@ -1,0 +1,239 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import Statistics from "../components/Statistics.astro";
+import { Icon } from "astro-icon/components";
+import {
+  SITE_URL,
+  createBreadcrumbSchema,
+  toAbsoluteUrl,
+} from "../lib/seo";
+import "../styles/global.css";
+
+const siteUrl = Astro.site?.toString() ?? SITE_URL;
+const pageUrl = toAbsoluteUrl("/skills-hub.html", siteUrl);
+const trialUrl = "https://jsj.top/f/umuYtv";
+
+const skillsKeywords = [
+  "统一管理",
+  "安全审计",
+  "技能沉淀",
+  "风险等级评估",
+  "可审计",
+  "可治理",
+];
+
+const capabilityCards = [
+  {
+    icon: "carbon:headset",
+    title: "Skill 技能包统一管理",
+    advantage:
+      "在组织内集中发布、发现、上传、导入和管理可复用的 Skills 技能。",
+    benefit:
+      "帮助企业沉淀可复用的 AI 技能资产，避免技能分散管理和重复建设。",
+  },
+  {
+    icon: "carbon:network-4",
+    title: "多种导入方式",
+    advantage:
+      "支持上传 Skill 技能包，也支持通过仓库或 URL 导入 Skill 技能包。",
+    benefit:
+      "提升 Skill 接入灵活性，方便团队快速引入已有技能资产。",
+  },
+  {
+    icon: "carbon:user-role",
+    title: "自定义智能体支持",
+    advantage:
+      "可围绕不同智能体使用场景安装 Skill，统一复用组织内的技能能力。",
+    benefit:
+      "扩展 Skill 的适用范围，让团队在多样化智能体场景中保持技能复用和统一管理。",
+  },
+  {
+    icon: "carbon:cloud-offline",
+    title: "Skill 技能包下载",
+    advantage:
+      "支持 Skill 技能包下载，便于迁移、备份和复用。",
+    benefit:
+      "提升 Skill 资产流转效率，方便在不同环境或团队之间共享使用。",
+  },
+  {
+    icon: "carbon:security",
+    title: "风险等级评估",
+    advantage:
+      "对 Skill 技能包进行风险等级评估，识别潜在安全风险。",
+    benefit:
+      "帮助管理员提前发现高风险技能，降低不安全 Skill 带来的影响。",
+  },
+  {
+    icon: "carbon:report",
+    title: "安全审计",
+    advantage:
+      "支持 Skill 技能包安全审计，确保技能使用过程可审计、可治理。",
+    benefit:
+      "提升企业对 Skill 使用的安全性和合规性控制，满足组织级治理需求。",
+  },
+];
+
+const pageTitle = "1Panel Skills Hub - 组织级 Skills 技能管理";
+const pageDescription =
+  "1Panel Skills Hub 用于在组织内发布、发现和管理可复用的 Skills 技能，确保可审计、可治理。";
+const skillsHubSchema = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "@id": `${pageUrl}#product`,
+  name: "1Panel Skills Hub",
+  applicationCategory: "DeveloperApplication",
+  applicationSubCategory: "Skills management",
+  operatingSystem: "Linux",
+  description: pageDescription,
+  url: pageUrl,
+  featureList: [
+    "Skill 技能包统一管理",
+    "多种导入方式",
+    "自定义智能体支持",
+    "Skill 技能包下载",
+    "风险等级评估",
+    "安全审计",
+  ],
+  publisher: {
+    "@type": "Organization",
+    name: "杭州飞致云信息科技有限公司",
+  },
+};
+---
+
+<Layout
+  title={pageTitle}
+  socialTitle="1Panel Skills Hub"
+  schemaName="1Panel Skills Hub"
+  description={pageDescription}
+  canonical="/skills-hub.html"
+  image="/images/enterprise-skills-hub.png"
+  imageWidth={3430}
+  imageHeight={1822}
+  imageAlt="1Panel Skills Hub"
+  keywords={[
+    "1Panel Skills Hub",
+    "Skill 商店",
+    "Skills 技能",
+    "Skill 技能包",
+    "技能沉淀",
+    "统一管理",
+    "安全审计",
+    "风险等级评估",
+    "可审计",
+    "可治理",
+  ]}
+  structuredData={[
+    createBreadcrumbSchema([
+      { name: "1Panel 官网", url: toAbsoluteUrl("/", siteUrl) },
+      { name: "1Panel Skills Hub", url: pageUrl },
+    ]),
+    skillsHubSchema,
+  ]}
+>
+  <Statistics slot="head" />
+  <Fragment slot="main">
+    <Header />
+    <main class="relative z-10 bg-white text-gray-800">
+      <section class="relative overflow-hidden bg-gradient-to-b from-blue-50/80 via-white to-white pt-20 pb-16 lg:pt-28 lg:pb-24">
+        <div class="absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-blue-200 to-transparent"></div>
+        <div class="container-custom">
+          <div class="mx-auto max-w-4xl text-center">
+            <a href="/enterprise.html" class="fade-in-up mb-6 inline-flex items-center justify-center rounded-full border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-1panel shadow-sm transition-all duration-300 hover:border-blue-200 hover:bg-blue-50" style="animation-delay: 0.05s;">
+              <Icon name="carbon:arrow-left" class="mr-2 h-4 w-4" />
+              返回企业版
+            </a>
+            <h1 class="fade-in-up text-4xl font-bold leading-tight tracking-normal text-gray-950 sm:text-5xl lg:text-6xl" style="animation-delay: 0.1s;">
+              1Panel Skills Hub
+            </h1>
+            <p class="fade-in-up mt-6 text-lg leading-relaxed text-gray-600 sm:text-xl" style="animation-delay: 0.2s;">
+              在组织内发布、发现和管理可复用的 Skills 技能，确保可审计、可治理。
+            </p>
+            <div class="fade-in-up mt-8 flex flex-wrap justify-center gap-3" style="animation-delay: 0.3s;">
+              {skillsKeywords.map((keyword) => (
+                <span class="rounded-md border border-blue-100 bg-white px-4 py-2 text-sm font-semibold text-1panel shadow-sm">
+                  {keyword}
+                </span>
+              ))}
+            </div>
+            <a href={trialUrl} target="_blank" rel="noopener noreferrer" class="btn-primary fade-in-up mt-7 inline-flex items-center justify-center px-9 py-4 text-base" style="animation-delay: 0.32s;">
+              申请试用
+              <Icon name="carbon:arrow-right" class="ml-2 h-5 w-5" />
+            </a>
+          </div>
+
+          <div class="fade-in-up mt-8" style="animation-delay: 0.35s;">
+            <div class="relative overflow-hidden rounded-lg border border-blue-100 bg-white p-3 shadow-2xl shadow-blue-100/70 sm:p-4">
+              <div class="absolute inset-x-10 -top-16 h-32 rounded-full bg-blue-200/30 blur-3xl"></div>
+              <div class="relative overflow-hidden rounded-lg border border-gray-100 bg-gray-50">
+                <img
+                  src="/images/enterprise-skills-hub.png"
+                  alt="1Panel Skills Hub 功能介绍"
+                  class="h-auto w-full object-cover"
+                  loading="eager"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="py-16 lg:py-24">
+        <div class="container-custom">
+          <div class="mx-auto mb-12 max-w-3xl text-center">
+            <h2 class="text-3xl font-bold leading-tight text-gray-900 lg:text-5xl">
+              统一管理，安全沉淀
+            </h2>
+            <p class="mt-5 text-lg leading-relaxed text-gray-600">
+              围绕 Skill 技能包的发布、发现、导入、下载和审计，帮助组织沉淀可复用技能资产。
+            </p>
+          </div>
+
+          <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {capabilityCards.map((capability, index) => (
+              <article
+                class="fade-in-up rounded-lg border border-gray-100 bg-white p-6 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-blue-100 hover:shadow-xl"
+                style={`animation-delay: ${index * 0.05}s;`}
+              >
+                <span class="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-lg bg-blue-50 text-1panel">
+                  <Icon name={capability.icon} class="h-6 w-6" />
+                </span>
+                <h3 class="text-xl font-bold text-gray-900">{capability.title}</h3>
+                <p class="mt-3 text-sm leading-relaxed text-gray-600">
+                  <span class="font-semibold text-gray-800">优势：</span>{capability.advantage}
+                </p>
+                <p class="mt-3 text-sm leading-relaxed text-gray-600">
+                  <span class="font-semibold text-gray-800">价值：</span>{capability.benefit}
+                </p>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section class="bg-white py-16 lg:py-24">
+        <div class="container-custom">
+          <div class="overflow-hidden rounded-lg border border-blue-100 bg-gradient-to-r from-blue-50 to-white p-6 shadow-sm sm:p-8 lg:p-10">
+            <div class="grid grid-cols-1 items-center gap-8 lg:grid-cols-[1fr_auto]">
+              <div>
+                <h2 class="text-2xl font-bold text-gray-900 lg:text-3xl">
+                  面向组织的 Skills 技能资产管理
+                </h2>
+                <p class="mt-4 max-w-3xl text-base leading-relaxed text-gray-600">
+                  1Panel Skills Hub 通过 Skill 技能包上传、仓库或 URL 导入、自定义智能体安装、技能包下载、风险等级评估和安全审计等能力，帮助企业沉淀可复用技能资产，并确保 Skill 的使用过程可审计、可治理、安全合规。
+                </p>
+              </div>
+              <a href="/enterprise.html" class="btn-primary inline-flex items-center justify-center px-8 py-4 text-base">
+                了解企业版
+                <Icon name="carbon:arrow-right" class="ml-2 h-5 w-5" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <Footer />
+  </Fragment>
+</Layout>
