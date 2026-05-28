@@ -10,7 +10,6 @@ export default defineConfig({
   output: 'static',
   build: {
     assets: 'assets',
-    assetsPrefix: './',
     format: 'file'
   },
   server: {

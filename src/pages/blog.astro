@@ -1,0 +1,120 @@
+---
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import BlogPostList from "../components/BlogPostList.astro";
+import Layout from "../layouts/Layout.astro";
+import posts from "../data/blog-posts.json";
+import {
+  BLOG_DESCRIPTION,
+  BLOG_KEYWORDS,
+  BLOG_SECTION_NAME,
+  type BlogPost,
+  getBlogPageLastmod,
+  getBlogPagePath,
+  getBlogPagePosts,
+  getBlogPageTitle,
+  getBlogTotalPages,
+  sortBlogPosts,
+} from "../lib/blog";
+import { SITE_URL, createBlogSchema, createBreadcrumbSchema, createItemListSchema } from "../lib/seo";
+import "../styles/global.css";
+
+const blogPosts = sortBlogPosts(posts as BlogPost[]);
+const currentPage = 1;
+const totalPages = getBlogTotalPages(blogPosts.length);
+const pagePosts = getBlogPagePosts(blogPosts, currentPage);
+const latestDate = blogPosts[0]?.date ?? "2026-05-28";
+const pageLatestDate = getBlogPageLastmod(blogPosts, currentPage);
+const earliestDate = blogPosts.at(-1)?.date ?? latestDate;
+const yearCount = new Set(blogPosts.map((post) => post.date.slice(0, 4))).size;
+const pageTitle = getBlogPageTitle(currentPage);
+const pageDescription = BLOG_DESCRIPTION;
+const keywords = BLOG_KEYWORDS;
+const structuredData = [
+  createBreadcrumbSchema([
+    { name: "首页", url: `${SITE_URL}/` },
+    { name: "产品动态", url: `${SITE_URL}/blog.html` },
+  ]),
+  createBlogSchema({
+    name: BLOG_SECTION_NAME,
+    description: pageDescription,
+    url: `${SITE_URL}/blog.html`,
+    posts: blogPosts,
+    dateModified: latestDate,
+  }),
+  createItemListSchema({
+    name: `${BLOG_SECTION_NAME} - 第 ${currentPage} 页`,
+    description: pageDescription,
+    url: `${SITE_URL}/blog.html`,
+    items: pagePosts,
+  }),
+  {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    "@id": `${SITE_URL}/blog.html#collection`,
+    name: pageTitle,
+    description: pageDescription,
+    url: `${SITE_URL}/blog.html`,
+    inLanguage: "zh-CN",
+    dateModified: pageLatestDate,
+    hasPart: pagePosts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: post.url,
+      datePublished: post.date,
+      dateModified: post.date,
+    })),
+  },
+];
+const nextPagePath = totalPages > 1 ? getBlogPagePath(2) : null;
+---
+
+<Layout
+  title={pageTitle}
+  socialTitle={pageTitle}
+  description={pageDescription}
+  keywords={keywords}
+  canonical="/blog.html"
+  schemaName={BLOG_SECTION_NAME}
+  modifiedTime={pageLatestDate}
+  structuredData={structuredData}
+>
+  <Fragment slot="head">
+    {nextPagePath && <link rel="next" href={`${SITE_URL}${nextPagePath}`} />}
+  </Fragment>
+  <Fragment slot="main">
+    <Header />
+    <main class="bg-gradient-light text-gray-900">
+      <section class="border-b border-gray-200 bg-white">
+        <div class="container-custom py-14 lg:py-20">
+          <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
+            <div>
+              <p class="text-sm font-semibold text-1panel">产品动态</p>
+              <h1 class="mt-3 text-3xl font-bold tracking-normal text-gray-950 lg:text-5xl">{BLOG_SECTION_NAME}</h1>
+              <p class="mt-4 max-w-3xl text-base leading-8 text-gray-600 lg:text-lg">
+                {BLOG_DESCRIPTION}
+              </p>
+            </div>
+            <div class="grid grid-cols-3 gap-3 rounded-lg border border-gray-200 bg-slate-50 p-4">
+              <div>
+                <div class="text-2xl font-bold text-gray-950">{blogPosts.length}</div>
+                <div class="mt-1 text-xs text-gray-500">文章</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-gray-950">{yearCount}</div>
+                <div class="mt-1 text-xs text-gray-500">年份</div>
+              </div>
+              <div>
+                <div class="text-2xl font-bold text-gray-950">{earliestDate.slice(0, 4)}</div>
+                <div class="mt-1 text-xs text-gray-500">起始</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <BlogPostList posts={pagePosts} currentPage={currentPage} totalPages={totalPages} />
+    </main>
+    <Footer />
+  </Fragment>
+</Layout>

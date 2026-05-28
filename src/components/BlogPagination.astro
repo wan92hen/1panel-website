@@ -1,0 +1,64 @@
+---
+import { getBlogPagePath } from "../lib/blog";
+
+const { currentPage, totalPages } = Astro.props as {
+  currentPage: number;
+  totalPages: number;
+};
+
+const pages = Array.from({ length: totalPages }, (_, index) => index + 1);
+const previousPage = currentPage > 1 ? currentPage - 1 : null;
+const nextPage = currentPage < totalPages ? currentPage + 1 : null;
+---
+
+{
+  totalPages > 1 && (
+    <nav class="mt-10 flex flex-col items-center justify-between gap-4 border-t border-gray-200 pt-8 sm:flex-row" aria-label="产品动态分页">
+      <div class="text-sm text-gray-500">
+        第 <span class="font-semibold text-gray-900">{currentPage}</span> / {totalPages} 页
+      </div>
+      <div class="flex flex-wrap items-center justify-center gap-2">
+        {
+          previousPage ? (
+            <a
+              href={getBlogPagePath(previousPage)}
+              class="rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition hover:border-1panel hover:text-1panel"
+            >
+              上一页
+            </a>
+          ) : (
+            <span class="rounded-md border border-gray-100 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-400">上一页</span>
+          )
+        }
+        {
+          pages.map((page) => (
+            page === currentPage ? (
+              <span class="w-10 rounded-md bg-1panel px-3 py-2 text-center text-sm font-semibold text-white" aria-current="page">
+                {page}
+              </span>
+            ) : (
+              <a
+                href={getBlogPagePath(page)}
+                class="w-10 rounded-md border border-gray-200 bg-white px-3 py-2 text-center text-sm font-medium text-gray-700 transition hover:border-1panel hover:text-1panel"
+              >
+                {page}
+              </a>
+            )
+          ))
+        }
+        {
+          nextPage ? (
+            <a
+              href={getBlogPagePath(nextPage)}
+              class="rounded-md border border-gray-200 bg-white px-3 py-2 text-sm font-medium text-gray-700 transition hover:border-1panel hover:text-1panel"
+            >
+              下一页
+            </a>
+          ) : (
+            <span class="rounded-md border border-gray-100 bg-gray-50 px-3 py-2 text-sm font-medium text-gray-400">下一页</span>
+          )
+        }
+      </div>
+    </nav>
+  )
+}

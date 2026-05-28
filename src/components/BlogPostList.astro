@@ -1,0 +1,49 @@
+---
+import { getBlogPostPreviewImage, type BlogPost } from "../lib/blog";
+import BlogPagination from "./BlogPagination.astro";
+
+const { posts, currentPage, totalPages } = Astro.props as {
+  posts: BlogPost[];
+  currentPage: number;
+  totalPages: number;
+};
+
+const postCards = posts.map((post) => ({
+  ...post,
+  previewImage: getBlogPostPreviewImage(post),
+}));
+---
+
+<section class="container-custom py-10 lg:py-14">
+  <div class="grid gap-5">
+    {
+      postCards.map((post) => (
+        <article
+          class={`grid gap-5 rounded-lg border border-gray-200 bg-white p-4 shadow-sm transition hover:border-blue-200 hover:shadow-md ${post.previewImage ? "md:grid-cols-[220px_minmax(0,1fr)]" : ""}`}
+        >
+          {post.previewImage && (
+            <a href={post.path} class="block overflow-hidden rounded-md bg-gray-100">
+              <img
+                src={post.previewImage}
+                alt={post.title}
+                loading="lazy"
+                class="aspect-video h-full w-full object-cover transition duration-300 hover:scale-105"
+              />
+            </a>
+          )}
+          <div class="flex min-w-0 flex-col justify-between gap-4 py-1">
+            <div>
+              <time datetime={post.date} class="text-sm text-gray-500">{post.dateText}</time>
+              <h2 class="mt-2 text-lg font-semibold leading-snug text-gray-950 lg:text-xl">
+                <a href={post.path} class="hover:text-1panel">{post.title}</a>
+              </h2>
+              <p class="mt-3 line-clamp-2 text-sm leading-7 text-gray-600">{post.description}</p>
+            </div>
+            <a href={post.path} class="text-sm font-semibold text-1panel hover:underline">阅读全文</a>
+          </div>
+        </article>
+      ))
+    }
+  </div>
+  <BlogPagination currentPage={currentPage} totalPages={totalPages} />
+</section>
