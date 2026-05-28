@@ -1,0 +1,350 @@
+---
+import Footer from "../../components/Footer.astro";
+import Header from "../../components/Header.astro";
+import BlogPostList from "../../components/BlogPostList.astro";
+import Layout from "../../layouts/Layout.astro";
+import posts from "../../data/blog-posts.json";
+import {
+  BLOG_DESCRIPTION,
+  BLOG_KEYWORDS,
+  BLOG_SECTION_NAME,
+  type BlogPost,
+  type BlogArticle,
+  getBlogPageLastmod,
+  getBlogPagePath,
+  getBlogPagePosts,
+  getBlogPageTitle,
+  getBlogPostKeywords,
+  getBlogTotalPages,
+  sortBlogPosts,
+} from "../../lib/blog";
+import {
+  DEFAULT_KEYWORDS,
+  SITE_URL,
+  createBlogSchema,
+  createBlogPostingSchema,
+  createBreadcrumbSchema,
+  createItemListSchema,
+} from "../../lib/seo";
+import "../../styles/global.css";
+
+const blogPosts = sortBlogPosts(posts as BlogArticle[]);
+const totalPages = getBlogTotalPages(blogPosts.length);
+
+export function getStaticPaths() {
+  const allPosts = sortBlogPosts(posts as BlogArticle[]);
+  const pages = getBlogTotalPages(allPosts.length);
+  const postPaths = allPosts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+  const pagePaths = Array.from({ length: Math.max(0, pages - 1) }, (_, index) => {
+    const currentPage = index + 2;
+    return {
+      params: { slug: String(currentPage) },
+      props: {
+        currentPage,
+        pagePosts: getBlogPagePosts(allPosts, currentPage),
+      },
+    };
+  });
+
+  return [...postPaths, ...pagePaths];
+}
+
+const { post, currentPage = 1, pagePosts = [] } = Astro.props as {
+  post?: BlogArticle;
+  currentPage?: number;
+  pagePosts?: BlogPost[];
+};
+const isListPage = !post;
+const latestDate = blogPosts[0]?.date ?? "2026-05-28";
+const pageLatestDate = isListPage ? getBlogPageLastmod(blogPosts, currentPage) : post.date;
+const earliestDate = blogPosts.at(-1)?.date ?? latestDate;
+const yearCount = new Set(blogPosts.map((item) => item.date.slice(0, 4))).size;
+const pageTitle = isListPage ? getBlogPageTitle(currentPage) : `${post.title} - ${BLOG_SECTION_NAME}`;
+const pageDescription = isListPage ? BLOG_DESCRIPTION : post.description;
+const canonical = isListPage ? getBlogPagePath(currentPage) : `/blog/${post.slug}.html`;
+const previousPagePath = isListPage ? getBlogPagePath(currentPage - 1) : null;
+const nextPagePath = isListPage && currentPage < totalPages ? getBlogPagePath(currentPage + 1) : null;
+const articleKeywords = post ? getBlogPostKeywords(post) : [];
+const keywords = isListPage
+  ? BLOG_KEYWORDS
+  : Array.from(new Set([...DEFAULT_KEYWORDS, ...articleKeywords]));
+const articleWordCount = post
+  ? post.content.replace(/<[^>]+>/g, "").replace(/\s+/g, "").length
+  : undefined;
+const structuredData = isListPage
+  ? [
+      createBreadcrumbSchema([
+        { name: "首页", url: `${SITE_URL}/` },
+        { name: "产品动态", url: `${SITE_URL}/blog.html` },
+        { name: `第 ${currentPage} 页`, url: `${SITE_URL}${canonical}` },
+      ]),
+      createBlogSchema({
+        name: BLOG_SECTION_NAME,
+        description: pageDescription,
+        url: `${SITE_URL}/blog.html`,
+        posts: blogPosts,
+        dateModified: latestDate,
+      }),
+      createItemListSchema({
+        name: `${BLOG_SECTION_NAME} - 第 ${currentPage} 页`,
+        description: pageDescription,
+        url: `${SITE_URL}${canonical}`,
+        items: pagePosts,
+      }),
+      {
+        "@context": "https://schema.org",
+        "@type": "CollectionPage",
+        "@id": `${SITE_URL}${canonical}#collection`,
+        name: pageTitle,
+        description: pageDescription,
+        url: `${SITE_URL}${canonical}`,
+        inLanguage: "zh-CN",
+        dateModified: pageLatestDate,
+        hasPart: pagePosts.map((item) => ({
+          "@type": "BlogPosting",
+          headline: item.title,
+          url: item.url,
+          datePublished: item.date,
+          dateModified: item.date,
+        })),
+      },
+    ]
+  : [
+      createBreadcrumbSchema([
+        { name: "首页", url: `${SITE_URL}/` },
+        { name: "产品动态", url: `${SITE_URL}/blog.html` },
+        { name: post.title, url: post.url },
+      ]),
+      createBlogPostingSchema({
+        title: post.title,
+        description: post.description,
+        url: post.url,
+        image: post.cover,
+        datePublished: post.date,
+        dateModified: post.date,
+        keywords: articleKeywords,
+        articleSection: BLOG_SECTION_NAME,
+        wordCount: articleWordCount,
+      }),
+    ];
+const socialTitle = isListPage ? pageTitle : post.title;
+const image = !isListPage && post.cover ? post.cover : undefined;
+const imageAlt = !isListPage ? post.title : undefined;
+const ogType = isListPage ? "website" : "article";
+---
+
+<Layout
+  title={pageTitle}
+  socialTitle={socialTitle}
+  description={pageDescription}
+  keywords={keywords}
+  canonical={canonical}
+  schemaName={isListPage ? BLOG_SECTION_NAME : post.title}
+  image={image}
+  imageAlt={imageAlt}
+  ogType={ogType}
+  publishedTime={!isListPage ? post.date : undefined}
+  modifiedTime={pageLatestDate}
+  section={!isListPage ? BLOG_SECTION_NAME : undefined}
+  tags={!isListPage ? articleKeywords : undefined}
+  structuredData={structuredData}
+>
+  <Fragment slot="head">
+    {
+      isListPage && (
+        <>
+          <link rel="prev" href={`${SITE_URL}${previousPagePath}`} />
+          {nextPagePath && <link rel="next" href={`${SITE_URL}${nextPagePath}`} />}
+        </>
+      )
+    }
+  </Fragment>
+  <Fragment slot="main">
+    <Header />
+    <main class="bg-gradient-light text-gray-900">
+      {
+        isListPage ? (
+          <>
+            <section class="border-b border-gray-200 bg-white">
+              <div class="container-custom py-14 lg:py-20">
+                <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_360px] lg:items-end">
+                  <div>
+                    <p class="text-sm font-semibold text-1panel">产品动态</p>
+                    <h1 class="mt-3 text-3xl font-bold tracking-normal text-gray-950 lg:text-5xl">{BLOG_SECTION_NAME}</h1>
+                    <p class="mt-4 max-w-3xl text-base leading-8 text-gray-600 lg:text-lg">
+                      {BLOG_DESCRIPTION}
+                    </p>
+                  </div>
+                  <div class="grid grid-cols-3 gap-3 rounded-lg border border-gray-200 bg-slate-50 p-4">
+                    <div>
+                      <div class="text-2xl font-bold text-gray-950">{blogPosts.length}</div>
+                      <div class="mt-1 text-xs text-gray-500">文章</div>
+                    </div>
+                    <div>
+                      <div class="text-2xl font-bold text-gray-950">{yearCount}</div>
+                      <div class="mt-1 text-xs text-gray-500">年份</div>
+                    </div>
+                    <div>
+                      <div class="text-2xl font-bold text-gray-950">{earliestDate.slice(0, 4)}</div>
+                      <div class="mt-1 text-xs text-gray-500">起始</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            <BlogPostList posts={pagePosts} currentPage={currentPage} totalPages={totalPages} />
+          </>
+        ) : (
+          <article class="container-custom py-10 lg:py-16">
+            <div class="mx-auto max-w-4xl">
+              <div class="flex flex-wrap items-center gap-2 text-sm text-gray-500">
+                <a href="/" class="hover:text-1panel">首页</a>
+                <span>/</span>
+                <a href="/blog.html" class="hover:text-1panel">产品动态</a>
+              </div>
+              <h1 class="mt-5 text-3xl font-bold leading-tight tracking-normal text-gray-950 lg:text-5xl">{post.title}</h1>
+              <p class="mt-5 text-base leading-8 text-gray-600">{post.description}</p>
+              <div class="mt-5 flex flex-wrap items-center gap-3 text-sm text-gray-500">
+                <time datetime={post.date}>{post.dateText}</time>
+              </div>
+              {post.cover && <img src={post.cover} alt={post.title} class="mt-8 w-full rounded-lg border border-gray-100 object-cover" />}
+              <div class="blog-content mt-10 border-t border-gray-200 pt-10" set:html={post.content} />
+            </div>
+          </article>
+        )
+      }
+    </main>
+    <Footer />
+  </Fragment>
+</Layout>
+
+<style is:global>
+  .blog-content {
+    color: #1f2937;
+    font-size: 16px;
+    line-height: 1.9;
+  }
+
+  .blog-content > * + * {
+    margin-top: 1rem;
+  }
+
+  .blog-content h1,
+  .blog-content h2,
+  .blog-content h3,
+  .blog-content h4 {
+    color: #111827;
+    font-weight: 700;
+    line-height: 1.35;
+    margin-top: 2rem;
+  }
+
+  .blog-content h1 {
+    font-size: 1.625rem;
+  }
+
+  .blog-content h2 {
+    font-size: 1.375rem;
+  }
+
+  .blog-content h3 {
+    font-size: 1.25rem;
+  }
+
+  .blog-content p {
+    margin: 1rem 0;
+  }
+
+  .blog-content a {
+    color: #005eeb;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+  }
+
+  .blog-content strong {
+    font-weight: 700;
+    color: #111827;
+  }
+
+  .blog-content img {
+    display: block;
+    height: auto;
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .blog-content video {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    border-radius: 8px;
+  }
+
+  .blog-content figure {
+    margin: 1.75rem 0;
+    max-width: 100%;
+  }
+
+  .blog-content ul,
+  .blog-content ol {
+    margin: 1rem 0;
+    padding-left: 1.5rem;
+  }
+
+  .blog-content ul {
+    list-style: disc;
+  }
+
+  .blog-content ol {
+    list-style: decimal;
+  }
+
+  .blog-content blockquote {
+    margin: 1.5rem 0;
+    border-left: 4px solid #005eeb;
+    background: #f8fafc;
+    padding: 1rem 1.25rem;
+    color: #4b5563;
+  }
+
+  .blog-content table {
+    display: block;
+    width: 100%;
+    overflow-x: auto;
+    border-collapse: collapse;
+  }
+
+  .blog-content th,
+  .blog-content td {
+    border: 1px solid #e5e7eb;
+    padding: 0.75rem;
+    text-align: left;
+  }
+
+  .blog-content pre {
+    overflow-x: auto;
+    border-radius: 8px;
+    background: #111827;
+    padding: 1rem;
+    color: #f9fafb;
+  }
+
+  .blog-content code {
+    border-radius: 4px;
+    background: #f3f4f6;
+    padding: 0.15rem 0.35rem;
+    font-size: 0.92em;
+  }
+
+  .blog-content pre code {
+    background: transparent;
+    padding: 0;
+  }
+</style>

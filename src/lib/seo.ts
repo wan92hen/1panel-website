@@ -115,6 +115,157 @@ export function createWebPageSchema({
   };
 }
 
+export function createBlogPostingSchema({
+  title,
+  description,
+  url,
+  image,
+  datePublished,
+  dateModified,
+  keywords,
+  articleSection,
+  wordCount,
+  siteUrl = SITE_URL,
+}: {
+  title: string;
+  description: string;
+  url: string;
+  image?: string;
+  datePublished: string;
+  dateModified: string;
+  keywords?: string[];
+  articleSection?: string;
+  wordCount?: number;
+  siteUrl?: string;
+}): StructuredData {
+  const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
+  const imageUrl = image ? toAbsoluteUrl(image, resolvedSiteUrl) : undefined;
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BlogPosting",
+    "@id": `${url}#article`,
+    headline: title,
+    description,
+    url,
+    inLanguage: "zh-CN",
+    datePublished,
+    dateModified,
+    ...(keywords?.length
+      ? {
+          keywords: keywords.join(","),
+        }
+      : {}),
+    ...(articleSection ? { articleSection } : {}),
+    ...(wordCount ? { wordCount } : {}),
+    ...(imageUrl
+      ? {
+          image: [imageUrl],
+        }
+      : {}),
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": `${url}#webpage`,
+    },
+    author: {
+      "@id": `${resolvedSiteUrl}/#organization`,
+    },
+    publisher: {
+      "@id": `${resolvedSiteUrl}/#organization`,
+    },
+    isPartOf: {
+      "@id": `${resolvedSiteUrl}/blog.html#blog`,
+    },
+    about: {
+      "@type": "SoftwareApplication",
+      name: SITE_NAME,
+      url: `${resolvedSiteUrl}/`,
+    },
+  };
+}
+
+export function createBlogSchema({
+  name,
+  description,
+  url,
+  posts,
+  dateModified,
+  siteUrl = SITE_URL,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  posts: Array<{ title: string; url: string; date: string; description?: string }>;
+  dateModified: string;
+  siteUrl?: string;
+}): StructuredData {
+  const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "Blog",
+    "@id": `${resolvedSiteUrl}/blog.html#blog`,
+    name,
+    description,
+    url,
+    inLanguage: "zh-CN",
+    dateModified,
+    publisher: {
+      "@id": `${resolvedSiteUrl}/#organization`,
+    },
+    blogPost: posts.map((post) => ({
+      "@type": "BlogPosting",
+      headline: post.title,
+      url: post.url,
+      datePublished: post.date,
+      dateModified: post.date,
+      ...(post.description ? { description: post.description } : {}),
+    })),
+  };
+}
+
+export function createItemListSchema({
+  name,
+  description,
+  url,
+  items,
+  siteUrl = SITE_URL,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  items: Array<{ title: string; url: string; date?: string; description?: string }>;
+  siteUrl?: string;
+}): StructuredData {
+  const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "@id": `${url}#itemlist`,
+    name,
+    description,
+    url,
+    inLanguage: "zh-CN",
+    isPartOf: {
+      "@id": `${resolvedSiteUrl}/blog.html#blog`,
+    },
+    numberOfItems: items.length,
+    itemListElement: items.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      url: item.url,
+      item: {
+        "@type": "BlogPosting",
+        headline: item.title,
+        url: item.url,
+        ...(item.date ? { datePublished: item.date, dateModified: item.date } : {}),
+        ...(item.description ? { description: item.description } : {}),
+      },
+    })),
+  };
+}
+
 export function createSoftwareApplicationSchema(siteUrl: string = SITE_URL): StructuredData {
   const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
 
