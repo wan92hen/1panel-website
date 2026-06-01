@@ -1,5 +1,17 @@
 [
   {
+    "id": "019e731f-12fb-727c-b02a-1226f8771a15",
+    "title": "内网AI编程神器来了！飞致云联合英特尔发布1Panel AI编程一体机（B70版）",
+    "description": "满足行业用户内网环境下的AI编程需求。",
+    "date": "2026-05-29",
+    "dateText": "2026年05月29日",
+    "slug": "ai-coding-appliance-b70-release",
+    "path": "/blog/ai-coding-appliance-b70-release.html",
+    "url": "https://1panel.cn/blog/ai-coding-appliance-b70-release.html",
+    "cover": "/images/blog/b70-appliance/cover.jpg",
+    "content": "<p style=\"\">2026年5月29日，中国领先的开源软件公司飞致云联合英特尔正式发布1Panel AI编程一体机（B70版）。该产品专为10至20人研发团队打造，旨在解决金融、能源、制造、政府等行业在内网隔离环境下的AI编程需求，帮助企业研发团队在保障代码安全的同时，享受高效、稳定的AI辅助编程能力。</p><p style=\"\">飞致云创立于2014年，秉持“软件用起来才有价值，才有改进的机会”的核心价值观，以“为数智经济时代创造好软件”为使命，向客户交付被广泛验证、可信赖的开源软件。飞致云旗下拥有1Panel开源面板、MaxKB开源企业级智能体平台、JumpServer开源堡垒机、DataEase开源BI工具等多款知名开源产品，累计服务超过500万免费用户和5000家付费客户。英特尔作为全球领先的半导体技术公司，在AI算力基础设施领域持续深耕，其锐炫™显卡系列产品已在多个行业场景中得到广泛应用。</p><p style=\"\"><strong>高效满足内网环境AI编程需求</strong></p><p style=\"\">本次发布的<strong>1Panel AI编程一体机（B70版）</strong>是一款<strong>“开箱即用”</strong>的软硬一体设备，将算力、模型、应用及管理后台打包进一台服务器，插电联网即可为整个研发团队提供强大的AI编程能力，无需再单独申请GPU、调试环境或担心代码外泄。该产品主打三大核心价值：<strong>安全</strong>——纯内网运行，确保数据不出域，杜绝代码外泄风险；<strong>高效</strong>——以Token自主权驱动开发效能，释放创新潜力；<strong>省心</strong>——开箱即用，图形化界面，非技术成员也能高效运维。</p><p style=\"\"><strong>硬件配置</strong>方面，一体机搭载4张英特尔锐炫™Pro B70显卡，提供128GB大显存和高达1468 TOPS峰值AI算力。</p><p style=\"\"><strong>模型配置</strong>方面，一体机预装Qwen 3.6 27B模型，在多项编程能力评测中表现出色，SWE-bench Verified得分达到77.2，接近Claude Opus 4.5的80.9分，在SkillsBench Avg5评测中更是以48.2分超越Claude Opus 4.5的45.3分，具备生成功能完备的复杂代码的能力。</p><p style=\"\"><strong>软件配置</strong>方面，一体机内置1Panel企业版软件，实现从底层硬件到智能体（Metal-to-Agent）的统一管理平台，内置vLLM推理引擎管理、AI网关、Skills Hub等能力。同时，1Panel应用商店提供完善的开源DevOps工具链，涵盖项目管理、代码托管、制品库管理、持续集成和持续测试等核心研发工具。</p><figure style=\"align-items: start; display: flex; flex-direction: column\" data-content-type=\"image\"><img src=\"/images/blog/b70-appliance/image-01.jpg\" alt=\"1Panel企业版轻量级AI管理平台\" width=\"100%\" height=\"auto\" style=\"display: inline-block\" loading=\"lazy\" sizes=\"(max-width: 640px) 94vw, (max-width: 768px) 92vw, (max-width: 1024px) 88vw, min(800px, 85vw)\"></figure><p style=\"\"><strong>实测性能表现</strong></p><p style=\"\">1Panel AI编程一体机针对内置模型和英特尔锐炫™Pro B70 GPU加速卡，深度优化了vLLM推理引擎的启动参数，实现开箱即享高效推理，无需用户进行复杂的参数调优。在典型编程辅助场景的实测中，基于FP8精度、8并发压力测试（Input/Output规格为64K+1K），一体机展现出优异的实时响应能力：首Token延迟（TTFT）控制在1.5秒以内，平均单Token生成耗时（TPOT）仅为55.90毫秒，每秒Token吞吐量（TPS）高达139.63 token/s。这一性能指标意味着，对于常见的代码补全与生成请求，系统能够在极短时间内开始输出结果，并以流畅的速率完成长序列生成，充分满足10至20人团队并发使用时的实时交互需求。</p><p style=\"\">目前，1Panel AI编程一体机（B70版）已正式开放采购，限时特惠价格为￥11.9万元（含一年期软硬件维保服务）。</p>"
+  },
+  {
     "id": "wechat-l9jinAnbk-HVqtRu_MPzBA",
     "title": "支持AI网关和Skills Hub，1Panel企业版正式发布",
     "description": "轻量级AI管理平台，实现从底层硬件到智能体的统一管理。",
