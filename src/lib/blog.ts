@@ -53,6 +53,21 @@ export function getBlogPageTitle(page: number) {
     : `1Panel 产品动态 - 第 ${page} 页`;
 }
 
+export function getBlogPageDescription<T extends BlogPost>(posts: T[], page: number) {
+  const pagePosts = getBlogPagePosts(posts, page);
+  if (page <= 1) {
+    return "汇总 1Panel 最新产品动态，涵盖版本发布、功能更新、应用生态与实践教程，帮助用户及时了解产品能力演进。";
+  }
+
+  const firstPost = pagePosts[0];
+  const lastPost = pagePosts.at(-1);
+  const dateRange = firstPost && lastPost
+    ? `${lastPost.dateText}至${firstPost.dateText}`
+    : "历史";
+
+  return `1Panel 产品动态第 ${page} 页，收录 ${dateRange} 的版本发布、功能更新、应用生态与实践教程。`;
+}
+
 export function getBlogPageLastmod<T extends BlogPost>(posts: T[], page: number) {
   return getBlogPagePosts(posts, page)[0]?.date ?? posts[0]?.date ?? "2026-05-28";
 }

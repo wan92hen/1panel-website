@@ -10,6 +10,7 @@ import {
   BLOG_SECTION_NAME,
   type BlogPost,
   type BlogArticle,
+  getBlogPageDescription,
   getBlogPageLastmod,
   getBlogPagePath,
   getBlogPagePosts,
@@ -63,7 +64,7 @@ const pageLatestDate = isListPage ? getBlogPageLastmod(blogPosts, currentPage) :
 const earliestDate = blogPosts.at(-1)?.date ?? latestDate;
 const yearCount = new Set(blogPosts.map((item) => item.date.slice(0, 4))).size;
 const pageTitle = isListPage ? getBlogPageTitle(currentPage) : `${post.title} - ${BLOG_SECTION_NAME}`;
-const pageDescription = isListPage ? BLOG_DESCRIPTION : post.description;
+const pageDescription = isListPage ? getBlogPageDescription(blogPosts, currentPage) : post.description;
 const canonical = isListPage ? getBlogPagePath(currentPage) : `/blog/${post.slug}.html`;
 const previousPagePath = isListPage ? getBlogPagePath(currentPage - 1) : null;
 const nextPagePath = isListPage && currentPage < totalPages ? getBlogPagePath(currentPage + 1) : null;

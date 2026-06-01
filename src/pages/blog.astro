@@ -9,6 +9,7 @@ import {
   BLOG_KEYWORDS,
   BLOG_SECTION_NAME,
   type BlogPost,
+  getBlogPageDescription,
   getBlogPageLastmod,
   getBlogPagePath,
   getBlogPagePosts,
@@ -28,7 +29,7 @@ const pageLatestDate = getBlogPageLastmod(blogPosts, currentPage);
 const earliestDate = blogPosts.at(-1)?.date ?? latestDate;
 const yearCount = new Set(blogPosts.map((post) => post.date.slice(0, 4))).size;
 const pageTitle = getBlogPageTitle(currentPage);
-const pageDescription = BLOG_DESCRIPTION;
+const pageDescription = getBlogPageDescription(blogPosts, currentPage);
 const keywords = BLOG_KEYWORDS;
 const structuredData = [
   createBreadcrumbSchema([

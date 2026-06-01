@@ -127,23 +127,58 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
           class="inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
           ><span class="nav-link-label" data-text="应用商店">应用商店</span></a
         >
-        <a
-          href="https://bbs.fit2cloud.com/c/1p/"
-          target="_blank"
-          class="inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          ><span class="nav-link-label" data-text="论坛求助">论坛求助</span></a
-        >
-        <a
-          href="https://1panel.cn/docs"
-          target="_blank"
-          class="inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          ><span class="nav-link-label" data-text="使用手册">使用手册</span></a
-        >
+        <div id="support-dropdown-container" class="relative">
+          <button
+            id="support-dropdown-trigger"
+            type="button"
+            class="relative inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300 group"
+            aria-expanded="false"
+            aria-controls="support-dropdown"
+          >
+            <span class="nav-link-label" data-text="帮助与支持">
+              <span class="nav-link-content">
+                <span>帮助与支持</span>
+                <Icon
+                  id="support-dropdown-icon"
+                  name="carbon:chevron-down"
+                  class="w-4 h-4 transition-transform duration-200"
+                />
+              </span>
+            </span>
+          </button>
+          <div
+            id="support-dropdown"
+            class="absolute left-1/2 top-full z-[9999] hidden w-44 -translate-x-1/2 pt-5"
+          >
+            <div class="rounded-lg border border-gray-100 bg-white py-2 shadow-xl shadow-gray-900/10">
+              <a
+                href="https://1panel.cn/docs"
+                target="_blank"
+                class="block px-4 py-3 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-1panel"
+              >
+                使用手册
+              </a>
+              <a
+                href="https://bbs.fit2cloud.com/c/1p/"
+                target="_blank"
+                class="block px-4 py-3 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-1panel"
+              >
+                论坛求助
+              </a>
+              <a
+                href="/blog.html"
+                class="block px-4 py-3 text-sm text-gray-700 transition-colors duration-200 hover:bg-blue-50 hover:text-1panel"
+              >
+                产品动态
+              </a>
+            </div>
+          </div>
+        </div>
         <a
           href="https://demo.1panel.cn/"
           target="_blank"
           class="inline-flex items-center text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          ><span class="nav-link-label" data-text="English">在线体验</span></a
+          ><span class="nav-link-label" data-text="在线体验">在线体验</span></a
         >
         <div class="flex items-center space-x-4">
           <a
@@ -252,18 +287,31 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
           class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
           >应用商店</a
         >
-        <a
-          href="https://bbs.fit2cloud.com/c/1p/"
-          target="_blank"
-          class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          >论坛求助</a
-        >
-        <a
-          href="https://1panel.cn/docs"
-          target="_blank"
-          class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
-          >使用手册</a
-        >
+        <div class="space-y-3">
+          <div class="text-sm font-semibold text-gray-900">帮助与支持</div>
+          <div class="flex flex-col space-y-3 pl-3 border-l border-gray-200">
+            <a
+              href="https://1panel.cn/docs"
+              target="_blank"
+              class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+            >
+              使用手册
+            </a>
+            <a
+              href="https://bbs.fit2cloud.com/c/1p/"
+              target="_blank"
+              class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+            >
+              论坛求助
+            </a>
+            <a
+              href="/blog.html"
+              class="text-gray-700 hover:text-gray-900 hover:font-bold transition-colors duration-300"
+            >
+              产品动态
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </nav>
@@ -328,6 +376,16 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
     const aiDropdown = document.getElementById("ai-appliance-dropdown");
     const aiDropdownIcon = document.getElementById(
       "ai-appliance-dropdown-icon"
+    );
+    const supportDropdownContainer = document.getElementById(
+      "support-dropdown-container"
+    );
+    const supportDropdownTrigger = document.getElementById(
+      "support-dropdown-trigger"
+    );
+    const supportDropdown = document.getElementById("support-dropdown");
+    const supportDropdownIcon = document.getElementById(
+      "support-dropdown-icon"
     );
 
     if (mobileMenuBtn && mobileMenu) {
@@ -395,6 +453,12 @@ import Fit2cloudHeader from "./Fit2cloudHeader.astro";
       aiDropdownTrigger,
       aiDropdown,
       aiDropdownIcon
+    );
+    setupDropdown(
+      supportDropdownContainer,
+      supportDropdownTrigger,
+      supportDropdown,
+      supportDropdownIcon
     );
   });
 </script>

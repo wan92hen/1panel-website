@@ -73,6 +73,8 @@ export function createWebPageSchema({
   url,
   image,
   imageAlt,
+  datePublished,
+  dateModified,
   siteUrl = SITE_URL,
 }: {
   title: string;
@@ -80,6 +82,8 @@ export function createWebPageSchema({
   url: string;
   image?: string;
   imageAlt?: string;
+  datePublished?: string;
+  dateModified?: string;
   siteUrl?: string;
 }): StructuredData {
   const resolvedSiteUrl = normalizeSiteUrl(siteUrl);
@@ -93,6 +97,8 @@ export function createWebPageSchema({
     name: title,
     description,
     inLanguage: "zh-CN",
+    ...(datePublished ? { datePublished } : {}),
+    ...(dateModified ? { dateModified } : {}),
     ...(imageUrl
       ? {
           primaryImageOfPage: {
