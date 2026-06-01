@@ -1,5 +1,17 @@
 [
   {
+    "id": "ai-gateway-products-2026",
+    "title": "AI网关怎么选？盘点2026年最常用的5个AI网关产品",
+    "description": "盘点 New API、Cloudflare AI Gateway、1Panel AI 网关、LiteLLM 和 OpenRouter，帮助团队选择适合自己的 AI 网关产品。",
+    "date": "2026-06-01",
+    "dateText": "2026年06月01日",
+    "slug": "ai-gateway-products-2026",
+    "path": "/blog/ai-gateway-products-2026.html",
+    "url": "https://1panel.cn/blog/ai-gateway-products-2026.html",
+    "cover": "/images/blog/ai-gateway-2026/cover.jpg",
+    "content": "<p style=\"\">随着大模型在企业场景的渗透率持续提升，<strong>AI 网关（AI Gateway）</strong> 已从“可选项”变为“必选项”。它不仅是连接应用与模型的桥梁，更是企业实现成本管控、安全合规与高效协作的核心基础设施。面对市面上琳琅满目的产品，2026 年究竟哪些 AI 网关更值得关注？本文将盘点目前较为主流的 5 款产品，帮助团队结合自身场景做出选择。</p><h1 style=\"\" id=\"new-api\">1. New API：开源社区的首选聚合平台</h1><p style=\"\">New API 是目前 GitHub 上较受欢迎的开源 AI 网关项目之一，其核心价值在于为个人开发者和中小团队提供一个零成本、高灵活性的统一接口管理平台。</p><ul><li><strong>统一接口：</strong>兼容 OpenAI 标准格式，一个 API 端点即可接入 30+ 家主流 AI 服务商，包括 DeepSeek、Claude、Gemini 等，减少多密钥、多地址带来的管理复杂度。</li><li><strong>智能路由：</strong>支持多渠道负载均衡与故障自动切换，当某个模型服务不稳定时，系统会自动将请求转发至备用渠道，保障业务连续性。</li><li><strong>精细计费：</strong>提供按次数或按 Token 量计费、预付费充值、多倍率配置等功能，让成本控制精确到每一笔调用。</li><li><strong>安全管控：</strong>内置令牌权限管理与 API 调用审计，确保只有授权用户才能访问特定模型，有效防止资源滥用。</li></ul><p style=\"\">对于追求技术自主、希望深度定制网关逻辑的团队，New API 是一个很适合作为起点的选择。</p><h1 style=\"\" id=\"cloudflare-ai-gateway\">2. Cloudflare AI Gateway：边缘计算时代的低延迟选择</h1><p style=\"\">Cloudflare 凭借其全球分布的边缘网络，将 AI 网关能力延伸至离用户更近的位置。</p><ul><li><strong>优势：</strong>利用边缘缓存技术，对相同的 Prompt 请求进行缓存，降低 Token 成本并减少响应时间。同时，它天然具备 DDoS 防护能力，安全性较高。</li><li><strong>适用场景：</strong>面向全球用户的 C 端应用，以及对延迟较为敏感的业务场景。</li><li><strong>实测感受：</strong>在部署全球性聊天机器人时，开启缓存后，重复问题的响应速度提升明显，也能降低源站模型接口限流带来的影响。</li></ul><h1 style=\"\" id=\"1panel-ai-gateway\">3. 1Panel AI 网关：轻量级服务器管理者的首选</h1><p style=\"\">作为新一代开源 Linux 服务器运维管理面板，1Panel 企业版内置了功能完善的 AI 网关模块。对于已经使用或倾向于使用轻量级架构的团队来说，它是一个集成化程度较高的选择。</p><p style=\"\"><strong>核心能力亮点</strong></p><ul><li><strong>模型代理：</strong>支持无缝对接各类大模型，统一管理接口，无需为不同模型适配多套代码。</li><li><strong>席位管理：</strong>提供灵活的团队成员权限分配机制，确保多人协作时井然有序，数据安全可控。</li><li><strong>用量统计：</strong>每一笔 Token 消耗都清晰可见，通过可视化的数据看板减少成本盲区，帮助团队精准控制用量。</li><li><strong>内容合规：</strong>内置敏感词过滤与风控机制，自动拦截违规输入输出，守住企业应用的安全底线。</li></ul><h1 style=\"\" id=\"litellm\">4. LiteLLM：开发者的瑞士军刀</h1><p style=\"\">LiteLLM 是一个专注于开发者体验的 Python 库和代理服务器，它的目标是让不同 LLM API 都能像 OpenAI API 一样简单调用。</p><ul><li><strong>标准化：</strong>无论底层使用的是 Azure、Bedrock 还是 Vertex AI，LiteLLM 都能将其转换为标准 OpenAI 格式，降低代码迁移成本。</li><li><strong>虚拟密钥管理：</strong>支持创建具有特定预算、模型限制和过期时间的虚拟密钥，适合 SaaS 平台为不同租户分配资源。</li><li><strong>可观测性：</strong>原生集成 LangSmith、Arize Phoenix 等可观测性工具，方便调试和追踪 Token 消耗。</li><li><strong>实测感受：</strong>在需要频繁切换底层模型进行 A/B 测试时，LiteLLM 的配置较为简单，通常只需调整环境变量即可完成切换。</li></ul><h1 style=\"\" id=\"openrouter\">5. OpenRouter：模型市场型聚合平台</h1><p style=\"\">OpenRouter 不仅仅是一个网关，更像是一个模型市场。它允许用户通过统一 API 访问数百种开源和闭源模型。</p><ul><li><strong>模型丰富度：</strong>拥有较完整的模型列表，包括许多在其他网关中较少出现的新模型。</li><li><strong>按需付费：</strong>没有月费，按实际使用的 Token 付费，价格相对透明，也便于团队按需试用。</li><li><strong>排名系统：</strong>社区会对模型的质量和性价比进行打分，帮助用户快速找到当前更适合的模型。</li><li><strong>适用场景：</strong>需要广泛尝试不同模型、寻找性价比最优解的研发团队。</li></ul><h1 style=\"\" id=\"summary\">总结与建议</h1><table><thead><tr><th>产品</th><th>核心优势</th><th>推荐人群</th></tr></thead><tbody><tr><td><strong>New API</strong></td><td>开源免费、功能全面、社区活跃</td><td>个人开发者、中小团队、技术极客</td></tr><tr><td><strong>Cloudflare AI Gateway</strong></td><td>全球边缘节点、缓存加速、高可用</td><td>全球化应用、对延迟敏感的业务</td></tr><tr><td><strong>1Panel AI 网关</strong></td><td>运维一体化、可视化强、合规安全</td><td>服务器运维人员、企业内部管理系统</td></tr><tr><td><strong>LiteLLM</strong></td><td>标准化接口、虚拟密钥、易于集成</td><td>Python 开发者、SaaS 平台构建者</td></tr><tr><td><strong>OpenRouter</strong></td><td>模型丰富、价格透明、无需自建</td><td>模型评测人员、追求性价比的团队</td></tr></tbody></table><p style=\"\">选择 AI 网关没有绝对的“最好”，只有“最适合”。如果是个人开发者或小团队，New API 可以快速起步；如果关注企业级运维、安全和可视化管理，<strong>1Panel AI 网关</strong>提供了更完整的一站式体验；如果面向全球用户，Cloudflare AI Gateway 则更适合作为性能和可用性保障。希望这份盘点能为你的 AI 基础设施建设提供参考。</p>"
+  },
+  {
     "id": "019e731f-12fb-727c-b02a-1226f8771a15",
     "title": "内网AI编程神器来了！飞致云联合英特尔发布1Panel AI编程一体机（B70版）",
     "description": "满足行业用户内网环境下的AI编程需求。",
@@ -158,7 +170,7 @@
   {
     "id": "019c0e45-2ce9-735f-bc8e-9584cb9d228e",
     "title": "赛道第一！1Panel成功入选Gitee 2025年度开源项目",
-    "description": "现代化、开源的Linux服务器运维管理面板。",
+    "description": "介绍 1Panel 入选 Gitee 2025 年度开源项目的背景与社区成果，展示开源 Linux 面板的生态影响力。",
     "date": "2026-01-30",
     "dateText": "2026年01月30日",
     "slug": "gitee-2025-open-source-project",
@@ -182,7 +194,7 @@
   {
     "id": "019bc9e4-f7b8-776f-98f7-976bcd9d6322",
     "title": "重要通知丨1Panel漏洞通知及修复方案（1P-2026.01.17）",
-    "description": "请用户尽快修复。",
+    "description": "说明 1Panel 安全漏洞 1P-2026.01.17 的影响范围、修复方案和升级建议，提醒用户及时完成安全修复。",
     "date": "2026-01-17",
     "dateText": "2026年01月17日",
     "slug": "security-advisory-1p-2026-01-17",
@@ -254,7 +266,7 @@
   {
     "id": "fb746696-d086-4c00-9e79-7311790c2530",
     "title": "重要通知丨1Panel漏洞通知及修复方案（1P-2025.12.08）",
-    "description": "请用户尽快修复。",
+    "description": "说明 1Panel 安全漏洞 1P-2025.12.08 的影响范围、修复方案和升级建议，提醒用户及时完成安全修复。",
     "date": "2025-12-08",
     "dateText": "2025年12月08日",
     "slug": "security-advisory-1p-2025-12-08",
@@ -314,7 +326,7 @@
   {
     "id": "8f3c9973-6544-48d1-9b63-1df4208f3935",
     "title": "1Panel应用推荐：SQLBot开源智能问数系统",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 SQLBot 开源智能问数系统的功能特点与 1Panel 应用商店部署方式，帮助团队快速构建自然语言数据查询能力。",
     "date": "2025-08-08",
     "dateText": "2025年08月08日",
     "slug": "sqlbot-app-recommendation",
@@ -326,7 +338,7 @@
   {
     "id": "ea886539-9365-4624-aa94-1fd6c5df4422",
     "title": "重要通知丨1Panel漏洞通知及修复方案（1P-2025.08.01）",
-    "description": "请用户尽快修复。",
+    "description": "说明 1Panel 安全漏洞 1P-2025.08.01 的影响范围、修复方案和升级建议，提醒用户及时完成安全修复。",
     "date": "2025-08-01",
     "dateText": "2025年08月01日",
     "slug": "security-advisory-1p-2025-08-01",
@@ -362,7 +374,7 @@
   {
     "id": "3464e67a-d737-47f2-9da9-71737db50e92",
     "title": "速来体验 | 1Panel应用商店上新MaxKB V2社区版本",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 MaxKB V2 社区版在 1Panel 应用商店中的上架与部署体验，帮助用户快速搭建企业级智能体平台。",
     "date": "2025-07-18",
     "dateText": "2025年07月18日",
     "slug": "maxkb-v2-app-store",
@@ -398,7 +410,7 @@
   {
     "id": "6ef86f00-5a78-4e52-b9de-552411826166",
     "title": "1Panel应用推荐：DBHub通用数据库网关",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 DBHub 通用数据库网关的功能特点与 1Panel 应用商店部署流程，帮助用户统一管理数据库连接与访问。",
     "date": "2025-05-24",
     "dateText": "2025年05月24日",
     "slug": "dbhub-app-recommendation",
@@ -410,7 +422,7 @@
   {
     "id": "82aefe78-e359-44d3-a589-3cb6ec300b42",
     "title": "1Panel应用推荐：Beszel轻量级服务器监控平台",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 Beszel 轻量级服务器监控平台的能力与 1Panel 部署方式，帮助用户快速搭建主机资源监控服务。",
     "date": "2025-05-16",
     "dateText": "2025年05月16日",
     "slug": "beszel-app-recommendation",
@@ -422,7 +434,7 @@
   {
     "id": "3b747316-95e5-4a29-896c-c5b75788d30c",
     "title": "1Panel应用推荐：OpenVPN开源VPN守护进程",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 OpenVPN 开源 VPN 守护进程在 1Panel 中的部署与使用场景，帮助用户构建安全的远程访问通道。",
     "date": "2025-05-09",
     "dateText": "2025年05月09日",
     "slug": "openvpn-app-recommendation",
@@ -482,7 +494,7 @@
   {
     "id": "6c9090e6-5d10-4ac4-a906-f9d5d5575e8d",
     "title": "1Panel应用推荐：WordPress开源博客软件和内容管理系统",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 WordPress 开源博客和内容管理系统在 1Panel 应用商店中的部署方式，帮助用户快速搭建网站。",
     "date": "2025-02-07",
     "dateText": "2025年02月07日",
     "slug": "wordpress-app-recommendation",
@@ -494,7 +506,7 @@
   {
     "id": "01983a27-6c3f-4cd5-8323-204408839be1",
     "title": "1Panel应用推荐：Halo开源建站工具",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 Halo 开源建站工具在 1Panel 应用商店中的部署与使用方式，帮助用户快速搭建个人或团队站点。",
     "date": "2025-01-25",
     "dateText": "2025年01月25日",
     "slug": "halo-app-recommendation",
@@ -530,7 +542,7 @@
   {
     "id": "d250319b-64ca-4fd9-9205-eaff735417b0",
     "title": "1Panel应用推荐：MaxKB开源知识库问答系统",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 MaxKB 开源知识库问答系统在 1Panel 中的部署与使用场景，帮助团队快速构建智能问答应用。",
     "date": "2024-12-16",
     "dateText": "2024年12月16日",
     "slug": "maxkb-app-recommendation",
@@ -578,7 +590,7 @@
   {
     "id": "ae48f94a-0294-42a7-85e7-1e53af3460fd",
     "title": "1Panel应用推荐：Bytebase开源数据库DevOps解决方案",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 Bytebase 开源数据库 DevOps 解决方案在 1Panel 中的部署方式，帮助团队规范数据库变更流程。",
     "date": "2024-08-16",
     "dateText": "2024年08月16日",
     "slug": "bytebase-app-recommendation",
@@ -590,7 +602,7 @@
   {
     "id": "427b81e3-b8b9-471c-b971-49c9420b3e4b",
     "title": "1Panel应用推荐：KubePi开源Kubernetes管理面板",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 KubePi 开源 Kubernetes 管理面板在 1Panel 中的部署与使用场景，帮助用户可视化管理集群资源。",
     "date": "2024-08-09",
     "dateText": "2024年08月09日",
     "slug": "kubepi-app-recommendation",
@@ -602,7 +614,7 @@
   {
     "id": "36c5a90d-151e-4465-becb-7771ce49cc1b",
     "title": "1Panel应用推荐：Screego开源屏幕共享工具",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 Screego 开源屏幕共享工具在 1Panel 中的部署方式，帮助团队快速搭建轻量级远程协作服务。",
     "date": "2024-07-27",
     "dateText": "2024年07月27日",
     "slug": "screego-app-recommendation",
@@ -614,7 +626,7 @@
   {
     "id": "01541924-7dc6-429d-bd14-faae00bc9f76",
     "title": "重要通知丨1Panel漏洞通知及修复方案（1P-2024.07.20）",
-    "description": "请用户尽快修复。",
+    "description": "说明 1Panel 安全漏洞 1P-2024.07.20 的影响范围、修复方案和升级建议，提醒用户及时完成安全修复。",
     "date": "2024-07-20",
     "dateText": "2024年07月20日",
     "slug": "security-advisory-1p-2024-07-20",
@@ -650,7 +662,7 @@
   {
     "id": "094a956f-ca75-4aa9-9401-1db311a5d1dd",
     "title": "1Panel应用推荐：Bitwarden开源密码管理器",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 Bitwarden 开源密码管理器在 1Panel 中的部署与使用场景，帮助用户自托管安全的密码管理服务。",
     "date": "2024-06-22",
     "dateText": "2024年06月22日",
     "slug": "bitwarden-app-recommendation",
@@ -662,7 +674,7 @@
   {
     "id": "bd337f7a-d138-41e6-bea6-84fa9d303cd5",
     "title": "1Panel应用推荐：Memos笔记服务",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 Memos 开源笔记服务在 1Panel 中的部署方式，帮助用户快速搭建轻量级个人知识记录工具。",
     "date": "2024-06-14",
     "dateText": "2024年06月14日",
     "slug": "memos-app-recommendation",
@@ -698,7 +710,7 @@
   {
     "id": "a4d4aed3-3547-4d8f-8dac-f7ebc4fb82e8",
     "title": "1Panel应用推荐：code-server",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 code-server 在 1Panel 中的部署与使用方式，帮助开发者通过浏览器访问远程 VS Code 开发环境。",
     "date": "2024-05-24",
     "dateText": "2024年05月24日",
     "slug": "code-server-app-recommendation",
@@ -710,7 +722,7 @@
   {
     "id": "464160e3-f6d1-43bc-82a6-0d8ec14efc4d",
     "title": "1Panel应用推荐：Uptime Kuma",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 Uptime Kuma 开源监控工具在 1Panel 中的部署方式，帮助用户快速搭建网站与服务可用性监控。",
     "date": "2024-05-13",
     "dateText": "2024年05月13日",
     "slug": "uptime-kuma-app-recommendation",
@@ -722,7 +734,7 @@
   {
     "id": "88117f8d-b5db-433a-a687-3479e5a2271d",
     "title": "1Panel应用推荐： frp内网穿透工具",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 frp 内网穿透工具在 1Panel 中的部署方式，帮助用户安全暴露内网服务并管理访问入口。",
     "date": "2024-04-27",
     "dateText": "2024年04月27日",
     "slug": "frp-app-recommendation",
@@ -734,7 +746,7 @@
   {
     "id": "88ea3783-c1e5-4ad9-a986-46d989f30fb2",
     "title": "1Panel应用推荐：DataEase开源数据可视化分析工具",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 DataEase 开源数据可视化分析工具在 1Panel 中的部署方式，帮助团队快速搭建 BI 分析平台。",
     "date": "2024-03-23",
     "dateText": "2024年03月23日",
     "slug": "dataease-app-recommendation",
@@ -746,7 +758,7 @@
   {
     "id": "d8ef07d4-45c2-4d9a-ad75-543fb8e8081a",
     "title": "1Panel应用推荐：Nginx Proxy Manager",
-    "description": "面小管的卖安利时刻！",
+    "description": "介绍 Nginx Proxy Manager 在 1Panel 中的部署方式，帮助用户可视化管理反向代理、域名和证书。",
     "date": "2024-03-15",
     "dateText": "2024年03月15日",
     "slug": "nginx-proxy-manager-app-recommendation",
@@ -782,7 +794,7 @@
   {
     "id": "c1d04e98-cdde-4762-831f-f5d56e9e53e9",
     "title": "1Panel应用推荐：青龙定时任务管理平台",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍青龙定时任务管理平台在 1Panel 应用商店中的部署方式，帮助用户集中管理脚本与自动化任务。",
     "date": "2024-02-03",
     "dateText": "2024年02月03日",
     "slug": "qinglong-app-recommendation",
@@ -830,7 +842,7 @@
   {
     "id": "5742201b-2b41-43a0-8711-c7773cfa96f0",
     "title": "1Panel应用推荐：AList开源文件列表工具",
-    "description": "面小馆的卖安利时刻！",
+    "description": "介绍 AList 开源文件列表工具在 1Panel 中的部署与使用方式，帮助用户快速搭建统一文件访问服务。",
     "date": "2024-01-12",
     "dateText": "2024年01月12日",
     "slug": "alist-app-recommendation",
@@ -866,7 +878,7 @@
   {
     "id": "17f4dcc6-d2cc-4a0e-8945-119886b15bd4",
     "title": "11月，1Panel开源面板项目收到了这些评论",
-    "description": "留下评论，赢取好礼！",
+    "description": "汇总 2023 年 11 月 1Panel 开源面板项目收到的社区评论与用户反馈，展示社区使用体验和建议。",
     "date": "2023-12-15",
     "dateText": "2023年12月15日",
     "slug": "community-comments-november-2023",
@@ -878,7 +890,7 @@
   {
     "id": "1628daf0-0da3-4d9a-afbc-2be1180a6ce2",
     "title": "10月，1Panel开源面板项目收到了这些评论",
-    "description": "留下评论，赢取好礼！",
+    "description": "汇总 2023 年 10 月 1Panel 开源面板项目收到的社区评论与用户反馈，展示社区使用体验和建议。",
     "date": "2023-11-24",
     "dateText": "2023年11月24日",
     "slug": "community-comments-october-2023",
@@ -914,7 +926,7 @@
   {
     "id": "07576838-de77-42dd-bda7-8ebe9909c762",
     "title": "9月，1Panel开源面板项目收到了这些评论",
-    "description": "留下评论，赢取好礼！",
+    "description": "汇总 2023 年 9 月 1Panel 开源面板项目收到的社区评论与用户反馈，展示社区使用体验和建议。",
     "date": "2023-10-20",
     "dateText": "2023年10月20日",
     "slug": "community-comments-september-2023",
@@ -938,7 +950,7 @@
   {
     "id": "7f70ba74-0b3b-41ba-984c-8d4d60d4cd41",
     "title": "当1Panel开源项目被社区平台推荐后，我们收获了这些评论",
-    "description": "留下评论，赢取好礼！",
+    "description": "汇总 1Panel 开源项目被社区平台推荐后的用户评论与反馈，展示社区关注点和真实使用体验。",
     "date": "2023-09-28",
     "dateText": "2023年09月28日",
     "slug": "community-platform-comments",
@@ -1130,7 +1142,7 @@
   {
     "id": "b7ea5ac0-31a2-43cf-9242-97c5a7e4108d",
     "title": "1Panel 开源 Linux 面板正式发布",
-    "description": "现代化、开源的Linux服务器运维管理面板。",
+    "description": "介绍 1Panel 开源 Linux 面板正式发布的背景、产品定位与核心能力，帮助用户了解初始版本。",
     "date": "2023-03-20",
     "dateText": "2023年03月20日",
     "slug": "linux-panel-initial-release",
